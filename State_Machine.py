@@ -2,9 +2,11 @@ import States
 
 class STATE_MACHINE:
     def __init__(self,owner):
+        print("fsm start up")
         self.owner=owner # who owns this state machine
-        self.current_state=States.READ_HDMI
+        self.current_state=States.READ_HDMI()
         self.previous_state=None
+        print("fsm finished")
     def Update(self):
         self.current_state.Execute(self.owner)
     def Change_State(new_state):

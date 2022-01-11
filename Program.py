@@ -2,8 +2,10 @@ from State_Machine import STATE_MACHINE
 from pynq.overlays.base import BaseOverlay
 from pynq.lib.video import *
 
+#TODO come up with a better name than program
 class PROGRAM:
     def __init__(self):
+        print("Starting program initialization")
         self.base=BaseOverlay("base.bit")
         ## configure HDMI
         self.hdmi_in=self.base.video.hdmi_in
@@ -15,8 +17,10 @@ class PROGRAM:
         self.frame=None
         self.is_running=True
         self.state_machine=STATE_MACHINE(self)
+        print("Finished initialization")
 
     def Update(self):
+        print("called update")
         self.state_machine.Update()
     def Is_Running(self):
         return self.is_running
@@ -27,7 +31,7 @@ class PROGRAM:
     def Read_HDMI(self):
         frame=self.hdmi_in.readframe()
     def Write_HDMI(self):
-        hdmi_out.writeframe(frame)
+        self.hdmi_out.writeframe(frame)
 
 
 
