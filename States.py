@@ -1,4 +1,4 @@
-
+import time
 
 class READ_HDMI:
     @staticmethod
@@ -6,6 +6,10 @@ class READ_HDMI:
         pass
     @staticmethod
     def Execute(program):
+        start=time.time()
+        while time.time()-start < 30:
+            program.Read_HDMI()
+            program.Write_HDMI()
         print("exe")
     @staticmethod
     def Exit(program):

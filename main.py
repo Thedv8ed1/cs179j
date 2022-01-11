@@ -1,5 +1,8 @@
 from Program import PROGRAM
-
 program=PROGRAM()
-while program.Is_Running():
-    program.Update()
+try:
+    while program.Is_Running():
+        program.Update()
+except:
+    program.Clean_Up()
+program.Clean_Up()
