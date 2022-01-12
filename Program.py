@@ -10,18 +10,20 @@ class PROGRAM:
         ## configure HDMI
         self.hdmi_in=self.base.video.hdmi_in
         self.hdmi_out=self.base.video.hdmi_out
-        self.hdmi_in.configure()
-        self.hdmi_out.configure(self.hdmi_in.mode)
+        self.hdmi_in.configure(PIXEL_RGB)
+        self.hdmi_out.configure(self.hdmi_in.mode,PIXEL_RGB)
         self.hdmi_in.start()
         self.hdmi_out.start()
         self.frame=None
         self.is_running=True
         self.state_machine=STATE_MACHINE(self)
         print("Finished initialization")
-
+        self.frames=500 #for testing, run for 500 frames
     def Update(self):
-        print("called update")
         self.state_machine.Update()
+        frames-=1
+        if not frames:
+            is_running=False
     def Is_Running(self):
         return self.is_running
 
@@ -29,9 +31,9 @@ class PROGRAM:
         self.hdmi_out.close()
         self.hdmi_in.close()
     def Read_HDMI(self):
-        frame=self.hdmi_in.readframe()
+        self.frame=self.hdmi_in.readframe()
     def Write_HDMI(self):
-        self.hdmi_out.writeframe(frame)
+        self.hdmi_out.writeframe(self.frame)
 
 
 
