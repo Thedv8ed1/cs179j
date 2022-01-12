@@ -7,10 +7,10 @@ class STATE_MACHINE:
         self.previous_state=None
     def Update(self):
         self.current_state.Execute(self.owner)
-    def Change_State(new_state):
+    def Change_State(self,new_state):
         self.previous_state=self.current_state
-        self.current_state.Exit()
+        self.current_state.Exit(self.owner)
         self.current_state=new_state
-        self.current_state.Enter()
+        self.current_state.Enter(self.owner)
     def Revert_State():
-        Change_State(previous_state)
+        Change_State(self.previous_state)

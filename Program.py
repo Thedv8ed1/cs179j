@@ -21,19 +21,23 @@ class PROGRAM:
         self.frames=500 #for testing, run for 500 frames
     def Update(self):
         self.state_machine.Update()
-        frames-=1
-        if not frames:
-            is_running=False
+        self.frames=self.frames-1
+        if self.frames==0:
+            print("no more frames")
+            self.is_running=False
     def Is_Running(self):
         return self.is_running
+    def Change_State(self,state):
+        self.state_machine.Change_State(state)
 
-    def Clean_Up(self):
-        self.hdmi_out.close()
-        self.hdmi_in.close()
     def Read_HDMI(self):
         self.frame=self.hdmi_in.readframe()
     def Write_HDMI(self):
         self.hdmi_out.writeframe(self.frame)
+
+    def Clean_Up(self):
+        self.hdmi_out.close()
+        self.hdmi_in.close()
 
 
 
