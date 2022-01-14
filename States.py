@@ -1,5 +1,4 @@
 import Program
-import time
 
 # reads a frame from hdmi port
 class READ_FRAME:
