@@ -18,13 +18,9 @@ class PROGRAM:
         self.is_running=True
         self.state_machine=STATE_MACHINE(self)
         print("Finished initialization")
-        self.frames=500 #for testing, run for 500 frames
     def Update(self):
         self.state_machine.Update()
-        self.frames=self.frames-1
-        if self.frames==0:
-            print("no more frames")
-            self.is_running=False
+
     def Is_Running(self):
         return self.is_running
     def Change_State(self,state):
@@ -38,6 +34,7 @@ class PROGRAM:
     def Clean_Up(self):
         self.hdmi_out.close()
         self.hdmi_in.close()
+        
 
 
 
