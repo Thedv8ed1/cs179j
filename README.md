@@ -11,3 +11,8 @@ Basic class to execute and change states.
 **States.py**\
 Unit of execution. Each state uses methods of the PROGRAM class to accomplish a task. States provide modularity as adding additional states will expand functionality.
 
+**Buttons.py**\
+Contains logic for button presses.
+
+**Enums.py**\
+Contains Enum class of photo filter types.
