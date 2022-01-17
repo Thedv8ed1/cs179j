@@ -5,12 +5,16 @@ base = BaseOverlay("base.bit")
 class BUTTONS:
     def __init(self):
         print("buttons initialized")
+        # select filter 1 by default
+        # base.leds[0].toggle()
 
-    def TurnOffAllLeds():
+    @classmethod
+    def TurnOffAllLeds(self):
         for led in base.leds:
             led.off()
 
-    def handleLEDForIndex(index: int):
+    @classmethod
+    def __handleLEDForIndex(self, index: int):
         TurnOffAllLeds()
         base.leds[index].toggle() 
 
@@ -20,7 +24,7 @@ class BUTTONS:
 
         # button 1
         if (base.buttons[0].read()==1):
-            #handleLEDForIndex(0)
+            #self.__handleLEDForIndex(0)
             for led in base.leds:
                 led.off()
             base.leds[0].toggle()

@@ -5,7 +5,6 @@ program=PROGRAM()
 buttons=BUTTONS()
 try:
     while program.Is_Running():
-        print("Shiba")
         program.Update()
         buttons.Poll_Buttons()
 
