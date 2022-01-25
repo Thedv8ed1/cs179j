@@ -10,8 +10,8 @@ class BUTTONS:
     # private methods
     def __init__(self):
         print("buttons initialized")
-        # select filter 1 by default
-        base.leds[0].toggle()
+        # no filter applied by default
+        self.__TurnOffAllLeds()
 
     @classmethod
     def __TurnOffAllLeds(self):
