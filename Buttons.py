@@ -31,11 +31,11 @@ class BUTTONS:
                 if self.filter.getFilterState() == FilterState.FILTER1:
                     self.__TurnOffAllLeds()
                     self.filter.setFilterState(FilterState.NONE)
-                    print("Unselecting Filter 0")
+                    print("Unselecting Filter 1")
                 else:
                     self.__handleLEDForIndex(0)
                     self.filter.setFilterState(FilterState.FILTER1)
-                    print("Selecting Filter 0")
+                    print("Selecting Filter 1")
         else:
             self.held[0] = False
 
@@ -46,11 +46,11 @@ class BUTTONS:
                 if self.filter.getFilterState() == FilterState.FILTER2:
                     self.__TurnOffAllLeds()
                     self.filter.setFilterState(FilterState.NONE)
-                    print("Unselecting Filter 1")
+                    print("Unselecting Filter 2")
                 else:
                     self.__handleLEDForIndex(1)
                     self.filter.setFilterState(FilterState.FILTER2)
-                    print("Selecting Filter 1")
+                    print("Selecting Filter 2")
         else:
             self.held[1] = False
 
@@ -61,11 +61,11 @@ class BUTTONS:
                 if self.filter.getFilterState() == FilterState.FILTER3:
                     self.__TurnOffAllLeds()
                     self.filter.setFilterState(FilterState.NONE)
-                    print("Unselecting Filter 2")
+                    print("Unselecting Filter 3")
                 else:
                     self.__handleLEDForIndex(2)
                     self.filter.setFilterState(FilterState.FILTER3)
-                    print("Selecting Filter 2")
+                    print("Selecting Filter 3")
         else:
             self.held[2] = False
 
@@ -76,10 +76,10 @@ class BUTTONS:
                 if self.filter.getFilterState() == FilterState.FILTER4:
                     self.__TurnOffAllLeds()
                     self.filter.setFilterState(FilterState.NONE)
-                    print("Unselecting Filter 3")
+                    print("Unselecting Filter 4")
                 else:
                     self.__handleLEDForIndex(3)
                     self.filter.setFilterState(FilterState.FILTER4)
-                    print("Selecting Filter 3")
+                    print("Selecting Filter 4")
         else:
             self.held[3] = False
