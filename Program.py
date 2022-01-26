@@ -12,7 +12,7 @@ from Buttons import BUTTONS
 class PROGRAM:
     def __init__(self):
         print("Starting program initialization")
-        self.base=BaseOverlay('base.bit')
+        self.base=BaseOverlay("base.bit")
         ## configure HDMI
         self.hdmi_in=self.base.video.hdmi_in
         self.hdmi_out=self.base.video.hdmi_out
