@@ -20,9 +20,8 @@ class Filter:
 
     def getFilterState(self):
         print(selectedFilterState.value)
-        return selectedFilterState.value
+        return selectedFilterState
 
     def setFilterState(self, state: FilterState):
         global selectedFilterState
         selectedFilterState = state
- 

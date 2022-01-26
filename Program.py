@@ -38,24 +38,19 @@ class PROGRAM:
 
         filter=filters.getFilterState()
 
-        if (filter == 0):
-            # no filter
+        if (filter == FilterState.NONE):
             self.frame = self.__applyNoFilter(self.frame)
-        elif (filter == 1):
-            # filter 1
+        elif (filter == FilterState.FILTER1):
             self.frame = self.__applyGaussianBlur(self.frame)
-        elif (filter == 2):
-            # filter 2
+        elif (filter == FilterState.FILTER2):
             self.frame = self.__applyLaplacian(self.frame)
-        elif (filter == 3):
-            # filter 3
+        elif (filter == FilterState.FILTER3):
             self.frame = self.__applyNoFilter(self.frame) # TODO
-        elif (filter == 4):
-            # filter 4
+        elif (filter == FilterState.FILTER4):
             self.frame = self.__applyNoFilter(self.frame) # TODO
         else:
             # default
-            self.__applyNoFilter()
+            self.frame = self.__applyNoFilter(self.frame)
 
         self.hdmi_out.writeframe(self.frame)
 
