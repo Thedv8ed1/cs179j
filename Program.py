@@ -35,28 +35,30 @@ class PROGRAM:
         self.frame=self.hdmi_in.readframe()
 
     def Write_HDMI(self):
-        
+
         filter=filters.getFilterState()
 
         if (filter == 0):
             # no filter
-            self.__applyNoFilter()
+            self.frame = self.__applyNoFilter(self.frame)
         elif (filter == 1):
             # filter 1
-            self.__applyGaussianBlur()
+            self.frame = self.__applyGaussianBlur(self.frame)
         elif (filter == 2):
             # filter 2
-            self.__applyLaplacian()
+            self.frame = self.__applyLaplacian(self.frame)
         elif (filter == 3):
             # filter 3
-            self.__applyNoFilter() # TODO
+            self.frame = self.__applyNoFilter(self.frame) # TODO
         elif (filter == 4):
             # filter 4
-            self.__applyNoFilter() # TODO
+            self.frame = self.__applyNoFilter(self.frame) # TODO
         else:
             # default
             self.__applyNoFilter()
-    
+
+        self.hdmi_out.writeframe(self.frame)
+
     def Clean_Up(self):
         self.hdmi_out.close()
         self.hdmi_in.close()
@@ -64,31 +66,23 @@ class PROGRAM:
 
     # MARK: - Photo filters for HDMI input
 
-    def __applyNoFilter(self):
-        self.hdmi_out.writeframe(self.frame)
+    def __applyNoFilter(self, in_frame):
+        return in_frame # Dummy function
 
-    def __applyGaussianBlur(self):
-        inframe = self.hdmi_in.readframe()
-        outframe = self.hdmi_out.newframe()
+    def __applyGaussianBlur(self, in_frame):
+        inter = self.hdmi_out.newframe()
         # Gaussian blur takes source, ksize, destination
-        cv2.GaussianBlur(inframe, (15,15), 0, dst=outframe)
-        inframe.freebuffer()
-        self.hdmi_out.writeframe(outframe)
+        cv2.GaussianBlur(in_frame, (15,15), 0, dst=inter)
+        return inter
 
     # source notebook: https://github.com/Xilinx/PYNQ/blob/master/boards/Pynq-Z1/base/notebooks/video/hdmi_introduction.ipynb
-    def __applyLaplacian(self):
+    def __applyLaplacian(self, in_frame):
         grayscale = np.ndarray(shape=(self.hdmi_in.mode.height, self.hdmi_in.mode.width),
                        dtype=np.uint8)
         result = np.ndarray(shape=(self.hdmi_in.mode.height, self.hdmi_in.mode.width),
                     dtype=np.uint8)
-        cv2.cvtColor(self.frame,cv2.COLOR_BGR2GRAY,dst=grayscale)
+        cv2.cvtColor(in_frame, cv2.COLOR_BGR2GRAY, dst=grayscale)
         cv2.Laplacian(grayscale, cv2.CV_8U, dst=result)
         outframe = self.hdmi_out.newframe()
         cv2.cvtColor(result, cv2.COLOR_GRAY2BGR,dst=outframe)
-        self.hdmi_out.writeframe(outframe)
-
-
-        
-
-
-
+        return outframe

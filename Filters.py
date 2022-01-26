@@ -8,7 +8,7 @@ class FILTERS:
     def __init__(self):
         print("filter class initialized")
         selectedFilterState = FilterState.NONE
-        
+
     # private methods
     @classmethod
     def __applyNoFilter(self):
@@ -16,7 +16,7 @@ class FILTERS:
             _hdmi_in = hdmi_in.readframe()
             self.hdmi_out.writeframe(_hdmi_in)
             _hdmi_in.freebuffer()
-           
+
 
 
     @classmethod
@@ -41,6 +41,3 @@ class FILTERS:
             #_hdmi_in.freebuffer()
         #print(selectedFilterState)
         #self.__applyNoFilter()
-
-
-    
