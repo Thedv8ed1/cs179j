@@ -1,6 +1,7 @@
 from State_Machine import STATE_MACHINE
 from pynq.overlays.base import BaseOverlay
 from pynq.lib.video import *
+from pynq import MMIO
 import cv2
 import numpy as np
 from Enums import FilterState
@@ -13,6 +14,7 @@ class PROGRAM:
     def __init__(self):
         print("Starting program initialization")
         self.base=BaseOverlay("base.bit")
+        self.base.download()
         ## configure HDMI
         self.hdmi_in=self.base.video.hdmi_in
         self.hdmi_out=self.base.video.hdmi_out
@@ -54,6 +56,7 @@ class PROGRAM:
 
     # MARK: - Photo filters for HDMI input
     def applyNoFilter(self):
+        MMIO(0x40010000,10000).write(0x10,0)
         return None # Dummy function
 
     def applyGaussianBlur(self):
@@ -73,4 +76,9 @@ class PROGRAM:
         outframe = self.hdmi_out.newframe()
         cv2.cvtColor(result, cv2.COLOR_GRAY2BGR,dst=outframe)
         self.in_frame=outframe 
+
+    def Invert_Colors(self): ## TODO figure out a better way to toggle filter
+        MMIO(0x40010000,10000).write(0x10,1)
+        
+        
         

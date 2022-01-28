@@ -41,7 +41,7 @@ class APPLY_FILTERS:
         elif (filter == FilterState.FILTER3):
             program.applyNoFilter() # TODO
         elif (filter == FilterState.FILTER4):
-            program.applyNoFilter() # TODO
+            program.Invert_Colors() # TODO
         else: # default
             program.__applyNoFilter()
         program.Change_State(WRITE_FRAME()) 
