@@ -16,3 +16,7 @@ Contains logic for button presses.
 
 **Enums.py**\
 Contains Enum class of photo filter types.
+
+
+```base/``` contains the updated block diagrams for pynq
+The three files need to be placed in ```pynq/overlays/base``` otherwise the memory mapped I/O won't work.
