@@ -1,10 +1,14 @@
 import Program
 from Enums import FilterState
+from Enums import ColorMap
+colorMap=ColorMap()
+
 # reads a frame from hdmi port
 class READ_FRAME:
     @staticmethod
     def Enter(program):
-        print("Reading frame.")
+        print("")
+        #print("Reading frame.")
     @staticmethod
     def Execute(program):
         program.Read_HDMI()
@@ -16,7 +20,8 @@ class READ_FRAME:
 class GET_BUTTON_INPUT:
     @staticmethod
     def Enter(program):
-        print("Getting button input.")
+        print("")
+        #print("Getting button input.")
     @staticmethod
     def Execute(program):
         program.Poll_Input()
@@ -28,7 +33,8 @@ class GET_BUTTON_INPUT:
 class APPLY_FILTERS:
     @staticmethod
     def Enter(program):
-        print("Applying filter.")
+        print("")
+        #print("Applying filter.")
     @staticmethod
     def Execute(program):
         filter=program.Get_Filter()
@@ -39,9 +45,9 @@ class APPLY_FILTERS:
         elif (filter == FilterState.FILTER2):
             program.applyLaplacian()
         elif (filter == FilterState.FILTER3):
-            program.applyNoFilter() # TODO
+            program.applyColorFilter(colorMap.getColorMap())
         elif (filter == FilterState.FILTER4):
-            program.Invert_Colors() # TODO
+            program.Invert_Colors()
         else: # default
             program.__applyNoFilter()
         program.Change_State(WRITE_FRAME()) 
