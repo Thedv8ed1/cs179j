@@ -1,14 +1,13 @@
 from enum import Enum
-#from pynq.overlays.base import BaseOverlay
 import cv2
 
-# change filter names later: Gaussian Blur, Sobel, Laplacian, color filter? (each press iterates through color in colorArr)
+
 class FilterState(Enum):
     NONE = 0
-    FILTER1 = 1 # Gaussian Blur
-    FILTER2 = 2 # Laplacian
-    FILTER3 = 3 # Color Maps
-    FILTER4 = 4 # Inverted Color
+    GAUSSIAN = 1 # Gaussian Blur
+    LAPLACIAN = 2 # Laplacian
+    COLORMAP = 3 # Colormaps
+    INVERTED = 4 # Inverted Color
 
 # MARK: - Global variable for selected filter type
 class Filter:
@@ -21,7 +20,6 @@ class Filter:
         selectedFilterState = FilterState.NONE
 
     def getFilterState(self):
-        # print(selectedFilterState.value)
         return selectedFilterState
 
     def setFilterState(self, state: FilterState):
@@ -32,13 +30,13 @@ class Filter:
 class ColorMapState(Enum):
     JET = 2 # cv2.COLORMAP_JET
     HOT = 11 # cv2.COLORMAP_HOT
-    RAINBOW = 4 # cv2.COLORMAP_RAINBOW
+    SPRING = 7 # cv2.COLORMAP_SPRING
     COOL = 8 # cv2.COLORMAP_COOL
 
 class ColorMap:
 
     selectedColorMapIndex = 0
-    colorMaps = [ColorMapState.JET, ColorMapState.HOT, ColorMapState.RAINBOW, ColorMapState.COOL]
+    colorMaps = [ColorMapState.JET, ColorMapState.HOT, ColorMapState.SPRING, ColorMapState.COOL]
 
     def __init__(self):
         global selectedColorMapIndex
@@ -47,7 +45,6 @@ class ColorMap:
     def getColorMap(self):
         global selectedColorMapIndex
         global colorMaps
-        # print(self.colorMaps[selectedColorMapIndex])
         return self.colorMaps[selectedColorMapIndex]
 
     def setColorMap(self):

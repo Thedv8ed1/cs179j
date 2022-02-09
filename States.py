@@ -45,13 +45,13 @@ class APPLY_FILTERS:
         filter=program.Get_Filter()
         if (filter == FilterState.NONE):
             program.applyNoFilter()
-        elif (filter == FilterState.FILTER1):
+        elif (filter == FilterState.GAUSSIAN):
             program.applyGaussianBlur()
-        elif (filter == FilterState.FILTER2):
+        elif (filter == FilterState.LAPLACIAN):
             program.applyLaplacian()
-        elif (filter == FilterState.FILTER3):
+        elif (filter == FilterState.COLORMAP):
             program.applyColorFilter(colorMap.getColorMap())
-        elif (filter == FilterState.FILTER4):
+        elif (filter == FilterState.INVERTED):
             program.Invert_Colors()
         else: # default
             program.__applyNoFilter()
