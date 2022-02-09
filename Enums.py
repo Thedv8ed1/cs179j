@@ -1,13 +1,13 @@
 from enum import Enum
 import cv2
 
-# change filter names later: Gaussian Blur, Sobel, Laplacian, color filter? (each press iterates through color in colorArr)
+
 class FilterState(Enum):
     NONE = 0
-    FILTER1 = 1 # Gaussian Blur
-    FILTER2 = 2 # Laplacian
-    FILTER3 = 3 # Color Maps
-    FILTER4 = 4 # Inverted Color
+    GAUSSIAN = 1 # Gaussian Blur
+    LAPLACIAN = 2 # Laplacian
+    COLORMAP = 3 # Colormaps
+    INVERTED = 4 # Inverted Color
 
 # MARK: - Global variable for selected filter type
 class Filter:
@@ -20,7 +20,6 @@ class Filter:
         selectedFilterState = FilterState.NONE
 
     def getFilterState(self):
-        # print(selectedFilterState.value)
         return selectedFilterState
 
     def setFilterState(self, state: FilterState):

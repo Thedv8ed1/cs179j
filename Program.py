@@ -80,6 +80,7 @@ class PROGRAM:
         cv2.cvtColor(result, cv2.COLOR_GRAY2BGR,dst=outframe)
         self.in_frame=outframe
 
+    # openCV colormap documentation: https://docs.opencv.org/4.x/d3/d50/group__imgproc__colormap.html
     def applyColorFilter(self, color_map: ColorMapState):
         result = np.ndarray(shape=(self.hdmi_in.mode.height, self.hdmi_in.mode.width), dtype=np.uint8)
         cv2.cvtColor(self.in_frame, cv2.COLOR_BGR2GRAY, dst=result)
