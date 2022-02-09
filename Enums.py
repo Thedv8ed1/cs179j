@@ -1,5 +1,4 @@
 from enum import Enum
-#from pynq.overlays.base import BaseOverlay
 import cv2
 
 # change filter names later: Gaussian Blur, Sobel, Laplacian, color filter? (each press iterates through color in colorArr)
@@ -32,13 +31,13 @@ class Filter:
 class ColorMapState(Enum):
     JET = 2 # cv2.COLORMAP_JET
     HOT = 11 # cv2.COLORMAP_HOT
-    RAINBOW = 4 # cv2.COLORMAP_RAINBOW
+    SPRING = 7 # cv2.COLORMAP_SPRING
     COOL = 8 # cv2.COLORMAP_COOL
 
 class ColorMap:
 
     selectedColorMapIndex = 0
-    colorMaps = [ColorMapState.JET, ColorMapState.HOT, ColorMapState.RAINBOW, ColorMapState.COOL]
+    colorMaps = [ColorMapState.JET, ColorMapState.HOT, ColorMapState.SPRING, ColorMapState.COOL]
 
     def __init__(self):
         global selectedColorMapIndex
@@ -47,7 +46,6 @@ class ColorMap:
     def getColorMap(self):
         global selectedColorMapIndex
         global colorMaps
-        # print(self.colorMaps[selectedColorMapIndex])
         return self.colorMaps[selectedColorMapIndex]
 
     def setColorMap(self):
