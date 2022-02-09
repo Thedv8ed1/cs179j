@@ -80,11 +80,11 @@ class PROGRAM:
         cv2.cvtColor(result, cv2.COLOR_GRAY2BGR,dst=outframe)
         self.in_frame=outframe
 
-    def applyColorFilter(self, color_map: int):
+    def applyColorFilter(self, color_map: ColorMapState):
         result = np.ndarray(shape=(self.hdmi_in.mode.height, self.hdmi_in.mode.width), dtype=np.uint8)
         cv2.cvtColor(self.in_frame, cv2.COLOR_BGR2GRAY, dst=result)
         outframe = self.hdmi_out.newframe()
-        cv2.applyColorMap(result, color_map, dst=outframe)
+        cv2.applyColorMap(result, color_map.value, dst=outframe)
         self.in_frame=outframe
 
     def Invert_Colors(self): ## TODO figure out a better way to toggle filter

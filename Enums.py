@@ -21,11 +21,12 @@ class Filter:
         selectedFilterState = FilterState.NONE
 
     def getFilterState(self):
-        print(selectedFilterState.value)
+        # print(selectedFilterState.value)
         return selectedFilterState
 
     def setFilterState(self, state: FilterState):
         global selectedFilterState
+        print(F"Changing filter state to {state.name}")
         selectedFilterState = state
 
 class ColorMapState(Enum):
@@ -46,15 +47,17 @@ class ColorMap:
     def getColorMap(self):
         global selectedColorMapIndex
         global colorMaps
-        print(self.colorMaps[selectedColorMapIndex])
-        return self.colorMaps[selectedColorMapIndex].value
+        # print(self.colorMaps[selectedColorMapIndex])
+        return self.colorMaps[selectedColorMapIndex]
 
     def setColorMap(self):
         # 0 <= index <= 3
         global selectedColorMapIndex
-    
+
         if (selectedColorMapIndex == 3):
             selectedColorMapIndex = 0
         else:
             selectedColorMapIndex = selectedColorMapIndex+1
+
+        print(F"Changing color map to {self.colorMaps[selectedColorMapIndex].name}")
 
