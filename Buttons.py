@@ -1,5 +1,7 @@
 from Enums import FilterState
 from Enums import Filter
+from Enums import ColorMap
+colorMap=ColorMap()
 
 
 class BUTTONS:
@@ -24,51 +26,53 @@ class BUTTONS:
     def Poll_Buttons(self):
         # check if any button has been pressed
 
-        # button 1
+        # button 1 (Gaussian Blur)
         if self.base.buttons[0].read():
             if not self.held[0]:
                 self.held[0] = True
                 if self.filter.getFilterState() == FilterState.FILTER1:
                     self.__TurnOffAllLeds()
                     self.filter.setFilterState(FilterState.NONE)
-                    print("Unselecting Filter 1")
+                    #print("Unselecting Filter 1")
                 else:
                     self.__handleLEDForIndex(0)
                     self.filter.setFilterState(FilterState.FILTER1)
-                    print("Selecting Filter 1")
+                    #print("Selecting Filter 1")
         else:
             self.held[0] = False
 
-        # button 2
+        # button 2 (Laplacian)
         if self.base.buttons[1].read():
             if not self.held[1]:
                 self.held[1] = True
                 if self.filter.getFilterState() == FilterState.FILTER2:
                     self.__TurnOffAllLeds()
                     self.filter.setFilterState(FilterState.NONE)
-                    print("Unselecting Filter 2")
+                    #print("Unselecting Filter 2")
                 else:
                     self.__handleLEDForIndex(1)
                     self.filter.setFilterState(FilterState.FILTER2)
-                    print("Selecting Filter 2")
+                    #print("Selecting Filter 2")
         else:
             self.held[1] = False
 
-        # button 3
+        # button 3 (Color Map)
         if self.base.buttons[2].read():
             if not self.held[2]:
                 self.held[2] = True
                 if self.filter.getFilterState() == FilterState.FILTER3:
-                    self.__TurnOffAllLeds()
-                    self.filter.setFilterState(FilterState.NONE)
-                    print("Unselecting Filter 3")
+                    #  self.__TurnOffAllLeds()
+                    #self.filter.setFilterState(FilterState.NONE)
+                    #print("Unselecting Filter 3")
+                    colorMap.setColorMap()
                 else:
                     self.__handleLEDForIndex(2)
+                    colorMap.setColorMap()
                     self.filter.setFilterState(FilterState.FILTER3)
-                    print("Selecting Filter 3")
+                    #print("Selecting Filter 3")
         else:
             self.held[2] = False
-
+            
         # button 4
         if self.base.buttons[3].read():
             if not self.held[3]:
@@ -76,10 +80,10 @@ class BUTTONS:
                 if self.filter.getFilterState() == FilterState.FILTER4:
                     self.__TurnOffAllLeds()
                     self.filter.setFilterState(FilterState.NONE)
-                    print("Unselecting Filter 4")
+                    #print("Unselecting Filter 4")
                 else:
                     self.__handleLEDForIndex(3)
                     self.filter.setFilterState(FilterState.FILTER4)
-                    print("Selecting Filter 4")
+                    #print("Selecting Filter 4")
         else:
             self.held[3] = False

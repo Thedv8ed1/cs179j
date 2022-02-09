@@ -15,7 +15,7 @@ Unit of execution. Each state uses methods of the PROGRAM class to accomplish a 
 Contains logic for button presses.
 
 **Enums.py**\
-Contains Enum class of photo filter types.
+Contains Enum class of photo filter and color map types. Includes classes to manage state of filter and color map.
 
 
 ```base/``` contains the updated block diagrams for pynq
