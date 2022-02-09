@@ -3,6 +3,7 @@ from pynq.overlays.base import BaseOverlay
 from pynq.lib.video import *
 from pynq import MMIO
 import cv2
+import os
 import numpy as np
 from Enums import FilterState
 from Enums import Filter
@@ -15,7 +16,7 @@ from Buttons import BUTTONS
 class PROGRAM:
     def __init__(self):
         print("Starting program initialization")
-        self.base=BaseOverlay("base.bit")
+        self.base=BaseOverlay(os.getcwd() + "/base/base.bit")
         self.base.download()
         ## configure HDMI
         self.hdmi_in=self.base.video.hdmi_in
@@ -26,7 +27,7 @@ class PROGRAM:
         self.hdmi_out.start()
         ## create class data
         self.in_frame=None ## holds frame data
-        self.is_running=True 
+        self.is_running=True
         self.state_machine=STATE_MACHINE(self)
         self.filters=Filter() ## contains the currently set filter
         self.button=BUTTONS(self.filters,self.base) ## contains funtionality for polling button input
@@ -65,7 +66,7 @@ class PROGRAM:
         outframe = self.hdmi_out.newframe()
         # Gaussian blur takes source, ksize, destination
         cv2.GaussianBlur(self.in_frame, (15,15), 0, dst=outframe)
-        self.in_frame=outframe        
+        self.in_frame=outframe
 
     # source notebook: https://github.com/Xilinx/PYNQ/blob/master/boards/Pynq-Z1/base/notebooks/video/hdmi_introduction.ipynb
     def applyLaplacian(self):
@@ -77,17 +78,14 @@ class PROGRAM:
         cv2.Laplacian(grayscale, cv2.CV_8U, dst=result)
         outframe = self.hdmi_out.newframe()
         cv2.cvtColor(result, cv2.COLOR_GRAY2BGR,dst=outframe)
-        self.in_frame=outframe 
+        self.in_frame=outframe
 
-    def applyColorFilter(self, color_map: int):
+    def applyColorFilter(self, color_map: ColorMapState):
         result = np.ndarray(shape=(self.hdmi_in.mode.height, self.hdmi_in.mode.width), dtype=np.uint8)
         cv2.cvtColor(self.in_frame, cv2.COLOR_BGR2GRAY, dst=result)
         outframe = self.hdmi_out.newframe()
-        cv2.applyColorMap(result, color_map, dst=outframe)
+        cv2.applyColorMap(result, color_map.value, dst=outframe)
         self.in_frame=outframe
 
     def Invert_Colors(self): ## TODO figure out a better way to toggle filter
         MMIO(0x40010000,10000).write(0x10,1)
-        
-        
-        

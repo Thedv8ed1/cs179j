@@ -72,7 +72,7 @@ class BUTTONS:
                     #print("Selecting Filter 3")
         else:
             self.held[2] = False
-            
+
         # button 4
         if self.base.buttons[3].read():
             if not self.held[3]:
