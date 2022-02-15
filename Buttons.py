@@ -61,10 +61,14 @@ class BUTTONS:
             if not self.held[2]:
                 self.held[2] = True
                 if self.filter.getFilterState() == FilterState.COLORMAP:
-                    #  self.__TurnOffAllLeds()
-                    #self.filter.setFilterState(FilterState.NONE)
-                    #print("Unselecting Filter 3")
                     colorMap.setColorMap()
+                    # no filter
+                    if (colorMap.getColorMap().value == -1):
+                        self.__TurnOffAllLeds()
+                        self.held[2] = False
+                        self.filter.setFilterState(FilterState.NONE)
+                        print("Unselecting Filter 3")
+
                 else:
                     self.__handleLEDForIndex(2)
                     colorMap.setColorMap()

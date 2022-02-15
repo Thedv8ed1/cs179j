@@ -90,3 +90,7 @@ class PROGRAM:
 
     def Invert_Colors(self): ## TODO figure out a better way to toggle filter
         MMIO(0x40010000,10000).write(0x10,1)
+        #result = np.ndarray(shape=(self.hdmi_in.mode.height, self.hdmi_in.mode.width), dtype=np.uint8)
+        #outframe = self.hdmi_out.newframe()
+        #cv2.bitwise_not(result, dst=outframe)
+        #self.in_frame=outframe
