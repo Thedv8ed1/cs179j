@@ -32,11 +32,12 @@ class ColorMapState(Enum):
     HOT = 11 # cv2.COLORMAP_HOT
     SPRING = 7 # cv2.COLORMAP_SPRING
     COOL = 8 # cv2.COLORMAP_COOL
+    NONE = -1
 
 class ColorMap:
 
     selectedColorMapIndex = 0
-    colorMaps = [ColorMapState.JET, ColorMapState.HOT, ColorMapState.SPRING, ColorMapState.COOL]
+    colorMaps = [ColorMapState.JET, ColorMapState.HOT, ColorMapState.SPRING, ColorMapState.COOL, ColorMapState.NONE]
 
     def __init__(self):
         global selectedColorMapIndex
@@ -48,10 +49,10 @@ class ColorMap:
         return self.colorMaps[selectedColorMapIndex]
 
     def setColorMap(self):
-        # 0 <= index <= 3
+        # 0 <= index <= 4
         global selectedColorMapIndex
 
-        if (selectedColorMapIndex == 3):
+        if (selectedColorMapIndex == 4):
             selectedColorMapIndex = 0
         else:
             selectedColorMapIndex = selectedColorMapIndex+1
