@@ -3,8 +3,8 @@ from pynq.overlays.base import BaseOverlay
 from pynq.lib.video import *
 from pynq import MMIO
 import cv2
-import os
 import numpy as np
+import os
 from Enums import FilterState
 from Enums import Filter
 from Enums import ColorMapState
@@ -92,5 +92,5 @@ class PROGRAM:
         MMIO(0x40010000,10000).write(0x10,1)
         #result = np.ndarray(shape=(self.hdmi_in.mode.height, self.hdmi_in.mode.width), dtype=np.uint8)
         #outframe = self.hdmi_out.newframe()
-        #cv2.bitwise_not(result, dst=outframe)
+        #cv2.bitwise_not(result, outframe)
         #self.in_frame=outframe
