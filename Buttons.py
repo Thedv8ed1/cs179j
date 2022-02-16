@@ -90,8 +90,7 @@ class BUTTONS:
                     #print("Unselecting Filter 4")
                     invertedFilter.setFilter()
                     # no filter
-                    if (invertedFilter.getFilter().value == 0):
-                        #self.held[3] = False
+                    if (invertedFilter.getFilter().value == 2):
                         self.__TurnOffAllLeds()
                         self.filter.setFilterState(FilterState.NONE)
                         print("Unselecting Filter 4")

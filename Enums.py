@@ -59,3 +59,31 @@ class ColorMap:
 
         print(F"Changing color map to {self.colorMaps[selectedColorMapIndex].name}")
 
+
+class InvertedFilterState(Enum):
+    HW = 0 # hardware accelerated version
+    SW = 1 # software version
+    NONE = 2 # no filter
+
+class InvertedFilter:
+    index = 0
+    filters = [InvertedFilterState.HW, InvertedFilterState.SW, InvertedFilterState.NONE]
+
+    def __init__(self):
+        global index
+        index = 0
+
+    def getFilter(self):
+        global index
+        global filters
+        return self.filters[index]
+    
+    def setFilter(self):
+        global index
+        global filters
+        if (index == 2):
+            index = 0
+        else:
+            index = index+1
+
+        print(F"Changing inverted filter to {self.filters[index].name}")
