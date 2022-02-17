@@ -1,7 +1,9 @@
 from Enums import FilterState
 from Enums import Filter
 from Enums import ColorMap
+from Enums import InvertedFilter
 colorMap=ColorMap()
+invertedFilter=InvertedFilter()
 
 
 class BUTTONS:
@@ -65,7 +67,7 @@ class BUTTONS:
                     # no filter
                     if (colorMap.getColorMap().value == -1):
                         self.__TurnOffAllLeds()
-                        self.held[2] = False
+                        #self.held[2] = False
                         self.filter.setFilterState(FilterState.NONE)
                         print("Unselecting Filter 3")
 
@@ -81,11 +83,21 @@ class BUTTONS:
         if self.base.buttons[3].read():
             if not self.held[3]:
                 self.held[3] = True
+                
                 if self.filter.getFilterState() == FilterState.INVERTED:
-                    self.__TurnOffAllLeds()
-                    self.filter.setFilterState(FilterState.NONE)
+                    #self.__TurnOffAllLeds()
+                    #self.filter.setFilterState(FilterState.NONE)
                     #print("Unselecting Filter 4")
+                    invertedFilter.setFilter()
+                    # no filter
+                    if (invertedFilter.getFilter().value == 2):
+                        self.__TurnOffAllLeds()
+                        self.filter.setFilterState(FilterState.NONE)
+                        print("Unselecting Filter 4")
+
+
                 else:
+                    invertedFilter.setFilter()
                     self.__handleLEDForIndex(3)
                     self.filter.setFilterState(FilterState.INVERTED)
                     #print("Selecting Filter 4")

@@ -1,8 +1,11 @@
 import Program
 from Enums import FilterState
 from Enums import ColorMap
+from Enums import InvertedFilter
 import time
 colorMap=ColorMap()
+invertedFilter=InvertedFilter()
+
 time_start = 0
 frametime_elapsed = 0
 
@@ -52,7 +55,7 @@ class APPLY_FILTERS:
         elif (filter == FilterState.COLORMAP):
             program.applyColorFilter(colorMap.getColorMap())
         elif (filter == FilterState.INVERTED):
-            program.Invert_Colors()
+            program.Invert_Colors(invertedFilter.getFilter())
         else: # default
             program.__applyNoFilter()
         program.Change_State(WRITE_FRAME())

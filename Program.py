@@ -8,6 +8,7 @@ import os
 from Enums import FilterState
 from Enums import Filter
 from Enums import ColorMapState
+from Enums import InvertedFilter
 from Buttons import BUTTONS
 
 
@@ -88,9 +89,18 @@ class PROGRAM:
         cv2.applyColorMap(result, color_map.value, dst=outframe)
         self.in_frame=outframe
 
-    def Invert_Colors(self): ## TODO figure out a better way to toggle filter
-        MMIO(0x40010000,10000).write(0x10,1)
-        #result = np.ndarray(shape=(self.hdmi_in.mode.height, self.hdmi_in.mode.width), dtype=np.uint8)
-        #outframe = self.hdmi_out.newframe()
-        #cv2.bitwise_not(result, outframe)
-        #self.in_frame=outframe
+
+    def Invert_Colors(self, inverted_filter: InvertedFilter): ## TODO figure out a better way to toggle filter
+
+        # hardware accelerated inversion filter
+        if (inverted_filter.value == 0):
+            MMIO(0x40010000,10000).write(0x10,1)
+
+        # software inversion filter
+        # FIXME
+        elif (inverted_filter.value == 1):
+            cv2.bitwise_not(self.in_frame, dst=self.in_frame)
+
+        # no filter
+        elif (inverted_filter.value == 2):
+            MMIO(0x40010000,10000).write(0x10,0)
