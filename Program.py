@@ -99,6 +99,7 @@ class PROGRAM:
         # software inversion filter
         # FIXME
         elif (inverted_filter.value == 1):
+            MMIO(0x40010000,10000).write(0x10,0)
             cv2.bitwise_not(self.in_frame, dst=self.in_frame)
 
         # no filter
