@@ -91,7 +91,7 @@ class PROGRAM:
 
 
     def Invert_Colors(self, inverted_filter: InvertedFilter): ## TODO figure out a better way to toggle filter
-        
+
         # hardware accelerated inversion filter
         if (inverted_filter.value == 0):
             MMIO(0x40010000,10000).write(0x10,1)
@@ -99,11 +99,8 @@ class PROGRAM:
         # software inversion filter
         # FIXME
         elif (inverted_filter.value == 1):
-            for i in range (0, self.hdmi_in.mode.height):
-                for j in range (0, self.hdmi_in.mode.width):
-                    for k in range (0, 3):
-                        self.in_frame[i][j][k]=255-self.in_frame[i][j][k]
-            
+            cv2.bitwise_not(self.in_frame, dst=self.in_frame)
+
         # no filter
         elif (inverted_filter.value == 2):
             MMIO(0x40010000,10000).write(0x10,0)
