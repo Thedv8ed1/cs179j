@@ -66,7 +66,7 @@ class InvertedFilterState(Enum):
     NONE = 2 # no filter
 
 class InvertedFilter:
-    index = 0
+    index = 2 # no filter index
     filters = [InvertedFilterState.HW, InvertedFilterState.SW, InvertedFilterState.NONE]
 
     def __init__(self):
