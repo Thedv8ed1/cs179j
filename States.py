@@ -8,6 +8,7 @@ invertedFilter=InvertedFilter()
 
 time_start = 0
 frametime_elapsed = 0
+last_fps = 0
 
 # reads a frame from hdmi port
 class READ_FRAME:
@@ -69,9 +70,14 @@ class WRITE_FRAME:
         pass#print("Writting frame.")
     @staticmethod
     def Execute(program):
-        global time_start, frametime_elapsed
+        global time_start, frametime_elapsed, last_fps
+
+        if program.getShowFPS():
+            program.applyFPS(last_fps)
+
         program.Write_HDMI()
         time_elapsed = time.time() - time_start
+        last_fps = 1/time_elapsed
         frametime_elapsed = time_elapsed + frametime_elapsed
         # Should prevent it from spamming prints when running at high FPS
         # Limits printing to at a minimum once per second

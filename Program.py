@@ -58,6 +58,13 @@ class PROGRAM:
     def Get_Filter(self):
         return self.filters.getFilterState()
 
+    def getShowFPS(self):
+        return self.base.switches[0].read()
+
+    def applyFPS(self, fps:int):
+        self.in_frame = cv2.rectangle(self.in_frame, (0,0), (110, 30), (0,0,0), -1)
+        self.in_frame = cv2.putText(self.in_frame, F"{fps:.2f} FPS", (10,20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
+
     # MARK: - Photo filters for HDMI input
     def applyNoFilter(self):
         MMIO(0x40010000,10000).write(0x10,0)
