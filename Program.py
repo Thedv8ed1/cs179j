@@ -4,16 +4,20 @@ from pynq.lib.video import *
 from pynq import MMIO
 import cv2
 import numpy as np
+import os
 from Enums import FilterState
 from Enums import Filter
+from Enums import ColorMapState
+from Enums import InvertedFilter
 from Buttons import BUTTONS
+
 
 
 #TODO come up with a better name than program
 class PROGRAM:
     def __init__(self):
         print("Starting program initialization")
-        self.base=BaseOverlay("base.bit")
+        self.base=BaseOverlay(os.getcwd() + "/base/base.bit")
         self.base.download()
         ## configure HDMI
         self.hdmi_in=self.base.video.hdmi_in
@@ -24,7 +28,7 @@ class PROGRAM:
         self.hdmi_out.start()
         ## create class data
         self.in_frame=None ## holds frame data
-        self.is_running=True 
+        self.is_running=True
         self.state_machine=STATE_MACHINE(self)
         self.filters=Filter() ## contains the currently set filter
         self.button=BUTTONS(self.filters,self.base) ## contains funtionality for polling button input
@@ -54,6 +58,13 @@ class PROGRAM:
     def Get_Filter(self):
         return self.filters.getFilterState()
 
+    def getShowFPS(self):
+        return self.base.switches[0].read()
+
+    def applyFPS(self, fps:int):
+        self.in_frame = cv2.rectangle(self.in_frame, (0,0), (110, 30), (0,0,0), -1)
+        self.in_frame = cv2.putText(self.in_frame, F"{fps:.2f} FPS", (10,20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
+
     # MARK: - Photo filters for HDMI input
     def applyNoFilter(self):
         MMIO(0x40010000,10000).write(0x10,0)
@@ -63,7 +74,7 @@ class PROGRAM:
         outframe = self.hdmi_out.newframe()
         # Gaussian blur takes source, ksize, destination
         cv2.GaussianBlur(self.in_frame, (15,15), 0, dst=outframe)
-        self.in_frame=outframe        
+        self.in_frame=outframe
 
     # source notebook: https://github.com/Xilinx/PYNQ/blob/master/boards/Pynq-Z1/base/notebooks/video/hdmi_introduction.ipynb
     def applyLaplacian(self):
@@ -75,10 +86,29 @@ class PROGRAM:
         cv2.Laplacian(grayscale, cv2.CV_8U, dst=result)
         outframe = self.hdmi_out.newframe()
         cv2.cvtColor(result, cv2.COLOR_GRAY2BGR,dst=outframe)
-        self.in_frame=outframe 
+        self.in_frame=outframe
 
-    def Invert_Colors(self): ## TODO figure out a better way to toggle filter
-        MMIO(0x40010000,10000).write(0x10,1)
-        
-        
-        
+    # openCV colormap documentation: https://docs.opencv.org/4.x/d3/d50/group__imgproc__colormap.html
+    def applyColorFilter(self, color_map: ColorMapState):
+        result = np.ndarray(shape=(self.hdmi_in.mode.height, self.hdmi_in.mode.width), dtype=np.uint8)
+        cv2.cvtColor(self.in_frame, cv2.COLOR_BGR2GRAY, dst=result)
+        outframe = self.hdmi_out.newframe()
+        cv2.applyColorMap(result, color_map.value, dst=outframe)
+        self.in_frame=outframe
+
+
+    def Invert_Colors(self, inverted_filter: InvertedFilter): ## TODO figure out a better way to toggle filter
+
+        # hardware accelerated inversion filter
+        if (inverted_filter.value == 0):
+            MMIO(0x40010000,10000).write(0x10,1)
+
+        # software inversion filter
+        # FIXME
+        elif (inverted_filter.value == 1):
+            MMIO(0x40010000,10000).write(0x10,0)
+            cv2.bitwise_not(self.in_frame, dst=self.in_frame)
+
+        # no filter
+        elif (inverted_filter.value == 2):
+            MMIO(0x40010000,10000).write(0x10,0)
