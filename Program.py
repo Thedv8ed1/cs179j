@@ -32,7 +32,20 @@ class PROGRAM:
         self.state_machine=STATE_MACHINE(self)
         self.filters=Filter() ## contains the currently set filter
         self.button=BUTTONS(self.filters,self.base) ## contains funtionality for polling button input
+        ## initiate filter dmas
+        self.inverted_vdma=self.base.Invert_Color.axi_vdma_0
+        
+
         print("Finished initialization")
+    def DMA_Initialization():
+        # reset vdma in/out channels
+        self.inverted_vdma.write(0x00,0x04)
+        while self.inverted_vdma.read(0x00)&0x4==4: # wait for reset to finish
+            pass
+        self.inverted_vdma.write(0x30,0x04)
+        while self.inverted_vdma.read(0x30)&0x4==4:
+            pass
+
     def Update(self):
         self.state_machine.Update()
 
@@ -67,8 +80,7 @@ class PROGRAM:
 
     # MARK: - Photo filters for HDMI input
     def applyNoFilter(self):
-        MMIO(0x40010000,10000).write(0x10,0)
-        return None # Dummy function
+        pass # Dummy function
 
     def applyGaussianBlur(self):
         outframe = self.hdmi_out.newframe()
@@ -96,19 +108,30 @@ class PROGRAM:
         cv2.applyColorMap(result, color_map.value, dst=outframe)
         self.in_frame=outframe
 
+    def Invert_Colors_HW(self):
+        in_buffer_address=self.in_frame.device_address
+        self.inverted_vdma.write(0x00,0x93) # start vdma channel
+        self.inverted_vdma.write(0x5C,in_buffer_address) # address of input 
+        self.inverted_vdma.write(0x58,self.hdmi_in.mode.width*3) # total pixel row data size
+        self.inverted_vdma.write(0x54,self.hdmi_in.mode.width*3) # read entire pixels row
+        self.inverted_vdma.write(0x50,self.hdmi_in.mode.height) # read all columns
+        # send vdma channel
+        self.inverted_vdma.write(0x30,0x93)
+        self.inverted_vdma.write(0xAC,in_buffer_address)
+        self.inverted_vdma.write(0xA8,self.hdmi_in.mode.width*3)
+        self.inverted_vdma.write(0xA4,self.hdmi_in.mode.width*3)
+        self.inverted_vdma.write(0xA0,self.hdmi_in.mode.height)
 
+        #while self.inverted_vdma.register_map.S2MM_VDMASR.Halted!=1: # wait for vdma to finish
+        #    pass
+    
     def Invert_Colors(self, inverted_filter: InvertedFilter): ## TODO figure out a better way to toggle filter
 
         # hardware accelerated inversion filter
         if (inverted_filter.value == 0):
-            MMIO(0x40010000,10000).write(0x10,1)
+            self.Invert_Colors_HW()
 
         # software inversion filter
         # FIXME
         elif (inverted_filter.value == 1):
-            MMIO(0x40010000,10000).write(0x10,0)
             cv2.bitwise_not(self.in_frame, dst=self.in_frame)
-
-        # no filter
-        elif (inverted_filter.value == 2):
-            MMIO(0x40010000,10000).write(0x10,0)
