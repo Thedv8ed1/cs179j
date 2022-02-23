@@ -34,16 +34,23 @@ class PROGRAM:
         self.button=BUTTONS(self.filters,self.base) ## contains funtionality for polling button input
         ## initiate filter dmas
         self.inverted_vdma=self.base.Invert_Color.axi_vdma_0
-        
-
+        self.gray_vdma=self.base.Gray.axi_vdma_0
+        self.DMA_Initialization()
         print("Finished initialization")
-    def DMA_Initialization():
+    def DMA_Initialization(self):
         # reset vdma in/out channels
         self.inverted_vdma.write(0x00,0x04)
         while self.inverted_vdma.read(0x00)&0x4==4: # wait for reset to finish
             pass
         self.inverted_vdma.write(0x30,0x04)
         while self.inverted_vdma.read(0x30)&0x4==4:
+            pass
+
+        self.gray_vdma.write(0x00,0x04)
+        while self.gray_vdma.read(0x00)&0x4==4:
+            pass
+        self.gray_vdma.write(0x30,0x04)
+        while self.gray_vdma.read(0x30)&0x4==4:
             pass
 
     def Update(self):
@@ -108,6 +115,20 @@ class PROGRAM:
         cv2.applyColorMap(result, color_map.value, dst=outframe)
         self.in_frame=outframe
 
+    def Gray_Scale_HW(self):
+        in_buffer_address=self.in_frame.device_address
+        self.gray_vdma.write(0x00,0x93) # start vdma channel
+        self.gray_vdma.write(0x5C,in_buffer_address) # address of input 
+        self.gray_vdma.write(0x58,self.hdmi_in.mode.width*3) # total pixel row data size
+        self.gray_vdma.write(0x54,self.hdmi_in.mode.width*3) # read entire pixels row
+        self.gray_vdma.write(0x50,self.hdmi_in.mode.height) # read all columns
+        # send vdma channel
+        self.gray_vdma.write(0x30,0x93)
+        self.gray_vdma.write(0xAC,in_buffer_address)
+        self.gray_vdma.write(0xA8,self.hdmi_in.mode.width*3)
+        self.gray_vdma.write(0xA4,self.hdmi_in.mode.width*3)
+        self.gray_vdma.write(0xA0,self.hdmi_in.mode.height)
+
     def Invert_Colors_HW(self):
         in_buffer_address=self.in_frame.device_address
         self.inverted_vdma.write(0x00,0x93) # start vdma channel
@@ -128,8 +149,9 @@ class PROGRAM:
     def Invert_Colors(self, inverted_filter: InvertedFilter): ## TODO figure out a better way to toggle filter
 
         # hardware accelerated inversion filter
-        if (inverted_filter.value == 0):
-            self.Invert_Colors_HW()
+        if (inverted_filter.value == 0):            
+            self.Gray_Scale_HW()
+            #self.Invert_Colors_HW()
 
         # software inversion filter
         # FIXME
