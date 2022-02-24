@@ -14,7 +14,6 @@ last_fps = 0
 class READ_FRAME:
     @staticmethod
     def Enter(program):
-        #print("Reading frame.")
         pass
     @staticmethod
     def Execute(program):
@@ -29,7 +28,6 @@ class READ_FRAME:
 class GET_BUTTON_INPUT:
     @staticmethod
     def Enter(program):
-        #print("Getting button input.")
         pass
     @staticmethod
     def Execute(program):
@@ -42,21 +40,19 @@ class GET_BUTTON_INPUT:
 class APPLY_FILTERS:
     @staticmethod
     def Enter(program):
-        #print("Applying filter.")
         pass
     @staticmethod
     def Execute(program):
         filter=program.Get_Filter()
         if (filter == FilterState.NONE):
             program.applyNoFilter()
-        elif (filter == FilterState.GAUSSIAN):
+        elif (filter == FilterState.GAUSSIAN):            
             program.applyGaussianBlur()
         elif (filter == FilterState.LAPLACIAN):
             program.applyLaplacian()
         elif (filter == FilterState.COLORMAP):
             program.applyColorFilter(colorMap.getColorMap())
         elif (filter == FilterState.INVERTED):
-            program.Invert_Colors(invertedFilter.getFilter())
         else: # default
             program.__applyNoFilter()
         program.Change_State(WRITE_FRAME())
@@ -67,7 +63,7 @@ class APPLY_FILTERS:
 class WRITE_FRAME:
     @staticmethod
     def Enter(program):
-        pass#print("Writting frame.")
+        pass
     @staticmethod
     def Execute(program):
         global time_start, frametime_elapsed, last_fps
