@@ -35,6 +35,8 @@ class PROGRAM:
         ## initiate filter dmas
         self.inverted_vdma=self.base.Invert_Color.axi_vdma_0
         self.gray_vdma=self.base.Gray.axi_vdma_0
+        self.dma_send=self.base.BoxBlur.axi_dma_0.sendchannel ## dma not vdma
+        self.dma_recv=self.base.BoxBlur.axi_dma_0.recvchannel ## dma not vdma
         self.DMA_Initialization()
         print("Finished initialization")
     def DMA_Initialization(self):
@@ -52,6 +54,8 @@ class PROGRAM:
         self.gray_vdma.write(0x30,0x04)
         while self.gray_vdma.read(0x30)&0x4==4:
             pass
+        MMIO(0x40010000,0x10000).write(0x10,self.hdmi_in.mode.width)
+        MMIO(0x40010000,0x10000).write(0x18,self.hdmi_in.mode.height)
 
     def Update(self):
         self.state_machine.Update()
@@ -145,9 +149,13 @@ class PROGRAM:
 
         #while self.inverted_vdma.register_map.S2MM_VDMASR.Halted!=1: # wait for vdma to finish
         #    pass
+    def Box_Blur_HW(self):
+        self.dma_send.transfer(self.in_frame)
+        self.dma_recv.transfer(self.in_frame)
+        #dma_send.wait() # waiting seems unnecesary
+        #dma_recv.wait()
     
     def Invert_Colors(self, inverted_filter: InvertedFilter): ## TODO figure out a better way to toggle filter
-
         # hardware accelerated inversion filter
         if (inverted_filter.value == 0):                        
             self.Invert_Colors_HW()
