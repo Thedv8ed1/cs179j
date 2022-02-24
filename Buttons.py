@@ -2,8 +2,12 @@ from Enums import FilterState
 from Enums import Filter
 from Enums import ColorMap
 from Enums import InvertedFilter
+from Enums import BoxBlurFilter
+from Enums import LaplacianFilter
 colorMap=ColorMap()
 invertedFilter=InvertedFilter()
+boxBlurFilter=BoxBlurFilter()
+laplacianFilter=LaplacianFilter()
 
 
 class BUTTONS:
@@ -28,18 +32,20 @@ class BUTTONS:
     def Poll_Buttons(self):
         # check if any button has been pressed
 
-        # button 1 (Gaussian Blur)
+        # button 1 (Box Blur)
         if self.base.buttons[0].read():
             if not self.held[0]:
                 self.held[0] = True
-                if self.filter.getFilterState() == FilterState.GAUSSIAN:
-                    self.__TurnOffAllLeds()
-                    self.filter.setFilterState(FilterState.NONE)
-                    #print("Unselecting Filter 1")
+                if self.filter.getFilterState() == FilterState.BOX_BLUR:
+                    boxBlurFilter.setFilter()
+
+                    if (boxBlurFilter.getFilter().value == 0):
+                        self.__TurnOffAllLeds()
+                        self.filter.setFilterState(FilterState.NONE)
                 else:
+                    boxBlurFilter.setFilter()
                     self.__handleLEDForIndex(0)
-                    self.filter.setFilterState(FilterState.GAUSSIAN)
-                    #print("Selecting Filter 1")
+                    self.filter.setFilterState(FilterState.BOX_BLUR)
         else:
             self.held[0] = False
 
@@ -48,13 +54,15 @@ class BUTTONS:
             if not self.held[1]:
                 self.held[1] = True
                 if self.filter.getFilterState() == FilterState.LAPLACIAN:
-                    self.__TurnOffAllLeds()
-                    self.filter.setFilterState(FilterState.NONE)
-                    #print("Unselecting Filter 2")
+                    laplacianFilter.setFilter()
+
+                    if (laplacianFilter.getFilter().value == 0):
+                        self.__TurnOffAllLeds()
+                        self.filter.setFilterState(FilterState.NONE)
                 else:
+                    laplacianFilter.setFilter()
                     self.__handleLEDForIndex(1)
                     self.filter.setFilterState(FilterState.LAPLACIAN)
-                    #print("Selecting Filter 2")
         else:
             self.held[1] = False
 
@@ -67,7 +75,6 @@ class BUTTONS:
                     # no filter
                     if (colorMap.getColorMap().value == -1):
                         self.__TurnOffAllLeds()
-                        #self.held[2] = False
                         self.filter.setFilterState(FilterState.NONE)
                         print("Unselecting Filter 3")
 
@@ -75,31 +82,23 @@ class BUTTONS:
                     self.__handleLEDForIndex(2)
                     colorMap.setColorMap()
                     self.filter.setFilterState(FilterState.COLORMAP)
-                    #print("Selecting Filter 3")
         else:
             self.held[2] = False
 
-        # button 4
+        # button 4 (Color Inversion)
         if self.base.buttons[3].read():
             if not self.held[3]:
                 self.held[3] = True
                 
                 if self.filter.getFilterState() == FilterState.INVERTED:
-                    #self.__TurnOffAllLeds()
-                    #self.filter.setFilterState(FilterState.NONE)
-                    #print("Unselecting Filter 4")
                     invertedFilter.setFilter()
                     # no filter
-                    if (invertedFilter.getFilter().value == 2):
+                    if (invertedFilter.getFilter().value == 0):
                         self.__TurnOffAllLeds()
                         self.filter.setFilterState(FilterState.NONE)
-                        print("Unselecting Filter 4")
-
-
                 else:
                     invertedFilter.setFilter()
                     self.__handleLEDForIndex(3)
                     self.filter.setFilterState(FilterState.INVERTED)
-                    #print("Selecting Filter 4")
         else:
             self.held[3] = False
