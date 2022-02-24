@@ -2,9 +2,13 @@ import Program
 from Enums import FilterState
 from Enums import ColorMap
 from Enums import InvertedFilter
+from Enums import BoxBlurFilter
+from Enums import LaplacianFilter
 import time
 colorMap=ColorMap()
 invertedFilter=InvertedFilter()
+boxBlurFilter=BoxBlurFilter()
+laplacianFilter=LaplacianFilter()
 
 time_start = 0
 frametime_elapsed = 0
@@ -46,13 +50,14 @@ class APPLY_FILTERS:
         filter=program.Get_Filter()
         if (filter == FilterState.NONE):
             program.applyNoFilter()
-        elif (filter == FilterState.GAUSSIAN):            
-            program.applyGaussianBlur()
+        elif (filter == FilterState.BOX_BLUR):            
+            program.applyBoxBlur(boxBlurFilter.getFilter())
         elif (filter == FilterState.LAPLACIAN):
-            program.applyLaplacian()
+            program.applyLaplacian(laplacianFilter.getFilter())
         elif (filter == FilterState.COLORMAP):
             program.applyColorFilter(colorMap.getColorMap())
         elif (filter == FilterState.INVERTED):
+            program.applyColorInversion(invertedFilter.getFilter())
         else: # default
             program.__applyNoFilter()
         program.Change_State(WRITE_FRAME())
