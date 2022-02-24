@@ -149,9 +149,8 @@ class PROGRAM:
     def Invert_Colors(self, inverted_filter: InvertedFilter): ## TODO figure out a better way to toggle filter
 
         # hardware accelerated inversion filter
-        if (inverted_filter.value == 0):            
-            self.Gray_Scale_HW()
-            #self.Invert_Colors_HW()
+        if (inverted_filter.value == 0):                        
+            self.Invert_Colors_HW()
 
         # software inversion filter
         # FIXME
