@@ -42,12 +42,10 @@ class BUTTONS:
                     if (boxBlurFilter.getFilter().value == 0):
                         self.__TurnOffAllLeds()
                         self.filter.setFilterState(FilterState.NONE)
-                        #print("Unselecting Filter 1")
                 else:
                     boxBlurFilter.setFilter()
                     self.__handleLEDForIndex(0)
                     self.filter.setFilterState(FilterState.BOX_BLUR)
-                    #print("Selecting Filter 1")
         else:
             self.held[0] = False
 
@@ -61,12 +59,10 @@ class BUTTONS:
                     if (laplacianFilter.getFilter().value == 0):
                         self.__TurnOffAllLeds()
                         self.filter.setFilterState(FilterState.NONE)
-                    #print("Unselecting Filter 2")
                 else:
                     laplacianFilter.setFilter()
                     self.__handleLEDForIndex(1)
                     self.filter.setFilterState(FilterState.LAPLACIAN)
-                    #print("Selecting Filter 2")
         else:
             self.held[1] = False
 
@@ -86,7 +82,6 @@ class BUTTONS:
                     self.__handleLEDForIndex(2)
                     colorMap.setColorMap()
                     self.filter.setFilterState(FilterState.COLORMAP)
-                    #print("Selecting Filter 3")
         else:
             self.held[2] = False
 
@@ -96,21 +91,14 @@ class BUTTONS:
                 self.held[3] = True
                 
                 if self.filter.getFilterState() == FilterState.INVERTED:
-                    #self.__TurnOffAllLeds()
-                    #self.filter.setFilterState(FilterState.NONE)
-                    #print("Unselecting Filter 4")
                     invertedFilter.setFilter()
                     # no filter
                     if (invertedFilter.getFilter().value == 0):
                         self.__TurnOffAllLeds()
                         self.filter.setFilterState(FilterState.NONE)
-                        #print("Unselecting Filter 4")
-
-
                 else:
                     invertedFilter.setFilter()
                     self.__handleLEDForIndex(3)
                     self.filter.setFilterState(FilterState.INVERTED)
-                    #print("Selecting Filter 4")
         else:
             self.held[3] = False
