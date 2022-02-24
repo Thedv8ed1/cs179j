@@ -106,8 +106,7 @@ class PROGRAM:
         # sowftware filter
         if (box_blur.value == 1):
             outframe = self.hdmi_out.newframe()
-            # ksize=15
-            #cv2.boxFilter(self.in_frame, 15, -1, dst=outframe)
+            cv2.boxFilter(src=self.in_frame, ddepth=-1, ksize=(15,15), dst=outframe)
             self.in_frame=outframe
 
         # hardware filter
