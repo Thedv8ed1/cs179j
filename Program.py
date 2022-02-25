@@ -136,13 +136,11 @@ class PROGRAM:
         if (laplacian.value == 1):            
             cv2.cvtColor(self.in_frame, cv2.COLOR_BGR2GRAY, dst=buffer)
             cv2.Laplacian(buffer, cv2.CV_8U, dst=buffer)
-            cv2.cvtColor(buffer, cv2.COLOR_GRAY2BGR,dst=self.in_frame)
-
         # HW greyscale
         else:       
             self.Gray_Scale_HW()      
             cv2.Laplacian(self.in_frame[:,:,0], cv2.CV_8U , dst=buffer)
-            cv2.cvtColor(buffer, cv2.COLOR_GRAY2BGR,dst=self.in_frame)       
+        cv2.cvtColor(buffer, cv2.COLOR_GRAY2BGR,dst=self.in_frame)       
 
     # Hardware Greyscale
     def Gray_Scale_HW(self):
