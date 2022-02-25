@@ -131,21 +131,18 @@ class PROGRAM:
     # Driver
     # source notebook: https://github.com/Xilinx/PYNQ/blob/master/boards/Pynq-Z1/base/notebooks/video/hdmi_introduction.ipynb
     def applyLaplacian(self, laplacian: LaplacianFilter):
-        grayscale = np.ndarray(shape=(self.hdmi_in.mode.height, self.hdmi_in.mode.width),
-                            dtype=np.uint8)
-        result = np.ndarray(shape=(self.hdmi_in.mode.height, self.hdmi_in.mode.width),
-                            dtype=np.uint8)
+        buffer = np.ndarray(shape=(self.hdmi_in.mode.height, self.hdmi_in.mode.width), dtype=np.uint8)        
         # SW greyscale
-        if (laplacian.value == 1): 
-            cv2.cvtColor(self.in_frame, cv2.COLOR_BGR2GRAY, dst=grayscale)
-        # HW greyscale
-        else:
-            self.Gray_Scale_HW()
+        if (laplacian.value == 1):            
+            cv2.cvtColor(self.in_frame, cv2.COLOR_BGR2GRAY, dst=buffer)
+            cv2.Laplacian(buffer, cv2.CV_8U, dst=buffer)
+            cv2.cvtColor(buffer, cv2.COLOR_GRAY2BGR,dst=self.in_frame)
 
-        cv2.Laplacian(grayscale, cv2.CV_8U, dst=result)
-        outframe = self.hdmi_out.newframe()
-        cv2.cvtColor(result, cv2.COLOR_GRAY2BGR,dst=outframe)
-        self.in_frame=outframe
+        # HW greyscale
+        else:       
+            self.Gray_Scale_HW()      
+            cv2.Laplacian(self.in_frame[:,:,0], cv2.CV_8U , dst=buffer)
+            cv2.cvtColor(buffer, cv2.COLOR_GRAY2BGR,dst=self.in_frame)       
 
     # Hardware Greyscale
     def Gray_Scale_HW(self):
@@ -181,7 +178,8 @@ class PROGRAM:
     def applyColorInversion(self, inverted_filter: InvertedFilter): ## TODO figure out a better way to toggle filter
         # hardware accelerated inversion filter
         if (inverted_filter.value == 1):                        
-            self.Invert_Colors_HW()
+            self.Gray_Scale_HW()
+            #self.Invert_Colors_HW()
 
         # software inversion filter
         elif (inverted_filter.value == 2):
