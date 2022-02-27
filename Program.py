@@ -9,6 +9,8 @@ from Enums import FilterState
 from Enums import Filter
 from Enums import ColorMapState
 from Enums import InvertedFilter
+from Enums import BoxBlurFilter
+from Enums import LaplacianFilter
 from Buttons import BUTTONS
 
 
@@ -89,36 +91,58 @@ class PROGRAM:
         self.in_frame = cv2.rectangle(self.in_frame, (0,0), (110, 30), (0,0,0), -1)
         self.in_frame = cv2.putText(self.in_frame, F"{fps:.2f} FPS", (10,20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
 
+
     # MARK: - Photo filters for HDMI input
+
     def applyNoFilter(self):
-        pass # Dummy function
+        pass
 
-    def applyGaussianBlur(self):
-        outframe = self.hdmi_out.newframe()
-        # Gaussian blur takes source, ksize, destination
-        cv2.GaussianBlur(self.in_frame, (15,15), 0, dst=outframe)
-        self.in_frame=outframe
 
+    # MARK: - Box Blur functions
+
+    # Driver
+    def applyBoxBlur(self, box_blur: BoxBlurFilter):
+
+        # sowftware filter
+        if (box_blur.value == 1):
+            outframe = self.hdmi_out.newframe()
+            cv2.boxFilter(src=self.in_frame, ddepth=-1, ksize=(15,15), dst=outframe)
+            self.in_frame=outframe
+
+        # hardware filter
+        elif (box_blur.value == 2):
+            self.Box_Blur_HW()
+        
+        # no filter
+        else:
+            pass
+            #self.applyNoFilter()
+
+    # Hardware Box Blur
+    def Box_Blur_HW(self):
+        self.dma_send.transfer(self.in_frame)
+        self.dma_recv.transfer(self.in_frame)
+        #dma_send.wait() # waiting seems unnecesary
+        #dma_recv.wait()
+
+
+    # MARK: - Laplacian Functions
+
+    # Driver
     # source notebook: https://github.com/Xilinx/PYNQ/blob/master/boards/Pynq-Z1/base/notebooks/video/hdmi_introduction.ipynb
-    def applyLaplacian(self):
-        grayscale = np.ndarray(shape=(self.hdmi_in.mode.height, self.hdmi_in.mode.width),
-                            dtype=np.uint8)
-        result = np.ndarray(shape=(self.hdmi_in.mode.height, self.hdmi_in.mode.width),
-                            dtype=np.uint8)
-        cv2.cvtColor(self.in_frame, cv2.COLOR_BGR2GRAY, dst=grayscale)
-        cv2.Laplacian(grayscale, cv2.CV_8U, dst=result)
-        outframe = self.hdmi_out.newframe()
-        cv2.cvtColor(result, cv2.COLOR_GRAY2BGR,dst=outframe)
-        self.in_frame=outframe
+    def applyLaplacian(self, laplacian: LaplacianFilter):
+        buffer = np.ndarray(shape=(self.hdmi_in.mode.height, self.hdmi_in.mode.width), dtype=np.uint8)        
+        # SW greyscale
+        if (laplacian.value == 1):            
+            cv2.cvtColor(self.in_frame, cv2.COLOR_BGR2GRAY, dst=buffer)
+            cv2.Laplacian(buffer, cv2.CV_8U, dst=buffer)
+        # HW greyscale
+        else:       
+            self.Gray_Scale_HW()      
+            cv2.Laplacian(self.in_frame[:,:,0], cv2.CV_8U , dst=buffer)
+        cv2.cvtColor(buffer, cv2.COLOR_GRAY2BGR,dst=self.in_frame)       
 
-    # openCV colormap documentation: https://docs.opencv.org/4.x/d3/d50/group__imgproc__colormap.html
-    def applyColorFilter(self, color_map: ColorMapState):
-        result = np.ndarray(shape=(self.hdmi_in.mode.height, self.hdmi_in.mode.width), dtype=np.uint8)
-        cv2.cvtColor(self.in_frame, cv2.COLOR_BGR2GRAY, dst=result)
-        outframe = self.hdmi_out.newframe()
-        cv2.applyColorMap(result, color_map.value, dst=outframe)
-        self.in_frame=outframe
-
+    # Hardware Greyscale
     def Gray_Scale_HW(self):
         in_buffer_address=self.in_frame.device_address
         self.gray_vdma.write(0x00,0x93) # start vdma channel
@@ -133,6 +157,38 @@ class PROGRAM:
         self.gray_vdma.write(0xA4,self.hdmi_in.mode.width*3)
         self.gray_vdma.write(0xA0,self.hdmi_in.mode.height)
 
+
+    # MARK: ColorMap Functions
+
+    # Driver
+    # openCV colormap documentation: https://docs.opencv.org/4.x/d3/d50/group__imgproc__colormap.html
+    def applyColorFilter(self, color_map: ColorMapState):
+        result = np.ndarray(shape=(self.hdmi_in.mode.height, self.hdmi_in.mode.width), dtype=np.uint8)
+        cv2.cvtColor(self.in_frame, cv2.COLOR_BGR2GRAY, dst=result)
+        outframe = self.hdmi_out.newframe()
+        cv2.applyColorMap(result, color_map.value, dst=outframe)
+        self.in_frame=outframe
+
+
+    # MARK: - Inverted Color Functions
+
+    # Driver
+    def applyColorInversion(self, inverted_filter: InvertedFilter): ## TODO figure out a better way to toggle filter
+        # hardware accelerated inversion filter
+        if (inverted_filter.value == 1):                                   
+            self.Invert_Colors_HW()
+
+        # software inversion filter
+        elif (inverted_filter.value == 2):
+            cv2.bitwise_not(self.in_frame, dst=self.in_frame)
+
+        # no filter
+        else:
+            pass
+            #self.applyNoFilter()
+
+
+    # Hardware Color Inversion
     def Invert_Colors_HW(self):
         in_buffer_address=self.in_frame.device_address
         self.inverted_vdma.write(0x00,0x93) # start vdma channel
@@ -149,18 +205,9 @@ class PROGRAM:
 
         #while self.inverted_vdma.register_map.S2MM_VDMASR.Halted!=1: # wait for vdma to finish
         #    pass
-    def Box_Blur_HW(self):
-        self.dma_send.transfer(self.in_frame)
-        self.dma_recv.transfer(self.in_frame)
-        #dma_send.wait() # waiting seems unnecesary
-        #dma_recv.wait()
-    
-    def Invert_Colors(self, inverted_filter: InvertedFilter): ## TODO figure out a better way to toggle filter
-        # hardware accelerated inversion filter
-        if (inverted_filter.value == 0):                        
-            self.Invert_Colors_HW()
 
-        # software inversion filter
-        # FIXME
-        elif (inverted_filter.value == 1):
-            cv2.bitwise_not(self.in_frame, dst=self.in_frame)
+
+
+
+    
+
