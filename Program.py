@@ -105,9 +105,7 @@ class PROGRAM:
 
     # MARK: - Photo filters for HDMI input
 
-    def applyNoFilter(self):
-        self.RGB2GRAY(self.buffer)
-        self.GRAY2RGB(self.buffer)
+    def applyNoFilter(self):        
         pass
 
     # MARK: - Box Blur functions
@@ -156,7 +154,7 @@ class PROGRAM:
 
     # Hardware RGB2GRAY
     # converts to 8 bit grayscale and puts result in buffer
-    def RGB2GRAY(self,buffer):
+    def RGB2GRAY(self):
         self.rgb2gray_vdma.write(0x00,0x93) # start vdma channel
         self.rgb2gray_vdma.write(0x5C,self.in_frame.device_address) # address of input 
         self.rgb2gray_vdma.write(0x58,self.hdmi_in.mode.width*3) # total pixel row data size
@@ -164,7 +162,7 @@ class PROGRAM:
         self.rgb2gray_vdma.write(0x50,self.hdmi_in.mode.height) # read all columns
         # send vdma channel
         self.rgb2gray_vdma.write(0x30,0x93)
-        self.rgb2gray_vdma.write(0xAC,buffer.device_address)
+        self.rgb2gray_vdma.write(0xAC,self.buffer.device_address)
         self.rgb2gray_vdma.write(0xA8,self.hdmi_in.mode.width)
         self.rgb2gray_vdma.write(0xA4,self.hdmi_in.mode.width)
         self.rgb2gray_vdma.write(0xA0,self.hdmi_in.mode.height)
@@ -174,7 +172,7 @@ class PROGRAM:
     # takes 8bit gray buffer and puts result in in_frame 
     def GRAY2RGB(self,buffer):
         self.gray2rgb_vdma.write(0x00,0x93) # start vdma channel
-        self.gray2rgb_vdma.write(0x5C,buffer.device_address) # address of input 
+        self.gray2rgb_vdma.write(0x5C,self.buffer.device_address) # address of input 
         self.gray2rgb_vdma.write(0x58,self.hdmi_in.mode.width) # total pixel row data size
         self.gray2rgb_vdma.write(0x54,self.hdmi_in.mode.width) # read entire pixels row
         self.gray2rgb_vdma.write(0x50,self.hdmi_in.mode.height) # read all columns
@@ -186,7 +184,10 @@ class PROGRAM:
         self.gray2rgb_vdma.write(0xA0,self.hdmi_in.mode.height)
       #  while self.gray2rgb_vdma.register_map.S2MM_VDMASR.Halted!=1: # wait for vdma to finish
             #pass
-
+    # full conversion from rgb->8bit gray->24bit gray
+    def Gray_Scale_HW():
+        self.RGB2GRAY()
+        self.GRAY2RGB()
     # MARK: ColorMap Functions
 
     # Driver
