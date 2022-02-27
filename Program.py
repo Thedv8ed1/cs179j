@@ -36,7 +36,7 @@ class PROGRAM:
         self.filters=Filter() ## contains the currently set filter
         self.button=BUTTONS(self.filters,self.base) ## contains funtionality for polling button input
         ## 8 bit buffer
-        self.buffer=allocate(shape=(self.hdmi_in.mode.width,self.hdmi_in.mode.height),dtype=np.uint8)
+        self.buffer=allocate(shape=(self.hdmi_in.mode.height, self.hdmi_in.mode.width),dtype=np.uint8)
         ## initiate filter dmas
         self.inverted_vdma=self.base.Invert_Color.axi_vdma_0
         self.rgb2gray_vdma=self.base.RGB2GRAY.axi_vdma_0
@@ -141,16 +141,19 @@ class PROGRAM:
     # Driver
     # source notebook: https://github.com/Xilinx/PYNQ/blob/master/boards/Pynq-Z1/base/notebooks/video/hdmi_introduction.ipynb
     def applyLaplacian(self, laplacian: LaplacianFilter):
-        buffer = np.ndarray(shape=(self.hdmi_in.mode.height, self.hdmi_in.mode.width), dtype=np.uint8)        
+        
         # SW greyscale
         if (laplacian.value == 1):            
+            buffer=np.ndarray(shape=(self.hdmi_in.mode.height, self.hdmi_in.mode.width), dtype=np.uint8)        
             cv2.cvtColor(self.in_frame, cv2.COLOR_BGR2GRAY, dst=buffer)
             cv2.Laplacian(buffer, cv2.CV_8U, dst=buffer)
+            cv2.cvtColor(buffer, cv2.COLOR_GRAY2BGR,dst=self.in_frame)
         # HW greyscale
         else:       
-            self.Gray_Scale_HW()      
-            cv2.Laplacian(self.in_frame[:,:,0], cv2.CV_8U , dst=buffer)
-        cv2.cvtColor(buffer, cv2.COLOR_GRAY2BGR,dst=self.in_frame)       
+            self.RGB2GRAY()
+            cv2.Laplacian(self.buffer,cv2.CV_8U,dst=self.buffer)
+            self.GRAY2RGB()
+        
 
     # Hardware RGB2GRAY
     # converts to 8 bit grayscale and puts result in buffer
@@ -170,7 +173,8 @@ class PROGRAM:
             #pass
     # converts 8bit grayscale to 24bit rgb gray scale   
     # takes 8bit gray buffer and puts result in in_frame 
-    def GRAY2RGB(self,buffer):
+    # also duplicates the 8 bits in the upper 16 bits
+    def GRAY2RGB(self):
         self.gray2rgb_vdma.write(0x00,0x93) # start vdma channel
         self.gray2rgb_vdma.write(0x5C,self.buffer.device_address) # address of input 
         self.gray2rgb_vdma.write(0x58,self.hdmi_in.mode.width) # total pixel row data size
