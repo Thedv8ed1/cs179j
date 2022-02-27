@@ -2,6 +2,7 @@ from State_Machine import STATE_MACHINE
 from pynq.overlays.base import BaseOverlay
 from pynq.lib.video import *
 from pynq import MMIO
+from pynq import allocate
 import cv2
 import numpy as np
 import os
@@ -34,9 +35,12 @@ class PROGRAM:
         self.state_machine=STATE_MACHINE(self)
         self.filters=Filter() ## contains the currently set filter
         self.button=BUTTONS(self.filters,self.base) ## contains funtionality for polling button input
+        ## 8 bit buffer
+        self.buffer=allocate(shape=(self.hdmi_in.mode.width,self.hdmi_in.mode.height),dtype=np.uint8)
         ## initiate filter dmas
         self.inverted_vdma=self.base.Invert_Color.axi_vdma_0
-        self.gray_vdma=self.base.Gray.axi_vdma_0
+        self.rgb2gray_vdma=self.base.RGB2GRAY.axi_vdma_0
+        self.gray2rgb_vdma=self.base.GRAY2RGB.axi_vdma_0
         self.dma_send=self.base.BoxBlur.axi_dma_0.sendchannel ## dma not vdma
         self.dma_recv=self.base.BoxBlur.axi_dma_0.recvchannel ## dma not vdma
         self.DMA_Initialization()
@@ -50,12 +54,20 @@ class PROGRAM:
         while self.inverted_vdma.read(0x30)&0x4==4:
             pass
 
-        self.gray_vdma.write(0x00,0x04)
-        while self.gray_vdma.read(0x00)&0x4==4:
+        self.rgb2gray_vdma.write(0x00,0x04)
+        while self.rgb2gray_vdma.read(0x00)&0x4==4:
             pass
-        self.gray_vdma.write(0x30,0x04)
-        while self.gray_vdma.read(0x30)&0x4==4:
+        self.rgb2gray_vdma.write(0x30,0x04)
+        while self.rgb2gray_vdma.read(0x30)&0x4==4:
             pass
+
+        self.gray2rgb_vdma.write(0x00,0x04)
+        while self.gray2rgb_vdma.read(0x00)&0x4==4:
+            pass
+        self.gray2rgb_vdma.write(0x30,0x04)
+        while self.gray2rgb_vdma.read(0x30)&0x4==4:
+            pass
+        # set dimension for box blur
         MMIO(0x40010000,0x10000).write(0x10,self.hdmi_in.mode.width)
         MMIO(0x40010000,0x10000).write(0x18,self.hdmi_in.mode.height)
 
@@ -91,12 +103,12 @@ class PROGRAM:
         self.in_frame = cv2.rectangle(self.in_frame, (0,0), (110, 30), (0,0,0), -1)
         self.in_frame = cv2.putText(self.in_frame, F"{fps:.2f} FPS", (10,20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
 
-
     # MARK: - Photo filters for HDMI input
 
     def applyNoFilter(self):
+        self.RGB2GRAY(self.buffer)
+        self.GRAY2RGB(self.buffer)
         pass
-
 
     # MARK: - Box Blur functions
 
@@ -142,21 +154,38 @@ class PROGRAM:
             cv2.Laplacian(self.in_frame[:,:,0], cv2.CV_8U , dst=buffer)
         cv2.cvtColor(buffer, cv2.COLOR_GRAY2BGR,dst=self.in_frame)       
 
-    # Hardware Greyscale
-    def Gray_Scale_HW(self):
-        in_buffer_address=self.in_frame.device_address
-        self.gray_vdma.write(0x00,0x93) # start vdma channel
-        self.gray_vdma.write(0x5C,in_buffer_address) # address of input 
-        self.gray_vdma.write(0x58,self.hdmi_in.mode.width*3) # total pixel row data size
-        self.gray_vdma.write(0x54,self.hdmi_in.mode.width*3) # read entire pixels row
-        self.gray_vdma.write(0x50,self.hdmi_in.mode.height) # read all columns
+    # Hardware RGB2GRAY
+    # converts to 8 bit grayscale and puts result in buffer
+    def RGB2GRAY(self,buffer):
+        self.rgb2gray_vdma.write(0x00,0x93) # start vdma channel
+        self.rgb2gray_vdma.write(0x5C,self.in_frame.device_address) # address of input 
+        self.rgb2gray_vdma.write(0x58,self.hdmi_in.mode.width*3) # total pixel row data size
+        self.rgb2gray_vdma.write(0x54,self.hdmi_in.mode.width*3) # read entire pixels row
+        self.rgb2gray_vdma.write(0x50,self.hdmi_in.mode.height) # read all columns
         # send vdma channel
-        self.gray_vdma.write(0x30,0x93)
-        self.gray_vdma.write(0xAC,in_buffer_address)
-        self.gray_vdma.write(0xA8,self.hdmi_in.mode.width*3)
-        self.gray_vdma.write(0xA4,self.hdmi_in.mode.width*3)
-        self.gray_vdma.write(0xA0,self.hdmi_in.mode.height)
-
+        self.rgb2gray_vdma.write(0x30,0x93)
+        self.rgb2gray_vdma.write(0xAC,buffer.device_address)
+        self.rgb2gray_vdma.write(0xA8,self.hdmi_in.mode.width)
+        self.rgb2gray_vdma.write(0xA4,self.hdmi_in.mode.width)
+        self.rgb2gray_vdma.write(0xA0,self.hdmi_in.mode.height)
+        #while self.rgb2gray_vdma.register_map.S2MM_VDMASR.Halted!=1: # wait for vdma to finish
+            #pass
+    # converts 8bit grayscale to 24bit rgb gray scale   
+    # takes 8bit gray buffer and puts result in in_frame 
+    def GRAY2RGB(self,buffer):
+        self.gray2rgb_vdma.write(0x00,0x93) # start vdma channel
+        self.gray2rgb_vdma.write(0x5C,buffer.device_address) # address of input 
+        self.gray2rgb_vdma.write(0x58,self.hdmi_in.mode.width) # total pixel row data size
+        self.gray2rgb_vdma.write(0x54,self.hdmi_in.mode.width) # read entire pixels row
+        self.gray2rgb_vdma.write(0x50,self.hdmi_in.mode.height) # read all columns
+        # send vdma channel
+        self.gray2rgb_vdma.write(0x30,0x93)
+        self.gray2rgb_vdma.write(0xAC,self.in_frame.device_address)
+        self.gray2rgb_vdma.write(0xA8,self.hdmi_in.mode.width*3)
+        self.gray2rgb_vdma.write(0xA4,self.hdmi_in.mode.width*3)
+        self.gray2rgb_vdma.write(0xA0,self.hdmi_in.mode.height)
+      #  while self.gray2rgb_vdma.register_map.S2MM_VDMASR.Halted!=1: # wait for vdma to finish
+            #pass
 
     # MARK: ColorMap Functions
 
