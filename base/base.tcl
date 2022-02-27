@@ -124,7 +124,6 @@ set bCheckIPs 1
 if { $bCheckIPs == 1 } {
    set list_check_ips "\ 
 xilinx.com:ip:axi_gpio:2.0\
-xilinx.com:ip:clk_wiz:6.0\
 xilinx.com:ip:xlconcat:2.1\
 xilinx.com:ip:processing_system7:5.5\
 xilinx.com:ip:proc_sys_reset:5.0\
@@ -133,9 +132,10 @@ xilinx.com:hls:Blur:1.0\
 xilinx.com:ip:axi_dma:7.1\
 xilinx.com:ip:axis_dwidth_converter:1.1\
 xilinx.com:ip:axis_register_slice:1.1\
+xilinx.com:hls:GRAY2RGB:1.0\
 xilinx.com:ip:axi_vdma:6.3\
-xilinx.com:hls:gray:1.0\
 xilinx.com:hls:Invert_Color:1.0\
+xilinx.com:hls:RGB2GRAY:1.0\
 xilinx.com:hls:color_convert:1.0\
 xilinx.com:hls:pixel_pack:1.0\
 xilinx.com:hls:pixel_unpack:1.0\
@@ -787,6 +787,90 @@ proc create_hier_cell_video { parentCell nameHier } {
   current_bd_instance $oldCurInst
 }
 
+# Hierarchical cell: RGB2GRAY
+proc create_hier_cell_RGB2GRAY { parentCell nameHier } {
+
+  variable script_folder
+
+  if { $parentCell eq "" || $nameHier eq "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2092 -severity "ERROR" "create_hier_cell_RGB2GRAY() - Empty argument(s)!"}
+     return
+  }
+
+  # Get object for parentCell
+  set parentObj [get_bd_cells $parentCell]
+  if { $parentObj == "" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2090 -severity "ERROR" "Unable to find parent cell <$parentCell>!"}
+     return
+  }
+
+  # Make sure parentObj is hier blk
+  set parentType [get_property TYPE $parentObj]
+  if { $parentType ne "hier" } {
+     catch {common::send_gid_msg -ssname BD::TCL -id 2091 -severity "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     return
+  }
+
+  # Save current instance; Restore later
+  set oldCurInst [current_bd_instance .]
+
+  # Set parent object as current
+  current_bd_instance $parentObj
+
+  # Create cell and set as current instance
+  set hier_obj [create_bd_cell -type hier $nameHier]
+  current_bd_instance $hier_obj
+
+  # Create interface pins
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 M06
+
+  create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M_AXI_MM2S
+
+  create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M_AXI_S2MM
+
+
+  # Create pins
+  create_bd_pin -dir I -type rst ap_rst_n
+  create_bd_pin -dir I -type rst axi_resetn
+  create_bd_pin -dir I -type clk mhz_144
+  create_bd_pin -dir O -type intr mm2s_introut
+  create_bd_pin -dir O -type intr s2mm_introut
+  create_bd_pin -dir I -type clk s_axi_lite_aclk
+
+  # Create instance: RGB2GRAY_0, and set properties
+  set RGB2GRAY_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:RGB2GRAY:1.0 RGB2GRAY_0 ]
+
+  # Create instance: axi_vdma_0, and set properties
+  set axi_vdma_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_vdma:6.3 axi_vdma_0 ]
+  set_property -dict [ list \
+   CONFIG.c_include_mm2s_dre {1} \
+   CONFIG.c_include_s2mm_dre {1} \
+   CONFIG.c_m_axis_mm2s_tdata_width {24} \
+   CONFIG.c_mm2s_max_burst_length {256} \
+   CONFIG.c_num_fstores {1} \
+   CONFIG.c_s2mm_max_burst_length {256} \
+   CONFIG.c_use_s2mm_fsync {0} \
+ ] $axi_vdma_0
+
+  # Create interface connections
+  connect_bd_intf_net -intf_net Conn1 [get_bd_intf_pins M_AXI_S2MM] [get_bd_intf_pins axi_vdma_0/M_AXI_S2MM]
+  connect_bd_intf_net -intf_net Conn2 [get_bd_intf_pins M_AXI_MM2S] [get_bd_intf_pins axi_vdma_0/M_AXI_MM2S]
+  connect_bd_intf_net -intf_net RGB2GRAY_0_out_data [get_bd_intf_pins RGB2GRAY_0/out_data] [get_bd_intf_pins axi_vdma_0/S_AXIS_S2MM]
+  connect_bd_intf_net -intf_net axi_vdma_0_M_AXIS_MM2S [get_bd_intf_pins RGB2GRAY_0/in_data] [get_bd_intf_pins axi_vdma_0/M_AXIS_MM2S]
+  connect_bd_intf_net -intf_net s_axi_control_1 [get_bd_intf_pins M06] [get_bd_intf_pins axi_vdma_0/S_AXI_LITE]
+
+  # Create port connections
+  connect_bd_net -net ap_rst_n_1 [get_bd_pins ap_rst_n] [get_bd_pins RGB2GRAY_0/ap_rst_n]
+  connect_bd_net -net axi_resetn_1 [get_bd_pins axi_resetn] [get_bd_pins axi_vdma_0/axi_resetn]
+  connect_bd_net -net axi_vdma_0_mm2s_introut [get_bd_pins mm2s_introut] [get_bd_pins axi_vdma_0/mm2s_introut]
+  connect_bd_net -net axi_vdma_0_s2mm_introut [get_bd_pins s2mm_introut] [get_bd_pins axi_vdma_0/s2mm_introut]
+  connect_bd_net -net mhz_144_1 [get_bd_pins mhz_144] [get_bd_pins RGB2GRAY_0/ap_clk] [get_bd_pins axi_vdma_0/m_axi_mm2s_aclk] [get_bd_pins axi_vdma_0/m_axi_s2mm_aclk] [get_bd_pins axi_vdma_0/m_axis_mm2s_aclk] [get_bd_pins axi_vdma_0/s_axis_s2mm_aclk]
+  connect_bd_net -net s_axi_lite_aclk_1 [get_bd_pins s_axi_lite_aclk] [get_bd_pins axi_vdma_0/s_axi_lite_aclk]
+
+  # Restore current instance
+  current_bd_instance $oldCurInst
+}
+
 # Hierarchical cell: Invert_Color
 proc create_hier_cell_Invert_Color { parentCell nameHier } {
 
@@ -895,13 +979,13 @@ proc create_hier_cell_Invert_Color { parentCell nameHier } {
   current_bd_instance $oldCurInst
 }
 
-# Hierarchical cell: Gray
-proc create_hier_cell_Gray { parentCell nameHier } {
+# Hierarchical cell: GRAY2RGB
+proc create_hier_cell_GRAY2RGB { parentCell nameHier } {
 
   variable script_folder
 
   if { $parentCell eq "" || $nameHier eq "" } {
-     catch {common::send_gid_msg -ssname BD::TCL -id 2092 -severity "ERROR" "create_hier_cell_Gray() - Empty argument(s)!"}
+     catch {common::send_gid_msg -ssname BD::TCL -id 2092 -severity "ERROR" "create_hier_cell_GRAY2RGB() - Empty argument(s)!"}
      return
   }
 
@@ -930,7 +1014,7 @@ proc create_hier_cell_Gray { parentCell nameHier } {
   current_bd_instance $hier_obj
 
   # Create interface pins
-  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 M11
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 M08
 
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M_AXI_MM2S
 
@@ -939,40 +1023,47 @@ proc create_hier_cell_Gray { parentCell nameHier } {
 
   # Create pins
   create_bd_pin -dir I -type rst ap_rst_n
-  create_bd_pin -dir I -type rst aresetn
-  create_bd_pin -dir I -type clk mhz144
+  create_bd_pin -dir I -type clk mhz_144
   create_bd_pin -dir O -type intr mm2s_introut
   create_bd_pin -dir O -type intr s2mm_introut
   create_bd_pin -dir I -type clk s_axi_lite_aclk
+
+  # Create instance: GRAY2RGB_0, and set properties
+  set GRAY2RGB_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:GRAY2RGB:1.0 GRAY2RGB_0 ]
 
   # Create instance: axi_vdma_0, and set properties
   set axi_vdma_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_vdma:6.3 axi_vdma_0 ]
   set_property -dict [ list \
    CONFIG.c_include_mm2s_dre {1} \
    CONFIG.c_include_s2mm_dre {1} \
-   CONFIG.c_m_axis_mm2s_tdata_width {24} \
+   CONFIG.c_m_axis_mm2s_tdata_width {8} \
    CONFIG.c_mm2s_max_burst_length {256} \
    CONFIG.c_num_fstores {1} \
    CONFIG.c_s2mm_max_burst_length {256} \
    CONFIG.c_use_s2mm_fsync {0} \
  ] $axi_vdma_0
 
-  # Create instance: gray_0, and set properties
-  set gray_0 [ create_bd_cell -type ip -vlnv xilinx.com:hls:gray:1.0 gray_0 ]
+  # Create instance: axis_dwidth_converter_0, and set properties
+  set axis_dwidth_converter_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axis_dwidth_converter:1.1 axis_dwidth_converter_0 ]
+  set_property -dict [ list \
+   CONFIG.HAS_MI_TKEEP {1} \
+   CONFIG.M_TDATA_NUM_BYTES {4} \
+   CONFIG.S_TDATA_NUM_BYTES {3} \
+ ] $axis_dwidth_converter_0
 
   # Create interface connections
-  connect_bd_intf_net -intf_net S_AXI_LITE_1 [get_bd_intf_pins M11] [get_bd_intf_pins axi_vdma_0/S_AXI_LITE]
-  connect_bd_intf_net -intf_net axi_vdma_0_M_AXIS_MM2S [get_bd_intf_pins axi_vdma_0/M_AXIS_MM2S] [get_bd_intf_pins gray_0/in_data]
-  connect_bd_intf_net -intf_net axi_vdma_0_M_AXI_MM2S [get_bd_intf_pins M_AXI_MM2S] [get_bd_intf_pins axi_vdma_0/M_AXI_MM2S]
-  connect_bd_intf_net -intf_net axi_vdma_0_M_AXI_S2MM [get_bd_intf_pins M_AXI_S2MM] [get_bd_intf_pins axi_vdma_0/M_AXI_S2MM]
-  connect_bd_intf_net -intf_net gray_0_out_data [get_bd_intf_pins axi_vdma_0/S_AXIS_S2MM] [get_bd_intf_pins gray_0/out_data]
+  connect_bd_intf_net -intf_net Conn1 [get_bd_intf_pins M_AXI_S2MM] [get_bd_intf_pins axi_vdma_0/M_AXI_S2MM]
+  connect_bd_intf_net -intf_net Conn2 [get_bd_intf_pins M_AXI_MM2S] [get_bd_intf_pins axi_vdma_0/M_AXI_MM2S]
+  connect_bd_intf_net -intf_net GRAY2RGB_0_out_data [get_bd_intf_pins GRAY2RGB_0/out_data] [get_bd_intf_pins axis_dwidth_converter_0/S_AXIS]
+  connect_bd_intf_net -intf_net axi_vdma_0_M_AXIS_MM2S [get_bd_intf_pins GRAY2RGB_0/in_data] [get_bd_intf_pins axi_vdma_0/M_AXIS_MM2S]
+  connect_bd_intf_net -intf_net axis_dwidth_converter_0_M_AXIS [get_bd_intf_pins axi_vdma_0/S_AXIS_S2MM] [get_bd_intf_pins axis_dwidth_converter_0/M_AXIS]
+  connect_bd_intf_net -intf_net s_axi_control_1 [get_bd_intf_pins M08] [get_bd_intf_pins axi_vdma_0/S_AXI_LITE]
 
   # Create port connections
-  connect_bd_net -net Net [get_bd_pins mhz144] [get_bd_pins axi_vdma_0/m_axi_mm2s_aclk] [get_bd_pins axi_vdma_0/m_axi_s2mm_aclk] [get_bd_pins axi_vdma_0/m_axis_mm2s_aclk] [get_bd_pins axi_vdma_0/s_axis_s2mm_aclk] [get_bd_pins gray_0/ap_clk]
-  connect_bd_net -net Net1 [get_bd_pins aresetn] [get_bd_pins axi_vdma_0/axi_resetn]
-  connect_bd_net -net ap_rst_n_1 [get_bd_pins ap_rst_n] [get_bd_pins gray_0/ap_rst_n]
+  connect_bd_net -net ap_rst_n_1 [get_bd_pins ap_rst_n] [get_bd_pins GRAY2RGB_0/ap_rst_n] [get_bd_pins axis_dwidth_converter_0/aresetn]
   connect_bd_net -net axi_vdma_0_mm2s_introut [get_bd_pins mm2s_introut] [get_bd_pins axi_vdma_0/mm2s_introut]
   connect_bd_net -net axi_vdma_0_s2mm_introut [get_bd_pins s2mm_introut] [get_bd_pins axi_vdma_0/s2mm_introut]
+  connect_bd_net -net mhz_144_1 [get_bd_pins mhz_144] [get_bd_pins GRAY2RGB_0/ap_clk] [get_bd_pins axi_vdma_0/m_axi_mm2s_aclk] [get_bd_pins axi_vdma_0/m_axi_s2mm_aclk] [get_bd_pins axi_vdma_0/m_axis_mm2s_aclk] [get_bd_pins axi_vdma_0/s_axis_s2mm_aclk] [get_bd_pins axis_dwidth_converter_0/aclk]
   connect_bd_net -net s_axi_lite_aclk_1 [get_bd_pins s_axi_lite_aclk] [get_bd_pins axi_vdma_0/s_axi_lite_aclk]
 
   # Restore current instance
@@ -1014,19 +1105,13 @@ proc create_hier_cell_BoxBlur { parentCell nameHier } {
   current_bd_instance $hier_obj
 
   # Create interface pins
-  create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M_AXI_MM2S
-
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M_AXI_MM2S1
-
-  create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M_AXI_S2MM
 
   create_bd_intf_pin -mode Master -vlnv xilinx.com:interface:aximm_rtl:1.0 M_AXI_S2MM1
 
-  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 ps7_m3
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 m3
 
-  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 ps7_m8
-
-  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 ps7_m9
+  create_bd_intf_pin -mode Slave -vlnv xilinx.com:interface:aximm_rtl:1.0 s_axi_control
 
 
   # Create pins
@@ -1047,7 +1132,7 @@ proc create_hier_cell_BoxBlur { parentCell nameHier } {
    CONFIG.c_m_axi_mm2s_data_width {64} \
    CONFIG.c_m_axi_s2mm_data_width {64} \
    CONFIG.c_m_axis_mm2s_tdata_width {64} \
-   CONFIG.c_mm2s_burst_size {8} \
+   CONFIG.c_mm2s_burst_size {256} \
    CONFIG.c_s2mm_burst_size {256} \
    CONFIG.c_sg_include_stscntrl_strm {0} \
    CONFIG.c_sg_length_width {26} \
@@ -1091,34 +1176,23 @@ proc create_hier_cell_BoxBlur { parentCell nameHier } {
    CONFIG.TUSER_WIDTH {1} \
  ] $axis_register_slice_0
 
-  # Create instance: axis_register_slice_1, and set properties
-  set axis_register_slice_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axis_register_slice:1.1 axis_register_slice_1 ]
-  set_property -dict [ list \
-   CONFIG.HAS_TKEEP {1} \
-   CONFIG.HAS_TLAST {1} \
-   CONFIG.HAS_TSTRB {1} \
-   CONFIG.TDATA_NUM_BYTES {3} \
-   CONFIG.TUSER_WIDTH {1} \
- ] $axis_register_slice_1
-
   # Create interface connections
   connect_bd_intf_net -intf_net Blur_out_data [get_bd_intf_pins Blur/out_data] [get_bd_intf_pins axis_dwidth_converter_1/S_AXIS]
   connect_bd_intf_net -intf_net Conn1 [get_bd_intf_pins M_AXI_MM2S1] [get_bd_intf_pins axi_dma_0/M_AXI_MM2S]
   connect_bd_intf_net -intf_net Conn2 [get_bd_intf_pins M_AXI_S2MM1] [get_bd_intf_pins axi_dma_0/M_AXI_S2MM]
-  connect_bd_intf_net -intf_net Conn3 [get_bd_intf_pins ps7_m3] [get_bd_intf_pins axi_dma_0/S_AXI_LITE]
-  connect_bd_intf_net -intf_net Conn4 [get_bd_intf_pins ps7_m9] [get_bd_intf_pins Blur/s_axi_control]
+  connect_bd_intf_net -intf_net Conn3 [get_bd_intf_pins m3] [get_bd_intf_pins axi_dma_0/S_AXI_LITE]
+  connect_bd_intf_net -intf_net Conn4 [get_bd_intf_pins s_axi_control] [get_bd_intf_pins Blur/s_axi_control]
   connect_bd_intf_net -intf_net axi_dma_0_M_AXIS_MM2S [get_bd_intf_pins axi_dma_0/M_AXIS_MM2S] [get_bd_intf_pins axis_dwidth_converter_0/S_AXIS]
-  connect_bd_intf_net -intf_net axis_dwidth_converter_0_M_AXIS [get_bd_intf_pins axis_dwidth_converter_0/M_AXIS] [get_bd_intf_pins axis_register_slice_1/S_AXIS]
+  connect_bd_intf_net -intf_net axis_dwidth_converter_0_M_AXIS [get_bd_intf_pins Blur/in_data] [get_bd_intf_pins axis_dwidth_converter_0/M_AXIS]
   connect_bd_intf_net -intf_net axis_dwidth_converter_1_M_AXIS [get_bd_intf_pins axis_dwidth_converter_1/M_AXIS] [get_bd_intf_pins axis_register_slice_0/S_AXIS]
   connect_bd_intf_net -intf_net axis_register_slice_0_M_AXIS [get_bd_intf_pins axi_dma_0/S_AXIS_S2MM] [get_bd_intf_pins axis_register_slice_0/M_AXIS]
-  connect_bd_intf_net -intf_net axis_register_slice_1_M_AXIS [get_bd_intf_pins Blur/in_data] [get_bd_intf_pins axis_register_slice_1/M_AXIS]
 
   # Create port connections
   connect_bd_net -net Blur_out_data_TKEEP [get_bd_pins Blur/out_data_TKEEP] [get_bd_pins axis_dwidth_converter_1/s_axis_tkeep]
   connect_bd_net -net Blur_out_data_TLAST [get_bd_pins Blur/out_data_TLAST] [get_bd_pins axis_dwidth_converter_1/s_axis_tlast]
   connect_bd_net -net Blur_out_data_TSTRB [get_bd_pins Blur/out_data_TSTRB] [get_bd_pins axis_dwidth_converter_1/s_axis_tstrb]
-  connect_bd_net -net Net [get_bd_pins mhz_144] [get_bd_pins Blur/ap_clk] [get_bd_pins axi_dma_0/m_axi_mm2s_aclk] [get_bd_pins axi_dma_0/m_axi_s2mm_aclk] [get_bd_pins axis_dwidth_converter_0/aclk] [get_bd_pins axis_dwidth_converter_1/aclk] [get_bd_pins axis_register_slice_0/aclk] [get_bd_pins axis_register_slice_1/aclk]
-  connect_bd_net -net ap_rst_n_1 [get_bd_pins ap_rst_n] [get_bd_pins Blur/ap_rst_n] [get_bd_pins axis_dwidth_converter_0/aresetn] [get_bd_pins axis_dwidth_converter_1/aresetn] [get_bd_pins axis_register_slice_0/aresetn] [get_bd_pins axis_register_slice_1/aresetn]
+  connect_bd_net -net Net [get_bd_pins mhz_144] [get_bd_pins Blur/ap_clk] [get_bd_pins axi_dma_0/m_axi_mm2s_aclk] [get_bd_pins axi_dma_0/m_axi_s2mm_aclk] [get_bd_pins axis_dwidth_converter_0/aclk] [get_bd_pins axis_dwidth_converter_1/aclk] [get_bd_pins axis_register_slice_0/aclk]
+  connect_bd_net -net ap_rst_n_1 [get_bd_pins ap_rst_n] [get_bd_pins Blur/ap_rst_n] [get_bd_pins axis_dwidth_converter_0/aresetn] [get_bd_pins axis_dwidth_converter_1/aresetn] [get_bd_pins axis_register_slice_0/aresetn]
   connect_bd_net -net aresetn_1 [get_bd_pins aresetn] [get_bd_pins axi_dma_0/axi_resetn]
   connect_bd_net -net axi_dma_0_mm2s_introut [get_bd_pins mm2s_introut] [get_bd_pins axi_dma_0/mm2s_introut]
   connect_bd_net -net axi_dma_0_s2mm_introut [get_bd_pins s2mm_introut] [get_bd_pins axi_dma_0/s2mm_introut]
@@ -1189,18 +1263,20 @@ proc create_root_design { parentCell } {
 
 
   # Create ports
-  set audio_clk_10MHz [ create_bd_port -dir O -type clk audio_clk_10MHz ]
   set hdmi_in_hpd [ create_bd_port -dir O -from 0 -to 0 hdmi_in_hpd ]
   set hdmi_out_hpd [ create_bd_port -dir O -from 0 -to 0 hdmi_out_hpd ]
 
   # Create instance: BoxBlur
   create_hier_cell_BoxBlur [current_bd_instance .] BoxBlur
 
-  # Create instance: Gray
-  create_hier_cell_Gray [current_bd_instance .] Gray
+  # Create instance: GRAY2RGB
+  create_hier_cell_GRAY2RGB [current_bd_instance .] GRAY2RGB
 
   # Create instance: Invert_Color
   create_hier_cell_Invert_Color [current_bd_instance .] Invert_Color
+
+  # Create instance: RGB2GRAY
+  create_hier_cell_RGB2GRAY [current_bd_instance .] RGB2GRAY
 
   # Create instance: axi_interconnect_filters, and set properties
   set axi_interconnect_filters [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_filters ]
@@ -1216,19 +1292,6 @@ proc create_root_design { parentCell } {
    CONFIG.C_GPIO_WIDTH {4} \
    CONFIG.C_INTERRUPT_PRESENT {1} \
  ] $btns_gpio
-
-  # Create instance: clk_wiz_10MHz, and set properties
-  set clk_wiz_10MHz [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_10MHz ]
-  set_property -dict [ list \
-   CONFIG.CLKOUT1_JITTER {290.478} \
-   CONFIG.CLKOUT1_PHASE_ERROR {133.882} \
-   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {10.000} \
-   CONFIG.MMCM_CLKFBOUT_MULT_F {15.625} \
-   CONFIG.MMCM_CLKOUT0_DIVIDE_F {78.125} \
-   CONFIG.MMCM_DIVCLK_DIVIDE {2} \
-   CONFIG.RESET_PORT {resetn} \
-   CONFIG.RESET_TYPE {ACTIVE_LOW} \
- ] $clk_wiz_10MHz
 
   # Create instance: concat_interrupts, and set properties
   set concat_interrupts [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 concat_interrupts ]
@@ -2195,12 +2258,13 @@ proc create_root_design { parentCell } {
  ] $xlconcat_1
 
   # Create interface connections
-  connect_bd_intf_net -intf_net S00_AXI_1 [get_bd_intf_pins BoxBlur/M_AXI_MM2S] [get_bd_intf_pins axi_interconnect_filters/S00_AXI]
-  connect_bd_intf_net -intf_net S01_AXI_1 [get_bd_intf_pins BoxBlur/M_AXI_S2MM] [get_bd_intf_pins axi_interconnect_filters/S01_AXI]
+  connect_bd_intf_net -intf_net M06 [get_bd_intf_pins RGB2GRAY/M06] [get_bd_intf_pins ps7_0_axi_periph/M06_AXI]
+  connect_bd_intf_net -intf_net S00_AXI_1 [get_bd_intf_pins GRAY2RGB/M_AXI_S2MM] [get_bd_intf_pins axi_interconnect_filters/S00_AXI]
+  connect_bd_intf_net -intf_net S01_AXI_1 [get_bd_intf_pins GRAY2RGB/M_AXI_MM2S] [get_bd_intf_pins axi_interconnect_filters/S01_AXI]
   connect_bd_intf_net -intf_net S02_AXI_2 [get_bd_intf_pins Invert_Color/M_AXI_MM2S] [get_bd_intf_pins axi_interconnect_filters/S02_AXI]
   connect_bd_intf_net -intf_net S03_AXI_2 [get_bd_intf_pins Invert_Color/M_AXI_S2MM] [get_bd_intf_pins axi_interconnect_filters/S03_AXI]
-  connect_bd_intf_net -intf_net S04_AXI_1 [get_bd_intf_pins Gray/M_AXI_MM2S] [get_bd_intf_pins axi_interconnect_filters/S04_AXI]
-  connect_bd_intf_net -intf_net S05_AXI_1 [get_bd_intf_pins Gray/M_AXI_S2MM] [get_bd_intf_pins axi_interconnect_filters/S05_AXI]
+  connect_bd_intf_net -intf_net S04_AXI_1 [get_bd_intf_pins RGB2GRAY/M_AXI_S2MM] [get_bd_intf_pins axi_interconnect_filters/S04_AXI]
+  connect_bd_intf_net -intf_net S05_AXI_1 [get_bd_intf_pins RGB2GRAY/M_AXI_MM2S] [get_bd_intf_pins axi_interconnect_filters/S05_AXI]
   connect_bd_intf_net -intf_net S06_AXI_1 [get_bd_intf_pins BoxBlur/M_AXI_MM2S1] [get_bd_intf_pins axi_interconnect_filters/S06_AXI]
   connect_bd_intf_net -intf_net S07_AXI_1 [get_bd_intf_pins BoxBlur/M_AXI_S2MM1] [get_bd_intf_pins axi_interconnect_filters/S07_AXI]
   connect_bd_intf_net -intf_net axi_interconnect_1_M00_AXI [get_bd_intf_pins axi_interconnect_filters/M00_AXI] [get_bd_intf_pins ps7_0/S_AXI_HP3]
@@ -2216,39 +2280,39 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M00_AXI [get_bd_intf_pins ps7_0_axi_periph/M00_AXI] [get_bd_intf_pins system_interrupts/s_axi]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M01_AXI [get_bd_intf_pins ps7_0_axi_periph/M01_AXI] [get_bd_intf_pins video/S_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M02_AXI [get_bd_intf_pins ps7_0_axi_periph/M02_AXI] [get_bd_intf_pins rgbleds_gpio/S_AXI]
-  connect_bd_intf_net -intf_net ps7_0_axi_periph_M03_AXI [get_bd_intf_pins BoxBlur/ps7_m3] [get_bd_intf_pins ps7_0_axi_periph/M03_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M03_AXI [get_bd_intf_pins BoxBlur/m3] [get_bd_intf_pins ps7_0_axi_periph/M03_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M04_AXI [get_bd_intf_pins ps7_0_axi_periph/M04_AXI] [get_bd_intf_pins switches_gpio/S_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M05_AXI [get_bd_intf_pins btns_gpio/S_AXI] [get_bd_intf_pins ps7_0_axi_periph/M05_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M07_AXI [get_bd_intf_pins leds_gpio/S_AXI] [get_bd_intf_pins ps7_0_axi_periph/M07_AXI]
-  connect_bd_intf_net -intf_net ps7_0_axi_periph_M08_AXI [get_bd_intf_pins BoxBlur/ps7_m8] [get_bd_intf_pins ps7_0_axi_periph/M08_AXI]
-  connect_bd_intf_net -intf_net ps7_0_axi_periph_M09_AXI [get_bd_intf_pins BoxBlur/ps7_m9] [get_bd_intf_pins ps7_0_axi_periph/M09_AXI]
+  connect_bd_intf_net -intf_net ps7_0_axi_periph_M09_AXI [get_bd_intf_pins BoxBlur/s_axi_control] [get_bd_intf_pins ps7_0_axi_periph/M09_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M10_AXI [get_bd_intf_pins Invert_Color/M10] [get_bd_intf_pins ps7_0_axi_periph/M10_AXI]
-  connect_bd_intf_net -intf_net ps7_0_axi_periph_M11_AXI [get_bd_intf_pins Gray/M11] [get_bd_intf_pins ps7_0_axi_periph/M11_AXI]
   connect_bd_intf_net -intf_net rgbled_gpio_GPIO [get_bd_intf_ports rgbleds_6bits] [get_bd_intf_pins rgbleds_gpio/GPIO]
+  connect_bd_intf_net -intf_net s_axi_control_1 [get_bd_intf_pins GRAY2RGB/M08] [get_bd_intf_pins ps7_0_axi_periph/M08_AXI]
   connect_bd_intf_net -intf_net swsleds_gpio_GPIO [get_bd_intf_ports sws_2bits] [get_bd_intf_pins switches_gpio/GPIO]
   connect_bd_intf_net -intf_net video_TMDS1 [get_bd_intf_ports hdmi_out] [get_bd_intf_pins video/TMDS_out]
 
   # Create port connections
   connect_bd_net -net BoxBlur_mm2s_introut [get_bd_pins BoxBlur/mm2s_introut] [get_bd_pins xlconcat_1/In2]
   connect_bd_net -net BoxBlur_s2mm_introut [get_bd_pins BoxBlur/s2mm_introut] [get_bd_pins xlconcat_1/In3]
-  connect_bd_net -net Gray_mm2s_introut [get_bd_pins Gray/mm2s_introut] [get_bd_pins xlconcat_1/In4]
-  connect_bd_net -net Gray_s2mm_introut [get_bd_pins Gray/s2mm_introut] [get_bd_pins xlconcat_1/In5]
+  connect_bd_net -net GRAY2RGB_mm2s_introut [get_bd_pins GRAY2RGB/mm2s_introut] [get_bd_pins xlconcat_1/In6]
+  connect_bd_net -net GRAY2RGB_s2mm_introut [get_bd_pins GRAY2RGB/s2mm_introut] [get_bd_pins xlconcat_1/In7]
   connect_bd_net -net Invert_Color_mm2s_introut [get_bd_pins Invert_Color/mm2s_introut] [get_bd_pins xlconcat_1/In0]
   connect_bd_net -net Invert_Color_s2mm_introut [get_bd_pins Invert_Color/s2mm_introut] [get_bd_pins xlconcat_1/In1]
+  connect_bd_net -net Mode_mm2s_introut [get_bd_pins RGB2GRAY/mm2s_introut] [get_bd_pins xlconcat_1/In4]
+  connect_bd_net -net Mode_s2mm_introut [get_bd_pins RGB2GRAY/s2mm_introut] [get_bd_pins xlconcat_1/In5]
   connect_bd_net -net axi_gpio_video_gpio_io_o [get_bd_ports hdmi_in_hpd] [get_bd_pins video/hdmi_in_hpd]
   connect_bd_net -net btns_gpio_ip2intc_irpt [get_bd_pins btns_gpio/ip2intc_irpt] [get_bd_pins concat_interrupts/In5]
-  connect_bd_net -net clk_wiz_10MHz_clk_out1 [get_bd_ports audio_clk_10MHz] [get_bd_pins clk_wiz_10MHz/clk_out1]
   connect_bd_net -net concat_interrupts_dout [get_bd_pins concat_interrupts/dout] [get_bd_pins system_interrupts/intr]
   connect_bd_net -net hdmi_out_hpd_video_gpio_io_o [get_bd_ports hdmi_out_hpd] [get_bd_pins video/hdmi_out_hpd]
   connect_bd_net -net leds_gpio_ip2intc_irpt [get_bd_pins concat_interrupts/In3] [get_bd_pins leds_gpio/ip2intc_irpt]
-  connect_bd_net -net ps7_0_FCLK_CLK0 [get_bd_pins BoxBlur/s_axi_lite_aclk] [get_bd_pins Gray/s_axi_lite_aclk] [get_bd_pins Invert_Color/s_axi_lite_aclk] [get_bd_pins btns_gpio/s_axi_aclk] [get_bd_pins clk_wiz_10MHz/clk_in1] [get_bd_pins leds_gpio/s_axi_aclk] [get_bd_pins ps7_0/FCLK_CLK0] [get_bd_pins ps7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/M03_ACLK] [get_bd_pins ps7_0_axi_periph/M04_ACLK] [get_bd_pins ps7_0_axi_periph/M05_ACLK] [get_bd_pins ps7_0_axi_periph/M06_ACLK] [get_bd_pins ps7_0_axi_periph/M07_ACLK] [get_bd_pins ps7_0_axi_periph/M08_ACLK] [get_bd_pins ps7_0_axi_periph/M10_ACLK] [get_bd_pins ps7_0_axi_periph/M11_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rgbleds_gpio/s_axi_aclk] [get_bd_pins rst_ps7_0_fclk0/slowest_sync_clk] [get_bd_pins switches_gpio/s_axi_aclk] [get_bd_pins system_interrupts/s_axi_aclk] [get_bd_pins video/clk_100M]
-  connect_bd_net -net ps7_0_FCLK_CLK1 [get_bd_pins BoxBlur/mhz_144] [get_bd_pins Gray/mhz144] [get_bd_pins Invert_Color/mhz144] [get_bd_pins axi_interconnect_filters/ACLK] [get_bd_pins axi_interconnect_filters/M00_ACLK] [get_bd_pins axi_interconnect_filters/S00_ACLK] [get_bd_pins axi_interconnect_filters/S01_ACLK] [get_bd_pins axi_interconnect_filters/S02_ACLK] [get_bd_pins axi_interconnect_filters/S03_ACLK] [get_bd_pins axi_interconnect_filters/S04_ACLK] [get_bd_pins axi_interconnect_filters/S05_ACLK] [get_bd_pins axi_interconnect_filters/S06_ACLK] [get_bd_pins axi_interconnect_filters/S07_ACLK] [get_bd_pins ps7_0/FCLK_CLK1] [get_bd_pins ps7_0/S_AXI_HP0_ACLK] [get_bd_pins ps7_0/S_AXI_HP3_ACLK] [get_bd_pins ps7_0_axi_periph/M09_ACLK] [get_bd_pins rst_ps7_0_fclk1/slowest_sync_clk] [get_bd_pins video/clk_142M]
+  connect_bd_net -net ps7_0_FCLK_CLK0 [get_bd_pins BoxBlur/s_axi_lite_aclk] [get_bd_pins GRAY2RGB/s_axi_lite_aclk] [get_bd_pins Invert_Color/s_axi_lite_aclk] [get_bd_pins RGB2GRAY/s_axi_lite_aclk] [get_bd_pins btns_gpio/s_axi_aclk] [get_bd_pins leds_gpio/s_axi_aclk] [get_bd_pins ps7_0/FCLK_CLK0] [get_bd_pins ps7_0/M_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/M03_ACLK] [get_bd_pins ps7_0_axi_periph/M04_ACLK] [get_bd_pins ps7_0_axi_periph/M05_ACLK] [get_bd_pins ps7_0_axi_periph/M06_ACLK] [get_bd_pins ps7_0_axi_periph/M07_ACLK] [get_bd_pins ps7_0_axi_periph/M08_ACLK] [get_bd_pins ps7_0_axi_periph/M10_ACLK] [get_bd_pins ps7_0_axi_periph/M11_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins rgbleds_gpio/s_axi_aclk] [get_bd_pins rst_ps7_0_fclk0/slowest_sync_clk] [get_bd_pins switches_gpio/s_axi_aclk] [get_bd_pins system_interrupts/s_axi_aclk] [get_bd_pins video/clk_100M]
+  connect_bd_net -net ps7_0_FCLK_CLK1 [get_bd_pins BoxBlur/mhz_144] [get_bd_pins GRAY2RGB/mhz_144] [get_bd_pins Invert_Color/mhz144] [get_bd_pins RGB2GRAY/mhz_144] [get_bd_pins axi_interconnect_filters/ACLK] [get_bd_pins axi_interconnect_filters/M00_ACLK] [get_bd_pins axi_interconnect_filters/S00_ACLK] [get_bd_pins axi_interconnect_filters/S01_ACLK] [get_bd_pins axi_interconnect_filters/S02_ACLK] [get_bd_pins axi_interconnect_filters/S03_ACLK] [get_bd_pins axi_interconnect_filters/S04_ACLK] [get_bd_pins axi_interconnect_filters/S05_ACLK] [get_bd_pins axi_interconnect_filters/S06_ACLK] [get_bd_pins axi_interconnect_filters/S07_ACLK] [get_bd_pins ps7_0/FCLK_CLK1] [get_bd_pins ps7_0/S_AXI_HP0_ACLK] [get_bd_pins ps7_0/S_AXI_HP3_ACLK] [get_bd_pins ps7_0_axi_periph/M09_ACLK] [get_bd_pins rst_ps7_0_fclk1/slowest_sync_clk] [get_bd_pins video/clk_142M]
   connect_bd_net -net ps7_0_FCLK_CLK2 [get_bd_pins ps7_0/FCLK_CLK2] [get_bd_pins video/clk_200M]
   connect_bd_net -net ps7_0_FCLK_RESET0_N [get_bd_pins ps7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_fclk0/ext_reset_in] [get_bd_pins rst_ps7_0_fclk1/ext_reset_in] [get_bd_pins video/system_resetn]
   connect_bd_net -net rst_ps7_0_fclk0_interconnect_aresetn [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins ps7_0_axi_periph/M03_ARESETN] [get_bd_pins rst_ps7_0_fclk0/interconnect_aresetn] [get_bd_pins video/ic_resetn_clk100M]
-  connect_bd_net -net rst_ps7_0_fclk0_peripheral_aresetn [get_bd_pins BoxBlur/aresetn] [get_bd_pins Gray/aresetn] [get_bd_pins Invert_Color/aresetn] [get_bd_pins btns_gpio/s_axi_aresetn] [get_bd_pins clk_wiz_10MHz/resetn] [get_bd_pins leds_gpio/s_axi_aresetn] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/M02_ARESETN] [get_bd_pins ps7_0_axi_periph/M04_ARESETN] [get_bd_pins ps7_0_axi_periph/M05_ARESETN] [get_bd_pins ps7_0_axi_periph/M06_ARESETN] [get_bd_pins ps7_0_axi_periph/M07_ARESETN] [get_bd_pins ps7_0_axi_periph/M08_ARESETN] [get_bd_pins ps7_0_axi_periph/M10_ARESETN] [get_bd_pins ps7_0_axi_periph/M11_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rgbleds_gpio/s_axi_aresetn] [get_bd_pins rst_ps7_0_fclk0/peripheral_aresetn] [get_bd_pins switches_gpio/s_axi_aresetn] [get_bd_pins system_interrupts/s_axi_aresetn] [get_bd_pins video/periph_resetn_clk100M]
+  connect_bd_net -net rst_ps7_0_fclk0_peripheral_aresetn [get_bd_pins BoxBlur/aresetn] [get_bd_pins Invert_Color/aresetn] [get_bd_pins RGB2GRAY/axi_resetn] [get_bd_pins btns_gpio/s_axi_aresetn] [get_bd_pins leds_gpio/s_axi_aresetn] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/M02_ARESETN] [get_bd_pins ps7_0_axi_periph/M04_ARESETN] [get_bd_pins ps7_0_axi_periph/M05_ARESETN] [get_bd_pins ps7_0_axi_periph/M06_ARESETN] [get_bd_pins ps7_0_axi_periph/M07_ARESETN] [get_bd_pins ps7_0_axi_periph/M08_ARESETN] [get_bd_pins ps7_0_axi_periph/M10_ARESETN] [get_bd_pins ps7_0_axi_periph/M11_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins rgbleds_gpio/s_axi_aresetn] [get_bd_pins rst_ps7_0_fclk0/peripheral_aresetn] [get_bd_pins switches_gpio/s_axi_aresetn] [get_bd_pins system_interrupts/s_axi_aresetn] [get_bd_pins video/periph_resetn_clk100M]
   connect_bd_net -net rst_ps7_0_fclk1_interconnect_aresetn [get_bd_pins rst_ps7_0_fclk1/interconnect_aresetn] [get_bd_pins video/ic_resetn_clk142M]
-  connect_bd_net -net rst_ps7_0_fclk1_peripheral_aresetn [get_bd_pins BoxBlur/ap_rst_n] [get_bd_pins Gray/ap_rst_n] [get_bd_pins Invert_Color/ap_rst_n] [get_bd_pins axi_interconnect_filters/ARESETN] [get_bd_pins axi_interconnect_filters/M00_ARESETN] [get_bd_pins axi_interconnect_filters/S00_ARESETN] [get_bd_pins axi_interconnect_filters/S01_ARESETN] [get_bd_pins axi_interconnect_filters/S02_ARESETN] [get_bd_pins axi_interconnect_filters/S03_ARESETN] [get_bd_pins axi_interconnect_filters/S04_ARESETN] [get_bd_pins axi_interconnect_filters/S05_ARESETN] [get_bd_pins axi_interconnect_filters/S06_ARESETN] [get_bd_pins axi_interconnect_filters/S07_ARESETN] [get_bd_pins ps7_0_axi_periph/M09_ARESETN] [get_bd_pins rst_ps7_0_fclk1/peripheral_aresetn] [get_bd_pins video/periph_resetn_clk142M]
+  connect_bd_net -net rst_ps7_0_fclk1_peripheral_aresetn [get_bd_pins BoxBlur/ap_rst_n] [get_bd_pins GRAY2RGB/ap_rst_n] [get_bd_pins Invert_Color/ap_rst_n] [get_bd_pins RGB2GRAY/ap_rst_n] [get_bd_pins axi_interconnect_filters/ARESETN] [get_bd_pins axi_interconnect_filters/M00_ARESETN] [get_bd_pins axi_interconnect_filters/S00_ARESETN] [get_bd_pins axi_interconnect_filters/S01_ARESETN] [get_bd_pins axi_interconnect_filters/S02_ARESETN] [get_bd_pins axi_interconnect_filters/S03_ARESETN] [get_bd_pins axi_interconnect_filters/S04_ARESETN] [get_bd_pins axi_interconnect_filters/S05_ARESETN] [get_bd_pins axi_interconnect_filters/S06_ARESETN] [get_bd_pins axi_interconnect_filters/S07_ARESETN] [get_bd_pins ps7_0_axi_periph/M09_ARESETN] [get_bd_pins rst_ps7_0_fclk1/peripheral_aresetn] [get_bd_pins video/periph_resetn_clk142M]
   connect_bd_net -net switches_gpio_ip2intc_irpt [get_bd_pins concat_interrupts/In6] [get_bd_pins switches_gpio/ip2intc_irpt]
   connect_bd_net -net system_interrupts_irq [get_bd_pins system_interrupts/irq] [get_bd_pins xlconcat_0/In0]
   connect_bd_net -net video_dout [get_bd_pins concat_interrupts/In0] [get_bd_pins video/video_irq]
@@ -2260,7 +2324,8 @@ proc create_root_design { parentCell } {
   assign_bd_address -offset 0x40400000 -range 0x00010000 -target_address_space [get_bd_addr_spaces ps7_0/Data] [get_bd_addr_segs BoxBlur/axi_dma_0/S_AXI_LITE/Reg] -force
   assign_bd_address -offset 0x43C10000 -range 0x00010000 -target_address_space [get_bd_addr_spaces ps7_0/Data] [get_bd_addr_segs video/hdmi_out/frontend/axi_dynclk/s00_axi/reg0] -force
   assign_bd_address -offset 0x41220000 -range 0x00010000 -target_address_space [get_bd_addr_spaces ps7_0/Data] [get_bd_addr_segs video/hdmi_in/frontend/axi_gpio_hdmiin/S_AXI/Reg] -force
-  assign_bd_address -offset 0x40020000 -range 0x00010000 -target_address_space [get_bd_addr_spaces ps7_0/Data] [get_bd_addr_segs Gray/axi_vdma_0/S_AXI_LITE/Reg] -force
+  assign_bd_address -offset 0x43010000 -range 0x00010000 -target_address_space [get_bd_addr_spaces ps7_0/Data] [get_bd_addr_segs RGB2GRAY/axi_vdma_0/S_AXI_LITE/Reg] -force
+  assign_bd_address -offset 0x43020000 -range 0x00010000 -target_address_space [get_bd_addr_spaces ps7_0/Data] [get_bd_addr_segs GRAY2RGB/axi_vdma_0/S_AXI_LITE/Reg] -force
   assign_bd_address -offset 0x40030000 -range 0x00010000 -target_address_space [get_bd_addr_spaces ps7_0/Data] [get_bd_addr_segs Invert_Color/axi_vdma_0/S_AXI_LITE/Reg] -force
   assign_bd_address -offset 0x43000000 -range 0x00010000 -target_address_space [get_bd_addr_spaces ps7_0/Data] [get_bd_addr_segs video/axi_vdma/S_AXI_LITE/Reg] -force
   assign_bd_address -offset 0x41210000 -range 0x00010000 -target_address_space [get_bd_addr_spaces ps7_0/Data] [get_bd_addr_segs btns_gpio/S_AXI/Reg] -force
@@ -2277,10 +2342,12 @@ proc create_root_design { parentCell } {
   assign_bd_address -offset 0x43C20000 -range 0x00010000 -target_address_space [get_bd_addr_spaces ps7_0/Data] [get_bd_addr_segs video/hdmi_out/frontend/vtc_out/ctrl/Reg] -force
   assign_bd_address -offset 0x00000000 -range 0x20000000 -target_address_space [get_bd_addr_spaces BoxBlur/axi_dma_0/Data_MM2S] [get_bd_addr_segs ps7_0/S_AXI_HP3/HP3_DDR_LOWOCM] -force
   assign_bd_address -offset 0x00000000 -range 0x20000000 -target_address_space [get_bd_addr_spaces BoxBlur/axi_dma_0/Data_S2MM] [get_bd_addr_segs ps7_0/S_AXI_HP3/HP3_DDR_LOWOCM] -force
-  assign_bd_address -offset 0x00000000 -range 0x20000000 -target_address_space [get_bd_addr_spaces Gray/axi_vdma_0/Data_MM2S] [get_bd_addr_segs ps7_0/S_AXI_HP3/HP3_DDR_LOWOCM] -force
-  assign_bd_address -offset 0x00000000 -range 0x20000000 -target_address_space [get_bd_addr_spaces Gray/axi_vdma_0/Data_S2MM] [get_bd_addr_segs ps7_0/S_AXI_HP3/HP3_DDR_LOWOCM] -force
+  assign_bd_address -offset 0x00000000 -range 0x20000000 -target_address_space [get_bd_addr_spaces GRAY2RGB/axi_vdma_0/Data_MM2S] [get_bd_addr_segs ps7_0/S_AXI_HP3/HP3_DDR_LOWOCM] -force
+  assign_bd_address -offset 0x00000000 -range 0x20000000 -target_address_space [get_bd_addr_spaces GRAY2RGB/axi_vdma_0/Data_S2MM] [get_bd_addr_segs ps7_0/S_AXI_HP3/HP3_DDR_LOWOCM] -force
   assign_bd_address -offset 0x00000000 -range 0x20000000 -target_address_space [get_bd_addr_spaces Invert_Color/axi_vdma_0/Data_MM2S] [get_bd_addr_segs ps7_0/S_AXI_HP3/HP3_DDR_LOWOCM] -force
   assign_bd_address -offset 0x00000000 -range 0x20000000 -target_address_space [get_bd_addr_spaces Invert_Color/axi_vdma_0/Data_S2MM] [get_bd_addr_segs ps7_0/S_AXI_HP3/HP3_DDR_LOWOCM] -force
+  assign_bd_address -offset 0x00000000 -range 0x20000000 -target_address_space [get_bd_addr_spaces RGB2GRAY/axi_vdma_0/Data_MM2S] [get_bd_addr_segs ps7_0/S_AXI_HP3/HP3_DDR_LOWOCM] -force
+  assign_bd_address -offset 0x00000000 -range 0x20000000 -target_address_space [get_bd_addr_spaces RGB2GRAY/axi_vdma_0/Data_S2MM] [get_bd_addr_segs ps7_0/S_AXI_HP3/HP3_DDR_LOWOCM] -force
   assign_bd_address -offset 0x10000000 -range 0x10000000 -target_address_space [get_bd_addr_spaces video/axi_vdma/Data_MM2S] [get_bd_addr_segs ps7_0/S_AXI_HP0/HP0_DDR_LOWOCM] -force
   assign_bd_address -offset 0x10000000 -range 0x10000000 -target_address_space [get_bd_addr_spaces video/axi_vdma/Data_S2MM] [get_bd_addr_segs ps7_0/S_AXI_HP0/HP0_DDR_LOWOCM] -force
 
@@ -2295,6 +2362,7 @@ proc create_root_design { parentCell } {
   set_property PFM.IRQ {In1 {} In2 {} In3 {} In4 {} In5 {} In6 {} In7 {} In8 {} In9 {} In10 {} In11 {} In12 {} In13 {} In14 {} In15 {}} [get_bd_cells /xlconcat_0]
 
 
+  validate_bd_design
   save_bd_design
 }
 # End of create_root_design()
@@ -2306,6 +2374,4 @@ proc create_root_design { parentCell } {
 
 create_root_design ""
 
-
-common::send_gid_msg -ssname BD::TCL -id 2053 -severity "WARNING" "This Tcl script was generated from a block design that has not been validated. It is possible that design <$design_name> may result in errors during validation."
 
