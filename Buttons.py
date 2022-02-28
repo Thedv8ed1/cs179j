@@ -73,7 +73,7 @@ class BUTTONS:
                 if self.filter.getFilterState() == FilterState.COLORMAP:
                     colorMap.setColorMap()
                     # no filter
-                    if (colorMap.getColorMap().value == -1):
+                    if (colorMap.getColorMap().map_type == -1):
                         self.__TurnOffAllLeds()
                         self.filter.setFilterState(FilterState.NONE)
                         print("Unselecting Filter 3")
