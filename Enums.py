@@ -12,6 +12,7 @@ class FilterState(Enum):
 class Filter:
 
     selectedFilterState = FilterState.NONE
+    
 
     def __init__(self):
         print("globals initialized")
@@ -25,6 +26,8 @@ class Filter:
         global selectedFilterState
         print(F"Changing filter state to {state.name}")
         selectedFilterState = state
+        
+
 
 # MARK:- States/Class for Box Blur Filter
 
@@ -93,20 +96,30 @@ class LaplacianFilter:
 # MARK:- State/Class for Colormap Filter
 
 class ColorMapState(Enum):
-    JET = 2 # cv2.COLORMAP_JET
-    HOT = 11 # cv2.COLORMAP_HOT
-    SPRING = 7 # cv2.COLORMAP_SPRING
-    COOL = 8 # cv2.COLORMAP_COOL
-    NONE = -1
+    # 0 = SW, 1 = HW
+    JET_SW = 2, 0 # cv2.COLORMAP_JET
+    JET_HW = 2, 1
+    HOT_SW = 11, 0 # cv2.COLORMAP_HOT
+    HOT_HW = 11, 1
+    SPRING_SW = 7, 0 # cv2.COLORMAP_SPRING
+    SPRING_HW = 7, 1
+    COOL_SW = 8, 0 # cv2.COLORMAP_COOL
+    COOL_HW = 8, 1
+    NONE = -1, -1
+
+    def __init__(self, map_type, performance):
+        self.map_type = map_type
+        self.performance = performance
+
 
 class ColorMap:
 
-    selectedColorMapIndex = 0
-    colorMaps = [ColorMapState.JET, ColorMapState.HOT, ColorMapState.SPRING, ColorMapState.COOL, ColorMapState.NONE]
+    selectedColorMapIndex = 8
+    colorMaps = [ColorMapState.JET_SW, ColorMapState.JET_HW, ColorMapState.HOT_SW, ColorMapState.HOT_HW, ColorMapState.SPRING_SW, ColorMapState.SPRING_HW, ColorMapState.COOL_SW, ColorMapState.COOL_HW, ColorMapState.NONE]
 
     def __init__(self):
         global selectedColorMapIndex
-        selectedColorMapIndex = 0
+        selectedColorMapIndex = 8
 
     def getColorMap(self):
         global selectedColorMapIndex
@@ -114,10 +127,10 @@ class ColorMap:
         return self.colorMaps[selectedColorMapIndex]
 
     def setColorMap(self):
-        # 0 <= index <= 4
+        # 0 <= index <= 8
         global selectedColorMapIndex
 
-        if (selectedColorMapIndex == 4):
+        if (selectedColorMapIndex == 8):
             selectedColorMapIndex = 0
         else:
             selectedColorMapIndex = selectedColorMapIndex+1
