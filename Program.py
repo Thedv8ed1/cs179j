@@ -126,7 +126,6 @@ class PROGRAM:
         # no filter
         else:
             pass
-            #self.applyNoFilter()
 
     # Hardware Box Blur
     def Box_Blur_HW(self):
@@ -192,16 +191,32 @@ class PROGRAM:
     def Gray_Scale_HW():
         self.RGB2GRAY()
         self.GRAY2RGB()
-    # MARK: ColorMap Functions
+
+
+    # MARK: - ColorMap Functions
 
     # Driver
     # openCV colormap documentation: https://docs.opencv.org/4.x/d3/d50/group__imgproc__colormap.html
     def applyColorFilter(self, color_map: ColorMapState):
-        result = np.ndarray(shape=(self.hdmi_in.mode.height, self.hdmi_in.mode.width), dtype=np.uint8)
-        cv2.cvtColor(self.in_frame, cv2.COLOR_BGR2GRAY, dst=result)
-        outframe = self.hdmi_out.newframe()
-        cv2.applyColorMap(result, color_map.value, dst=outframe)
-        self.in_frame=outframe
+
+        # SW
+        if (color_map.performance == 0): 
+            result = np.ndarray(shape=(self.hdmi_in.mode.height, self.hdmi_in.mode.width), dtype=np.uint8)
+            cv2.cvtColor(self.in_frame, cv2.COLOR_BGR2GRAY, dst=result)
+            outframe = self.hdmi_out.newframe()
+            cv2.applyColorMap(result, color_map.map_type, dst=outframe)
+            self.in_frame=outframe
+        
+        # HW
+        elif (color_map.performance == 1):
+            self.RGB2GRAY()
+            cv2.applyColorMap(self.buffer, color_map.map_type, dst=self.buffer)
+            self.GRAY2RGB()
+        
+        # None
+        else:
+            pass
+
 
 
     # MARK: - Inverted Color Functions
@@ -219,7 +234,6 @@ class PROGRAM:
         # no filter
         else:
             pass
-            #self.applyNoFilter()
 
 
     # Hardware Color Inversion
