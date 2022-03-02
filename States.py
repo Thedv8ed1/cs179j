@@ -1,11 +1,11 @@
 import Program
 from Enums import FilterState
-from Enums import ColorMap
+from Enums import GrayscaleFilter
 from Enums import InvertedFilter
 from Enums import BoxBlurFilter
 from Enums import LaplacianFilter
 import time
-colorMap=ColorMap()
+grayscale=GrayscaleFilter()
 invertedFilter=InvertedFilter()
 boxBlurFilter=BoxBlurFilter()
 laplacianFilter=LaplacianFilter()
@@ -54,8 +54,8 @@ class APPLY_FILTERS:
             program.applyBoxBlur(boxBlurFilter.getFilter())
         elif (filter == FilterState.LAPLACIAN):
             program.applyLaplacian(laplacianFilter.getFilter())
-        elif (filter == FilterState.COLORMAP):
-            program.applyColorFilter(colorMap.getColorMap())
+        elif (filter == FilterState.GRAYSCALE):
+            program.applyGrayscaleFilter(grayscale.getFilter())
         elif (filter == FilterState.INVERTED):
             program.applyColorInversion(invertedFilter.getFilter())
         else: # default

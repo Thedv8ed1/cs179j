@@ -8,7 +8,7 @@ import numpy as np
 import os
 from Enums import FilterState
 from Enums import Filter
-from Enums import ColorMapState
+from Enums import GrayscaleFilter
 from Enums import InvertedFilter
 from Enums import BoxBlurFilter
 from Enums import LaplacianFilter
@@ -113,13 +113,13 @@ class PROGRAM:
     # Driver
     def applyBoxBlur(self, box_blur: BoxBlurFilter):
 
-        # sowftware filter
+        # SW
         if (box_blur.value == 1):
             outframe = self.hdmi_out.newframe()
             cv2.boxFilter(src=self.in_frame, ddepth=-1, ksize=(15,15), dst=outframe)
             self.in_frame=outframe
 
-        # hardware filter
+        # HW
         elif (box_blur.value == 2):
             self.Box_Blur_HW()
         
@@ -141,17 +141,22 @@ class PROGRAM:
     # source notebook: https://github.com/Xilinx/PYNQ/blob/master/boards/Pynq-Z1/base/notebooks/video/hdmi_introduction.ipynb
     def applyLaplacian(self, laplacian: LaplacianFilter):
         
-        # SW greyscale
+        # SW
         if (laplacian.value == 1):            
             buffer=np.ndarray(shape=(self.hdmi_in.mode.height, self.hdmi_in.mode.width), dtype=np.uint8)        
             cv2.cvtColor(self.in_frame, cv2.COLOR_BGR2GRAY, dst=buffer)
             cv2.Laplacian(buffer, cv2.CV_8U, dst=buffer)
             cv2.cvtColor(buffer, cv2.COLOR_GRAY2BGR,dst=self.in_frame)
-        # HW greyscale
-        else:       
+        # HW
+        elif (laplacian.value == 2):       
             self.RGB2GRAY()
             cv2.Laplacian(self.buffer,cv2.CV_8U,dst=self.buffer)
             self.GRAY2RGB()
+        
+        # None
+        else:
+            pass
+
         
 
     # Hardware RGB2GRAY
@@ -193,45 +198,38 @@ class PROGRAM:
         self.GRAY2RGB()
 
 
-    # MARK: - ColorMap Functions
+    # MARK: - Grayscale Filter
 
     # Driver
-    # openCV colormap documentation: https://docs.opencv.org/4.x/d3/d50/group__imgproc__colormap.html
-    def applyColorFilter(self, color_map: ColorMapState):
+    def applyGrayscaleFilter(self, grayscale: GrayscaleFilter):
 
         # SW
-        if (color_map.performance == 0): 
-            result = np.ndarray(shape=(self.hdmi_in.mode.height, self.hdmi_in.mode.width), dtype=np.uint8)
-            cv2.cvtColor(self.in_frame, cv2.COLOR_BGR2GRAY, dst=result)
-            outframe = self.hdmi_out.newframe()
-            cv2.applyColorMap(result, color_map.map_type, dst=outframe)
-            self.in_frame=outframe
-        
+        if (grayscale.value == 1):
+            pass # FIXME
+
         # HW
-        elif (color_map.performance == 1):
-            self.RGB2GRAY()
-            cv2.applyColorMap(self.buffer, color_map.map_type, dst=self.buffer)
-            self.GRAY2RGB()
-        
+        elif (grayscale.value == 2):
+            pass #FIXME
+
         # None
         else:
             pass
 
 
-
     # MARK: - Inverted Color Functions
 
     # Driver
-    def applyColorInversion(self, inverted_filter: InvertedFilter): ## TODO figure out a better way to toggle filter
-        # hardware accelerated inversion filter
-        if (inverted_filter.value == 1):                                   
+    def applyColorInversion(self, inverted_filter: InvertedFilter):
+        
+        # SW
+        if (inverted_filter.value == 1):
+            cv2.bitwise_not(self.in_frame, dst=self.in_frame)
+        
+        # HW
+        if (inverted_filter.value == 2):                                   
             self.Invert_Colors_HW()
 
-        # software inversion filter
-        elif (inverted_filter.value == 2):
-            cv2.bitwise_not(self.in_frame, dst=self.in_frame)
-
-        # no filter
+        # None
         else:
             pass
 
