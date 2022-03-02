@@ -1,10 +1,10 @@
 from Enums import FilterState
 from Enums import Filter
-from Enums import ColorMap
 from Enums import InvertedFilter
 from Enums import BoxBlurFilter
 from Enums import LaplacianFilter
-colorMap=ColorMap()
+from Enums import GrayscaleFilter
+grayscale=GrayscaleFilter()
 invertedFilter=InvertedFilter()
 boxBlurFilter=BoxBlurFilter()
 laplacianFilter=LaplacianFilter()
@@ -66,22 +66,22 @@ class BUTTONS:
         else:
             self.held[1] = False
 
-        # button 3 (Color Map)
+        # button 3 (Grayscale)
         if self.base.buttons[2].read():
             if not self.held[2]:
                 self.held[2] = True
-                if self.filter.getFilterState() == FilterState.COLORMAP:
-                    colorMap.setColorMap()
+                if self.filter.getFilterState() == FilterState.GRAYSCALE:
+                    grayscale.setFilter()
                     # no filter
-                    if (colorMap.getColorMap().map_type == -1):
+                    if (grayscale.getFilter().value == 0):
                         self.__TurnOffAllLeds()
                         self.filter.setFilterState(FilterState.NONE)
-                        print("Unselecting Filter 3")
+                        #print("Unselecting Filter 3")
 
                 else:
                     self.__handleLEDForIndex(2)
-                    colorMap.setColorMap()
-                    self.filter.setFilterState(FilterState.COLORMAP)
+                    grayscale.setFilter()
+                    self.filter.setFilterState(FilterState.GRAYSCALE)
         else:
             self.held[2] = False
 
