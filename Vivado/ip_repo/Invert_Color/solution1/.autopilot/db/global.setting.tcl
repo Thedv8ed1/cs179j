@@ -4,7 +4,7 @@ set ClockPeriod 10
 set ClockList ap_clk
 set HasVivadoClockPeriod 0
 set CombLogicFlag 0
-set PipelineFlag 1
+set PipelineFlag 0
 set DataflowTaskPipelineFlag 1
 set TrivialPipelineFlag 0
 set noPortSwitchingFlag 0
@@ -42,9 +42,9 @@ set SCTraceFileName mytrace
 set SCTraceFileFormat vcd
 set SCTraceOption all
 set TargetInfo xc7z020:-clg400:-1
-set SourceFiles {sc {} c ../../../../Users/thedv/Desktop/invert.cpp}
+set SourceFiles {sc {} c ../invert.cpp}
 set SourceFlags {sc {} c {{}}}
-set DirectiveFile C:/PYNQ/VITIS/Invert_Color/solution1/solution1.directive
+set DirectiveFile C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Invert_Color/solution1/solution1.directive
 set TBFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set SpecLanguage C
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

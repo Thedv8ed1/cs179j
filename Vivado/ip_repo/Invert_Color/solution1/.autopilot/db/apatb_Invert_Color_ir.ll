@@ -1,4 +1,4 @@
-; ModuleID = 'C:/PYNQ/VITIS/Invert_Color/solution1/.autopilot/db/a.g.ld.5.gdce.bc'
+; ModuleID = 'C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Invert_Color/solution1/.autopilot/db/a.g.ld.5.gdce.bc'
 source_filename = "llvm-link"
 target datalayout = "e-m:e-i64:64-i128:128-i256:256-i512:512-i1024:1024-i2048:2048-i4096:4096-n8:16:32:64-S128-v16:16-v24:32-v32:32-v48:64-v96:128-v192:256-v256:256-v512:512-v1024:1024"
 target triple = "fpga64-xilinx-none"
@@ -16,12 +16,12 @@ target triple = "fpga64-xilinx-none"
 %struct.ssdm_int.5 = type { i1 }
 
 ; Function Attrs: noinline
-define void @apatb_Invert_Color_ir(%"class.hls::stream"* %in_data, %"class.hls::stream"* %out_data, i32 %a) local_unnamed_addr #0 {
+define void @apatb_Invert_Color_ir(%"class.hls::stream"* %in_data, %"class.hls::stream"* %out_data) local_unnamed_addr #0 {
 entry:
   %in_data_copy = alloca %"class.hls::stream", align 512
   %out_data_copy = alloca %"class.hls::stream", align 512
   call fastcc void @copy_in(%"class.hls::stream"* %in_data, %"class.hls::stream"* nonnull align 512 %in_data_copy, %"class.hls::stream"* %out_data, %"class.hls::stream"* nonnull align 512 %out_data_copy)
-  call void @apatb_Invert_Color_hw(%"class.hls::stream"* %in_data_copy, %"class.hls::stream"* %out_data_copy, i32 %a)
+  call void @apatb_Invert_Color_hw(%"class.hls::stream"* %in_data_copy, %"class.hls::stream"* %out_data_copy)
   call fastcc void @copy_out(%"class.hls::stream"* %in_data, %"class.hls::stream"* nonnull align 512 %in_data_copy, %"class.hls::stream"* %out_data, %"class.hls::stream"* nonnull align 512 %out_data_copy)
   ret void
 }
@@ -633,17 +633,17 @@ entry:
   ret void
 }
 
-declare void @apatb_Invert_Color_hw(%"class.hls::stream"*, %"class.hls::stream"*, i32)
+declare void @apatb_Invert_Color_hw(%"class.hls::stream"*, %"class.hls::stream"*)
 
-define void @Invert_Color_hw_stub_wrapper(%"class.hls::stream"*, %"class.hls::stream"*, i32) #6 {
+define void @Invert_Color_hw_stub_wrapper(%"class.hls::stream"*, %"class.hls::stream"*) #6 {
 entry:
   call void @copy_out(%"class.hls::stream"* null, %"class.hls::stream"* %0, %"class.hls::stream"* null, %"class.hls::stream"* %1)
-  call void @Invert_Color_hw_stub(%"class.hls::stream"* %0, %"class.hls::stream"* %1, i32 %2)
+  call void @Invert_Color_hw_stub(%"class.hls::stream"* %0, %"class.hls::stream"* %1)
   call void @copy_in(%"class.hls::stream"* null, %"class.hls::stream"* %0, %"class.hls::stream"* null, %"class.hls::stream"* %1)
   ret void
 }
 
-declare void @Invert_Color_hw_stub(%"class.hls::stream"*, %"class.hls::stream"*, i32)
+declare void @Invert_Color_hw_stub(%"class.hls::stream"*, %"class.hls::stream"*)
 
 declare i1 @fpga_fifo_not_empty_12(i8*)
 

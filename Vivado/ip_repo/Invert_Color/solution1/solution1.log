@@ -953,3 +953,783 @@ INFO: [HLS 200-1510] Running: export_design -rtl verilog -format ip_catalog
 INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
 INFO: [HLS 200-802] Generated output file Invert_Color/solution1/impl/export.zip
 INFO: [HLS 200-111] Finished Command export_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 6.886 seconds; current allocated memory: 180.310 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog 
+INFO: [HLS 200-1510] Running: set_directive_top -name Invert_Color Invert_Color 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.051 seconds; current allocated memory: 172.078 MB.
+INFO: [HLS 200-10] Analyzing design file 'Invert_Color/invert.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 3.379 seconds; current allocated memory: 173.370 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:283:50)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:286:25)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:285:67)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:285:36)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:284:39)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:284:23)
+INFO: [HLS 214-131] Inlining function 'ap_range_ref<24, false>::ap_range_ref(ap_int_base<24, false>*, int, int)' into 'ap_int_base<24, false>::range(int, int)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:899:12)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::range(int, int)' into 'ap_int_base<24, false>::operator()(int, int)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:936:18)
+INFO: [HLS 214-131] Inlining function 'ap_range_ref<24, false>::get() const' into 'ap_int_base<8, true>::ap_int_base<24, false>(ap_range_ref<24, false> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:358:20)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, true>::ap_int_base<24, false>(ap_range_ref<24, false> const&)' into 'ap_int<8>::ap_int<24, false>(ap_range_ref<24, false> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int.h:98:91)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::operator()(int, int)' into 'channels::channels(ap_uint<24>)' (Invert_Color/invert.cpp:20:10)
+INFO: [HLS 214-131] Inlining function 'ap_int<8>::ap_int<24, false>(ap_range_ref<24, false> const&)' into 'channels::channels(ap_uint<24>)' (Invert_Color/invert.cpp:20:40)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::operator()(int, int)' into 'channels::channels(ap_uint<24>)' (Invert_Color/invert.cpp:20:43)
+INFO: [HLS 214-131] Inlining function 'ap_int<8>::ap_int<24, false>(ap_range_ref<24, false> const&)' into 'channels::channels(ap_uint<24>)' (Invert_Color/invert.cpp:20:23)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::operator()(int, int)' into 'channels::channels(ap_uint<24>)' (Invert_Color/invert.cpp:20:26)
+INFO: [HLS 214-131] Inlining function 'ap_int<8>::ap_int<24, false>(ap_range_ref<24, false> const&)' into 'channels::channels(ap_uint<24>)' (Invert_Color/invert.cpp:20:7)
+INFO: [HLS 214-131] Inlining function 'af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::af_range_ref(ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>*, int, int)' into 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::range(int, int)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_fixed_base.h:1591:12)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::range(int, int)' into 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::range()' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_fixed_base.h:1621:18)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0>::operator!() const' into 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>& ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::operator=<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0>(ap_fixed_base<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_fixed_base.h:698:9)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>& ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::operator=<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0>(ap_fixed_base<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0> const&)' into 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::ap_fixed_base<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0>(ap_fixed_base<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_fixed_base.h:431:5)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::ap_fixed_base<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0>(ap_fixed_base<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0> const&)' into 'ap_ufixed<8, 0, (ap_q_mode)0, (ap_o_mode)0, 0>::ap_ufixed<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0>(ap_fixed_base<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_fixed.h:239:9)
+INFO: [HLS 214-131] Inlining function 'ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::ap_concat_ref(af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>&, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>&)' into 'ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> > af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::operator,<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>(af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_fixed_ref.h:539:12)
+INFO: [HLS 214-131] Inlining function 'ap_concat_ref<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::ap_concat_ref(ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >&, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>&)' into 'ap_concat_ref<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> > ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::operator,<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>(af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h:255:12)
+INFO: [HLS 214-131] Inlining function 'af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::length() const' into 'ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::length() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h:329:74)
+INFO: [HLS 214-131] Inlining function 'af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::length() const' into 'ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::length() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h:329:90)
+INFO: [HLS 214-131] Inlining function 'af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::get() const' into 'ap_int_base<8, false>::ap_int_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>(af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:403:20)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<16, false>::ap_int_base(int)' into 'ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::get() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h:305:32)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, false>::ap_int_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>(af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> const&)' into 'ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::get() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h:309:32)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, false>::ap_int_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>(af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> const&)' into 'ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::get() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h:308:32)
+INFO: [HLS 214-131] Inlining function 'af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::length() const' into 'ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::get() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h:307:23)
+INFO: [HLS 214-131] Inlining function 'af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::length() const' into 'ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::get() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h:306:23)
+INFO: [HLS 214-131] Inlining function 'ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::get() const' into 'ap_int_base<16, false>::ap_int_base<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >(ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> > const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:370:19)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::ap_int_base(int)' into 'ap_concat_ref<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::get() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h:305:32)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<16, false>::ap_int_base<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >(ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> > const&)' into 'ap_concat_ref<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::get() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h:309:32)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, false>::ap_int_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>(af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> const&)' into 'ap_concat_ref<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::get() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h:308:32)
+INFO: [HLS 214-131] Inlining function 'af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::length() const' into 'ap_concat_ref<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::get() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h:307:23)
+INFO: [HLS 214-131] Inlining function 'ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::length() const' into 'ap_concat_ref<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::get() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h:306:23)
+INFO: [HLS 214-131] Inlining function 'ap_concat_ref<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::get() const' into 'ap_int_base<24, false>::ap_int_base<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >(ap_concat_ref<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> > const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:370:19)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::ap_int_base<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >(ap_concat_ref<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> > const&)' into 'ap_uint<24>::ap_uint<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >(ap_concat_ref<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> > const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int.h:244:9)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:304:51)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:307:26)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:306:68)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:306:37)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:305:40)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:305:24)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:34:10)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:55:11)
+INFO: [HLS 214-131] Inlining function 'ap_uint<24>::ap_uint<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >(ap_concat_ref<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> > const&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:53:18)
+INFO: [HLS 214-131] Inlining function 'ap_concat_ref<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> > ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::operator,<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>(af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> const&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:53:45)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::range()' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:53:52)
+INFO: [HLS 214-131] Inlining function 'ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> > af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::operator,<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>(af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> const&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:53:31)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::range()' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:53:38)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::range()' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:53:24)
+INFO: [HLS 214-131] Inlining function 'ap_ufixed<8, 0, (ap_q_mode)0, (ap_o_mode)0, 0>::ap_ufixed<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0>(ap_fixed_base<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0> const&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:45:8)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::operator~() const' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:45:8)
+INFO: [HLS 214-131] Inlining function 'ap_ufixed<8, 0, (ap_q_mode)0, (ap_o_mode)0, 0>::ap_ufixed<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0>(ap_fixed_base<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0> const&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:44:8)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::operator~() const' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:44:8)
+INFO: [HLS 214-131] Inlining function 'ap_ufixed<8, 0, (ap_q_mode)0, (ap_o_mode)0, 0>::ap_ufixed<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0>(ap_fixed_base<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0> const&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:43:8)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::operator~() const' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:43:8)
+INFO: [HLS 214-131] Inlining function 'af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>& af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::operator=<8, true>(ap_int_base<8, true> const&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:40:13)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::range()' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:40:6)
+INFO: [HLS 214-131] Inlining function 'af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>& af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::operator=<8, true>(ap_int_base<8, true> const&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:39:13)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::range()' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:39:6)
+INFO: [HLS 214-131] Inlining function 'af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>& af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::operator=<8, true>(ap_int_base<8, true> const&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:38:13)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::range()' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:38:6)
+INFO: [HLS 214-178] Inlining function 'channels::channels(ap_uint<24>)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:24:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 4.144 seconds; current allocated memory: 175.373 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.046 seconds; current allocated memory: 175.373 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.104 seconds; current allocated memory: 182.398 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.149 seconds; current allocated memory: 191.806 MB.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (Invert_Color/invert.cpp:57:1) in function 'Invert_Color'... converting 3 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.244 seconds; current allocated memory: 222.545 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.159 seconds; current allocated memory: 219.124 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'Invert_Color' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Invert_Color' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'Invert_Color'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, function 'Invert_Color'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.122 seconds; current allocated memory: 219.263 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.118 seconds; current allocated memory: 219.466 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Invert_Color' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/a' to 's_axilite & ap_none' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'Invert_Color' to 'ap_ctrl_none'.
+WARNING: [RTGEN 206-101] Cannot apply register mode option on port a. It is not an AXI-Stream interface.
+INFO: [RTGEN 206-100] Bundling port 'a' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Invert_Color'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.205 seconds; current allocated memory: 220.042 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.316 seconds; current allocated memory: 227.094 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for Invert_Color.
+INFO: [VLOG 209-307] Generating Verilog RTL for Invert_Color.
+INFO: [HLS 200-789] **** Estimated Fmax: 211.82 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 10.18 seconds; current allocated memory: 227.241 MB.
+INFO: [HLS 200-112] Total CPU user time: 5 seconds. Total CPU system time: 1 seconds. Total elapsed time: 12.269 seconds; peak allocated memory: 227.094 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog 
+INFO: [HLS 200-1510] Running: set_directive_top -name Invert_Color Invert_Color 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 172.078 MB.
+INFO: [HLS 200-10] Analyzing design file 'Invert_Color/invert.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 3.328 seconds; current allocated memory: 173.370 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:283:50)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:286:25)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:285:67)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:285:36)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:284:39)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:284:23)
+INFO: [HLS 214-131] Inlining function 'ap_range_ref<24, false>::ap_range_ref(ap_int_base<24, false>*, int, int)' into 'ap_int_base<24, false>::range(int, int)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:899:12)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::range(int, int)' into 'ap_int_base<24, false>::operator()(int, int)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:936:18)
+INFO: [HLS 214-131] Inlining function 'ap_range_ref<24, false>::get() const' into 'ap_int_base<8, true>::ap_int_base<24, false>(ap_range_ref<24, false> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:358:20)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, true>::ap_int_base<24, false>(ap_range_ref<24, false> const&)' into 'ap_int<8>::ap_int<24, false>(ap_range_ref<24, false> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int.h:98:91)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::operator()(int, int)' into 'channels::channels(ap_uint<24>)' (Invert_Color/invert.cpp:18:10)
+INFO: [HLS 214-131] Inlining function 'ap_int<8>::ap_int<24, false>(ap_range_ref<24, false> const&)' into 'channels::channels(ap_uint<24>)' (Invert_Color/invert.cpp:18:40)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::operator()(int, int)' into 'channels::channels(ap_uint<24>)' (Invert_Color/invert.cpp:18:43)
+INFO: [HLS 214-131] Inlining function 'ap_int<8>::ap_int<24, false>(ap_range_ref<24, false> const&)' into 'channels::channels(ap_uint<24>)' (Invert_Color/invert.cpp:18:23)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::operator()(int, int)' into 'channels::channels(ap_uint<24>)' (Invert_Color/invert.cpp:18:26)
+INFO: [HLS 214-131] Inlining function 'ap_int<8>::ap_int<24, false>(ap_range_ref<24, false> const&)' into 'channels::channels(ap_uint<24>)' (Invert_Color/invert.cpp:18:7)
+INFO: [HLS 214-131] Inlining function 'af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::af_range_ref(ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>*, int, int)' into 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::range(int, int)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_fixed_base.h:1591:12)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::range(int, int)' into 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::range()' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_fixed_base.h:1621:18)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0>::operator!() const' into 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>& ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::operator=<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0>(ap_fixed_base<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_fixed_base.h:698:9)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>& ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::operator=<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0>(ap_fixed_base<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0> const&)' into 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::ap_fixed_base<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0>(ap_fixed_base<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_fixed_base.h:431:5)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::ap_fixed_base<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0>(ap_fixed_base<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0> const&)' into 'ap_ufixed<8, 0, (ap_q_mode)0, (ap_o_mode)0, 0>::ap_ufixed<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0>(ap_fixed_base<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_fixed.h:239:9)
+INFO: [HLS 214-131] Inlining function 'ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::ap_concat_ref(af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>&, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>&)' into 'ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> > af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::operator,<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>(af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_fixed_ref.h:539:12)
+INFO: [HLS 214-131] Inlining function 'ap_concat_ref<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::ap_concat_ref(ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >&, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>&)' into 'ap_concat_ref<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> > ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::operator,<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>(af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h:255:12)
+INFO: [HLS 214-131] Inlining function 'af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::length() const' into 'ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::length() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h:329:74)
+INFO: [HLS 214-131] Inlining function 'af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::length() const' into 'ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::length() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h:329:90)
+INFO: [HLS 214-131] Inlining function 'af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::get() const' into 'ap_int_base<8, false>::ap_int_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>(af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:403:20)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<16, false>::ap_int_base(int)' into 'ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::get() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h:305:32)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, false>::ap_int_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>(af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> const&)' into 'ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::get() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h:309:32)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, false>::ap_int_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>(af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> const&)' into 'ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::get() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h:308:32)
+INFO: [HLS 214-131] Inlining function 'af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::length() const' into 'ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::get() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h:307:23)
+INFO: [HLS 214-131] Inlining function 'af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::length() const' into 'ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::get() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h:306:23)
+INFO: [HLS 214-131] Inlining function 'ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::get() const' into 'ap_int_base<16, false>::ap_int_base<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >(ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> > const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:370:19)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::ap_int_base(int)' into 'ap_concat_ref<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::get() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h:305:32)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<16, false>::ap_int_base<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >(ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> > const&)' into 'ap_concat_ref<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::get() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h:309:32)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, false>::ap_int_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>(af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> const&)' into 'ap_concat_ref<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::get() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h:308:32)
+INFO: [HLS 214-131] Inlining function 'af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::length() const' into 'ap_concat_ref<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::get() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h:307:23)
+INFO: [HLS 214-131] Inlining function 'ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::length() const' into 'ap_concat_ref<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::get() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h:306:23)
+INFO: [HLS 214-131] Inlining function 'ap_concat_ref<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::get() const' into 'ap_int_base<24, false>::ap_int_base<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >(ap_concat_ref<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> > const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:370:19)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::ap_int_base<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >(ap_concat_ref<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> > const&)' into 'ap_uint<24>::ap_uint<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >(ap_concat_ref<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> > const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int.h:244:9)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:304:51)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:307:26)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:306:68)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:306:37)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:305:40)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:305:24)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:32:10)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:53:11)
+INFO: [HLS 214-131] Inlining function 'ap_uint<24>::ap_uint<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >(ap_concat_ref<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> > const&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:51:18)
+INFO: [HLS 214-131] Inlining function 'ap_concat_ref<16, ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> > ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> >::operator,<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>(af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> const&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:51:45)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::range()' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:51:52)
+INFO: [HLS 214-131] Inlining function 'ap_concat_ref<8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>, 8, af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> > af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::operator,<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>(af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0> const&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:51:31)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::range()' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:51:38)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::range()' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:51:24)
+INFO: [HLS 214-131] Inlining function 'ap_ufixed<8, 0, (ap_q_mode)0, (ap_o_mode)0, 0>::ap_ufixed<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0>(ap_fixed_base<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0> const&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:43:8)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::operator~() const' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:43:8)
+INFO: [HLS 214-131] Inlining function 'ap_ufixed<8, 0, (ap_q_mode)0, (ap_o_mode)0, 0>::ap_ufixed<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0>(ap_fixed_base<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0> const&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:42:8)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::operator~() const' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:42:8)
+INFO: [HLS 214-131] Inlining function 'ap_ufixed<8, 0, (ap_q_mode)0, (ap_o_mode)0, 0>::ap_ufixed<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0>(ap_fixed_base<8, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0> const&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:41:8)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::operator~() const' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:41:8)
+INFO: [HLS 214-131] Inlining function 'af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>& af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::operator=<8, true>(ap_int_base<8, true> const&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:38:13)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::range()' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:38:6)
+INFO: [HLS 214-131] Inlining function 'af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>& af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::operator=<8, true>(ap_int_base<8, true> const&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:37:13)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::range()' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:37:6)
+INFO: [HLS 214-131] Inlining function 'af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>& af_range_ref<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::operator=<8, true>(ap_int_base<8, true> const&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:36:13)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<8, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::range()' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:36:6)
+INFO: [HLS 214-178] Inlining function 'channels::channels(ap_uint<24>)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:22:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 4.112 seconds; current allocated memory: 175.402 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 175.403 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.099 seconds; current allocated memory: 182.427 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.151 seconds; current allocated memory: 191.835 MB.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (Invert_Color/invert.cpp:55:1) in function 'Invert_Color'... converting 3 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.231 seconds; current allocated memory: 222.575 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.144 seconds; current allocated memory: 219.124 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'Invert_Color' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Invert_Color' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'Invert_Color'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, function 'Invert_Color'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.115 seconds; current allocated memory: 219.264 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.098 seconds; current allocated memory: 219.466 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Invert_Color' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/a' to 's_axilite & ap_none' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'Invert_Color' to 'ap_ctrl_none'.
+WARNING: [RTGEN 206-101] Cannot apply register mode option on port a. It is not an AXI-Stream interface.
+INFO: [RTGEN 206-100] Bundling port 'a' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Invert_Color'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.205 seconds; current allocated memory: 220.042 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.178 seconds; current allocated memory: 227.094 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for Invert_Color.
+INFO: [VLOG 209-307] Generating Verilog RTL for Invert_Color.
+INFO: [HLS 200-789] **** Estimated Fmax: 211.82 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 9.888 seconds; current allocated memory: 227.241 MB.
+INFO: [HLS 200-112] Total CPU user time: 4 seconds. Total CPU system time: 1 seconds. Total elapsed time: 11.839 seconds; peak allocated memory: 227.094 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog 
+INFO: [HLS 200-1510] Running: set_directive_top -name Invert_Color Invert_Color 
+INFO: [HLS 200-1510] Running: export_design -rtl verilog -format ip_catalog 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+INFO: [HLS 200-802] Generated output file Invert_Color/solution1/impl/export.zip
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 6.772 seconds; current allocated memory: 180.434 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog 
+INFO: [HLS 200-1510] Running: set_directive_top -name Invert_Color Invert_Color 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.051 seconds; current allocated memory: 172.031 MB.
+INFO: [HLS 200-10] Analyzing design file 'Invert_Color/invert.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 3.296 seconds; current allocated memory: 173.369 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:283:50)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:286:25)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:285:67)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:285:36)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:284:39)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:284:23)
+INFO: [HLS 214-131] Inlining function 'ap_uint<24>::ap_uint<24, false>(ap_int_base<24, false> const&)' into 'ap_int_base<24, false>::operator~() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:761:12)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:304:51)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:307:26)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:306:68)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:306:37)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:305:40)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:305:24)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:32:10)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:35:11)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::operator~() const' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, int)' (Invert_Color/invert.cpp:34:19)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 3.438 seconds; current allocated memory: 174.771 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.049 seconds; current allocated memory: 174.772 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 179.909 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.118 seconds; current allocated memory: 186.871 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.187 seconds; current allocated memory: 213.824 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 208.986 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'Invert_Color' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Invert_Color' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'Invert_Color'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, function 'Invert_Color'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 209.134 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.087 seconds; current allocated memory: 209.291 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Invert_Color' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/a' to 's_axilite & ap_none' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'Invert_Color' to 'ap_ctrl_none'.
+WARNING: [RTGEN 206-101] Cannot apply register mode option on port a. It is not an AXI-Stream interface.
+INFO: [RTGEN 206-100] Bundling port 'a' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Invert_Color'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.166 seconds; current allocated memory: 209.828 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.135 seconds; current allocated memory: 217.194 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for Invert_Color.
+INFO: [VLOG 209-307] Generating Verilog RTL for Invert_Color.
+INFO: [HLS 200-789] **** Estimated Fmax: 221.88 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 8.962 seconds; current allocated memory: 217.341 MB.
+INFO: [HLS 200-112] Total CPU user time: 5 seconds. Total CPU system time: 1 seconds. Total elapsed time: 11.344 seconds; peak allocated memory: 217.194 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog 
+INFO: [HLS 200-1510] Running: set_directive_top -name Invert_Color Invert_Color 
+INFO: [HLS 200-1510] Running: export_design -rtl verilog -format ip_catalog 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+INFO: [HLS 200-802] Generated output file Invert_Color/solution1/impl/export.zip
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 7.36 seconds; current allocated memory: 180.433 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog 
+INFO: [HLS 200-1510] Running: set_directive_top -name Invert_Color Invert_Color 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.048 seconds; current allocated memory: 172.031 MB.
+INFO: [HLS 200-10] Analyzing design file 'Invert_Color/invert.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 2.879 seconds; current allocated memory: 173.353 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:283:50)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:286:25)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:285:67)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:285:36)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:284:39)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:284:23)
+INFO: [HLS 214-131] Inlining function 'ap_uint<24>::ap_uint<24, false>(ap_int_base<24, false> const&)' into 'ap_int_base<24, false>::operator~() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:761:12)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:304:51)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:307:26)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:306:68)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:306:37)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:305:40)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:305:24)
+INFO: [HLS 214-131] Inlining function 'ap_uint<1>::ap_uint(int)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&)' (Invert_Color/invert.cpp:12:17)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&)' (Invert_Color/invert.cpp:16:12)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::operator~() const' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&)' (Invert_Color/invert.cpp:15:10)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&)' (Invert_Color/invert.cpp:14:11)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<1, false>::operator!() const' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&)' (Invert_Color/invert.cpp:13:25)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 3.078 seconds; current allocated memory: 174.804 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.042 seconds; current allocated memory: 174.805 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.085 seconds; current allocated memory: 179.991 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.112 seconds; current allocated memory: 186.896 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' in function 'Invert_Color' automatically.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.177 seconds; current allocated memory: 213.910 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.111 seconds; current allocated memory: 209.171 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'Invert_Color' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Invert_Color' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.099 seconds; current allocated memory: 209.311 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.083 seconds; current allocated memory: 209.465 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Invert_Color' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'Invert_Color' to 'ap_ctrl_none'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Invert_Color'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.179 seconds; current allocated memory: 209.877 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.943 seconds; current allocated memory: 216.571 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for Invert_Color.
+INFO: [VLOG 209-307] Generating Verilog RTL for Invert_Color.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 967.12 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 7.943 seconds; current allocated memory: 216.717 MB.
+INFO: [HLS 200-112] Total CPU user time: 4 seconds. Total CPU system time: 1 seconds. Total elapsed time: 9.789 seconds; peak allocated memory: 216.571 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog 
+INFO: [HLS 200-1510] Running: set_directive_top -name Invert_Color Invert_Color 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.057 seconds; current allocated memory: 172.037 MB.
+INFO: [HLS 200-10] Analyzing design file 'Invert_Color/invert.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 2.907 seconds; current allocated memory: 173.353 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:283:50)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:286:25)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:285:67)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:285:36)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:284:39)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:284:23)
+INFO: [HLS 214-131] Inlining function 'ap_uint<24>::ap_uint<24, false>(ap_int_base<24, false> const&)' into 'ap_int_base<24, false>::operator~() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:761:12)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:304:51)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:307:26)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:306:68)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:306:37)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:305:40)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:305:24)
+INFO: [HLS 214-131] Inlining function 'ap_uint<1>::ap_uint(int)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&)' (Invert_Color/invert.cpp:12:17)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&)' (Invert_Color/invert.cpp:16:12)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::operator~() const' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&)' (Invert_Color/invert.cpp:15:10)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&)' (Invert_Color/invert.cpp:14:11)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<1, false>::operator!() const' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&)' (Invert_Color/invert.cpp:13:25)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 3.062 seconds; current allocated memory: 174.834 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.044 seconds; current allocated memory: 174.834 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.081 seconds; current allocated memory: 180.020 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.105 seconds; current allocated memory: 186.925 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' in function 'Invert_Color' automatically.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.168 seconds; current allocated memory: 213.939 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.106 seconds; current allocated memory: 209.170 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'Invert_Color' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Invert_Color' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.098 seconds; current allocated memory: 209.311 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.077 seconds; current allocated memory: 209.465 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Invert_Color' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'Invert_Color' to 'ap_ctrl_none'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Invert_Color'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.161 seconds; current allocated memory: 209.877 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.902 seconds; current allocated memory: 216.571 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for Invert_Color.
+INFO: [VLOG 209-307] Generating Verilog RTL for Invert_Color.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 967.12 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 7.869 seconds; current allocated memory: 216.717 MB.
+INFO: [HLS 200-112] Total CPU user time: 4 seconds. Total CPU system time: 1 seconds. Total elapsed time: 9.59 seconds; peak allocated memory: 216.571 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog 
+INFO: [HLS 200-1510] Running: set_directive_top -name Invert_Color Invert_Color 
+INFO: [HLS 200-1510] Running: export_design -rtl verilog -format ip_catalog 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+INFO: [HLS 200-802] Generated output file Invert_Color/solution1/impl/export.zip
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 6.296 seconds; current allocated memory: 179.971 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog 
+INFO: [HLS 200-1510] Running: set_directive_top -name Invert_Color Invert_Color 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 172.078 MB.
+INFO: [HLS 200-10] Analyzing design file 'Invert_Color/invert.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 3.259 seconds; current allocated memory: 173.386 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:283:50)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:286:25)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:285:67)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:285:36)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:284:39)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:284:23)
+INFO: [HLS 214-131] Inlining function 'ap_uint<24>::ap_uint<24, false>(ap_int_base<24, false> const&)' into 'ap_int_base<24, false>::operator~() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:761:12)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:304:51)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:307:26)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:306:68)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:306:37)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:305:40)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:305:24)
+INFO: [HLS 214-131] Inlining function 'ap_uint<1>::ap_uint(int)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, bool)' (Invert_Color/invert.cpp:14:17)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, bool)' (Invert_Color/invert.cpp:19:12)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::operator~() const' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, bool)' (Invert_Color/invert.cpp:18:11)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, bool)' (Invert_Color/invert.cpp:16:11)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<1, false>::operator!() const' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, bool)' (Invert_Color/invert.cpp:15:25)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 3.343 seconds; current allocated memory: 174.837 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.047 seconds; current allocated memory: 174.838 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.093 seconds; current allocated memory: 179.998 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.112 seconds; current allocated memory: 186.906 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_15_1' in function 'Invert_Color' automatically.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.203 seconds; current allocated memory: 213.924 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.114 seconds; current allocated memory: 209.227 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'Invert_Color' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Invert_Color' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_15_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_15_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.099 seconds; current allocated memory: 209.378 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.089 seconds; current allocated memory: 209.535 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Invert_Color' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/filter' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'Invert_Color' to 'ap_ctrl_none'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Invert_Color'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.161 seconds; current allocated memory: 209.974 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.111 seconds; current allocated memory: 216.784 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for Invert_Color.
+INFO: [VLOG 209-307] Generating Verilog RTL for Invert_Color.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 967.12 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 8.812 seconds; current allocated memory: 216.900 MB.
+INFO: [HLS 200-112] Total CPU user time: 4 seconds. Total CPU system time: 1 seconds. Total elapsed time: 11.067 seconds; peak allocated memory: 216.784 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog 
+INFO: [HLS 200-1510] Running: set_directive_top -name Invert_Color Invert_Color 
+INFO: [HLS 200-1510] Running: export_design -rtl verilog -format ip_catalog 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+INFO: [HLS 200-802] Generated output file Invert_Color/solution1/impl/export.zip
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 6.697 seconds; current allocated memory: 180.019 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog 
+INFO: [HLS 200-1510] Running: set_directive_top -name Invert_Color Invert_Color 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.051 seconds; current allocated memory: 172.061 MB.
+INFO: [HLS 200-10] Analyzing design file 'Invert_Color/invert.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 3.256 seconds; current allocated memory: 173.338 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:283:50)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:286:25)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:285:67)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:285:36)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:284:39)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:284:23)
+INFO: [HLS 214-131] Inlining function 'ap_uint<24>::ap_uint<24, false>(ap_int_base<24, false> const&)' into 'ap_int_base<24, false>::operator~() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:761:12)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:304:51)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:307:26)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:306:68)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:306:37)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:305:40)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:305:24)
+INFO: [HLS 214-131] Inlining function 'ap_uint<1>::ap_uint(int)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&)' (Invert_Color/invert.cpp:12:17)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::write(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul> const&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&)' (Invert_Color/invert.cpp:16:12)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::operator~() const' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&)' (Invert_Color/invert.cpp:15:10)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>::read(hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>&)' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&)' (Invert_Color/invert.cpp:14:11)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<1, false>::operator!() const' into 'Invert_Color(hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&, hls::stream<hls::axis<ap_uint<24>, 1ul, 0ul, 0ul>, 0>&)' (Invert_Color/invert.cpp:13:25)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 3.506 seconds; current allocated memory: 174.834 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.052 seconds; current allocated memory: 174.835 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.097 seconds; current allocated memory: 180.005 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.117 seconds; current allocated memory: 186.910 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' in function 'Invert_Color' automatically.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.194 seconds; current allocated memory: 213.923 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.122 seconds; current allocated memory: 209.155 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'Invert_Color' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Invert_Color' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.101 seconds; current allocated memory: 209.296 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.085 seconds; current allocated memory: 209.492 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Invert_Color' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/in_data_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Invert_Color/out_data_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'Invert_Color' to 'ap_ctrl_none'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Invert_Color'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.16 seconds; current allocated memory: 209.862 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.151 seconds; current allocated memory: 216.494 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for Invert_Color.
+INFO: [VLOG 209-307] Generating Verilog RTL for Invert_Color.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 967.12 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 9.005 seconds; current allocated memory: 216.669 MB.
+INFO: [HLS 200-112] Total CPU user time: 4 seconds. Total CPU system time: 1 seconds. Total elapsed time: 11.135 seconds; peak allocated memory: 216.494 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog 
+INFO: [HLS 200-1510] Running: set_directive_top -name Invert_Color Invert_Color 
+INFO: [HLS 200-1510] Running: export_design -rtl verilog -format ip_catalog 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+INFO: [HLS 200-802] Generated output file Invert_Color/solution1/impl/export.zip
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 6.661 seconds; current allocated memory: 179.940 MB.

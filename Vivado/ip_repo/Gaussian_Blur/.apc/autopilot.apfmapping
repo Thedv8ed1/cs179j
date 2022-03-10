@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="Homer_grey2.txt" path="C:\PYNQ\PYNQ-master\PYNQ-master\boards\ip\Gaussian_Blur\Homer_grey2.txt"/>
+    <originFiles name="blur.cpp" path="C:\PYNQ\PYNQ-master\PYNQ-master\boards\ip\Gaussian_Blur\blur.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="test_bench.cpp" path="C:\PYNQ\PYNQ-master\PYNQ-master\boards\ip\Gaussian_Blur\test_bench.cpp"/>
+    <originFiles name="blur.cpp" path="C:\PYNQ\PYNQ-master\PYNQ-master\boards\ip\Gaussian_Blur\blur.cpp"/>
+    <originFiles name="Homer_blurred.txt" path="C:\PYNQ\PYNQ-master\PYNQ-master\boards\ip\Gaussian_Blur\Homer_blurred.txt"/>
+    <originFiles name="Homer_Grey2.txt" path="C:\PYNQ\PYNQ-master\PYNQ-master\boards\ip\Gaussian_Blur\Homer_Grey2.txt"/>
+    <originFiles name="Homer_Grey1.txt" path="C:\PYNQ\PYNQ-master\PYNQ-master\boards\ip\Gaussian_Blur\Homer_Grey1.txt"/>
+    <originFiles name="Homer_Grey.txt" path="C:\PYNQ\PYNQ-master\PYNQ-master\boards\ip\Gaussian_Blur\Homer_Grey.txt"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

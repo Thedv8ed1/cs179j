@@ -1,93 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1643395688980">
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1645642034023">
   <ports id="1" name="in_data_V_data_V" type="PortType" originalName="in_data" coreId="0" bitwidth="24">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="2" name="in_data_V_keep_V" type="PortType" originalName="in_data" coreId="1383248464" bitwidth="3">
+  <ports id="2" name="in_data_V_keep_V" type="PortType" originalName="in_data" coreId="1" bitwidth="3">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="3" name="in_data_V_strb_V" type="PortType" originalName="in_data" coreId="1927557680" bitwidth="3">
+  <ports id="3" name="in_data_V_strb_V" type="PortType" originalName="in_data" coreId="4294967292" bitwidth="3">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="4" name="in_data_V_user_V" type="PortType" originalName="in_data" coreId="1927557680" bitwidth="1">
+  <ports id="4" name="in_data_V_user_V" type="PortType" originalName="in_data" coreId="4" bitwidth="1">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="5" name="in_data_V_last_V" type="PortType" originalName="in_data" coreId="4294967292" bitwidth="1">
+  <ports id="5" name="in_data_V_last_V" type="PortType" originalName="in_data" coreId="2889418145" bitwidth="1">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="6" name="out_data_V_data_V" type="PortType" originalName="out_data" coreId="1631206003" bitwidth="24" direction="DirOut">
+  <ports id="6" name="out_data_V_data_V" type="PortType" originalName="out_data" coreId="938761123" bitwidth="24" direction="DirOut">
     <dataInputObjs>write</dataInputObjs>
   </ports>
-  <ports id="7" name="out_data_V_keep_V" type="PortType" originalName="out_data" coreId="539437350" bitwidth="3" direction="DirOut">
+  <ports id="7" name="out_data_V_keep_V" type="PortType" originalName="out_data" coreId="934048480" bitwidth="3" direction="DirOut">
     <dataInputObjs>write</dataInputObjs>
   </ports>
-  <ports id="8" name="out_data_V_strb_V" type="PortType" originalName="out_data" coreId="539766825" bitwidth="3" direction="DirOut">
+  <ports id="8" name="out_data_V_strb_V" type="PortType" originalName="out_data" coreId="4294967295" bitwidth="3" direction="DirOut">
     <dataInputObjs>write</dataInputObjs>
   </ports>
-  <ports id="9" name="out_data_V_user_V" type="PortType" originalName="out_data" coreId="1143961188" bitwidth="1" direction="DirOut">
+  <ports id="9" name="out_data_V_user_V" type="PortType" originalName="out_data" coreId="8677" bitwidth="1" direction="DirOut">
     <dataInputObjs>write</dataInputObjs>
   </ports>
-  <ports id="10" name="out_data_V_last_V" type="PortType" originalName="out_data" coreId="742288501" bitwidth="1" direction="DirOut">
+  <ports id="10" name="out_data_V_last_V" type="PortType" originalName="out_data" coreId="936319904" bitwidth="1" direction="DirOut">
     <dataInputObjs>write</dataInputObjs>
   </ports>
-  <ports id="11" name="a" type="PortType" originalName="a" coreId="1853187616" bitwidth="32">
-    <dataOutputObjs>read</dataOutputObjs>
-  </ports>
-  <edges id="59" source_obj="//@ports.10" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
-  <edges id="62" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
-  <edges id="63" source_obj="//@ports.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
-  <edges id="64" source_obj="//@ports.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
-  <edges id="65" source_obj="//@ports.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
-  <edges id="66" source_obj="//@ports.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
-  <edges id="67" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
-  <edges id="68" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
-  <edges id="69" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
-  <edges id="70" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="71" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.6"/>
-  <edges id="72" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
-  <edges id="75" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.8"/>
-  <edges id="81" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.9"/>
-  <edges id="86" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.10"/>
-  <edges id="89" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.11"/>
-  <edges id="92" source_obj="//@regions.0/@basic_blocks.0/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.12"/>
-  <edges id="94" source_obj="//@regions.0/@basic_blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.13"/>
-  <edges id="96" source_obj="//@regions.0/@basic_blocks.0/@node_objs.10" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.14"/>
-  <edges id="97" source_obj="//@regions.0/@basic_blocks.0/@node_objs.13" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.14"/>
-  <edges id="98" source_obj="//@regions.0/@basic_blocks.0/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.14"/>
-  <edges id="99" source_obj="//@regions.0/@basic_blocks.0/@node_objs.10" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.15"/>
-  <edges id="100" source_obj="//@regions.0/@basic_blocks.0/@node_objs.12" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.15"/>
-  <edges id="101" source_obj="//@regions.0/@basic_blocks.0/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.15"/>
-  <edges id="102" source_obj="//@regions.0/@basic_blocks.0/@node_objs.10" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.16"/>
-  <edges id="103" source_obj="//@regions.0/@basic_blocks.0/@node_objs.11" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.16"/>
-  <edges id="104" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.16"/>
-  <edges id="105" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.17"/>
-  <edges id="106" source_obj="//@regions.0/@basic_blocks.0/@node_objs.17" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.18"/>
-  <edges id="108" source_obj="//@regions.0/@basic_blocks.0/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.19"/>
-  <edges id="110" source_obj="//@regions.0/@basic_blocks.0/@node_objs.18" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.19"/>
-  <edges id="113" source_obj="//@regions.0/@basic_blocks.0/@node_objs.14" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.20"/>
-  <edges id="114" source_obj="//@regions.0/@basic_blocks.0/@node_objs.15" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.20"/>
-  <edges id="115" source_obj="//@regions.0/@basic_blocks.0/@node_objs.16" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.20"/>
-  <edges id="118" source_obj="//@regions.0/@basic_blocks.0/@node_objs.21" sink_obj="//@ports.5"/>
-  <edges id="119" source_obj="//@regions.0/@basic_blocks.0/@node_objs.21" sink_obj="//@ports.6"/>
-  <edges id="120" source_obj="//@regions.0/@basic_blocks.0/@node_objs.21" sink_obj="//@ports.7"/>
-  <edges id="121" source_obj="//@regions.0/@basic_blocks.0/@node_objs.21" sink_obj="//@ports.8"/>
-  <edges id="122" source_obj="//@regions.0/@basic_blocks.0/@node_objs.21" sink_obj="//@ports.9"/>
-  <edges id="123" source_obj="//@regions.0/@basic_blocks.0/@node_objs.20" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.21"/>
-  <edges id="124" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.21"/>
-  <edges id="125" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.21"/>
-  <edges id="126" source_obj="//@regions.0/@basic_blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.21"/>
-  <edges id="127" source_obj="//@regions.0/@basic_blocks.0/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.21"/>
-  <edges id="128" source_obj="//@regions.0/@basic_blocks.0/@node_objs.19" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.22"/>
-  <edges id="129" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.22"/>
-  <edges id="275" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.17" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.22"/>
-  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="152" pipe_depth="3" RegionName="Invert_Color">
-    <basic_blocks id="56" name="Invert_Color" type="BlockType">
-      <node_objs xsi:type="cdfg:CdfgNode" id="32" name="a_read" originalName="a" coreName="s_axilite" implIndex="UNSUPPORTED" control="auto" coreId="114" bitwidth="32" opcode="read" nodeLatency="1" m_display="0" m_delay="1.0" m_topoIndex="1" m_clusterGroupNumber="-1">
-        <dataInputObjs>a</dataInputObjs>
-        <dataOutputObjs>icmp</dataOutputObjs>
-      </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="33" name="empty" lineNumber="283" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" fileDirectory=".." coreName="axis" implIndex="axi4stream" control="auto" opType="adapter" coreId="115" contextFuncName="read" bitwidth="32" opcode="read" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" linenumber="283" fileDirectory="C:\PYNQ\VITIS" functionName="read"/>
+  <edges id="41" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.0/@node_objs.0"/>
+  <edges id="44" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="45" source_obj="//@ports.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="46" source_obj="//@ports.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="47" source_obj="//@ports.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="48" source_obj="//@ports.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="49" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="50" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="51" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="52" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="53" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
+  <edges id="54" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.6"/>
+  <edges id="59" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@ports.5"/>
+  <edges id="60" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@ports.6"/>
+  <edges id="61" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@ports.7"/>
+  <edges id="62" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@ports.8"/>
+  <edges id="63" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@ports.9"/>
+  <edges id="64" source_obj="//@regions.0/@basic_blocks.0/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
+  <edges id="65" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
+  <edges id="66" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
+  <edges id="67" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
+  <edges id="68" source_obj="//@regions.0/@basic_blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
+  <edges id="69" source_obj="//@regions.0/@basic_blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.8"/>
+  <edges id="70" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.8"/>
+  <edges id="71" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.8"/>
+  <edges id="182" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0"/>
+  <edges id="183" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.1"/>
+  <edges id="184" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.0" is_back_edge="1"/>
+  <blocks id="26" name=".critedge" type="BlockType">
+    <controlOutputObjs>block_38</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="25" name="br_ln0" coreId="3753018913" opcode="br" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <controlInputObjs>block_38</controlInputObjs>
+    </node_objs>
+  </blocks>
+  <blocks id="40" name="block_40" type="BlockType">
+    <controlInputObjs>block_38</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="39" name="_ln18" lineNumber="18" fileName="Invert_Color/invert.cpp" fileDirectory=".." coreId="762495413" contextFuncName="Invert_Color" opcode="ret" nodeLabel="3.0" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Invert_Color/invert.cpp" linenumber="18" fileDirectory="C:\PYNQ\PYNQ-master\PYNQ-master\boards\ip" functionName="Invert_Color"/>
+    </node_objs>
+    <fileValidLineNumbers fileName="Invert_Color/invert.cpp">
+      <validLinenumbers>18</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="97" pipe_depth="2" RegionName="VITIS_LOOP_13_1">
+    <basic_blocks id="38" name="block_38" type="BlockType">
+      <controlInputObjs>.critedge</controlInputObjs>
+      <controlInputObjs>block_38</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>block_40</controlOutputObjs>
+      <controlOutputObjs>block_38</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="29" name="empty" lineNumber="283" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" fileDirectory=".." coreName="axis" implIndex="axi4stream" control="auto" opType="adapter" coreId="115" contextFuncName="read" bitwidth="32" opcode="read" nodeLabel="1.0" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" linenumber="283" fileDirectory="C:\PYNQ\PYNQ-master\PYNQ-master\boards\ip" functionName="read"/>
         <dataInputObjs>in_data_V_data_V</dataInputObjs>
         <dataInputObjs>in_data_V_keep_V</dataInputObjs>
         <dataInputObjs>in_data_V_strb_V</dataInputObjs>
@@ -99,128 +95,41 @@
         <dataOutputObjs>extractvalue</dataOutputObjs>
         <dataOutputObjs>extractvalue</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="34" name="curr_pixel_data_V_1" lineNumber="283" originalName="curr_pixel.data.V" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" fileDirectory=".." coreId="50" contextFuncName="read" bitwidth="24" opcode="extractvalue" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" linenumber="283" fileDirectory="C:\PYNQ\VITIS" functionName="read"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="30" name="p_data_V" lineNumber="283" originalName="p.data.V" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" fileDirectory=".." coreId="244360463" contextFuncName="read" bitwidth="24" opcode="extractvalue" nodeLabel="1.0" m_display="0" m_topoIndex="3" m_clusterGroupNumber="1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" linenumber="283" fileDirectory="C:\PYNQ\PYNQ-master\PYNQ-master\boards\ip" functionName="read"/>
         <dataInputObjs>read</dataInputObjs>
-        <dataOutputObjs>trunc</dataOutputObjs>
-        <dataOutputObjs>partselect</dataOutputObjs>
-        <dataOutputObjs>partselect</dataOutputObjs>
-      </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="35" name="tmp_i1_keep" lineNumber="283" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" fileDirectory=".." coreId="4294967292" contextFuncName="read" bitwidth="3" opcode="extractvalue" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" linenumber="283" fileDirectory="C:\PYNQ\VITIS" functionName="read"/>
-        <dataInputObjs>read</dataInputObjs>
-        <dataOutputObjs>write</dataOutputObjs>
-      </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="36" name="tmp_i1_strb" lineNumber="283" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" fileDirectory=".." coreId="1356013600" contextFuncName="read" bitwidth="3" opcode="extractvalue" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" linenumber="283" fileDirectory="C:\PYNQ\VITIS" functionName="read"/>
-        <dataInputObjs>read</dataInputObjs>
-        <dataOutputObjs>write</dataOutputObjs>
-      </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="37" name="tmp_i1_user" lineNumber="283" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" fileDirectory=".." coreId="1356013600" contextFuncName="read" bitwidth="1" opcode="extractvalue" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" linenumber="283" fileDirectory="C:\PYNQ\VITIS" functionName="read"/>
-        <dataInputObjs>read</dataInputObjs>
-        <dataOutputObjs>write</dataOutputObjs>
-      </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="38" name="curr_pixel_last_V" lineNumber="283" originalName="curr_pixel.last.V" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" fileDirectory=".." coreId="1356013600" contextFuncName="read" bitwidth="1" opcode="extractvalue" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" linenumber="283" fileDirectory="C:\PYNQ\VITIS" functionName="read"/>
-        <dataInputObjs>read</dataInputObjs>
-        <dataOutputObjs>select</dataOutputObjs>
-        <dataOutputObjs>write</dataOutputObjs>
-      </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="39" name="v_p1_V" lineNumber="674" originalName="v.p1.V" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h" fileDirectory=".." rtlName="v_p1_V_fu_133_p1" coreId="0" contextFuncName="get" bitwidth="8" opcode="trunc" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h" linenumber="674" fileDirectory="C:\PYNQ\VITIS" functionName="get"/>
-        <dataInputObjs>extractvalue</dataInputObjs>
         <dataOutputObjs>xor</dataOutputObjs>
-        <dataOutputObjs>select</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="40" name="v_p2_V" lineNumber="674" originalName="v.p2.V" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h" fileDirectory=".." rtlName="v_p2_V_reg_260" coreId="4294967292" contextFuncName="get" bitwidth="8" opcode="partselect" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h" linenumber="674" fileDirectory="C:\PYNQ\VITIS" functionName="get"/>
-        <dataInputObjs>extractvalue</dataInputObjs>
-        <dataOutputObjs>xor</dataOutputObjs>
-        <dataOutputObjs>select</dataOutputObjs>
-        <constName>empty</constName>
-      </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="41" name="v_p3_V" lineNumber="674" originalName="v.p3.V" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h" fileDirectory=".." rtlName="v_p3_V_reg_266" coreId="1" contextFuncName="get" bitwidth="8" opcode="partselect" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h" linenumber="674" fileDirectory="C:\PYNQ\VITIS" functionName="get"/>
-        <dataInputObjs>extractvalue</dataInputObjs>
-        <dataOutputObjs>xor</dataOutputObjs>
-        <dataOutputObjs>select</dataOutputObjs>
-        <constName>empty</constName>
-      </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="42" name="icmp_ln43" lineNumber="43" fileName="../../Users/thedv/Desktop/invert.cpp" fileDirectory=".." rtlName="icmp_ln43_fu_181_p2" opType="icmp" coreId="1356013600" contextFuncName="Invert_Color" bitwidth="1" opcode="icmp" nodeLabel="1.0" m_display="0" m_delay="2.47" m_topoIndex="15" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="../../Users/thedv/Desktop/invert.cpp" linenumber="43" fileDirectory="C:\PYNQ\VITIS" functionName="Invert_Color"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="31" name="tmp_i2_keep" lineNumber="283" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" fileDirectory=".." coreId="0" contextFuncName="read" bitwidth="3" opcode="extractvalue" nodeLabel="1.0" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" linenumber="283" fileDirectory="C:\PYNQ\PYNQ-master\PYNQ-master\boards\ip" functionName="read"/>
         <dataInputObjs>read</dataInputObjs>
-        <dataOutputObjs>select</dataOutputObjs>
-        <dataOutputObjs>select</dataOutputObjs>
-        <dataOutputObjs>select</dataOutputObjs>
-        <constName>empty</constName>
-      </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="43" name="r" lineNumber="1272" originalName="r" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_fixed_base.h" fileDirectory=".." rtlName="r_fu_187_p2" opType="xor" coreId="1356013600" contextFuncName="operator_bnot" bitwidth="8" opcode="xor" nodeLabel="1.0" m_display="0" m_topoIndex="16" m_clusterGroupNumber="1">
-        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_fixed_base.h" linenumber="1272" fileDirectory="C:\PYNQ\VITIS" functionName="operator~"/>
-        <dataInputObjs>trunc</dataInputObjs>
-        <dataOutputObjs>select</dataOutputObjs>
-        <constName>empty</constName>
-      </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="44" name="r_1" lineNumber="1272" originalName="r" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_fixed_base.h" fileDirectory=".." rtlName="r_1_fu_192_p2" opType="xor" coreId="11" contextFuncName="operator_bnot" bitwidth="8" opcode="xor" nodeLabel="1.0" m_display="0" m_topoIndex="17" m_clusterGroupNumber="2">
-        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_fixed_base.h" linenumber="1272" fileDirectory="C:\PYNQ\VITIS" functionName="operator~"/>
-        <dataInputObjs>partselect</dataInputObjs>
-        <dataOutputObjs>select</dataOutputObjs>
-        <constName>empty</constName>
-      </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="45" name="r_2" lineNumber="1272" originalName="r" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_fixed_base.h" fileDirectory=".." rtlName="r_2_fu_197_p2" opType="xor" coreId="1356013600" contextFuncName="operator_bnot" bitwidth="8" opcode="xor" nodeLabel="1.0" m_display="0" m_topoIndex="18" m_clusterGroupNumber="3">
-        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_fixed_base.h" linenumber="1272" fileDirectory="C:\PYNQ\VITIS" functionName="operator~"/>
-        <dataInputObjs>partselect</dataInputObjs>
-        <dataOutputObjs>select</dataOutputObjs>
-        <constName>empty</constName>
-      </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="46" name="out3_V" lineNumber="43" originalName="out3.V" fileName="../../Users/thedv/Desktop/invert.cpp" fileDirectory=".." rtlName="out3_V_fu_202_p3" coreName="Sel" implIndex="auto_sel" control="auto" opType="select" coreId="73" contextFuncName="Invert_Color" bitwidth="8" opcode="select" nodeLabel="1.0" m_display="0" m_delay="1.24" m_topoIndex="19" m_clusterGroupNumber="3">
-        <inlineStackInfo fileName="../../Users/thedv/Desktop/invert.cpp" linenumber="43" fileDirectory="C:\PYNQ\VITIS" functionName="Invert_Color"/>
-        <dataInputObjs>icmp</dataInputObjs>
-        <dataInputObjs>xor</dataInputObjs>
-        <dataInputObjs>partselect</dataInputObjs>
-        <dataOutputObjs>bitconcatenate</dataOutputObjs>
-      </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="47" name="out2_V" lineNumber="43" originalName="out2.V" fileName="../../Users/thedv/Desktop/invert.cpp" fileDirectory=".." rtlName="out2_V_fu_209_p3" coreName="Sel" implIndex="auto_sel" control="auto" opType="select" coreId="73" contextFuncName="Invert_Color" bitwidth="8" opcode="select" nodeLabel="1.0" m_display="0" m_delay="1.24" m_topoIndex="20" m_clusterGroupNumber="2">
-        <inlineStackInfo fileName="../../Users/thedv/Desktop/invert.cpp" linenumber="43" fileDirectory="C:\PYNQ\VITIS" functionName="Invert_Color"/>
-        <dataInputObjs>icmp</dataInputObjs>
-        <dataInputObjs>xor</dataInputObjs>
-        <dataInputObjs>partselect</dataInputObjs>
-        <dataOutputObjs>bitconcatenate</dataOutputObjs>
-      </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="48" name="out1_V" lineNumber="43" originalName="out1.V" fileName="../../Users/thedv/Desktop/invert.cpp" fileDirectory=".." rtlName="out1_V_fu_216_p3" coreName="Sel" implIndex="auto_sel" control="auto" opType="select" coreId="73" contextFuncName="Invert_Color" bitwidth="8" opcode="select" nodeLabel="1.0" m_display="0" m_delay="1.24" m_topoIndex="21" m_clusterGroupNumber="1">
-        <inlineStackInfo fileName="../../Users/thedv/Desktop/invert.cpp" linenumber="43" fileDirectory="C:\PYNQ\VITIS" functionName="Invert_Color"/>
-        <dataInputObjs>icmp</dataInputObjs>
-        <dataInputObjs>xor</dataInputObjs>
-        <dataInputObjs>trunc</dataInputObjs>
-        <dataOutputObjs>bitconcatenate</dataOutputObjs>
-      </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="49" name="col_load" lineNumber="55" fileName="../../Users/thedv/Desktop/invert.cpp" fileDirectory=".." coreId="0" contextFuncName="Invert_Color" bitwidth="32" opcode="load" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="../../Users/thedv/Desktop/invert.cpp" linenumber="55" fileDirectory="C:\PYNQ\VITIS" functionName="Invert_Color"/>
-        <dataOutputObjs>add</dataOutputObjs>
-      </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="50" name="add_ln55" lineNumber="55" fileName="../../Users/thedv/Desktop/invert.cpp" fileDirectory=".." rtlName="add_ln55_fu_161_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="Invert_Color" bitwidth="32" opcode="add" m_display="0" m_delay="2.55" m_topoIndex="12" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="../../Users/thedv/Desktop/invert.cpp" linenumber="55" fileDirectory="C:\PYNQ\VITIS" functionName="Invert_Color"/>
-        <dataInputObjs>load</dataInputObjs>
-        <dataOutputObjs>select</dataOutputObjs>
-        <constName>empty</constName>
-      </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="51" name="select_ln55" lineNumber="55" fileName="../../Users/thedv/Desktop/invert.cpp" fileDirectory=".." rtlName="select_ln55_fu_167_p3" coreName="Sel" implIndex="auto_sel" control="auto" opType="select" coreId="73" contextFuncName="Invert_Color" bitwidth="32" opcode="select" m_display="0" m_delay="0.69" m_topoIndex="13" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="../../Users/thedv/Desktop/invert.cpp" linenumber="55" fileDirectory="C:\PYNQ\VITIS" functionName="Invert_Color"/>
-        <dataInputObjs>extractvalue</dataInputObjs>
-        <dataInputObjs>add</dataInputObjs>
-        <dataOutputObjs>store</dataOutputObjs>
-        <constName>empty</constName>
-      </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="52" name="p_Result_s" lineNumber="312" originalName="__Result__" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h" fileDirectory=".." rtlName="out_data_TDATA_int_regslice" coreId="1356013600" contextFuncName="get" bitwidth="24" opcode="bitconcatenate" nodeLabel="1.0" m_display="0" m_topoIndex="22" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h" linenumber="312" fileDirectory="C:\PYNQ\VITIS" functionName="get"/>
-        <dataInputObjs>select</dataInputObjs>
-        <dataInputObjs>select</dataInputObjs>
-        <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>write</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="53" name="out_data_V_data_V_write_ln304" lineNumber="304" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" fileDirectory=".." coreName="axis" implIndex="axi4stream" control="auto" opType="adapter" coreId="115" contextFuncName="write" opcode="write" nodeLabel="1.0" nodeLatency="1" m_display="0" m_topoIndex="23" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" linenumber="304" fileDirectory="C:\PYNQ\VITIS" functionName="write"/>
-        <dataInputObjs>bitconcatenate</dataInputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="32" name="tmp_i2_strb" lineNumber="283" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" fileDirectory=".." coreId="1695040262" contextFuncName="read" bitwidth="3" opcode="extractvalue" nodeLabel="1.0" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" linenumber="283" fileDirectory="C:\PYNQ\PYNQ-master\PYNQ-master\boards\ip" functionName="read"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>write</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="33" name="tmp_i2_user" lineNumber="283" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" fileDirectory=".." coreId="533465631" contextFuncName="read" bitwidth="1" opcode="extractvalue" nodeLabel="1.0" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" linenumber="283" fileDirectory="C:\PYNQ\PYNQ-master\PYNQ-master\boards\ip" functionName="read"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>write</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="34" name="p_last_V" lineNumber="283" originalName="p.last.V" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" fileDirectory=".." coreId="1074924972" contextFuncName="read" bitwidth="1" opcode="extractvalue" nodeLabel="1.0" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" linenumber="283" fileDirectory="C:\PYNQ\PYNQ-master\PYNQ-master\boards\ip" functionName="read"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataOutputObjs>write</dataOutputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="35" name="r" lineNumber="760" originalName="r" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" fileDirectory=".." rtlName="out_data_TDATA_int_regslice" opType="xor" coreId="4171365776" contextFuncName="operator_bnot" bitwidth="24" opcode="xor" nodeLabel="1.0" m_display="0" m_delay="1.03" m_topoIndex="8" m_clusterGroupNumber="1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h" linenumber="760" fileDirectory="C:\PYNQ\PYNQ-master\PYNQ-master\boards\ip" functionName="operator~"/>
+        <dataInputObjs>extractvalue</dataInputObjs>
+        <dataOutputObjs>write</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="36" name="out_data_V_data_V_write_ln304" lineNumber="304" fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" fileDirectory=".." coreName="axis" implIndex="axi4stream" control="auto" opType="adapter" coreId="115" contextFuncName="write" opcode="write" nodeLabel="1.0" nodeLatency="1" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h" linenumber="304" fileDirectory="C:\PYNQ\PYNQ-master\PYNQ-master\boards\ip" functionName="write"/>
+        <dataInputObjs>xor</dataInputObjs>
         <dataInputObjs>extractvalue</dataInputObjs>
         <dataInputObjs>extractvalue</dataInputObjs>
         <dataInputObjs>extractvalue</dataInputObjs>
@@ -231,213 +140,122 @@
         <dataOutputObjs>out_data_V_user_V</dataOutputObjs>
         <dataOutputObjs>out_data_V_last_V</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="54" name="col_write_ln54" lineNumber="54" fileName="../../Users/thedv/Desktop/invert.cpp" fileDirectory=".." coreId="0" contextFuncName="Invert_Color" opcode="store" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="../../Users/thedv/Desktop/invert.cpp" linenumber="54" fileDirectory="C:\PYNQ\VITIS" functionName="Invert_Color"/>
-        <dataInputObjs>select</dataInputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="37" name="br_ln13" lineNumber="13" fileName="Invert_Color/invert.cpp" fileDirectory=".." coreId="3422776075" contextFuncName="Invert_Color" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="Invert_Color/invert.cpp" linenumber="13" fileDirectory="C:\PYNQ\PYNQ-master\PYNQ-master\boards\ip" functionName="Invert_Color"/>
+        <dataInputObjs>extractvalue</dataInputObjs>
+        <controlInputObjs>block_38</controlInputObjs>
+        <controlInputObjs>block_40</controlInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="55" name="_ln62" lineNumber="62" fileName="../../Users/thedv/Desktop/invert.cpp" fileDirectory=".." coreId="0" contextFuncName="Invert_Color" opcode="ret" nodeLabel="2.0" m_display="0" m_topoIndex="24" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="../../Users/thedv/Desktop/invert.cpp" linenumber="62" fileDirectory="C:\PYNQ\VITIS" functionName="Invert_Color"/>
-      </node_objs>
-      <fileValidLineNumbers fileName="../../Users/thedv/Desktop/invert.cpp">
-        <validLinenumbers>43</validLinenumbers>
-        <validLinenumbers>55</validLinenumbers>
-        <validLinenumbers>54</validLinenumbers>
-        <validLinenumbers>62</validLinenumbers>
-      </fileValidLineNumbers>
-      <fileValidLineNumbers fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_ref.h">
-        <validLinenumbers>674</validLinenumbers>
-        <validLinenumbers>312</validLinenumbers>
-      </fileValidLineNumbers>
-      <fileValidLineNumbers fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_fixed_base.h">
-        <validLinenumbers>1272</validLinenumbers>
+      <fileValidLineNumbers fileName="Invert_Color/invert.cpp">
+        <validLinenumbers>13</validLinenumbers>
       </fileValidLineNumbers>
       <fileValidLineNumbers fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h">
         <validLinenumbers>283</validLinenumbers>
         <validLinenumbers>304</validLinenumbers>
+      </fileValidLineNumbers>
+      <fileValidLineNumbers fileName="C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h">
+        <validLinenumbers>760</validLinenumbers>
       </fileValidLineNumbers>
     </basic_blocks>
   </regions>
   <ScheduleInfo time="0"/>
   <ScheduleInfo time="1"/>
   <ScheduleInfo time="2"/>
-  <regnodes realName="curr_pixel_last_V_reg_249">
-    <nodeIds>38</nodeIds>
+  <ScheduleInfo time="3"/>
+  <regnodes realName="p_last_V_reg_135">
+    <nodeIds>34</nodeIds>
   </regnodes>
-  <regnodes realName="p_Result_s_reg_272">
-    <nodeIds>52</nodeIds>
-  </regnodes>
-  <regnodes realName="v_p1_V_reg_254">
-    <nodeIds>39</nodeIds>
-  </regnodes>
-  <regnodes realName="v_p2_V_reg_260">
-    <nodeIds>40</nodeIds>
-  </regnodes>
-  <regnodes realName="tmp_i1_keep_reg_234">
+  <regnodes realName="r_reg_140">
     <nodeIds>35</nodeIds>
   </regnodes>
-  <regnodes realName="v_p3_V_reg_266">
-    <nodeIds>41</nodeIds>
+  <regnodes realName="tmp_i2_strb_reg_125">
+    <nodeIds>32</nodeIds>
   </regnodes>
-  <regnodes realName="tmp_i1_user_reg_244">
-    <nodeIds>37</nodeIds>
+  <regnodes realName="tmp_i2_keep_reg_120">
+    <nodeIds>31</nodeIds>
   </regnodes>
-  <regnodes realName="tmp_i1_strb_reg_239">
-    <nodeIds>36</nodeIds>
+  <regnodes realName="tmp_i2_user_reg_130">
+    <nodeIds>33</nodeIds>
   </regnodes>
-  <expressionNodes realName="tmp_i1_keep_fu_117">
+  <expressionNodes realName="r_fu_113">
     <nodeIds>35</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="tmp_i1_user_fu_125">
-    <nodeIds>37</nodeIds>
+  <expressionNodes realName="tmp_i2_user_fu_103">
+    <nodeIds>33</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="v_p3_V_fu_147">
-    <nodeIds>41</nodeIds>
+  <expressionNodes realName="p_data_V_fu_89">
+    <nodeIds>30</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="v_p1_V_fu_133">
-    <nodeIds>39</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="r_fu_187">
-    <nodeIds>43</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="out3_V_fu_202">
-    <nodeIds>46</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="out2_V_fu_209">
-    <nodeIds>47</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="tmp_i1_strb_fu_121">
-    <nodeIds>36</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="curr_pixel_data_V_1_fu_113">
+  <expressionNodes realName="p_last_V_fu_108">
     <nodeIds>34</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="p_Result_s_fu_223">
-    <nodeIds>52</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="add_ln55_fu_161">
-    <nodeIds>50</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="icmp_ln43_fu_181">
-    <nodeIds>42</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="r_2_fu_197">
-    <nodeIds>45</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="out1_V_fu_216">
-    <nodeIds>48</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="select_ln55_fu_167">
-    <nodeIds>51</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="r_1_fu_192">
-    <nodeIds>44</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="curr_pixel_last_V_fu_129">
-    <nodeIds>38</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="v_p2_V_fu_137">
-    <nodeIds>40</nodeIds>
-  </expressionNodes>
-  <ioNodes realName="empty_read_fu_80">
-    <nodeIds>33</nodeIds>
-  </ioNodes>
-  <ioNodes realName="col_load_load_fu_157">
-    <nodeIds>49</nodeIds>
-  </ioNodes>
-  <ioNodes realName="grp_write_fu_94">
-    <nodeIds>53</nodeIds>
-  </ioNodes>
-  <ioNodes realName="store_ln54_store_fu_175">
-    <nodeIds>54</nodeIds>
-  </ioNodes>
-  <ioNodes realName="grp_read_fu_74">
+  <expressionNodes realName="tmp_i2_strb_fu_98">
     <nodeIds>32</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_i2_keep_fu_93">
+    <nodeIds>31</nodeIds>
+  </expressionNodes>
+  <ioNodes realName="empty_read_fu_56">
+    <nodeIds>29</nodeIds>
   </ioNodes>
-  <ioPorts name="a">
-    <contents name="read">
-      <nodeIds>32</nodeIds>
-    </contents>
-  </ioPorts>
+  <ioNodes realName="grp_write_fu_70">
+    <nodeIds>36</nodeIds>
+  </ioNodes>
   <ioPorts name="in_data_V_data_V">
     <contents name="read">
-      <nodeIds>33</nodeIds>
+      <nodeIds>29</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="in_data_V_keep_V">
     <contents name="read">
-      <nodeIds>33</nodeIds>
+      <nodeIds>29</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="in_data_V_last_V">
     <contents name="read">
-      <nodeIds>33</nodeIds>
+      <nodeIds>29</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="in_data_V_strb_V">
     <contents name="read">
-      <nodeIds>33</nodeIds>
+      <nodeIds>29</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="in_data_V_user_V">
     <contents name="read">
-      <nodeIds>33</nodeIds>
+      <nodeIds>29</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="out_data_V_data_V">
     <contents name="write">
-      <nodeIds>53</nodeIds>
+      <nodeIds>36</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="out_data_V_keep_V">
     <contents name="write">
-      <nodeIds>53</nodeIds>
+      <nodeIds>36</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="out_data_V_last_V">
     <contents name="write">
-      <nodeIds>53</nodeIds>
+      <nodeIds>36</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="out_data_V_strb_V">
     <contents name="write">
-      <nodeIds>53</nodeIds>
+      <nodeIds>36</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="out_data_V_user_V">
     <contents name="write">
-      <nodeIds>53</nodeIds>
+      <nodeIds>36</nodeIds>
     </contents>
   </ioPorts>
   <fsm>
     <states id="1">
-      <operations id="32" stage="2" latency="2"/>
-      <operations id="33" stage="1" latency="1"/>
-      <operations id="34" stage="1" latency="1"/>
-      <operations id="35" stage="1" latency="1"/>
-      <operations id="36" stage="1" latency="1"/>
-      <operations id="37" stage="1" latency="1"/>
-      <operations id="38" stage="1" latency="1"/>
-      <operations id="39" stage="1" latency="1"/>
-      <operations id="40" stage="1" latency="1"/>
-      <operations id="41" stage="1" latency="1"/>
-      <operations id="49" stage="1" latency="1"/>
-      <operations id="50" stage="1" latency="1"/>
-      <operations id="51" stage="1" latency="1"/>
-      <operations id="54" stage="1" latency="1"/>
-    </states>
-    <states id="2">
-      <operations id="32" stage="1" latency="2"/>
-      <operations id="42" stage="1" latency="1"/>
-      <operations id="43" stage="1" latency="1"/>
-      <operations id="44" stage="1" latency="1"/>
-      <operations id="45" stage="1" latency="1"/>
-      <operations id="46" stage="1" latency="1"/>
-      <operations id="47" stage="1" latency="1"/>
-      <operations id="48" stage="1" latency="1"/>
-      <operations id="52" stage="1" latency="1"/>
-      <operations id="53" stage="2" latency="2"/>
-    </states>
-    <states id="3">
+      <operations id="11" stage="1" latency="1"/>
+      <operations id="12" stage="1" latency="1"/>
+      <operations id="13" stage="1" latency="1"/>
       <operations id="14" stage="1" latency="1"/>
       <operations id="15" stage="1" latency="1"/>
       <operations id="16" stage="1" latency="1"/>
@@ -450,14 +268,25 @@
       <operations id="23" stage="1" latency="1"/>
       <operations id="24" stage="1" latency="1"/>
       <operations id="25" stage="1" latency="1"/>
-      <operations id="26" stage="1" latency="1"/>
-      <operations id="27" stage="1" latency="1"/>
-      <operations id="28" stage="1" latency="1"/>
+    </states>
+    <states id="2">
       <operations id="29" stage="1" latency="1"/>
       <operations id="30" stage="1" latency="1"/>
       <operations id="31" stage="1" latency="1"/>
-      <operations id="53" stage="1" latency="2"/>
-      <operations id="55" stage="1" latency="1"/>
+      <operations id="32" stage="1" latency="1"/>
+      <operations id="33" stage="1" latency="1"/>
+      <operations id="34" stage="1" latency="1"/>
+      <operations id="35" stage="1" latency="1"/>
+      <operations id="36" stage="2" latency="2"/>
+      <operations id="37" stage="1" latency="1"/>
+    </states>
+    <states id="3">
+      <operations id="27" stage="1" latency="1"/>
+      <operations id="28" stage="1" latency="1"/>
+      <operations id="36" stage="1" latency="2"/>
+    </states>
+    <states id="4">
+      <operations id="39" stage="1" latency="1"/>
     </states>
     <transitions inState="1" outState="2">
       <condition id="-1"/>
@@ -465,10 +294,30 @@
     <transitions inState="2" outState="3">
       <condition id="-1"/>
     </transitions>
+    <transitions inState="3" outState="4">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="3" outState="2">
+      <condition id="-1"/>
+    </transitions>
   </fsm>
   <CFGRegionsRoot>
-    <cfgRegions mId="1" mTag="Invert_Color" mII="1" mDepth="3" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="2" mMaxLatency="2">
-      <basicBlocks>56</basicBlocks>
+    <cfgRegions mId="1" mTag="Invert_Color" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="-1" mMaxLatency="-1">
+      <subRegions>2</subRegions>
+      <subRegions>3</subRegions>
+      <subRegions>4</subRegions>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="2" mTag="Entry" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>26</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="3" mTag="VITIS_LOOP_13_1" mII="1" mDepth="2" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="-1" mMaxLatency="-1" mType="1">
+      <basicBlocks>38</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="4" mTag="Return" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>40</basicBlocks>
       <mDfPipe/>
     </cfgRegions>
   </CFGRegionsRoot>

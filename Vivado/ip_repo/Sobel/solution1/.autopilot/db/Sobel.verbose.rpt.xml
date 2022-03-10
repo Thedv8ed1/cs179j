@@ -1,0 +1,159 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'Sobel'" level="0">
+<item name = "Date">Fri Feb 25 17:19:04 2022
+</item>
+<item name = "Version">2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)</item>
+<item name = "Project">Sobel</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg400-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 7.268 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, ?, ?, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="Loop_Border_proc_U0">Loop_Border_proc, ?, ?, ?, ?, ?, ?, none</column>
+<column name="Loop_VConvH_proc_U0">Loop_VConvH_proc, ?, ?, ?, ?, ?, ?, none</column>
+<column name="Loop_HConvH_proc8_U0">Loop_HConvH_proc8, 4, 2070605, 40.000 ns, 20.706 ms, 4, 2070605, none</column>
+<column name="Block_split32_proc_U0">Block_split32_proc, 1, 1, 10.000 ns, 10.000 ns, 1, 1, none</column>
+<column name="Sobel_entry9_U0">Sobel_entry9, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 2, -</column>
+<column name="FIFO">-, -, 990, 680, -</column>
+<column name="Instance">3, 0, 1866, 2008, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, -, -</column>
+<column name="Register">-, -, -, -, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
+<specialColumn name="Utilization (%)">1, 0, 2, 5, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="Block_split32_proc_U0">Block_split32_proc, 0, 0, 36, 102, 0</column>
+<column name="Loop_Border_proc_U0">Loop_Border_proc, 1, 0, 883, 908, 0</column>
+<column name="Loop_HConvH_proc8_U0">Loop_HConvH_proc8, 0, 0, 385, 337, 0</column>
+<column name="Loop_VConvH_proc_U0">Loop_VConvH_proc, 2, 0, 453, 437, 0</column>
+<column name="Sobel_entry9_U0">Sobel_entry9, 0, 0, 3, 56, 0</column>
+<column name="control_s_axi_U">control_s_axi, 0, 0, 106, 168, 0</column>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+<column name="h_c38_U">0, 99, 0, -, 3, 32, 96</column>
+<column name="h_c40_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="h_c_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="hconv_U">0, 99, 0, -, 2, 8, 16</column>
+<column name="vconv_U">0, 99, 0, -, 2, 8, 16</column>
+<column name="vconv_xlim_loc_c41_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="vconv_xlim_loc_c_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="w_c37_U">0, 99, 0, -, 2, 32, 64</column>
+<column name="w_c39_U">0, 99, 0, -, 3, 32, 96</column>
+<column name="w_c_U">0, 99, 0, -, 2, 32, 64</column>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="Sobel_entry9_U0_start_full_n">and, 0, 0, 2, 1, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="s_axi_control_AWVALID">in, 1, s_axi, control, scalar</column>
+<column name="s_axi_control_AWREADY">out, 1, s_axi, control, scalar</column>
+<column name="s_axi_control_AWADDR">in, 5, s_axi, control, scalar</column>
+<column name="s_axi_control_WVALID">in, 1, s_axi, control, scalar</column>
+<column name="s_axi_control_WREADY">out, 1, s_axi, control, scalar</column>
+<column name="s_axi_control_WDATA">in, 32, s_axi, control, scalar</column>
+<column name="s_axi_control_WSTRB">in, 4, s_axi, control, scalar</column>
+<column name="s_axi_control_ARVALID">in, 1, s_axi, control, scalar</column>
+<column name="s_axi_control_ARREADY">out, 1, s_axi, control, scalar</column>
+<column name="s_axi_control_ARADDR">in, 5, s_axi, control, scalar</column>
+<column name="s_axi_control_RVALID">out, 1, s_axi, control, scalar</column>
+<column name="s_axi_control_RREADY">in, 1, s_axi, control, scalar</column>
+<column name="s_axi_control_RDATA">out, 32, s_axi, control, scalar</column>
+<column name="s_axi_control_RRESP">out, 2, s_axi, control, scalar</column>
+<column name="s_axi_control_BVALID">out, 1, s_axi, control, scalar</column>
+<column name="s_axi_control_BREADY">in, 1, s_axi, control, scalar</column>
+<column name="s_axi_control_BRESP">out, 2, s_axi, control, scalar</column>
+<column name="ap_clk">in, 1, ap_ctrl_none, Sobel, return value</column>
+<column name="ap_rst_n">in, 1, ap_ctrl_none, Sobel, return value</column>
+<column name="in_data_TDATA">in, 8, axis, in_data_V_data_V, pointer</column>
+<column name="in_data_TKEEP">in, 1, axis, in_data_V_keep_V, pointer</column>
+<column name="in_data_TSTRB">in, 1, axis, in_data_V_strb_V, pointer</column>
+<column name="in_data_TUSER">in, 1, axis, in_data_V_user_V, pointer</column>
+<column name="in_data_TLAST">in, 1, axis, in_data_V_last_V, pointer</column>
+<column name="in_data_TID">in, 1, axis, in_data_V_id_V, pointer</column>
+<column name="in_data_TDEST">in, 1, axis, in_data_V_dest_V, pointer</column>
+<column name="in_data_TVALID">in, 1, axis, in_data_V_dest_V, pointer</column>
+<column name="in_data_TREADY">out, 1, axis, in_data_V_dest_V, pointer</column>
+<column name="out_data_TDATA">out, 8, axis, out_data_V_data_V, pointer</column>
+<column name="out_data_TKEEP">out, 1, axis, out_data_V_keep_V, pointer</column>
+<column name="out_data_TSTRB">out, 1, axis, out_data_V_strb_V, pointer</column>
+<column name="out_data_TUSER">out, 1, axis, out_data_V_user_V, pointer</column>
+<column name="out_data_TLAST">out, 1, axis, out_data_V_last_V, pointer</column>
+<column name="out_data_TID">out, 1, axis, out_data_V_id_V, pointer</column>
+<column name="out_data_TDEST">out, 1, axis, out_data_V_dest_V, pointer</column>
+<column name="out_data_TVALID">out, 1, axis, out_data_V_dest_V, pointer</column>
+<column name="out_data_TREADY">in, 1, axis, out_data_V_dest_V, pointer</column>
+</table>
+</item>
+</section>
+</profile>

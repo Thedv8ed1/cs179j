@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="Invert_Color_Invert_Color,hls_ip_2020_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=pipeline,HLS_SYN_CLOCK=4.721000,HLS_SYN_LAT=2,HLS_SYN_TPT=1,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=167,HLS_SYN_LUT=265,HLS_VERSION=2020_2}" *)
+(* CORE_GENERATION_INFO="Invert_Color_Invert_Color,hls_ip_2020_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=1.034000,HLS_SYN_LAT=-1,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=5,HLS_SYN_LUT=77,HLS_VERSION=2020_2}" *)
 
 module Invert_Color (
         ap_clk,
@@ -25,33 +25,12 @@ module Invert_Color (
         out_data_TKEEP,
         out_data_TSTRB,
         out_data_TUSER,
-        out_data_TLAST,
-        s_axi_control_AWVALID,
-        s_axi_control_AWREADY,
-        s_axi_control_AWADDR,
-        s_axi_control_WVALID,
-        s_axi_control_WREADY,
-        s_axi_control_WDATA,
-        s_axi_control_WSTRB,
-        s_axi_control_ARVALID,
-        s_axi_control_ARREADY,
-        s_axi_control_ARADDR,
-        s_axi_control_RVALID,
-        s_axi_control_RREADY,
-        s_axi_control_RDATA,
-        s_axi_control_RRESP,
-        s_axi_control_BVALID,
-        s_axi_control_BREADY,
-        s_axi_control_BRESP
+        out_data_TLAST
 );
 
-parameter    ap_ST_fsm_pp0_stage0 = 1'd1;
-parameter    C_S_AXI_CONTROL_DATA_WIDTH = 32;
-parameter    C_S_AXI_CONTROL_ADDR_WIDTH = 5;
-parameter    C_S_AXI_DATA_WIDTH = 32;
-
-parameter C_S_AXI_CONTROL_WSTRB_WIDTH = (32 / 8);
-parameter C_S_AXI_WSTRB_WIDTH = (32 / 8);
+parameter    ap_ST_fsm_state1 = 3'd1;
+parameter    ap_ST_fsm_pp0_stage0 = 3'd2;
+parameter    ap_ST_fsm_state4 = 3'd4;
 
 input   ap_clk;
 input   ap_rst_n;
@@ -69,63 +48,26 @@ output  [2:0] out_data_TKEEP;
 output  [2:0] out_data_TSTRB;
 output  [0:0] out_data_TUSER;
 output  [0:0] out_data_TLAST;
-input   s_axi_control_AWVALID;
-output   s_axi_control_AWREADY;
-input  [C_S_AXI_CONTROL_ADDR_WIDTH - 1:0] s_axi_control_AWADDR;
-input   s_axi_control_WVALID;
-output   s_axi_control_WREADY;
-input  [C_S_AXI_CONTROL_DATA_WIDTH - 1:0] s_axi_control_WDATA;
-input  [C_S_AXI_CONTROL_WSTRB_WIDTH - 1:0] s_axi_control_WSTRB;
-input   s_axi_control_ARVALID;
-output   s_axi_control_ARREADY;
-input  [C_S_AXI_CONTROL_ADDR_WIDTH - 1:0] s_axi_control_ARADDR;
-output   s_axi_control_RVALID;
-input   s_axi_control_RREADY;
-output  [C_S_AXI_CONTROL_DATA_WIDTH - 1:0] s_axi_control_RDATA;
-output  [1:0] s_axi_control_RRESP;
-output   s_axi_control_BVALID;
-input   s_axi_control_BREADY;
-output  [1:0] s_axi_control_BRESP;
 
  reg    ap_rst_n_inv;
-wire   [31:0] a;
-reg   [31:0] a_0_data_reg;
-reg    a_0_vld_reg;
-reg    a_0_ack_out;
-reg   [31:0] col;
 reg    in_data_TDATA_blk_n;
-(* fsm_encoding = "none" *) reg   [0:0] ap_CS_fsm;
+(* fsm_encoding = "none" *) reg   [2:0] ap_CS_fsm;
 wire    ap_CS_fsm_pp0_stage0;
+reg    ap_enable_reg_pp0_iter0;
 wire    ap_block_pp0_stage0;
 reg    out_data_TDATA_blk_n;
 reg    ap_enable_reg_pp0_iter1;
-reg    ap_enable_reg_pp0_iter2;
-reg   [2:0] tmp_i1_keep_reg_234;
-reg    ap_block_state1_pp0_stage0_iter0;
-reg    ap_block_state2_pp0_stage0_iter1;
-wire    regslice_both_out_data_V_data_V_U_apdone_blk;
-reg    ap_block_state3_pp0_stage0_iter2;
+reg    ap_block_state2_pp0_stage0_iter0;
+reg    ap_block_state3_pp0_stage0_iter1;
 reg    ap_block_pp0_stage0_11001;
-reg   [2:0] tmp_i1_strb_reg_239;
-reg   [0:0] tmp_i1_user_reg_244;
-reg   [0:0] curr_pixel_last_V_reg_249;
-wire   [7:0] v_p1_V_fu_133_p1;
-reg   [7:0] v_p1_V_reg_254;
-reg   [7:0] v_p2_V_reg_260;
-reg   [7:0] v_p3_V_reg_266;
+wire   [0:0] p_last_V_fu_108_p1;
+wire    ap_CS_fsm_state1;
 reg    ap_block_pp0_stage0_subdone;
-wire   [31:0] select_ln55_fu_167_p3;
+reg    ap_condition_pp0_flush_enable;
 reg    ap_block_pp0_stage0_01001;
-wire   [31:0] add_ln55_fu_161_p2;
-wire   [0:0] icmp_ln43_fu_181_p2;
-wire   [7:0] r_2_fu_197_p2;
-wire   [7:0] r_1_fu_192_p2;
-wire   [7:0] r_fu_187_p2;
-wire   [7:0] out3_V_fu_202_p3;
-wire   [7:0] out2_V_fu_209_p3;
-wire   [7:0] out1_V_fu_216_p3;
-reg   [0:0] ap_NS_fsm;
-wire    ap_reset_idle_pp0;
+reg   [2:0] ap_NS_fsm;
+wire    ap_CS_fsm_state4;
+wire    regslice_both_out_data_V_data_V_U_apdone_blk;
 reg    ap_idle_pp0;
 wire    ap_enable_pp0;
 wire    regslice_both_in_data_V_data_V_U_apdone_blk;
@@ -169,40 +111,10 @@ wire    ap_ce_reg;
 
 // power-on initialization
 initial begin
-#0 a_0_data_reg = 32'd0;
-#0 a_0_vld_reg = 1'b0;
-#0 col = 32'd0;
-#0 ap_CS_fsm = 1'd1;
+#0 ap_CS_fsm = 3'd1;
+#0 ap_enable_reg_pp0_iter0 = 1'b0;
 #0 ap_enable_reg_pp0_iter1 = 1'b0;
-#0 ap_enable_reg_pp0_iter2 = 1'b0;
 end
-
-Invert_Color_control_s_axi #(
-    .C_S_AXI_ADDR_WIDTH( C_S_AXI_CONTROL_ADDR_WIDTH ),
-    .C_S_AXI_DATA_WIDTH( C_S_AXI_CONTROL_DATA_WIDTH ))
-control_s_axi_U(
-    .AWVALID(s_axi_control_AWVALID),
-    .AWREADY(s_axi_control_AWREADY),
-    .AWADDR(s_axi_control_AWADDR),
-    .WVALID(s_axi_control_WVALID),
-    .WREADY(s_axi_control_WREADY),
-    .WDATA(s_axi_control_WDATA),
-    .WSTRB(s_axi_control_WSTRB),
-    .ARVALID(s_axi_control_ARVALID),
-    .ARREADY(s_axi_control_ARREADY),
-    .ARADDR(s_axi_control_ARADDR),
-    .RVALID(s_axi_control_RVALID),
-    .RREADY(s_axi_control_RREADY),
-    .RDATA(s_axi_control_RDATA),
-    .RRESP(s_axi_control_RRESP),
-    .BVALID(s_axi_control_BVALID),
-    .BREADY(s_axi_control_BREADY),
-    .BRESP(s_axi_control_BRESP),
-    .ACLK(ap_clk),
-    .ARESET(ap_rst_n_inv),
-    .ACLK_EN(1'b1),
-    .a(a)
-);
 
 Invert_Color_regslice_both #(
     .DataWidth( 24 ))
@@ -293,7 +205,7 @@ Invert_Color_regslice_both #(
 regslice_both_out_data_V_keep_V_U(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
-    .data_in(tmp_i1_keep_reg_234),
+    .data_in(in_data_TKEEP_int_regslice),
     .vld_in(out_data_TVALID_int_regslice),
     .ack_in(regslice_both_out_data_V_keep_V_U_ack_in_dummy),
     .data_out(out_data_TKEEP),
@@ -307,7 +219,7 @@ Invert_Color_regslice_both #(
 regslice_both_out_data_V_strb_V_U(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
-    .data_in(tmp_i1_strb_reg_239),
+    .data_in(in_data_TSTRB_int_regslice),
     .vld_in(out_data_TVALID_int_regslice),
     .ack_in(regslice_both_out_data_V_strb_V_U_ack_in_dummy),
     .data_out(out_data_TSTRB),
@@ -321,7 +233,7 @@ Invert_Color_regslice_both #(
 regslice_both_out_data_V_user_V_U(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
-    .data_in(tmp_i1_user_reg_244),
+    .data_in(in_data_TUSER_int_regslice),
     .vld_in(out_data_TVALID_int_regslice),
     .ack_in(regslice_both_out_data_V_user_V_U_ack_in_dummy),
     .data_out(out_data_TUSER),
@@ -335,7 +247,7 @@ Invert_Color_regslice_both #(
 regslice_both_out_data_V_last_V_U(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
-    .data_in(curr_pixel_last_V_reg_249),
+    .data_in(in_data_TLAST_int_regslice),
     .vld_in(out_data_TVALID_int_regslice),
     .ack_in(regslice_both_out_data_V_last_V_U_ack_in_dummy),
     .data_out(out_data_TLAST),
@@ -346,9 +258,21 @@ regslice_both_out_data_V_last_V_U(
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        ap_CS_fsm <= ap_ST_fsm_pp0_stage0;
+        ap_CS_fsm <= ap_ST_fsm_state1;
     end else begin
         ap_CS_fsm <= ap_NS_fsm;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst_n_inv == 1'b1) begin
+        ap_enable_reg_pp0_iter0 <= 1'b0;
+    end else begin
+        if ((1'b1 == ap_condition_pp0_flush_enable)) begin
+            ap_enable_reg_pp0_iter0 <= 1'b0;
+        end else if ((1'b1 == ap_CS_fsm_state1)) begin
+            ap_enable_reg_pp0_iter0 <= 1'b1;
+        end
     end
 end
 
@@ -357,65 +281,31 @@ always @ (posedge ap_clk) begin
         ap_enable_reg_pp0_iter1 <= 1'b0;
     end else begin
         if ((1'b0 == ap_block_pp0_stage0_subdone)) begin
-            ap_enable_reg_pp0_iter1 <= 1'b1;
+            ap_enable_reg_pp0_iter1 <= ap_enable_reg_pp0_iter0;
+        end else if ((1'b1 == ap_CS_fsm_state1)) begin
+            ap_enable_reg_pp0_iter1 <= 1'b0;
         end
     end
 end
 
-always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_enable_reg_pp0_iter2 <= 1'b0;
+always @ (*) begin
+    if (((p_last_V_fu_108_p1 == 1'd1) & (1'b0 == ap_block_pp0_stage0_subdone) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        ap_condition_pp0_flush_enable = 1'b1;
     end else begin
-        if ((1'b0 == ap_block_pp0_stage0_subdone)) begin
-            ap_enable_reg_pp0_iter2 <= ap_enable_reg_pp0_iter1;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((((1'b1 == a_0_ack_out) & (1'b1 == 1'b1) & (1'b1 == a_0_vld_reg)) | ((1'b0 == a_0_vld_reg) & (1'b1 == 1'b1)))) begin
-        a_0_data_reg <= a;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        col <= select_ln55_fu_167_p3;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        curr_pixel_last_V_reg_249 <= in_data_TLAST_int_regslice;
-        tmp_i1_keep_reg_234 <= in_data_TKEEP_int_regslice;
-        tmp_i1_strb_reg_239 <= in_data_TSTRB_int_regslice;
-        tmp_i1_user_reg_244 <= in_data_TUSER_int_regslice;
-        v_p1_V_reg_254 <= v_p1_V_fu_133_p1;
-        v_p2_V_reg_260 <= {{in_data_TDATA_int_regslice[15:8]}};
-        v_p3_V_reg_266 <= {{in_data_TDATA_int_regslice[23:16]}};
+        ap_condition_pp0_flush_enable = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((((ap_enable_reg_pp0_iter1 == 1'b1) & (1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0)) | ((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0)))) begin
-        a_0_ack_out = 1'b1;
-    end else begin
-        a_0_ack_out = 1'b0;
-    end
-end
-
-always @ (*) begin
-    if (((ap_enable_reg_pp0_iter2 == 1'b0) & (ap_enable_reg_pp0_iter1 == 1'b0) & (1'b1 == 1'b0))) begin
+    if (((ap_enable_reg_pp0_iter1 == 1'b0) & (ap_enable_reg_pp0_iter0 == 1'b0))) begin
         ap_idle_pp0 = 1'b1;
     end else begin
         ap_idle_pp0 = 1'b0;
     end
 end
 
-assign ap_reset_idle_pp0 = 1'b0;
-
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0) & (1'b1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+    if (((1'b0 == ap_block_pp0_stage0) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         in_data_TDATA_blk_n = in_data_TVALID_int_regslice;
     end else begin
         in_data_TDATA_blk_n = 1'b1;
@@ -423,7 +313,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         in_data_TREADY_int_regslice = 1'b1;
     end else begin
         in_data_TREADY_int_regslice = 1'b0;
@@ -431,7 +321,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if ((((ap_enable_reg_pp0_iter2 == 1'b1) & (1'b0 == ap_block_pp0_stage0)) | ((ap_enable_reg_pp0_iter1 == 1'b1) & (1'b0 == ap_block_pp0_stage0) & (1'b1 == ap_CS_fsm_pp0_stage0)))) begin
+    if ((((ap_enable_reg_pp0_iter1 == 1'b1) & (1'b0 == ap_block_pp0_stage0) & (1'b1 == ap_CS_fsm_pp0_stage0)) | ((1'b0 == ap_block_pp0_stage0) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0)))) begin
         out_data_TDATA_blk_n = out_data_TREADY_int_regslice;
     end else begin
         out_data_TDATA_blk_n = 1'b1;
@@ -439,7 +329,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((ap_enable_reg_pp0_iter1 == 1'b1) & (1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         out_data_TVALID_int_regslice = 1'b1;
     end else begin
         out_data_TVALID_int_regslice = 1'b0;
@@ -448,8 +338,24 @@ end
 
 always @ (*) begin
     case (ap_CS_fsm)
-        ap_ST_fsm_pp0_stage0 : begin
+        ap_ST_fsm_state1 : begin
             ap_NS_fsm = ap_ST_fsm_pp0_stage0;
+        end
+        ap_ST_fsm_pp0_stage0 : begin
+            if (~((ap_enable_reg_pp0_iter1 == 1'b1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter0 == 1'b0) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+                ap_NS_fsm = ap_ST_fsm_pp0_stage0;
+            end else if (((ap_enable_reg_pp0_iter1 == 1'b1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter0 == 1'b0) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+                ap_NS_fsm = ap_ST_fsm_state4;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_pp0_stage0;
+            end
+        end
+        ap_ST_fsm_state4 : begin
+            if (((1'b1 == ap_CS_fsm_state4) & (regslice_both_out_data_V_data_V_U_apdone_blk == 1'b0))) begin
+                ap_NS_fsm = ap_ST_fsm_state1;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state4;
+            end
         end
         default : begin
             ap_NS_fsm = 'bx;
@@ -457,34 +363,32 @@ always @ (*) begin
     endcase
 end
 
-assign add_ln55_fu_161_p2 = (col + 32'd1);
+assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[32'd1];
 
-assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[32'd0];
+assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
+
+assign ap_CS_fsm_state4 = ap_CS_fsm[32'd2];
 
 assign ap_block_pp0_stage0 = ~(1'b1 == 1'b1);
 
 always @ (*) begin
-    ap_block_pp0_stage0_01001 = (((ap_enable_reg_pp0_iter2 == 1'b1) & ((out_data_TREADY_int_regslice == 1'b0) | (regslice_both_out_data_V_data_V_U_apdone_blk == 1'b1))) | ((ap_enable_reg_pp0_iter1 == 1'b1) & (out_data_TREADY_int_regslice == 1'b0)) | ((1'b1 == 1'b1) & (in_data_TVALID_int_regslice == 1'b0)));
+    ap_block_pp0_stage0_01001 = (((ap_enable_reg_pp0_iter1 == 1'b1) & (out_data_TREADY_int_regslice == 1'b0)) | ((ap_enable_reg_pp0_iter0 == 1'b1) & ((out_data_TREADY_int_regslice == 1'b0) | (in_data_TVALID_int_regslice == 1'b0))));
 end
 
 always @ (*) begin
-    ap_block_pp0_stage0_11001 = (((ap_enable_reg_pp0_iter2 == 1'b1) & ((out_data_TREADY_int_regslice == 1'b0) | (regslice_both_out_data_V_data_V_U_apdone_blk == 1'b1))) | ((ap_enable_reg_pp0_iter1 == 1'b1) & (out_data_TREADY_int_regslice == 1'b0)) | ((1'b1 == 1'b1) & (in_data_TVALID_int_regslice == 1'b0)));
+    ap_block_pp0_stage0_11001 = (((ap_enable_reg_pp0_iter1 == 1'b1) & (out_data_TREADY_int_regslice == 1'b0)) | ((ap_enable_reg_pp0_iter0 == 1'b1) & ((out_data_TREADY_int_regslice == 1'b0) | (in_data_TVALID_int_regslice == 1'b0))));
 end
 
 always @ (*) begin
-    ap_block_pp0_stage0_subdone = (((ap_enable_reg_pp0_iter2 == 1'b1) & ((out_data_TREADY_int_regslice == 1'b0) | (regslice_both_out_data_V_data_V_U_apdone_blk == 1'b1))) | ((ap_enable_reg_pp0_iter1 == 1'b1) & (out_data_TREADY_int_regslice == 1'b0)) | ((1'b1 == 1'b1) & (in_data_TVALID_int_regslice == 1'b0)));
+    ap_block_pp0_stage0_subdone = (((ap_enable_reg_pp0_iter1 == 1'b1) & (out_data_TREADY_int_regslice == 1'b0)) | ((ap_enable_reg_pp0_iter0 == 1'b1) & ((out_data_TREADY_int_regslice == 1'b0) | (in_data_TVALID_int_regslice == 1'b0))));
 end
 
 always @ (*) begin
-    ap_block_state1_pp0_stage0_iter0 = (in_data_TVALID_int_regslice == 1'b0);
+    ap_block_state2_pp0_stage0_iter0 = ((out_data_TREADY_int_regslice == 1'b0) | (in_data_TVALID_int_regslice == 1'b0));
 end
 
 always @ (*) begin
-    ap_block_state2_pp0_stage0_iter1 = (out_data_TREADY_int_regslice == 1'b0);
-end
-
-always @ (*) begin
-    ap_block_state3_pp0_stage0_iter2 = ((out_data_TREADY_int_regslice == 1'b0) | (regslice_both_out_data_V_data_V_U_apdone_blk == 1'b1));
+    ap_block_state3_pp0_stage0_iter1 = (out_data_TREADY_int_regslice == 1'b0);
 end
 
 assign ap_enable_pp0 = (ap_idle_pp0 ^ 1'b1);
@@ -493,28 +397,12 @@ always @ (*) begin
     ap_rst_n_inv = ~ap_rst_n;
 end
 
-assign icmp_ln43_fu_181_p2 = ((a_0_data_reg == 32'd1) ? 1'b1 : 1'b0);
-
 assign in_data_TREADY = regslice_both_in_data_V_data_V_U_ack_in;
 
-assign out1_V_fu_216_p3 = ((icmp_ln43_fu_181_p2[0:0] == 1'b1) ? r_fu_187_p2 : v_p1_V_reg_254);
-
-assign out2_V_fu_209_p3 = ((icmp_ln43_fu_181_p2[0:0] == 1'b1) ? r_1_fu_192_p2 : v_p2_V_reg_260);
-
-assign out3_V_fu_202_p3 = ((icmp_ln43_fu_181_p2[0:0] == 1'b1) ? r_2_fu_197_p2 : v_p3_V_reg_266);
-
-assign out_data_TDATA_int_regslice = {{{out3_V_fu_202_p3}, {out2_V_fu_209_p3}}, {out1_V_fu_216_p3}};
+assign out_data_TDATA_int_regslice = (in_data_TDATA_int_regslice ^ 24'd16777215);
 
 assign out_data_TVALID = regslice_both_out_data_V_data_V_U_vld_out;
 
-assign r_1_fu_192_p2 = (v_p2_V_reg_260 ^ 8'd255);
-
-assign r_2_fu_197_p2 = (v_p3_V_reg_266 ^ 8'd255);
-
-assign r_fu_187_p2 = (v_p1_V_reg_254 ^ 8'd255);
-
-assign select_ln55_fu_167_p3 = ((in_data_TLAST_int_regslice[0:0] == 1'b1) ? 32'd1 : add_ln55_fu_161_p2);
-
-assign v_p1_V_fu_133_p1 = in_data_TDATA_int_regslice[7:0];
+assign p_last_V_fu_108_p1 = in_data_TLAST_int_regslice;
 
 endmodule //Invert_Color

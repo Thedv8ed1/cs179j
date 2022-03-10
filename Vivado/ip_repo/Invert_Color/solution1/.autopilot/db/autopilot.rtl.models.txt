@@ -1,4 +1,3 @@
-Invert_Color_control_s_axi
 Invert_Color_regslice_both
 Invert_Color_regslice_both
 Invert_Color_regslice_both

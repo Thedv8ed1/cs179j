@@ -1,0 +1,141 @@
+
+
+================================================================
+== Vitis HLS Report for 'Mux'
+================================================================
+* Date:           Wed Feb 23 09:05:41 2022
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
+* Project:        Filter_Mux
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  2.302 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        1|        1|  10.000 ns|  10.000 ns|    2|    2|     none|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.00>
+ST_1 : Operation 3 [2/2] (1.00ns)   --->   "%filter_setting_read = read i32 @_ssdm_op_Read.s_axilite.i32, i32 %filter_setting" [Filter_Mux/mux.cpp:2]   --->   Operation 3 'read' 'filter_setting_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+
+State 2 <SV = 1> <Delay = 2.30>
+ST_2 : Operation 4 [1/1] (0.00ns)   --->   "%spectopmodule_ln0 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_6"   --->   Operation 4 'spectopmodule' 'spectopmodule_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 5 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_7, i32 0, i32 0, void @empty_3, i32 0, i32 0, void @empty_3, void @empty_3, void @empty_3, i32 0, i32 0, i32 0, i32 0, void @empty_3, void @empty_3"   --->   Operation 5 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 6 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %filter_setting"   --->   Operation 6 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 7 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %filter_setting, void @empty, i32 1, i32 1, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_2, void @empty_3, i32 0, i32 0, i32 0, i32 0, void @empty_3, void @empty_3"   --->   Operation 7 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 8 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %filter_setting, void @empty_4, i32 1, i32 1, void @empty_0, i32 0, i32 0, void @empty_3, void @empty_3, void @empty_3, i32 0, i32 0, i32 0, i32 0, void @empty_3, void @empty_3"   --->   Operation 8 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %gray"   --->   Operation 9 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %gray, void @empty_5, i32 0, i32 0, void @empty_3, i32 0, i32 0, void @empty_3, void @empty_3, void @empty_3, i32 0, i32 0, i32 0, i32 0, void @empty_3, void @empty_3"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %invert"   --->   Operation 11 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %invert, void @empty_5, i32 0, i32 0, void @empty_3, i32 0, i32 0, void @empty_3, void @empty_3, void @empty_3, i32 0, i32 0, i32 0, i32 0, void @empty_3, void @empty_3"   --->   Operation 12 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 13 [1/2] (1.00ns)   --->   "%filter_setting_read = read i32 @_ssdm_op_Read.s_axilite.i32, i32 %filter_setting" [Filter_Mux/mux.cpp:2]   --->   Operation 13 'read' 'filter_setting_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 14 [1/1] (1.30ns)   --->   "%switch_ln8 = switch i32 %filter_setting_read, void, i32 0, void, i32 1, void, i32 2, void, i32 3, void" [Filter_Mux/mux.cpp:8]   --->   Operation 14 'switch' 'switch_ln8' <Predicate = true> <Delay = 1.30>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%write_ln12 = write void @_ssdm_op_Write.ap_none.i1P0A, i1 %gray, i1 1" [Filter_Mux/mux.cpp:12]   --->   Operation 15 'write' 'write_ln12' <Predicate = (filter_setting_read == 3)> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%write_ln12 = write void @_ssdm_op_Write.ap_none.i1P0A, i1 %invert, i1 1" [Filter_Mux/mux.cpp:12]   --->   Operation 16 'write' 'write_ln12' <Predicate = (filter_setting_read == 3)> <Delay = 0.00>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%br_ln12 = br void" [Filter_Mux/mux.cpp:12]   --->   Operation 17 'br' 'br_ln12' <Predicate = (filter_setting_read == 3)> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%write_ln11 = write void @_ssdm_op_Write.ap_none.i1P0A, i1 %gray, i1 0" [Filter_Mux/mux.cpp:11]   --->   Operation 18 'write' 'write_ln11' <Predicate = (filter_setting_read == 2)> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%write_ln11 = write void @_ssdm_op_Write.ap_none.i1P0A, i1 %invert, i1 1" [Filter_Mux/mux.cpp:11]   --->   Operation 19 'write' 'write_ln11' <Predicate = (filter_setting_read == 2)> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%br_ln11 = br void" [Filter_Mux/mux.cpp:11]   --->   Operation 20 'br' 'br_ln11' <Predicate = (filter_setting_read == 2)> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%write_ln10 = write void @_ssdm_op_Write.ap_none.i1P0A, i1 %gray, i1 1" [Filter_Mux/mux.cpp:10]   --->   Operation 21 'write' 'write_ln10' <Predicate = (filter_setting_read == 1)> <Delay = 0.00>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%write_ln10 = write void @_ssdm_op_Write.ap_none.i1P0A, i1 %invert, i1 0" [Filter_Mux/mux.cpp:10]   --->   Operation 22 'write' 'write_ln10' <Predicate = (filter_setting_read == 1)> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%br_ln10 = br void" [Filter_Mux/mux.cpp:10]   --->   Operation 23 'br' 'br_ln10' <Predicate = (filter_setting_read == 1)> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%write_ln9 = write void @_ssdm_op_Write.ap_none.i1P0A, i1 %gray, i1 0" [Filter_Mux/mux.cpp:9]   --->   Operation 24 'write' 'write_ln9' <Predicate = (filter_setting_read == 0)> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%write_ln9 = write void @_ssdm_op_Write.ap_none.i1P0A, i1 %invert, i1 0" [Filter_Mux/mux.cpp:9]   --->   Operation 25 'write' 'write_ln9' <Predicate = (filter_setting_read == 0)> <Delay = 0.00>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%br_ln9 = br void" [Filter_Mux/mux.cpp:9]   --->   Operation 26 'br' 'br_ln9' <Predicate = (filter_setting_read == 0)> <Delay = 0.00>
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%write_ln13 = write void @_ssdm_op_Write.ap_none.i1P0A, i1 %gray, i1 0" [Filter_Mux/mux.cpp:13]   --->   Operation 27 'write' 'write_ln13' <Predicate = (filter_setting_read != 0 & filter_setting_read != 1 & filter_setting_read != 2 & filter_setting_read != 3)> <Delay = 0.00>
+ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%write_ln13 = write void @_ssdm_op_Write.ap_none.i1P0A, i1 %invert, i1 0" [Filter_Mux/mux.cpp:13]   --->   Operation 28 'write' 'write_ln13' <Predicate = (filter_setting_read != 0 & filter_setting_read != 1 & filter_setting_read != 2 & filter_setting_read != 3)> <Delay = 0.00>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%br_ln13 = br void" [Filter_Mux/mux.cpp:13]   --->   Operation 29 'br' 'br_ln13' <Predicate = (filter_setting_read != 0 & filter_setting_read != 1 & filter_setting_read != 2 & filter_setting_read != 3)> <Delay = 0.00>
+ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%ret_ln16 = ret" [Filter_Mux/mux.cpp:16]   --->   Operation 30 'ret' 'ret_ln16' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1ns
+The critical path consists of the following:
+	s_axi read on port 'filter_setting' (Filter_Mux/mux.cpp:2) [13]  (1 ns)
+
+ <State 2>: 2.3ns
+The critical path consists of the following:
+	s_axi read on port 'filter_setting' (Filter_Mux/mux.cpp:2) [13]  (1 ns)
+	blocking operation 1.3 ns on control path)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

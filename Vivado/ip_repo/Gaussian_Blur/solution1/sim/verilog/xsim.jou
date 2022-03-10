@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# xsim v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sat Feb 19 12:21:50 2022
+# Process ID: 8328
+# Current directory: C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog
+# Command line: xsim.exe -mode tcl -source {xsim.dir/Blur/xsim_script.tcl}
+# Log file: C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/xsim.log
+# Journal file: C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog\xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/Blur/xsim_script.tcl
+source Blur.tcl

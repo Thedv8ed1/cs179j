@@ -1,0 +1,1617 @@
+INFO-FLOW: Workspace C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1 opened at Fri Feb 25 17:18:51 -0800 2022
+Execute     ap_set_clock -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     import_lib C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/zynq/zynq 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.hlp 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.hlp 
+Execute     source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Execute     import_lib C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.hlp 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.hlp 
+Execute     source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Execute     import_lib C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/zynq/zynq 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.hlp 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.hlp 
+Execute     source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Execute     set_part xc7z020-clg400-1 
+INFO-FLOW: DBG:set_part: XILINX_VIVADO=C:/Xilinx/Vivado/2020.2
+INFO-FLOW: DBG:set_part: RDI_DATADIR=C:/Xilinx/Vivado/2020.2/data;C:/Xilinx/Vitis_HLS/2020.2/data
+Execute       ap_part_info -name xc7z020-clg400-1 -data single -quiet 
+DBG:HLSDevice: Trying to load device library: C:/Xilinx/Vitis_HLS/2020.2\lib\win64.o\librdi_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: C:/Xilinx/Vivado/2020.2/data/parts/arch.xml
+Command       ap_part_info done; 0.917 sec.
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       add_library xilinx/zynq/zynq:xc7z020:-clg400:-1 
+Execute         get_default_platform 
+Execute         open_platform DefaultPlatform 
+Execute         ap_part_info -data single -name xc7z020-clg400-1 
+Execute         ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute         config_chip_info -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP 220} {BRAM 280} {URAM 0} 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -speed slow 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_library_info -library zynq_slow 
+Execute         config_library_info -family zynq 
+Execute         config_library_info -part xc7z020:-clg400:-1 
+Execute         import_lib C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/zynq/zynq 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.hlp 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/zynq_dsp48e1.hlp 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       add_library done; 0.132 sec.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 1.082 sec.
+Execute     ap_part_info -data single -name xc7z020-clg400-1 
+Execute     ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute     config_chip_info -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP 220} {BRAM 280} {URAM 0} 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -speed slow 
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute     get_config_interface -m_axi_latency 
+Execute     get_config_interface -m_axi_alignment_byte_size 
+Execute     get_config_interface -m_axi_max_widen_bitwidth 
+Execute     get_config_interface -default_interface 
+Execute     get_config_interface -m_axi_offset 
+Execute     get_config_rtl -register_reset_num 
+Execute     send_msg_by_id INFO @200-1464@%s config_export -format=ip_catalog 
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+Execute     config_export -format=ip_catalog 
+Execute     send_msg_by_id INFO @200-1464@%s config_export -rtl=verilog 
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+Execute     config_export -rtl=verilog 
+Command   open_solution done; 1.358 sec.
+Execute   set_part xc7z020clg400-1 
+INFO: [HLS 200-1510] Running: set_part xc7z020clg400-1 
+INFO-FLOW: DBG:set_part: XILINX_VIVADO=C:/Xilinx/Vivado/2020.2
+INFO-FLOW: DBG:set_part: RDI_DATADIR=C:/Xilinx/Vivado/2020.2/data;C:/Xilinx/Vitis_HLS/2020.2/data
+Execute     ap_part_info -name xc7z020clg400-1 -data single -quiet 
+Execute     ap_part_info -name xc7z020clg400-1 -data info 
+Execute     add_library xilinx/zynq/zynq:xc7z020:-clg400:-1 
+Execute       get_default_platform 
+Execute       open_platform DefaultPlatform 
+Execute       ap_part_info -data single -name xc7z020-clg400-1 
+Execute       ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute       config_chip_info -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP 220} {BRAM 280} {URAM 0} 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       config_chip_info -speed slow 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       config_library_info -library zynq_slow 
+Execute       config_library_info -family zynq 
+Execute       config_library_info -part xc7z020:-clg400:-1 
+Execute       import_lib C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/zynq/zynq 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.hlp 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/zynq_dsp48e1.hlp 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     add_library done; 0.128 sec.
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.162 sec.
+Execute   create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+Execute   config_export -format ip_catalog -rtl verilog 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog 
+Execute   csynth_design 
+INFO: [HLS 200-1510] Running: csynth_design 
+Execute     get_config_compile -effort 
+Execute     get_config_compile -enable_clang39 
+Execute     get_config_compile -g 
+Execute     get_config_compile -ng 
+Execute     get_config_compile -opt_fp 
+Execute     get_config_compile -skip_cdt 
+Execute     get_config_compile -skip_syncheck 
+Execute     get_config_compile -skip_transform 
+Execute     get_config_compile -keep_printf 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 172.060 MB.
+INFO: [HLS 200-10] Analyzing design file 'Sobel/Sobel.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute       get_config_compile -pragma_strict_mode 
+INFO-FLOW: Handling Sobel/Sobel.cpp as C++
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: Running: GCC PP 39
+INFO-FLOW: Source preprocessing
+Execute       ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2020.2/win64/tools/clang-3.9-csynth/bin/clang Sobel/Sobel.cpp -foptimization-record-file=C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/clang.Sobel.cpp.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info --sysroot C:/Xilinx/Vitis_HLS/2020.2/tps/mingw/6.2.0/win64.o/nt -fhls -fno-exceptions -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-mingw32 -fno-threadsafe-statics -fno-use-cxa-atexit -I C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/39 -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot -I C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.pp.0.cpp > C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/clang.Sobel.cpp.out.log 2> C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/clang.Sobel.cpp.err.log 
+Command       ap_eval done; 0.359 sec.
+INFO-FLOW: Done: GCC PP 39 time: 0.4 seconds per iteration
+Execute       set_directive_top Sobel -name=Sobel 
+INFO-FLOW: Setting directive 'TOP' name=Sobel 
+INFO-FLOW: Setting directive 'TOP' name=Sobel 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/tps/tcl/tcllib1.11.1/try/try.tcl 
+INFO-FLOW: Setting directive 'TOP' name=Sobel 
+Execute       list_core -type functional_unit 
+Execute       clang_tidy xilinx-systemc-detector C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.pp.0.cpp std=gnu++14 -target fpga  -directive=C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec C:/Xilinx/Vitis_HLS/2020.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/.systemc_flag -fix-errors C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 0.333 sec.
+INFO-FLOW: Running: clang-tidy CDT preprocess 39
+Execute       clang_tidy xilinx-directive2pragma C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.pp.0.cpp std=gnu++14 -target fpga  -directive=C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec C:/Xilinx/Vitis_HLS/2020.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/all.directive.json -fix-errors C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 0.489 sec.
+Execute       clang_tidy xilinx-constantarray-param,xilinx-remove-assert C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.pp.0.cpp std=gnu++14 -target fpga  
+INFO-FLOW: exec C:/Xilinx/Vitis_HLS/2020.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-constantarray-param,xilinx-remove-assert -fix-errors C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 0.385 sec.
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.9 seconds per iteration
+INFO-FLOW: Calling xilinx-label-all-loops ... 
+Execute       clang_tidy -errorcheck xilinx-label-all-loops,xilinx-top-parameters,xilinx-array-stream-check,xilinx-warn-mayneed-no-ctor-attribute C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2020.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/clang-tidy.Sobel.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-top-parameters,xilinx-array-stream-check,xilinx-warn-mayneed-no-ctor-attribute -fix-errors C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/clang-tidy.Sobel.pp.0.cpp.out.log 2> C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/clang-tidy.Sobel.pp.0.cpp.err.log 
+Command         ap_eval done; 0.612 sec.
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/tps/tcl/tcllib1.11.1/cmdline/cmdline.tcl 
+Command       clang_tidy done; 0.646 sec.
+Execute       get_config_dataflow -strict_mode 
+Execute       ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2020.2/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/xilinx-dataflow-lawyer.Sobel.pp.0.cpp.diag.yml C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/xilinx-dataflow-lawyer.Sobel.pp.0.cpp.out.log 2> C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/xilinx-dataflow-lawyer.Sobel.pp.0.cpp.err.log 
+Command       ap_eval done; 0.364 sec.
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables: Sobel/Sobel.cpp:113:20
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables: Sobel/Sobel.cpp:114:20
+Execute       send_msg_by_id WARNING @200-471@%s%s 2 Sobel/Sobel.cpp 
+WARNING: [HLS 200-471] Dataflow form checks found 2 issue(s) in file Sobel/Sobel.cpp
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: compiling source code to llvm bc
+Execute       ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2020.2/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/clang.Sobel.pp.0.cpp.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.pp.0.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot -I C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.bc > C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/clang.Sobel.pp.0.cpp.out.log 2> C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/clang.Sobel.pp.0.cpp.err.log 
+Command       ap_eval done; 0.529 sec.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 3.244 seconds; current allocated memory: 173.369 MB.
+INFO-FLOW: Linking Debug ...
+INFO-FLOW: Linking dut bc code.
+Execute       run_link_or_opt -out C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.ld.0.bc -args  "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.g.bc"  
+Execute         ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2020.2/win64/tools/clang-3.9-csynth/bin/llvm-link C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.g.bc -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.ld.0.bc > C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/llvm-link.a.g.ld.0.bc.out.log 2> C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/llvm-link.a.g.ld.0.bc.err.log 
+INFO-FLOW: 
+Execute       run_link_or_opt -opt -out C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.ld.1.lower.bc -args C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics 
+Execute         ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2020.2/win64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/opt.a.g.ld.1.lower.bc.diag.yml C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.ld.1.lower.bc > C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/opt.a.g.ld.1.lower.bc.out.log 2> C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/opt.a.g.ld.1.lower.bc.err.log 
+INFO-FLOW: 
+INFO-FLOW: Linking math bc lib
+Execute       run_link_or_opt -out C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.ld.2.m1.bc -args C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed C:/Xilinx/Vitis_HLS/2020.2/win64/lib/libhlsm_39.bc C:/Xilinx/Vitis_HLS/2020.2/win64/lib/libhlsmc++_39.bc 
+Execute         ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2020.2/win64/tools/clang-3.9-csynth/bin/llvm-link C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed C:/Xilinx/Vitis_HLS/2020.2/win64/lib/libhlsm_39.bc C:/Xilinx/Vitis_HLS/2020.2/win64/lib/libhlsmc++_39.bc -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.ld.2.m1.bc > C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/llvm-link.a.g.ld.2.m1.bc.out.log 2> C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/llvm-link.a.g.ld.2.m1.bc.err.log 
+Command         ap_eval done; 1.759 sec.
+INFO-FLOW: 
+Command       run_link_or_opt done; 1.76 sec.
+Execute       run_link_or_opt -opt -out C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.ld.3.fpc.bc -args C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=Sobel -reflow-float-conversion 
+Execute         ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2020.2/win64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/opt.a.g.ld.3.fpc.bc.diag.yml C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=Sobel -reflow-float-conversion -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.ld.3.fpc.bc > C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/opt.a.g.ld.3.fpc.bc.out.log 2> C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/opt.a.g.ld.3.fpc.bc.err.log 
+Command         ap_eval done; 0.693 sec.
+INFO-FLOW: 
+Command       run_link_or_opt done; 0.695 sec.
+Execute       run_link_or_opt -out C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.ld.4.m2.bc -args C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed C:/Xilinx/Vitis_HLS/2020.2/win64/lib/libfloatconversion_39.bc 
+Execute         ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2020.2/win64/tools/clang-3.9-csynth/bin/llvm-link C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed C:/Xilinx/Vitis_HLS/2020.2/win64/lib/libfloatconversion_39.bc -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.ld.4.m2.bc > C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/llvm-link.a.g.ld.4.m2.bc.out.log 2> C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/llvm-link.a.g.ld.4.m2.bc.err.log 
+INFO-FLOW: 
+Execute       run_link_or_opt -opt -out C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.ld.5.gdce.bc -args C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=Sobel 
+Execute         ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2020.2/win64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/opt.a.g.ld.5.gdce.bc.diag.yml C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=Sobel -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.ld.5.gdce.bc > C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/opt.a.g.ld.5.gdce.bc.out.log 2> C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/opt.a.g.ld.5.gdce.bc.err.log 
+INFO-FLOW: 
+Execute       get_solution -flow_target 
+Execute       get_config_export -xo 
+Execute       get_config_export -format 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_interface -default_slave_interface 
+Execute       get_solution -flow_target 
+Execute       get_config_export -xo 
+Execute       get_config_export -format 
+Execute       get_config_interface -m_axi_offset 
+Execute       get_config_interface -m_axi_latency 
+Execute       get_config_interface -m_axi_alignment_byte_size 
+Execute       get_config_interface -m_axi_min_bitwidth 
+Execute       get_config_interface -m_axi_max_bitwidth 
+Execute       get_config_interface -m_axi_max_widen_bitwidth 
+Execute       get_config_interface -m_axi_num_read_outstanding 
+Execute       get_config_interface -m_axi_num_write_outstanding 
+Execute       get_config_interface -m_axi_max_read_burst_length 
+Execute       get_config_interface -m_axi_max_write_burst_length 
+Execute       get_config_interface -m_axi_min_bitwidth 
+Execute       get_config_interface -m_axi_max_bitwidth 
+Execute       get_config_interface -m_axi_latency 
+Execute       get_config_interface -m_axi_min_bitwidth 
+Execute       get_config_interface -m_axi_max_bitwidth 
+Execute       get_config_interface -m_axi_max_widen_bitwidth 
+Execute       get_config_interface -m_axi_auto_max_ports 
+Execute       get_config_interface -m_axi_num_read_outstanding 
+Execute       get_config_interface -m_axi_num_write_outstanding 
+Execute       get_config_interface -m_axi_max_read_burst_length 
+Execute       get_config_interface -m_axi_max_write_burst_length 
+Execute       get_config_interface -s_axilite_data64 
+Execute       get_config_interface -m_axi_alignment_byte_size 
+Execute       get_config_compile -pragma_strict_mode 
+Execute       get_config_compile -pipeline_style 
+Execute       send_msg_by_id INFO @200-777@%s Vivado 
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+Execute       is_m_axi_addr64 
+INFO-FLOW: Doing LTO.
+Execute       ap_eval exec -ignorestderr C:/Xilinx/Vitis_HLS/2020.2/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/clang.a.g.ld.0.bc.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fhls -mllvm -hls-top-function-name=Sobel -mllvm -hls-db-dir -mllvm C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db -emit-llvm -c -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/kernel.internal.xml -mllvm -top-io-mapping-info=C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/top-io-fe.xml -mllvm -hls-bitcode-version=3.1 -mllvm -reflow-enable-slave-interface-default-setting=true -mllvm -gen-kernel-xml=false -mllvm -default-maxi-offset=off -mllvm -maxi-latency=0 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=0 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -assume-maxi-align=0 -mllvm -no-unaligned-maxi-accesses -mllvm -reflow-pipeline-style-llvm-setting=0 -mllvm -disable-inlined-alloca-merging=true -x ir C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.ld.5.gdce.bc -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.lto.bc > C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/clang.a.g.ld.0.bc.out.log 2> C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/clang.a.g.ld.0.bc.err.log 
+Command       ap_eval done; 0.396 sec.
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::read()' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:293:50)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::read()' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:296:25)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::read()' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:295:67)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::read()' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:295:36)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::read()' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:294:39)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::read()' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:294:23)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<16, true>::ap_int_base<8, false>(ap_int_base<8, false> const&)' into 'ap_int_base<8, false>::RType<8, true>::mult operator*<8, false, 8, true>(ap_int_base<8, false> const&, ap_int_base<8, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1345:339)
+INFO: [HLS 214-131] Inlining function 'ap_int<16>::ap_int<16, true>(ap_int_base<16, true> const&)' into 'ap_int_base<8, false>::RType<8, true>::mult operator*<8, false, 8, true>(ap_int_base<8, false> const&, ap_int_base<8, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1345:551)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<16, true>::ap_int_base<8, true>(ap_int_base<8, true> const&)' into 'ap_int_base<8, false>::RType<8, true>::mult operator*<8, false, 8, true>(ap_int_base<8, false> const&, ap_int_base<8, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1345:427)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, true>::ap_int_base(char)' into 'ap_int_base<8, false>::RType<8, ($_0)1>::mult operator*<8, false>(ap_int_base<8, false> const&, char)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1456:482)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, false>::RType<8, true>::mult operator*<8, false, 8, true>(ap_int_base<8, false> const&, ap_int_base<8, true> const&)' into 'ap_int_base<8, false>::RType<8, ($_0)1>::mult operator*<8, false>(ap_int_base<8, false> const&, char)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1456:480)
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_uint<8>, 0>::read(ap_uint<8>&)' into 'hls::stream<ap_uint<8>, 0>::read()' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:156:9)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_uint<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:304:51)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_uint<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:307:26)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_uint<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:306:68)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_uint<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:306:37)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_uint<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:305:40)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_uint<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:305:24)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_uint<8>, 1ul, 1ul, 1ul> const&)' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::operator<<(hls::axis<ap_uint<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:262:86)
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_uint<8>, 0>::stream(char const*)' into 'void convolution_strm<ap_uint<8>, 3>(int, int, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, char const*, char const*)' (Sobel/Sobel.cpp:27:20)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::operator<<(hls::axis<ap_uint<8>, 1ul, 1ul, 1ul> const&)' into 'void convolution_strm<ap_uint<8>, 3>(int, int, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, char const*, char const*)' (Sobel/Sobel.cpp:101:12)
+INFO: [HLS 214-131] Inlining function 'ap_uint<1>::ap_uint(int)' into 'void convolution_strm<ap_uint<8>, 3>(int, int, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, char const*, char const*)' (Sobel/Sobel.cpp:100:16)
+INFO: [HLS 214-131] Inlining function 'ap_uint<1>::ap_uint(int)' into 'void convolution_strm<ap_uint<8>, 3>(int, int, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, char const*, char const*)' (Sobel/Sobel.cpp:99:16)
+INFO: [HLS 214-131] Inlining function 'ap_uint<1>::ap_uint(int)' into 'void convolution_strm<ap_uint<8>, 3>(int, int, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, char const*, char const*)' (Sobel/Sobel.cpp:98:16)
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_uint<8>, 0>::read(ap_uint<8>&)' into 'void convolution_strm<ap_uint<8>, 3>(int, int, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, char const*, char const*)' (Sobel/Sobel.cpp:82:27)
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_uint<8>, 0>::write(ap_uint<8> const&)' into 'void convolution_strm<ap_uint<8>, 3>(int, int, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, char const*, char const*)' (Sobel/Sobel.cpp:70:11)
+INFO: [HLS 214-131] Inlining function 'ap_uint<8>::ap_uint<16>(ap_int<16> const&)' into 'void convolution_strm<ap_uint<8>, 3>(int, int, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, char const*, char const*)' (Sobel/Sobel.cpp:65:25)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, false>::RType<8, ($_0)1>::mult operator*<8, false>(ap_int_base<8, false> const&, char)' into 'void convolution_strm<ap_uint<8>, 3>(int, int, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, char const*, char const*)' (Sobel/Sobel.cpp:65:33)
+INFO: [HLS 214-131] Inlining function 'ap_uint<8>::ap_uint(int)' into 'void convolution_strm<ap_uint<8>, 3>(int, int, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, char const*, char const*)' (Sobel/Sobel.cpp:62:22)
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_uint<8>, 0>::read()' into 'void convolution_strm<ap_uint<8>, 3>(int, int, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, char const*, char const*)' (Sobel/Sobel.cpp:61:17)
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_uint<8>, 0>::write(ap_uint<8> const&)' into 'void convolution_strm<ap_uint<8>, 3>(int, int, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, char const*, char const*)' (Sobel/Sobel.cpp:52:20)
+INFO: [HLS 214-131] Inlining function 'ap_uint<8>::ap_uint<16>(ap_int<16> const&)' into 'void convolution_strm<ap_uint<8>, 3>(int, int, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, char const*, char const*)' (Sobel/Sobel.cpp:49:25)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, false>::RType<8, ($_0)1>::mult operator*<8, false>(ap_int_base<8, false> const&, char)' into 'void convolution_strm<ap_uint<8>, 3>(int, int, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, char const*, char const*)' (Sobel/Sobel.cpp:49:32)
+INFO: [HLS 214-131] Inlining function 'ap_uint<8>::ap_uint(int)' into 'void convolution_strm<ap_uint<8>, 3>(int, int, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, char const*, char const*)' (Sobel/Sobel.cpp:46:20)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::read()' into 'void convolution_strm<ap_uint<8>, 3>(int, int, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, char const*, char const*)' (Sobel/Sobel.cpp:44:25)
+INFO: [HLS 214-131] Inlining function 'hls::stream<ap_uint<8>, 0>::stream(char const*)' into 'void convolution_strm<ap_uint<8>, 3>(int, int, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, char const*, char const*)' (Sobel/Sobel.cpp:30:20)
+INFO: [HLS 214-131] Inlining function 'void convolution_strm<ap_uint<8>, 3>(int, int, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, char const*, char const*)' into 'Sobel(hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, int, int)' (Sobel/Sobel.cpp:118:2)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i8.s_struct.ap_uints' into 'Sobel(hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, int, int)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174:9)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i8.s_struct.ap_uints' into 'Sobel(hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, int, int)'
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i8.s_struct.ap_uints' into 'Sobel(hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&, int, int)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174:9)
+INFO-FLOW: DBG:CMD: copy_raw_kernel_xml ap_link_39: kernel.xml not generated: C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/kernel.internal.xml
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 3.542 seconds; current allocated memory: 175.443 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.048 seconds; current allocated memory: 175.444 MB.
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute         cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+INFO-FLOW: Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top Sobel -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.0.bc -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.115 seconds; current allocated memory: 181.890 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce -check-dspbuiltin C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.1.bc -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.2.prechk.bc -f 
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute         transform -syn-check C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.2.prechk.bc -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.151 seconds; current allocated memory: 189.333 MB.
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.g.1.bc to C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute         transform -hls -tmp C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db -interface-port-rename -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -function-uniquify -directive-preproc -mem2reg -dse -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -accesses-merge -function-inline -complex-op-raise -inst-simplify -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin2 -bitwidthmin2 -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -hls-dead-arg-elim -deadargelim -directive-preproc -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.o.1.bc -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'HConvW' (Sobel/Sobel.cpp:42) in function 'Sobel' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VConvW' (Sobel/Sobel.cpp:58) in function 'Sobel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'HConv' (Sobel/Sobel.cpp:47) in function 'Sobel' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'VConv' (Sobel/Sobel.cpp:63) in function 'Sobel' completely with a factor of 3.
+INFO: [XFORM 203-102] Partitioning array 'hwin.V' (Sobel/Sobel.cpp:26) automatically.
+INFO: [XFORM 203-101] Partitioning array 'linebuf.V'  in dimension 1 completely.
+INFO: [XFORM 203-721] Changing loop 'Loop_HConvH_proc' (Sobel/Sobel.cpp:42) to a process function for dataflow in function 'Sobel'.
+INFO: [XFORM 203-721] Changing loop 'Loop_VConvH_proc' (Sobel/Sobel.cpp:58) to a process function for dataflow in function 'Sobel'.
+INFO: [XFORM 203-721] Changing loop 'Loop_Border_proc' (Sobel/Sobel.cpp:75) to a process function for dataflow in function 'Sobel'.
+WARNING: [HLS 200-805] An internal stream 'hconv' (Sobel/Sobel.cpp:27) with default size can result in deadlock. Please consider resizing the stream using the directive 'set_directive_stream' or the 'HLS stream' pragma.
+WARNING: [HLS 200-805] An internal stream 'vconv' (Sobel/Sobel.cpp:30) with default size can result in deadlock. Please consider resizing the stream using the directive 'set_directive_stream' or the 'HLS stream' pragma.
+INFO: [XFORM 203-712] Applying dataflow to function 'Sobel' (Sobel/Sobel.cpp:106), detected/extracted 5 process function(s): 
+	 'Sobel.entry9'
+	 'Block_.split32_proc'
+	 'Loop_HConvH_proc8'
+	 'Loop_VConvH_proc'
+	 'Loop_Border_proc'.
+Command         transform done; 0.317 sec.
+INFO-FLOW: Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -barrier -norm-name C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.o.1.tmp.bc -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (Sobel/Sobel.cpp:90:17) in function 'Loop_Border_proc'... converting 4 basic blocks.
+Command         transform done; 0.205 sec.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.585 seconds; current allocated memory: 217.976 MB.
+Execute         get_config_compile -enable_loop_extract 
+Execute         get_config_compile -disable_auto_rewind 
+Execute         get_config_compile -enable_auto_rewind 
+INFO-FLOW: Building ssdm...
+Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin2 -bitwidthmin2 -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -float-op-raise -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -dyn-mem-reuse -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.o.2.bc -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+INFO: [XFORM 203-541] Flattening a loop nest 'VConvH' (Sobel/Sobel.cpp:58:24) in function 'Loop_VConvH_proc'.
+INFO: [XFORM 203-541] Flattening a loop nest 'HConvH' (Sobel/Sobel.cpp:42:24) in function 'Loop_HConvH_proc8'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Border' (Sobel/Sobel.cpp:75:34) in function 'Loop_Border_proc'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.V.1'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.V.0'.
+INFO: [HLS 200-472] Inferring partial write operation for 'linebuf.V.0' (Sobel/Sobel.cpp:67:38)
+INFO: [HLS 200-472] Inferring partial write operation for 'borderbuf.V' (Sobel/Sobel.cpp:83:33)
+WARNING: [HLS 200-1614] Cosimulation may deadlock if process Loop_HConvH_proc8 has a streamed top-level array input and has predecessor processes. If a deadlock occurs, please consider converting the streamed array into an hls::stream or using '::common::get_param hls.config_cosim.top_streamed_array true' in the TCL script.
+WARNING: [HLS 200-631] Ignoring ap_ctrl_none interface for Sobel due to Sobel.entry9 with non-FIFO I/O
+Command         transform done; 0.408 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.458 seconds; current allocated memory: 264.314 MB.
+INFO-FLOW: Finish building internal data model.
+Command       opt_and_import_c done; 1.314 sec.
+Command     elaborate done; 8.196 sec.
+Execute     autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'Sobel' ...
+Execute       ap_set_top_model Sobel 
+WARNING: [SYN 201-103] Legalizing function name 'Sobel.entry9' to 'Sobel_entry9'.
+WARNING: [SYN 201-103] Legalizing function name 'Block_.split32_proc' to 'Block_split32_proc'.
+Execute       get_model_list Sobel -filter all-wo-channel -topdown 
+Execute       preproc_iomode -model Sobel 
+Execute       preproc_iomode -model Loop_Border_proc 
+Execute       preproc_iomode -model Loop_VConvH_proc 
+Execute       preproc_iomode -model Loop_HConvH_proc8 
+Execute       preproc_iomode -model Block_.split32_proc 
+Execute       preproc_iomode -model Sobel.entry9 
+Execute       get_model_list Sobel -filter all-wo-channel 
+INFO-FLOW: Model list for configure: Sobel.entry9 Block_.split32_proc Loop_HConvH_proc8 Loop_VConvH_proc Loop_Border_proc Sobel
+INFO-FLOW: Configuring Module : Sobel.entry9 ...
+Execute       set_default_model Sobel.entry9 
+Execute       apply_spec_resource_limit Sobel.entry9 
+INFO-FLOW: Configuring Module : Block_.split32_proc ...
+Execute       set_default_model Block_.split32_proc 
+Execute       apply_spec_resource_limit Block_.split32_proc 
+INFO-FLOW: Configuring Module : Loop_HConvH_proc8 ...
+Execute       set_default_model Loop_HConvH_proc8 
+Execute       apply_spec_resource_limit Loop_HConvH_proc8 
+INFO-FLOW: Configuring Module : Loop_VConvH_proc ...
+Execute       set_default_model Loop_VConvH_proc 
+Execute       apply_spec_resource_limit Loop_VConvH_proc 
+INFO-FLOW: Configuring Module : Loop_Border_proc ...
+Execute       set_default_model Loop_Border_proc 
+Execute       apply_spec_resource_limit Loop_Border_proc 
+INFO-FLOW: Configuring Module : Sobel ...
+Execute       set_default_model Sobel 
+Execute       apply_spec_resource_limit Sobel 
+INFO-FLOW: Model list for preprocess: Sobel.entry9 Block_.split32_proc Loop_HConvH_proc8 Loop_VConvH_proc Loop_Border_proc Sobel
+INFO-FLOW: Preprocessing Module: Sobel.entry9 ...
+Execute       set_default_model Sobel.entry9 
+Execute       cdfg_preprocess -model Sobel.entry9 
+Execute       rtl_gen_preprocess Sobel.entry9 
+INFO-FLOW: Preprocessing Module: Block_.split32_proc ...
+Execute       set_default_model Block_.split32_proc 
+Execute       cdfg_preprocess -model Block_.split32_proc 
+Execute       rtl_gen_preprocess Block_.split32_proc 
+INFO-FLOW: Preprocessing Module: Loop_HConvH_proc8 ...
+Execute       set_default_model Loop_HConvH_proc8 
+Execute       cdfg_preprocess -model Loop_HConvH_proc8 
+Execute       rtl_gen_preprocess Loop_HConvH_proc8 
+INFO-FLOW: Preprocessing Module: Loop_VConvH_proc ...
+Execute       set_default_model Loop_VConvH_proc 
+Execute       cdfg_preprocess -model Loop_VConvH_proc 
+Execute       rtl_gen_preprocess Loop_VConvH_proc 
+INFO-FLOW: Preprocessing Module: Loop_Border_proc ...
+Execute       set_default_model Loop_Border_proc 
+Execute       cdfg_preprocess -model Loop_Border_proc 
+Execute       rtl_gen_preprocess Loop_Border_proc 
+INFO-FLOW: Preprocessing Module: Sobel ...
+Execute       set_default_model Sobel 
+Execute       cdfg_preprocess -model Sobel 
+Execute       rtl_gen_preprocess Sobel 
+INFO-FLOW: Model list for synthesis: Sobel.entry9 Block_.split32_proc Loop_HConvH_proc8 Loop_VConvH_proc Loop_Border_proc Sobel
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Sobel_entry9' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model Sobel.entry9 
+Execute       schedule -model Sobel.entry9 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.106 seconds; current allocated memory: 264.469 MB.
+Execute       syn_report -verbosereport -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel_entry9.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel_entry9.sched.adb -f 
+INFO-FLOW: Finish scheduling Sobel.entry9.
+Execute       set_default_model Sobel.entry9 
+Execute       bind -model Sobel.entry9 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.088 seconds; current allocated memory: 264.596 MB.
+Execute       syn_report -verbosereport -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel_entry9.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel_entry9.bind.adb -f 
+INFO-FLOW: Finish binding Sobel.entry9.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Block_split32_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model Block_.split32_proc 
+Execute       schedule -model Block_.split32_proc 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.091 seconds; current allocated memory: 264.681 MB.
+Execute       syn_report -verbosereport -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Block_split32_proc.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Block_split32_proc.sched.adb -f 
+INFO-FLOW: Finish scheduling Block_.split32_proc.
+Execute       set_default_model Block_.split32_proc 
+Execute       bind -model Block_.split32_proc 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.087 seconds; current allocated memory: 264.746 MB.
+Execute       syn_report -verbosereport -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Block_split32_proc.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Block_split32_proc.bind.adb -f 
+INFO-FLOW: Finish binding Block_.split32_proc.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Loop_HConvH_proc8' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model Loop_HConvH_proc8 
+Execute       schedule -model Loop_HConvH_proc8 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'HConvH_HConvW'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'HConvH_HConvW'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.112 seconds; current allocated memory: 264.866 MB.
+Execute       syn_report -verbosereport -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_HConvH_proc8.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_HConvH_proc8.sched.adb -f 
+INFO-FLOW: Finish scheduling Loop_HConvH_proc8.
+Execute       set_default_model Loop_HConvH_proc8 
+Execute       bind -model Loop_HConvH_proc8 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.124 seconds; current allocated memory: 265.113 MB.
+Execute       syn_report -verbosereport -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_HConvH_proc8.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_HConvH_proc8.bind.adb -f 
+INFO-FLOW: Finish binding Loop_HConvH_proc8.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Loop_VConvH_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model Loop_VConvH_proc 
+Execute       schedule -model Loop_VConvH_proc 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VConvH_VConvW'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VConvH_VConvW'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.144 seconds; current allocated memory: 265.254 MB.
+Execute       syn_report -verbosereport -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_VConvH_proc.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_VConvH_proc.sched.adb -f 
+INFO-FLOW: Finish scheduling Loop_VConvH_proc.
+Execute       set_default_model Loop_VConvH_proc 
+Execute       bind -model Loop_VConvH_proc 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.112 seconds; current allocated memory: 265.465 MB.
+Execute       syn_report -verbosereport -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_VConvH_proc.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_VConvH_proc.bind.adb -f 
+INFO-FLOW: Finish binding Loop_VConvH_proc.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Loop_Border_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model Loop_Border_proc 
+Execute       schedule -model Loop_Border_proc 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Border_VITIS_LOOP_75_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 5, loop 'Border_VITIS_LOOP_75_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.165 seconds; current allocated memory: 265.749 MB.
+Execute       syn_report -verbosereport -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_Border_proc.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_Border_proc.sched.adb -f 
+INFO-FLOW: Finish scheduling Loop_Border_proc.
+Execute       set_default_model Loop_Border_proc 
+Execute       bind -model Loop_Border_proc 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.15 seconds; current allocated memory: 266.171 MB.
+Execute       syn_report -verbosereport -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_Border_proc.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_Border_proc.bind.adb -f 
+INFO-FLOW: Finish binding Loop_Border_proc.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model Sobel 
+Execute       schedule -model Sobel 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.188 seconds; current allocated memory: 266.362 MB.
+Execute       syn_report -verbosereport -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.sched.adb -f 
+INFO-FLOW: Finish scheduling Sobel.
+Execute       set_default_model Sobel 
+Execute       bind -model Sobel 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.102 sec.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.179 seconds; current allocated memory: 266.673 MB.
+Execute       syn_report -verbosereport -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Command       syn_report done; 0.123 sec.
+Execute       db_write -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.bind.adb -f 
+INFO-FLOW: Finish binding Sobel.
+Execute       get_model_list Sobel -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess Sobel.entry9 
+Execute       rtl_gen_preprocess Block_.split32_proc 
+Execute       rtl_gen_preprocess Loop_HConvH_proc8 
+Execute       rtl_gen_preprocess Loop_VConvH_proc 
+Execute       rtl_gen_preprocess Loop_Border_proc 
+Execute       rtl_gen_preprocess Sobel 
+INFO-FLOW: Model list for RTL generation: Sobel.entry9 Block_.split32_proc Loop_HConvH_proc8 Loop_VConvH_proc Loop_Border_proc Sobel
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Sobel_entry9' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model Sobel.entry9 -top_prefix Sobel_ -sub_prefix Sobel_ -mg_file C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel_entry9.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Sobel_entry9'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.21 seconds; current allocated memory: 266.850 MB.
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.rtl_wrap.cfg.tcl 
+Execute       gen_rtl Sobel.entry9 -style xilinx -f -lang vhdl -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/syn/vhdl/Sobel_Sobel_entry9 
+Execute       gen_rtl Sobel.entry9 -style xilinx -f -lang vlog -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/syn/verilog/Sobel_Sobel_entry9 
+Execute       syn_report -csynth -model Sobel.entry9 -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/syn/report/Sobel_entry9_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       syn_report -rtlxml -model Sobel.entry9 -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/syn/report/Sobel_entry9_csynth.xml 
+Execute         get_solution -flow_target
+Execute           get_solution -flow_target 
+Execute       syn_report -verbosereport -model Sobel.entry9 -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel_entry9.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -model Sobel.entry9 -f -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel_entry9.adb 
+Execute       gen_tb_info Sobel.entry9 -p C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel_entry9 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Block_split32_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model Block_.split32_proc -top_prefix Sobel_ -sub_prefix Sobel_ -mg_file C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Block_split32_proc.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Block_split32_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.105 seconds; current allocated memory: 267.246 MB.
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.rtl_wrap.cfg.tcl 
+Execute       gen_rtl Block_.split32_proc -style xilinx -f -lang vhdl -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/syn/vhdl/Sobel_Block_split32_proc 
+Execute       gen_rtl Block_.split32_proc -style xilinx -f -lang vlog -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/syn/verilog/Sobel_Block_split32_proc 
+Execute       syn_report -csynth -model Block_.split32_proc -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/syn/report/Block_split32_proc_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       syn_report -rtlxml -model Block_.split32_proc -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/syn/report/Block_split32_proc_csynth.xml 
+Execute         get_solution -flow_target
+Execute           get_solution -flow_target 
+Execute       syn_report -verbosereport -model Block_.split32_proc -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Block_split32_proc.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -model Block_.split32_proc -f -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Block_split32_proc.adb 
+Execute       gen_tb_info Block_.split32_proc -p C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Block_split32_proc 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Loop_HConvH_proc8' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model Loop_HConvH_proc8 -top_prefix Sobel_ -sub_prefix Sobel_ -mg_file C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_HConvH_proc8.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32ns_64_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_HConvH_proc8'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.135 seconds; current allocated memory: 267.859 MB.
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.rtl_wrap.cfg.tcl 
+Execute       gen_rtl Loop_HConvH_proc8 -style xilinx -f -lang vhdl -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/syn/vhdl/Sobel_Loop_HConvH_proc8 
+Execute       gen_rtl Loop_HConvH_proc8 -style xilinx -f -lang vlog -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/syn/verilog/Sobel_Loop_HConvH_proc8 
+Execute       syn_report -csynth -model Loop_HConvH_proc8 -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/syn/report/Loop_HConvH_proc8_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       syn_report -rtlxml -model Loop_HConvH_proc8 -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/syn/report/Loop_HConvH_proc8_csynth.xml 
+Execute         get_solution -flow_target
+Execute           get_solution -flow_target 
+Execute       syn_report -verbosereport -model Loop_HConvH_proc8 -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_HConvH_proc8.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -model Loop_HConvH_proc8 -f -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_HConvH_proc8.adb 
+Execute       gen_tb_info Loop_HConvH_proc8 -p C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_HConvH_proc8 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Loop_VConvH_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model Loop_VConvH_proc -top_prefix Sobel_ -sub_prefix Sobel_ -mg_file C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_VConvH_proc.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32ns_64_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_VConvH_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.195 seconds; current allocated memory: 268.836 MB.
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.rtl_wrap.cfg.tcl 
+Execute       gen_rtl Loop_VConvH_proc -style xilinx -f -lang vhdl -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/syn/vhdl/Sobel_Loop_VConvH_proc 
+Execute       gen_rtl Loop_VConvH_proc -style xilinx -f -lang vlog -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/syn/verilog/Sobel_Loop_VConvH_proc 
+Execute       syn_report -csynth -model Loop_VConvH_proc -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/syn/report/Loop_VConvH_proc_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       syn_report -rtlxml -model Loop_VConvH_proc -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/syn/report/Loop_VConvH_proc_csynth.xml 
+Execute         get_solution -flow_target
+Execute           get_solution -flow_target 
+Execute       syn_report -verbosereport -model Loop_VConvH_proc -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_VConvH_proc.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -model Loop_VConvH_proc -f -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_VConvH_proc.adb 
+Execute       gen_tb_info Loop_VConvH_proc -p C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_VConvH_proc 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Loop_Border_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model Loop_Border_proc -top_prefix Sobel_ -sub_prefix Sobel_ -mg_file C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_Border_proc.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32ns_64_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_Border_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.254 seconds; current allocated memory: 270.250 MB.
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.rtl_wrap.cfg.tcl 
+Execute       gen_rtl Loop_Border_proc -style xilinx -f -lang vhdl -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/syn/vhdl/Sobel_Loop_Border_proc 
+Execute       gen_rtl Loop_Border_proc -style xilinx -f -lang vlog -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/syn/verilog/Sobel_Loop_Border_proc 
+Execute       syn_report -csynth -model Loop_Border_proc -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/syn/report/Loop_Border_proc_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       syn_report -rtlxml -model Loop_Border_proc -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/syn/report/Loop_Border_proc_csynth.xml 
+Execute         get_solution -flow_target
+Execute           get_solution -flow_target 
+Execute       syn_report -verbosereport -model Loop_Border_proc -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_Border_proc.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Command       syn_report done; 0.116 sec.
+Execute       db_write -model Loop_Border_proc -f -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_Border_proc.adb 
+Execute       gen_tb_info Loop_Border_proc -p C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_Border_proc 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Sobel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model Sobel -top_prefix  -sub_prefix Sobel_ -mg_file C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.compgen.tcl 
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Sobel/in_data_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Sobel/in_data_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Sobel/in_data_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Sobel/in_data_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Sobel/in_data_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Sobel/in_data_V_id_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Sobel/in_data_V_dest_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Sobel/out_data_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Sobel/out_data_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Sobel/out_data_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Sobel/out_data_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Sobel/out_data_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Sobel/out_data_V_id_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Sobel/out_data_V_dest_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'Sobel/w' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'Sobel/h' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'Sobel' to 'ap_ctrl_none'.
+INFO: [RTGEN 206-100] Bundling port 'w' and 'h' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Sobel'.
+Command       create_rtl_model done; 0.172 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.575 seconds; current allocated memory: 272.346 MB.
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.rtl_wrap.cfg.tcl 
+Execute       gen_rtl Sobel -istop -style xilinx -f -lang vhdl -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/syn/vhdl/Sobel 
+Execute       gen_rtl Sobel -istop -style xilinx -f -lang vlog -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/syn/verilog/Sobel 
+Execute       syn_report -csynth -model Sobel -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/syn/report/Sobel_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       syn_report -rtlxml -model Sobel -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/syn/report/Sobel_csynth.xml 
+Execute         get_solution -flow_target
+Execute           get_solution -flow_target 
+Execute       syn_report -verbosereport -model Sobel -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Command       syn_report done; 0.104 sec.
+Execute       db_write -model Sobel -f -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.adb 
+Execute       gen_tb_info Sobel -p C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel 
+Execute       export_constraint_db -f -tool general -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.constraint.tcl 
+Execute       syn_report -designview -model Sobel -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.design.xml 
+Command       syn_report done; 0.107 sec.
+Execute       syn_report -csynthDesign -model Sobel -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/syn/report/csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       get_config_rtl -disable_wave_debug 
+Execute       syn_report -wcfg -model Sobel -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel_dataflow_ana.wcfg 
+Execute       syn_report -protoinst -model Sobel -o C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.protoinst 
+Execute       get_config_debug -directory 
+Execute       sc_get_clocks Sobel 
+Execute       get_config_export -vivado_clock 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       sc_get_portdomain Sobel 
+INFO-FLOW: Model list for RTL component generation: Sobel.entry9 Block_.split32_proc Loop_HConvH_proc8 Loop_VConvH_proc Loop_Border_proc Sobel
+INFO-FLOW: Handling components in module [Sobel_entry9] ... 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel_entry9.compgen.tcl 
+INFO-FLOW: Handling components in module [Block_split32_proc] ... 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Block_split32_proc.compgen.tcl 
+INFO-FLOW: Handling components in module [Loop_HConvH_proc8] ... 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_HConvH_proc8.compgen.tcl 
+INFO-FLOW: Found component Sobel_mul_32ns_32ns_64_2_1.
+INFO-FLOW: Append model Sobel_mul_32ns_32ns_64_2_1
+INFO-FLOW: Found component Sobel_regslice_both.
+INFO-FLOW: Append model Sobel_regslice_both
+INFO-FLOW: Found component Sobel_regslice_both.
+INFO-FLOW: Append model Sobel_regslice_both
+INFO-FLOW: Found component Sobel_regslice_both.
+INFO-FLOW: Append model Sobel_regslice_both
+INFO-FLOW: Found component Sobel_regslice_both.
+INFO-FLOW: Append model Sobel_regslice_both
+INFO-FLOW: Found component Sobel_regslice_both.
+INFO-FLOW: Append model Sobel_regslice_both
+INFO-FLOW: Found component Sobel_regslice_both.
+INFO-FLOW: Append model Sobel_regslice_both
+INFO-FLOW: Found component Sobel_regslice_both.
+INFO-FLOW: Append model Sobel_regslice_both
+INFO-FLOW: Handling components in module [Loop_VConvH_proc] ... 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_VConvH_proc.compgen.tcl 
+INFO-FLOW: Found component Sobel_Loop_VConvH_proc_linebuf_V_1.
+INFO-FLOW: Append model Sobel_Loop_VConvH_proc_linebuf_V_1
+INFO-FLOW: Found component Sobel_Loop_VConvH_proc_linebuf_V_0.
+INFO-FLOW: Append model Sobel_Loop_VConvH_proc_linebuf_V_0
+INFO-FLOW: Handling components in module [Loop_Border_proc] ... 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_Border_proc.compgen.tcl 
+INFO-FLOW: Found component Sobel_Loop_Border_proc_borderbuf_V.
+INFO-FLOW: Append model Sobel_Loop_Border_proc_borderbuf_V
+INFO-FLOW: Found component Sobel_regslice_both.
+INFO-FLOW: Append model Sobel_regslice_both
+INFO-FLOW: Found component Sobel_regslice_both.
+INFO-FLOW: Append model Sobel_regslice_both
+INFO-FLOW: Found component Sobel_regslice_both.
+INFO-FLOW: Append model Sobel_regslice_both
+INFO-FLOW: Found component Sobel_regslice_both.
+INFO-FLOW: Append model Sobel_regslice_both
+INFO-FLOW: Found component Sobel_regslice_both.
+INFO-FLOW: Append model Sobel_regslice_both
+INFO-FLOW: Found component Sobel_regslice_both.
+INFO-FLOW: Append model Sobel_regslice_both
+INFO-FLOW: Found component Sobel_regslice_both.
+INFO-FLOW: Append model Sobel_regslice_both
+INFO-FLOW: Handling components in module [Sobel] ... 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.compgen.tcl 
+INFO-FLOW: Found component Sobel_fifo_w32_d2_S.
+INFO-FLOW: Append model Sobel_fifo_w32_d2_S
+INFO-FLOW: Found component Sobel_fifo_w32_d2_S.
+INFO-FLOW: Append model Sobel_fifo_w32_d2_S
+INFO-FLOW: Found component Sobel_fifo_w32_d2_S.
+INFO-FLOW: Append model Sobel_fifo_w32_d2_S
+INFO-FLOW: Found component Sobel_fifo_w32_d3_S.
+INFO-FLOW: Append model Sobel_fifo_w32_d3_S
+INFO-FLOW: Found component Sobel_fifo_w32_d3_S.
+INFO-FLOW: Append model Sobel_fifo_w32_d3_S
+INFO-FLOW: Found component Sobel_fifo_w32_d2_S.
+INFO-FLOW: Append model Sobel_fifo_w32_d2_S
+INFO-FLOW: Found component Sobel_fifo_w8_d2_S.
+INFO-FLOW: Append model Sobel_fifo_w8_d2_S
+INFO-FLOW: Found component Sobel_fifo_w8_d2_S.
+INFO-FLOW: Append model Sobel_fifo_w8_d2_S
+INFO-FLOW: Found component Sobel_fifo_w32_d2_S.
+INFO-FLOW: Append model Sobel_fifo_w32_d2_S
+INFO-FLOW: Found component Sobel_fifo_w32_d2_S.
+INFO-FLOW: Append model Sobel_fifo_w32_d2_S
+INFO-FLOW: Found component Sobel_start_for_Block_split32_proc_U0.
+INFO-FLOW: Append model Sobel_start_for_Block_split32_proc_U0
+INFO-FLOW: Found component Sobel_start_for_Loop_HConvH_proc8_U0.
+INFO-FLOW: Append model Sobel_start_for_Loop_HConvH_proc8_U0
+INFO-FLOW: Found component Sobel_start_for_Loop_VConvH_proc_U0.
+INFO-FLOW: Append model Sobel_start_for_Loop_VConvH_proc_U0
+INFO-FLOW: Found component Sobel_start_for_Loop_Border_proc_U0.
+INFO-FLOW: Append model Sobel_start_for_Loop_Border_proc_U0
+INFO-FLOW: Found component Sobel_control_s_axi.
+INFO-FLOW: Append model Sobel_control_s_axi
+INFO-FLOW: Append model Sobel_entry9
+INFO-FLOW: Append model Block_split32_proc
+INFO-FLOW: Append model Loop_HConvH_proc8
+INFO-FLOW: Append model Loop_VConvH_proc
+INFO-FLOW: Append model Loop_Border_proc
+INFO-FLOW: Append model Sobel
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: Sobel_mul_32ns_32ns_64_2_1 Sobel_regslice_both Sobel_regslice_both Sobel_regslice_both Sobel_regslice_both Sobel_regslice_both Sobel_regslice_both Sobel_regslice_both Sobel_Loop_VConvH_proc_linebuf_V_1 Sobel_Loop_VConvH_proc_linebuf_V_0 Sobel_Loop_Border_proc_borderbuf_V Sobel_regslice_both Sobel_regslice_both Sobel_regslice_both Sobel_regslice_both Sobel_regslice_both Sobel_regslice_both Sobel_regslice_both Sobel_fifo_w32_d2_S Sobel_fifo_w32_d2_S Sobel_fifo_w32_d2_S Sobel_fifo_w32_d3_S Sobel_fifo_w32_d3_S Sobel_fifo_w32_d2_S Sobel_fifo_w8_d2_S Sobel_fifo_w8_d2_S Sobel_fifo_w32_d2_S Sobel_fifo_w32_d2_S Sobel_start_for_Block_split32_proc_U0 Sobel_start_for_Loop_HConvH_proc8_U0 Sobel_start_for_Loop_VConvH_proc_U0 Sobel_start_for_Loop_Border_proc_U0 Sobel_control_s_axi Sobel_entry9 Block_split32_proc Loop_HConvH_proc8 Loop_VConvH_proc Loop_Border_proc Sobel
+INFO-FLOW: To file: write model Sobel_mul_32ns_32ns_64_2_1
+INFO-FLOW: To file: write model Sobel_regslice_both
+INFO-FLOW: To file: write model Sobel_regslice_both
+INFO-FLOW: To file: write model Sobel_regslice_both
+INFO-FLOW: To file: write model Sobel_regslice_both
+INFO-FLOW: To file: write model Sobel_regslice_both
+INFO-FLOW: To file: write model Sobel_regslice_both
+INFO-FLOW: To file: write model Sobel_regslice_both
+INFO-FLOW: To file: write model Sobel_Loop_VConvH_proc_linebuf_V_1
+INFO-FLOW: To file: write model Sobel_Loop_VConvH_proc_linebuf_V_0
+INFO-FLOW: To file: write model Sobel_Loop_Border_proc_borderbuf_V
+INFO-FLOW: To file: write model Sobel_regslice_both
+INFO-FLOW: To file: write model Sobel_regslice_both
+INFO-FLOW: To file: write model Sobel_regslice_both
+INFO-FLOW: To file: write model Sobel_regslice_both
+INFO-FLOW: To file: write model Sobel_regslice_both
+INFO-FLOW: To file: write model Sobel_regslice_both
+INFO-FLOW: To file: write model Sobel_regslice_both
+INFO-FLOW: To file: write model Sobel_fifo_w32_d2_S
+INFO-FLOW: To file: write model Sobel_fifo_w32_d2_S
+INFO-FLOW: To file: write model Sobel_fifo_w32_d2_S
+INFO-FLOW: To file: write model Sobel_fifo_w32_d3_S
+INFO-FLOW: To file: write model Sobel_fifo_w32_d3_S
+INFO-FLOW: To file: write model Sobel_fifo_w32_d2_S
+INFO-FLOW: To file: write model Sobel_fifo_w8_d2_S
+INFO-FLOW: To file: write model Sobel_fifo_w8_d2_S
+INFO-FLOW: To file: write model Sobel_fifo_w32_d2_S
+INFO-FLOW: To file: write model Sobel_fifo_w32_d2_S
+INFO-FLOW: To file: write model Sobel_start_for_Block_split32_proc_U0
+INFO-FLOW: To file: write model Sobel_start_for_Loop_HConvH_proc8_U0
+INFO-FLOW: To file: write model Sobel_start_for_Loop_VConvH_proc_U0
+INFO-FLOW: To file: write model Sobel_start_for_Loop_Border_proc_U0
+INFO-FLOW: To file: write model Sobel_control_s_axi
+INFO-FLOW: To file: write model Sobel_entry9
+INFO-FLOW: To file: write model Block_split32_proc
+INFO-FLOW: To file: write model Loop_HConvH_proc8
+INFO-FLOW: To file: write model Loop_VConvH_proc
+INFO-FLOW: To file: write model Loop_Border_proc
+INFO-FLOW: To file: write model Sobel
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+Execute       get_top 
+Execute       get_config_export -ipname 
+Execute       get_config_export -xo 
+Execute       get_config_export -format 
+Execute       get_config_rtl -module_auto_prefix 
+INFO-FLOW: DBG:CMD:   auto_impl: set ipname to top (module_auto_prefix): Sobel
+INFO-FLOW: DBG:CMD: auto_generate_csynth_design
+INFO-FLOW: DBG:CMD:     auto_generate --sim-model -phase csynth_design -d C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1
+Execute       get_solution -flow_target 
+Execute       get_config_export -xo 
+Execute       get_config_export -format 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/common.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/op.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/interface.gen 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=1 export=0 expOnly=0 dstVlogDir=syn/verilog
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel_entry9.compgen.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Block_split32_proc.compgen.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_HConvH_proc8.compgen.tcl 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-282] Generating pipelined core: 'Sobel_mul_32ns_32ns_64_2_1_Multiplier_0'
+Command       ap_source done; 0.11 sec.
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_VConvH_proc.compgen.tcl 
+INFO: [RTMG 210-278] Implementing memory 'Sobel_Loop_VConvH_proc_linebuf_V_1_ram (RAM)' using auto RAMs with power-on initialization.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-278] Implementing memory 'Sobel_Loop_VConvH_proc_linebuf_V_0_ram (RAM)' using auto RAMs with power-on initialization.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_Border_proc.compgen.tcl 
+INFO: [RTMG 210-278] Implementing memory 'Sobel_Loop_Border_proc_borderbuf_V_ram (RAM)' using auto RAMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.compgen.tcl 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-285] Implementing FIFO 'w_c_U(Sobel_fifo_w32_d2_S)' using Shift Registers.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-285] Implementing FIFO 'w_c37_U(Sobel_fifo_w32_d2_S)' using Shift Registers.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-285] Implementing FIFO 'h_c_U(Sobel_fifo_w32_d2_S)' using Shift Registers.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-285] Implementing FIFO 'h_c38_U(Sobel_fifo_w32_d3_S)' using Shift Registers.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-285] Implementing FIFO 'w_c39_U(Sobel_fifo_w32_d3_S)' using Shift Registers.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-285] Implementing FIFO 'vconv_xlim_loc_c_U(Sobel_fifo_w32_d2_S)' using Shift Registers.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-285] Implementing FIFO 'hconv_U(Sobel_fifo_w8_d2_S)' using Shift Registers.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-285] Implementing FIFO 'vconv_U(Sobel_fifo_w8_d2_S)' using Shift Registers.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-285] Implementing FIFO 'h_c40_U(Sobel_fifo_w32_d2_S)' using Shift Registers.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-285] Implementing FIFO 'vconv_xlim_loc_c41_U(Sobel_fifo_w32_d2_S)' using Shift Registers.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_Block_split32_proc_U0_U(Sobel_start_for_Block_split32_proc_U0)' using Shift Registers.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_Loop_HConvH_proc8_U0_U(Sobel_start_for_Loop_HConvH_proc8_U0)' using Shift Registers.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_Loop_VConvH_proc_U0_U(Sobel_start_for_Loop_VConvH_proc_U0)' using Shift Registers.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_Loop_Border_proc_U0_U(Sobel_start_for_Loop_Border_proc_U0)' using Shift Registers.
+Execute         source ./control.slave.tcl 
+Command       ap_source done; 0.506 sec.
+INFO-FLOW: DBG:CMD:     auto_generate -export -impltomg_flag -rtl both -tool Vivado -pcore_version 1.00.a -phase csynth_design -d C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1
+Execute       get_solution -flow_target 
+Execute       get_config_export -xo 
+Execute       get_config_export -format 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/common.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/op.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/interface.gen 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+INFO-FLOW: DBG:CMD:       initCTypeInfo top_module=Sobel xml_exists=0
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.rtl_wrap.cfg.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.rtl_wrap.cfg.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.rtl_wrap.cfg.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.tbgen.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       export_impl_rtl
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.verilog
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel_entry9.compgen.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Block_split32_proc.compgen.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_HConvH_proc8.compgen.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_VConvH_proc.compgen.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_Border_proc.compgen.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.compgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=1 expOnly=1 dstVlogDir=impl/.pcores/verilog
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel_entry9.compgen.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Block_split32_proc.compgen.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_HConvH_proc8.compgen.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_VConvH_proc.compgen.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_Border_proc.compgen.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.compgen.tcl 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Command       ap_source done; 0.193 sec.
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.pcores/verilog_sim
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel_entry9.compgen.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Block_split32_proc.compgen.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_HConvH_proc8.compgen.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_VConvH_proc.compgen.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_Border_proc.compgen.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.compgen.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.constraint.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=28
+INFO-FLOW: DBG:CMD: Skipping loadAnalyze_DB, #g_database=16
+INFO-FLOW: DBG:CMD:       generate_json is_phase_csynth=1 g_has_adaptors=false generate_bd_files=1 #modelList=39 #gSsdmPorts=28
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/tps/tcl/tcllib1.11.1/fileutil/fileutil.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/top-io-be.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.tbgen.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.compgen.dataonly.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.compgen.dataonly.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.rtl_wrap.cfg.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.compgen.dataonly.tcl 
+Execute       get_config_export -format 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel_entry9.tbgen.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Block_split32_proc.tbgen.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_HConvH_proc8.tbgen.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_VConvH_proc.tbgen.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_Border_proc.tbgen.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.tbgen.tcl 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       get_solution -flow_target 
+Execute       get_config_rtl -kernel_profile 
+Execute       get_config_rtl -kernel_profile 
+Execute       get_config_rtl -stall_sig_gen 
+Execute       get_config_rtl -profile 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.constraint.tcl 
+Execute       sc_get_clocks Sobel 
+Execute       source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+Execute       get_config_debug -directory 
+INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 2.372 seconds; current allocated memory: 280.955 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for Sobel.
+INFO: [VLOG 209-307] Generating Verilog RTL for Sobel.
+INFO-FLOW: DBG:CMD:       update_csynth_xml_report append design.xml content design_xml=C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.design.xml
+INFO-FLOW: DBG:CMD:       update_csynth_xml_report json2reportxml
+INFO-FLOW: DBG:CMD:       update_csynth_xml_report done
+Execute       syn_report -model Sobel -printsummary 
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 137.59 MHz
+Command     autosyn done; 5.53 sec.
+Command   csynth_design done; 13.731 sec.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 6 seconds. CPU system time: 1 seconds. Elapsed time: 13.784 seconds; current allocated memory: 281.490 MB.
+Command ap_source done; 15.325 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1 opened at Fri Feb 25 17:19:14 -0800 2022
+Execute     ap_set_clock -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     import_lib C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/zynq/zynq 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.hlp 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.hlp 
+Execute     source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Execute     import_lib C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.hlp 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.hlp 
+Execute     source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Execute     import_lib C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/zynq/zynq 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.hlp 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.hlp 
+Execute     source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Execute     set_part xc7z020-clg400-1 
+INFO-FLOW: DBG:set_part: XILINX_VIVADO=C:/Xilinx/Vivado/2020.2
+INFO-FLOW: DBG:set_part: RDI_DATADIR=C:/Xilinx/Vivado/2020.2/data;C:/Xilinx/Vitis_HLS/2020.2/data
+Execute       ap_part_info -name xc7z020-clg400-1 -data single -quiet 
+DBG:HLSDevice: Trying to load device library: C:/Xilinx/Vitis_HLS/2020.2\lib\win64.o\librdi_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: C:/Xilinx/Vivado/2020.2/data/parts/arch.xml
+Command       ap_part_info done; 0.881 sec.
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       add_library xilinx/zynq/zynq:xc7z020:-clg400:-1 
+Execute         get_default_platform 
+Execute         open_platform DefaultPlatform 
+Execute         ap_part_info -data single -name xc7z020-clg400-1 
+Execute         ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute         config_chip_info -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP 220} {BRAM 280} {URAM 0} 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -speed slow 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_library_info -library zynq_slow 
+Execute         config_library_info -family zynq 
+Execute         config_library_info -part xc7z020:-clg400:-1 
+Execute         import_lib C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/zynq/zynq 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.hlp 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/zynq_dsp48e1.hlp 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       add_library done; 0.163 sec.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 1.098 sec.
+Execute     ap_part_info -data single -name xc7z020-clg400-1 
+Execute     ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute     config_chip_info -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP 220} {BRAM 280} {URAM 0} 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_chip_info -speed slow 
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute     get_config_interface -m_axi_latency 
+Execute     get_config_interface -m_axi_alignment_byte_size 
+Execute     get_config_interface -m_axi_max_widen_bitwidth 
+Execute     get_config_interface -default_interface 
+Execute     get_config_interface -m_axi_offset 
+Execute     get_config_rtl -register_reset_num 
+Execute     send_msg_by_id INFO @200-1464@%s config_export -format=ip_catalog 
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+Execute     config_export -format=ip_catalog 
+Execute     send_msg_by_id INFO @200-1464@%s config_export -rtl=verilog 
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+Execute     config_export -rtl=verilog 
+Command   open_solution done; 1.395 sec.
+Execute   set_part xc7z020clg400-1 
+INFO: [HLS 200-1510] Running: set_part xc7z020clg400-1 
+INFO-FLOW: DBG:set_part: XILINX_VIVADO=C:/Xilinx/Vivado/2020.2
+INFO-FLOW: DBG:set_part: RDI_DATADIR=C:/Xilinx/Vivado/2020.2/data;C:/Xilinx/Vitis_HLS/2020.2/data
+Execute     ap_part_info -name xc7z020clg400-1 -data single -quiet 
+Execute     ap_part_info -name xc7z020clg400-1 -data info 
+Execute     add_library xilinx/zynq/zynq:xc7z020:-clg400:-1 
+Execute       get_default_platform 
+Execute       open_platform DefaultPlatform 
+Execute       ap_part_info -data single -name xc7z020-clg400-1 
+Execute       ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute       config_chip_info -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP 220} {BRAM 280} {URAM 0} 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       config_chip_info -speed slow 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       config_library_info -library zynq_slow 
+Execute       config_library_info -family zynq 
+Execute       config_library_info -part xc7z020:-clg400:-1 
+Execute       import_lib C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/zynq/zynq 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.hlp 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/zynq_dsp48e1.hlp 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     add_library done; 0.149 sec.
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.207 sec.
+Execute   create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+Execute   config_export -format ip_catalog -rtl verilog 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog 
+Execute   export_design -rtl verilog -format ip_catalog 
+INFO: [HLS 200-1510] Running: export_design -rtl verilog -format ip_catalog 
+Execute     get_config_export -clock_margin 
+Execute     get_config_export -custom_script 
+Execute     get_config_export -description 
+Execute     get_config_export -display_name 
+Execute     get_config_export -driver_input_dir 
+Execute     get_config_export -ipname 
+Execute     get_config_export -library 
+Execute     get_config_export -output 
+Execute     get_config_export -qor_test 
+Execute     get_config_export -sim 
+Execute     get_config_export -taxonomy 
+Execute     get_config_export -use_ip 
+Execute     get_config_export -use_netlist 
+Execute     get_config_export -vendor 
+Execute     get_config_export -version 
+Execute     get_config_export -xo 
+Execute     config_export -format=ip_catalog -rtl=verilog 
+INFO-FLOW: DBG:CMD: export_design_wrap: -format ip_catalog -rtl verilog
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+Execute     get_config_export -vivado_clock 
+Execute     get_top 
+Execute     get_config_export -ipname 
+Execute     get_config_export -xo 
+Execute     get_config_export -format 
+Execute     get_config_rtl -module_auto_prefix 
+INFO-FLOW: DBG:CMD:   auto_impl: set ipname to top (module_auto_prefix): Sobel
+Execute     get_solution -flow_target 
+Execute     get_config_export -xo 
+Execute     get_config_export -format 
+INFO-FLOW: DBG:CMD:   auto_impl: pack: -export -rtl verilog
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: automg_wrap -export -pcore_version 1.00.a -rtl vlog -tool Vivado -impltomg_flag
+INFO-FLOW: DBG:CMD:     auto_generate -export -pcore_version 1.00.a -rtl vlog -tool Vivado -impltomg_flag
+Execute     get_solution -flow_target 
+Execute     get_config_export -xo 
+Execute     get_config_export -format 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl
+Execute     source C:/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/common.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source C:/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/op.gen 
+Execute     source C:/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source C:/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/interface.gen 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Execute     source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
+INFO-FLOW: DBG:CMD:       initCTypeInfo top_module=Sobel xml_exists=1
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.rtl_wrap.cfg.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.rtl_wrap.cfg.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.rtl_wrap.cfg.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.tbgen.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       export_impl_rtl
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.verilog
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel_entry9.compgen.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Block_split32_proc.compgen.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_HConvH_proc8.compgen.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_VConvH_proc.compgen.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_Border_proc.compgen.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.compgen.tcl 
+Execute     get_config_export -disable_deadlock_detection 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.tbgen.tcl 
+Execute     get_config_rtl -module_prefix 
+INFO-FLOW: DBG:CMD:       cosim_export_main adding deadlock detection to Sobel
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=1 expOnly=1 dstVlogDir=impl/.pcores/verilog
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel_entry9.compgen.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Block_split32_proc.compgen.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_HConvH_proc8.compgen.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_VConvH_proc.compgen.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_Border_proc.compgen.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.compgen.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Command     ap_source done; 0.155 sec.
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.pcores/verilog_sim
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel_entry9.compgen.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Block_split32_proc.compgen.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_HConvH_proc8.compgen.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_VConvH_proc.compgen.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Loop_Border_proc.compgen.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.compgen.tcl 
+Execute     get_config_export -disable_deadlock_detection 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.tbgen.tcl 
+Execute     get_config_rtl -module_prefix 
+INFO-FLOW: DBG:CMD:       cosim_export_main adding deadlock detection to Sobel
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.constraint.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=28
+INFO-FLOW: DBG:CMD:       copying IP vlog from C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/impl/verilog
+INFO-FLOW: DBG:CMD:       copying IP vhdl from C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/impl/vhdl
+INFO-FLOW: DBG:CMD:       copy ip_driver_dir 1_0 C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/driver
+Execute     get_config_export -format 
+INFO-FLOW: DBG:CMD:       generate_ip_script #gSsdmPorts=28 g_lang=vlog is_sdaccel=false is_sdsoc=true xo_file=
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.compgen.dataonly.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.compgen.dataonly.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.tbgen.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.tbgen.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.tbgen.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.tbgen.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.tbgen.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.tbgen.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.tbgen.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+Execute     get_config_debug -directory 
+INFO-FLOW: DBG:CMD:       generate_ip_auxiliary
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD:       prepArgInfo -> loadAnalyze_DB top_module=Sobel
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.rtl_wrap.cfg.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.rtl_wrap.cfg.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.rtl_wrap.cfg.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.tbgen.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.tbgen.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_top_info
+INFO-FLOW: DBG:CMD:       prepArgInfo -> loadAnalyze_DB top_module=Sobel
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.rtl_wrap.cfg.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.rtl_wrap.cfg.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.rtl_wrap.cfg.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.tbgen.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.tbgen.tcl 
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO-FLOW: DBG:CMD:       generate_ip_bd_script
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.tbgen.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.constraint.tcl 
+INFO-FLOW: DBG:CMD:       generate_ipi_example_script
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO-FLOW: DBG:CMD:       generate_syn_sh
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD:       generate_imp_constraints
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.constraint.tcl 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/Sobel.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO-FLOW: DBG:CMD: read_platform_lib C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl
+Execute     source C:/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/common.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source C:/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/op.gen 
+Execute     source C:/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source C:/Xilinx/Vitis_HLS/2020.2/common/technology/generic/autopilot/interface.gen 
+Execute     source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Execute     source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/maxi.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/util.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source C:/Xilinx/Vitis_HLS/2020.2/common/technology/xilinx/DSP48/dsp48.gen 
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO-FLOW: DBG:CMD:     exec C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Sobel/solution1/impl/ip/pack.bat
+Execute     get_config_export -output 
+Execute     send_msg_by_id INFO @200-802@%s Sobel/solution1/impl/export.zip 
+INFO: [HLS 200-802] Generated output file Sobel/solution1/impl/export.zip
+Command   export_design done; 7.393 sec.
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 7.436 seconds; current allocated memory: 181.087 MB.
+Command ap_source done; 9.056 sec.
+Execute cleanup_all 

@@ -1,4 +1,4 @@
-# 1 "../../Users/thedv/Desktop/invert.cpp"
+# 1 "Invert_Color/invert.cpp"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 395 "<built-in>" 3
@@ -150,7 +150,7 @@ extern "C" {
 
 }
 # 2 "<built-in>" 2
-# 1 "../../Users/thedv/Desktop/invert.cpp" 2
+# 1 "Invert_Color/invert.cpp" 2
 # 1 "C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\\ap_fixed.h" 1
 # 55 "C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\\ap_fixed.h"
 # 1 "C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\\ap_common.h" 1
@@ -5567,9 +5567,9 @@ inline bool operator!=(
 
 }
 # 396 "C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\\ap_fixed.h" 2
-# 2 "../../Users/thedv/Desktop/invert.cpp" 2
+# 2 "Invert_Color/invert.cpp" 2
 # 1 "C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\\ap_int.h" 1
-# 3 "../../Users/thedv/Desktop/invert.cpp" 2
+# 3 "Invert_Color/invert.cpp" 2
 # 1 "C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\\hls_stream.h" 1
 # 61 "C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\\hls_stream.h"
 # 1 "C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h" 1
@@ -5767,7 +5767,7 @@ class stream : public stream<__STREAM_T__, 0> {
 };
 }
 # 62 "C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\\hls_stream.h" 2
-# 4 "../../Users/thedv/Desktop/invert.cpp" 2
+# 4 "Invert_Color/invert.cpp" 2
 # 1 "C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\\ap_axi_sdata.h" 1
 # 87 "C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\\ap_axi_sdata.h"
 # 1 "C:/Xilinx/Vitis_HLS/2020.2/tps/mingw/6.2.0/win64.o/nt\\lib\\gcc\\x86_64-w64-mingw32\\6.2.0\\include\\c++\\climits" 1 3
@@ -6338,65 +6338,22 @@ private:
 };
 
 }
-# 5 "../../Users/thedv/Desktop/invert.cpp" 2
-typedef ap_uint<8> pixel_type;
-typedef ap_int<8> pixel_type_s;
-typedef ap_ufixed<8,0, AP_RND, AP_SAT> comp_type;
-
-
+# 5 "Invert_Color/invert.cpp" 2
 typedef ap_axiu<24,1,0,0> pixel;
 typedef hls::stream<pixel> video_stream;
 
-int col = 0;
-
-struct channels {
- pixel_type_s p1;
- pixel_type_s p2;
- pixel_type_s p3;
- channels() {}
- channels(ap_uint<24> pixel)
-    : p1(pixel(7,0)), p2(pixel(15,8)), p3(pixel(23,16)) {}
-};
-
-
-__attribute__((sdx_kernel("Invert_Color", 0))) void Invert_Color(video_stream& in_data,video_stream & out_data,int a) {
+__attribute__((sdx_kernel("Invert_Color", 0))) void Invert_Color(video_stream& in_data,video_stream & out_data) {
 #pragma HLS TOP name=Invert_Color
-# 25 "../../Users/thedv/Desktop/invert.cpp"
-
+# 8 "Invert_Color/invert.cpp"
 
 #pragma HLS INTERFACE ap_ctrl_none port=return
 #pragma HLS INTERFACE axis port=in_data register
 #pragma HLS INTERFACE axis port=out_data register
-#pragma HLS INTERFACE s_axilite port=a register
-
-#pragma HLS pipeline II=1
-
- pixel curr_pixel;
- in_data.read(curr_pixel);
- auto v=channels(curr_pixel.data);
-
- comp_type in1, in2, in3, out1, out2, out3;
- in1.range()=v.p1;
- in2.range()=v.p2;
- in3.range()=v.p3;
-
- if(a==1){
-  out1=~in1;
-  out2=~in2;
-  out3=~in3;
- }else{
-  out1=in1;
-  out2=in2;
-  out3=in3;
+ pixel p;p.last=0;
+ VITIS_LOOP_13_1: while(!p.last){
+  in_data.read(p);
+  p.data=~p.data;
+  out_data.write(p);
  }
-
- if(curr_pixel.last)
-  col=0;
- col++;
-
-
- curr_pixel.data=(out3.range(), out2.range(), out1.range());
-
- out_data.write(curr_pixel);
-
+ return;
 }

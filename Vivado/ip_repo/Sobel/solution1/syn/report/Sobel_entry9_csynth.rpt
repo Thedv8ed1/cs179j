@@ -1,0 +1,147 @@
+
+
+================================================================
+== Vitis HLS Report for 'Sobel_entry9'
+================================================================
+* Date:           Fri Feb 25 17:19:03 2022
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
+* Project:        Sobel
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  3.634 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        0|        0|      0 ns|      0 ns|    0|    0|     none|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|      2|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       -|      -|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|     54|    -|
+|Register         |        -|    -|       3|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|       3|     56|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------+----------+----+---+----+------------+------------+
+    |  Variable Name  | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------+----------+----+---+----+------------+------------+
+    |ap_block_state1  |        or|   0|  0|   2|           1|           1|
+    +-----------------+----------+----+---+----+------------+------------+
+    |Total            |          |   0|  0|   2|           1|           1|
+    +-----------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +--------------+----+-----------+-----+-----------+
+    |     Name     | LUT| Input Size| Bits| Total Bits|
+    +--------------+----+-----------+-----+-----------+
+    |ap_done       |   9|          2|    1|          2|
+    |h_out2_blk_n  |   9|          2|    1|          2|
+    |h_out_blk_n   |   9|          2|    1|          2|
+    |real_start    |   9|          2|    1|          2|
+    |w_out1_blk_n  |   9|          2|    1|          2|
+    |w_out_blk_n   |   9|          2|    1|          2|
+    +--------------+----+-----------+-----+-----------+
+    |Total         |  54|         12|    6|         12|
+    +--------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------+---+----+-----+-----------+
+    |      Name      | FF| LUT| Bits| Const Bits|
+    +----------------+---+----+-----+-----------+
+    |ap_CS_fsm       |  1|   0|    1|          0|
+    |ap_done_reg     |  1|   0|    1|          0|
+    |start_once_reg  |  1|   0|    1|          0|
+    +----------------+---+----+-----+-----------+
+    |Total           |  3|   0|    3|          0|
+    +----------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------+-----+-----+------------+--------------+--------------+
+|   RTL Ports   | Dir | Bits|  Protocol  | Source Object|    C Type    |
++---------------+-----+-----+------------+--------------+--------------+
+|ap_clk         |   in|    1|  ap_ctrl_hs|  Sobel.entry9|  return value|
+|ap_rst         |   in|    1|  ap_ctrl_hs|  Sobel.entry9|  return value|
+|ap_start       |   in|    1|  ap_ctrl_hs|  Sobel.entry9|  return value|
+|start_full_n   |   in|    1|  ap_ctrl_hs|  Sobel.entry9|  return value|
+|ap_done        |  out|    1|  ap_ctrl_hs|  Sobel.entry9|  return value|
+|ap_continue    |   in|    1|  ap_ctrl_hs|  Sobel.entry9|  return value|
+|ap_idle        |  out|    1|  ap_ctrl_hs|  Sobel.entry9|  return value|
+|ap_ready       |  out|    1|  ap_ctrl_hs|  Sobel.entry9|  return value|
+|start_out      |  out|    1|  ap_ctrl_hs|  Sobel.entry9|  return value|
+|start_write    |  out|    1|  ap_ctrl_hs|  Sobel.entry9|  return value|
+|w              |   in|   32|     ap_none|             w|        scalar|
+|h              |   in|   32|     ap_none|             h|        scalar|
+|w_out_din      |  out|   32|     ap_fifo|         w_out|       pointer|
+|w_out_full_n   |   in|    1|     ap_fifo|         w_out|       pointer|
+|w_out_write    |  out|    1|     ap_fifo|         w_out|       pointer|
+|w_out1_din     |  out|   32|     ap_fifo|        w_out1|       pointer|
+|w_out1_full_n  |   in|    1|     ap_fifo|        w_out1|       pointer|
+|w_out1_write   |  out|    1|     ap_fifo|        w_out1|       pointer|
+|h_out_din      |  out|   32|     ap_fifo|         h_out|       pointer|
+|h_out_full_n   |   in|    1|     ap_fifo|         h_out|       pointer|
+|h_out_write    |  out|    1|     ap_fifo|         h_out|       pointer|
+|h_out2_din     |  out|   32|     ap_fifo|        h_out2|       pointer|
+|h_out2_full_n  |   in|    1|     ap_fifo|        h_out2|       pointer|
+|h_out2_write   |  out|    1|     ap_fifo|        h_out2|       pointer|
++---------------+-----+-----+------------+--------------+--------------+
+

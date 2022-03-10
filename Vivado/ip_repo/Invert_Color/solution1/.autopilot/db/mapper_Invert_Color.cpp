@@ -37,8 +37,8 @@ static AESL_RUNTIME_BC __xlx_in_data_V_size_Reader("../tv/stream_size/stream_siz
 unsigned int ap_apatb_out_data_V_cap_bc;
 static AESL_RUNTIME_BC __xlx_out_data_V_size_Reader("../tv/stream_size/stream_size_out_out_data_V.dat");
 struct __cosim_sC__ { char data[12]; };
-extern "C" void Invert_Color(__cosim_sC__*, __cosim_sC__*, int);
-extern "C" void apatb_Invert_Color_hw(volatile void * __xlx_apatb_param_in_data, volatile void * __xlx_apatb_param_out_data, int __xlx_apatb_param_a) {
+extern "C" void Invert_Color(__cosim_sC__*, __cosim_sC__*);
+extern "C" void apatb_Invert_Color_hw(volatile void * __xlx_apatb_param_in_data, volatile void * __xlx_apatb_param_out_data) {
   // collect __xlx_in_data_tmp_vec
   unsigned __xlx_in_data_V_tmp_Count = 0;
   unsigned __xlx_in_data_V_read_Size = __xlx_in_data_V_size_Reader.read_size();
@@ -57,7 +57,7 @@ extern "C" void apatb_Invert_Color_hw(volatile void * __xlx_apatb_param_in_data,
   ap_apatb_out_data_V_cap_bc = __xlx_out_data_V_size_Reader.read_size();
   __cosim_sC__* __xlx_out_data_input_buffer= new __cosim_sC__[ap_apatb_out_data_V_cap_bc];
   // DUT call
-  Invert_Color(__xlx_in_data_input_buffer, __xlx_out_data_input_buffer, __xlx_apatb_param_a);
+  Invert_Color(__xlx_in_data_input_buffer, __xlx_out_data_input_buffer);
   for (unsigned i = 0; i <ap_apatb_out_data_V_cap_bc; ++i)
     ((hls::stream<__cosim_sC__>*)__xlx_apatb_param_out_data)->write(__xlx_out_data_input_buffer[i]);
 }

@@ -9,34 +9,40 @@
         <TopModelName>Invert_Color</TopModelName>
         <TargetClockPeriod>10.00</TargetClockPeriod>
         <ClockUncertainty>2.70</ClockUncertainty>
-        <TargetInitiationInterval>1</TargetInitiationInterval>
         <FlowTarget>vivado</FlowTarget>
     </UserAssignments>
     <PerformanceEstimates>
-        <PipelineType>yes</PipelineType>
+        <PipelineType>none</PipelineType>
         <SummaryOfTimingAnalysis>
             <unit>ns</unit>
-            <EstimatedClockPeriod>4.721</EstimatedClockPeriod>
+            <EstimatedClockPeriod>1.034</EstimatedClockPeriod>
         </SummaryOfTimingAnalysis>
         <SummaryOfOverallLatency>
             <unit>clock cycles</unit>
-            <Best-caseLatency>2</Best-caseLatency>
-            <Average-caseLatency>2</Average-caseLatency>
-            <Worst-caseLatency>2</Worst-caseLatency>
-            <Best-caseRealTimeLatency>20.000 ns</Best-caseRealTimeLatency>
-            <Average-caseRealTimeLatency>20.000 ns</Average-caseRealTimeLatency>
-            <Worst-caseRealTimeLatency>20.000 ns</Worst-caseRealTimeLatency>
-            <PipelineInitiationInterval>1</PipelineInitiationInterval>
-            <PipelineDepth>3</PipelineDepth>
-            <Interval-min>1</Interval-min>
-            <Interval-max>1</Interval-max>
+            <Best-caseLatency>undef</Best-caseLatency>
+            <Average-caseLatency>undef</Average-caseLatency>
+            <Worst-caseLatency>undef</Worst-caseLatency>
+            <Best-caseRealTimeLatency>undef</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>undef</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>undef</Worst-caseRealTimeLatency>
+            <Interval-min>undef</Interval-min>
+            <Interval-max>undef</Interval-max>
         </SummaryOfOverallLatency>
+        <SummaryOfLoopLatency>
+            <VITIS_LOOP_13_1>
+                <TripCount>undef</TripCount>
+                <Latency>undef</Latency>
+                <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
+                <PipelineII>1</PipelineII>
+                <PipelineDepth>2</PipelineDepth>
+            </VITIS_LOOP_13_1>
+        </SummaryOfLoopLatency>
     </PerformanceEstimates>
     <AreaEstimates>
         <Resources>
+            <FF>5</FF>
+            <LUT>77</LUT>
             <BRAM_18K>0</BRAM_18K>
-            <FF>167</FF>
-            <LUT>265</LUT>
             <DSP>0</DSP>
             <URAM>0</URAM>
         </Resources>
@@ -49,227 +55,6 @@
         </AvailableResources>
     </AreaEstimates>
     <InterfaceSummary>
-        <RtlPorts>
-            <name>s_axi_control_AWVALID</name>
-            <Object>control</Object>
-            <Type>scalar</Type>
-            <Scope/>
-            <IOProtocol>s_axi</IOProtocol>
-            <IOConfig>register, both mode</IOConfig>
-            <Dir>in</Dir>
-            <Bits>1</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_AWREADY</name>
-            <Object>control</Object>
-            <Type>scalar</Type>
-            <Scope/>
-            <IOProtocol>s_axi</IOProtocol>
-            <IOConfig>register, both mode</IOConfig>
-            <Dir>out</Dir>
-            <Bits>1</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_AWADDR</name>
-            <Object>control</Object>
-            <Type>scalar</Type>
-            <Scope/>
-            <IOProtocol>s_axi</IOProtocol>
-            <IOConfig>register, both mode</IOConfig>
-            <Dir>in</Dir>
-            <Bits>5</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_WVALID</name>
-            <Object>control</Object>
-            <Type>scalar</Type>
-            <Scope/>
-            <IOProtocol>s_axi</IOProtocol>
-            <IOConfig>register, both mode</IOConfig>
-            <Dir>in</Dir>
-            <Bits>1</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_WREADY</name>
-            <Object>control</Object>
-            <Type>scalar</Type>
-            <Scope/>
-            <IOProtocol>s_axi</IOProtocol>
-            <IOConfig>register, both mode</IOConfig>
-            <Dir>out</Dir>
-            <Bits>1</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_WDATA</name>
-            <Object>control</Object>
-            <Type>scalar</Type>
-            <Scope/>
-            <IOProtocol>s_axi</IOProtocol>
-            <IOConfig>register, both mode</IOConfig>
-            <Dir>in</Dir>
-            <Bits>32</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_WSTRB</name>
-            <Object>control</Object>
-            <Type>scalar</Type>
-            <Scope/>
-            <IOProtocol>s_axi</IOProtocol>
-            <IOConfig>register, both mode</IOConfig>
-            <Dir>in</Dir>
-            <Bits>4</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_ARVALID</name>
-            <Object>control</Object>
-            <Type>scalar</Type>
-            <Scope/>
-            <IOProtocol>s_axi</IOProtocol>
-            <IOConfig>register, both mode</IOConfig>
-            <Dir>in</Dir>
-            <Bits>1</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_ARREADY</name>
-            <Object>control</Object>
-            <Type>scalar</Type>
-            <Scope/>
-            <IOProtocol>s_axi</IOProtocol>
-            <IOConfig>register, both mode</IOConfig>
-            <Dir>out</Dir>
-            <Bits>1</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_ARADDR</name>
-            <Object>control</Object>
-            <Type>scalar</Type>
-            <Scope/>
-            <IOProtocol>s_axi</IOProtocol>
-            <IOConfig>register, both mode</IOConfig>
-            <Dir>in</Dir>
-            <Bits>5</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_RVALID</name>
-            <Object>control</Object>
-            <Type>scalar</Type>
-            <Scope/>
-            <IOProtocol>s_axi</IOProtocol>
-            <IOConfig>register, both mode</IOConfig>
-            <Dir>out</Dir>
-            <Bits>1</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_RREADY</name>
-            <Object>control</Object>
-            <Type>scalar</Type>
-            <Scope/>
-            <IOProtocol>s_axi</IOProtocol>
-            <IOConfig>register, both mode</IOConfig>
-            <Dir>in</Dir>
-            <Bits>1</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_RDATA</name>
-            <Object>control</Object>
-            <Type>scalar</Type>
-            <Scope/>
-            <IOProtocol>s_axi</IOProtocol>
-            <IOConfig>register, both mode</IOConfig>
-            <Dir>out</Dir>
-            <Bits>32</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_RRESP</name>
-            <Object>control</Object>
-            <Type>scalar</Type>
-            <Scope/>
-            <IOProtocol>s_axi</IOProtocol>
-            <IOConfig>register, both mode</IOConfig>
-            <Dir>out</Dir>
-            <Bits>2</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_BVALID</name>
-            <Object>control</Object>
-            <Type>scalar</Type>
-            <Scope/>
-            <IOProtocol>s_axi</IOProtocol>
-            <IOConfig>register, both mode</IOConfig>
-            <Dir>out</Dir>
-            <Bits>1</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_BREADY</name>
-            <Object>control</Object>
-            <Type>scalar</Type>
-            <Scope/>
-            <IOProtocol>s_axi</IOProtocol>
-            <IOConfig>register, both mode</IOConfig>
-            <Dir>in</Dir>
-            <Bits>1</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
-        </RtlPorts>
-        <RtlPorts>
-            <name>s_axi_control_BRESP</name>
-            <Object>control</Object>
-            <Type>scalar</Type>
-            <Scope/>
-            <IOProtocol>s_axi</IOProtocol>
-            <IOConfig>register, both mode</IOConfig>
-            <Dir>out</Dir>
-            <Bits>2</Bits>
-            <Attribute>unknown</Attribute>
-            <CType>int</CType>
-            <HasCtrl>0</HasCtrl>
-        </RtlPorts>
         <RtlPorts>
             <name>ap_clk</name>
             <Object>Invert_Color</Object>
@@ -473,32 +258,40 @@
                 <SummaryOfTimingAnalysis>
                     <TargetClockPeriod>10.00</TargetClockPeriod>
                     <ClockUncertainty>2.70</ClockUncertainty>
-                    <TargetInitiationInterval>1</TargetInitiationInterval>
-                    <EstimatedClockPeriod>4.721</EstimatedClockPeriod>
+                    <EstimatedClockPeriod>1.034</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>2</Best-caseLatency>
-                    <Average-caseLatency>2</Average-caseLatency>
-                    <Worst-caseLatency>2</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>20.000 ns</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>20.000 ns</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>20.000 ns</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>1</PipelineInitiationInterval>
-                    <PipelineDepth>3</PipelineDepth>
-                    <PipelineType>yes</PipelineType>
+                    <Best-caseLatency>undef</Best-caseLatency>
+                    <Average-caseLatency>undef</Average-caseLatency>
+                    <Worst-caseLatency>undef</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>undef</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>undef</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>undef</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>undef</PipelineInitiationInterval>
+                    <PipelineType>none</PipelineType>
                 </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <VITIS_LOOP_13_1>
+                        <Name>VITIS_LOOP_13_1</Name>
+                        <TripCount>undef</TripCount>
+                        <Latency>undef</Latency>
+                        <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>2</PipelineDepth>
+                    </VITIS_LOOP_13_1>
+                </SummaryOfLoopLatency>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
+                    <FF>5</FF>
+                    <AVAIL_FF>106400</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>77</LUT>
+                    <AVAIL_LUT>53200</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
                     <AVAIL_BRAM>280</AVAIL_BRAM>
                     <UTIL_BRAM>0</UTIL_BRAM>
-                    <FF>167</FF>
-                    <AVAIL_FF>106400</AVAIL_FF>
-                    <UTIL_FF>~0</UTIL_FF>
-                    <LUT>265</LUT>
-                    <AVAIL_LUT>53200</AVAIL_LUT>
-                    <UTIL_LUT>~0</UTIL_LUT>
                     <DSP>0</DSP>
                     <AVAIL_DSP>220</AVAIL_DSP>
                     <UTIL_DSP>0</UTIL_DSP>
@@ -508,227 +301,6 @@
                 </Resources>
             </AreaEstimates>
             <InterfaceSummary>
-                <RtlPorts>
-                    <name>s_axi_control_AWVALID</name>
-                    <Object>control</Object>
-                    <Type>scalar</Type>
-                    <Scope/>
-                    <IOProtocol>s_axi</IOProtocol>
-                    <IOConfig>register, both mode</IOConfig>
-                    <Dir>in</Dir>
-                    <Bits>1</Bits>
-                    <Attribute>unknown</Attribute>
-                    <CType>int</CType>
-                    <HasCtrl>0</HasCtrl>
-                </RtlPorts>
-                <RtlPorts>
-                    <name>s_axi_control_AWREADY</name>
-                    <Object>control</Object>
-                    <Type>scalar</Type>
-                    <Scope/>
-                    <IOProtocol>s_axi</IOProtocol>
-                    <IOConfig>register, both mode</IOConfig>
-                    <Dir>out</Dir>
-                    <Bits>1</Bits>
-                    <Attribute>unknown</Attribute>
-                    <CType>int</CType>
-                    <HasCtrl>0</HasCtrl>
-                </RtlPorts>
-                <RtlPorts>
-                    <name>s_axi_control_AWADDR</name>
-                    <Object>control</Object>
-                    <Type>scalar</Type>
-                    <Scope/>
-                    <IOProtocol>s_axi</IOProtocol>
-                    <IOConfig>register, both mode</IOConfig>
-                    <Dir>in</Dir>
-                    <Bits>5</Bits>
-                    <Attribute>unknown</Attribute>
-                    <CType>int</CType>
-                    <HasCtrl>0</HasCtrl>
-                </RtlPorts>
-                <RtlPorts>
-                    <name>s_axi_control_WVALID</name>
-                    <Object>control</Object>
-                    <Type>scalar</Type>
-                    <Scope/>
-                    <IOProtocol>s_axi</IOProtocol>
-                    <IOConfig>register, both mode</IOConfig>
-                    <Dir>in</Dir>
-                    <Bits>1</Bits>
-                    <Attribute>unknown</Attribute>
-                    <CType>int</CType>
-                    <HasCtrl>0</HasCtrl>
-                </RtlPorts>
-                <RtlPorts>
-                    <name>s_axi_control_WREADY</name>
-                    <Object>control</Object>
-                    <Type>scalar</Type>
-                    <Scope/>
-                    <IOProtocol>s_axi</IOProtocol>
-                    <IOConfig>register, both mode</IOConfig>
-                    <Dir>out</Dir>
-                    <Bits>1</Bits>
-                    <Attribute>unknown</Attribute>
-                    <CType>int</CType>
-                    <HasCtrl>0</HasCtrl>
-                </RtlPorts>
-                <RtlPorts>
-                    <name>s_axi_control_WDATA</name>
-                    <Object>control</Object>
-                    <Type>scalar</Type>
-                    <Scope/>
-                    <IOProtocol>s_axi</IOProtocol>
-                    <IOConfig>register, both mode</IOConfig>
-                    <Dir>in</Dir>
-                    <Bits>32</Bits>
-                    <Attribute>unknown</Attribute>
-                    <CType>int</CType>
-                    <HasCtrl>0</HasCtrl>
-                </RtlPorts>
-                <RtlPorts>
-                    <name>s_axi_control_WSTRB</name>
-                    <Object>control</Object>
-                    <Type>scalar</Type>
-                    <Scope/>
-                    <IOProtocol>s_axi</IOProtocol>
-                    <IOConfig>register, both mode</IOConfig>
-                    <Dir>in</Dir>
-                    <Bits>4</Bits>
-                    <Attribute>unknown</Attribute>
-                    <CType>int</CType>
-                    <HasCtrl>0</HasCtrl>
-                </RtlPorts>
-                <RtlPorts>
-                    <name>s_axi_control_ARVALID</name>
-                    <Object>control</Object>
-                    <Type>scalar</Type>
-                    <Scope/>
-                    <IOProtocol>s_axi</IOProtocol>
-                    <IOConfig>register, both mode</IOConfig>
-                    <Dir>in</Dir>
-                    <Bits>1</Bits>
-                    <Attribute>unknown</Attribute>
-                    <CType>int</CType>
-                    <HasCtrl>0</HasCtrl>
-                </RtlPorts>
-                <RtlPorts>
-                    <name>s_axi_control_ARREADY</name>
-                    <Object>control</Object>
-                    <Type>scalar</Type>
-                    <Scope/>
-                    <IOProtocol>s_axi</IOProtocol>
-                    <IOConfig>register, both mode</IOConfig>
-                    <Dir>out</Dir>
-                    <Bits>1</Bits>
-                    <Attribute>unknown</Attribute>
-                    <CType>int</CType>
-                    <HasCtrl>0</HasCtrl>
-                </RtlPorts>
-                <RtlPorts>
-                    <name>s_axi_control_ARADDR</name>
-                    <Object>control</Object>
-                    <Type>scalar</Type>
-                    <Scope/>
-                    <IOProtocol>s_axi</IOProtocol>
-                    <IOConfig>register, both mode</IOConfig>
-                    <Dir>in</Dir>
-                    <Bits>5</Bits>
-                    <Attribute>unknown</Attribute>
-                    <CType>int</CType>
-                    <HasCtrl>0</HasCtrl>
-                </RtlPorts>
-                <RtlPorts>
-                    <name>s_axi_control_RVALID</name>
-                    <Object>control</Object>
-                    <Type>scalar</Type>
-                    <Scope/>
-                    <IOProtocol>s_axi</IOProtocol>
-                    <IOConfig>register, both mode</IOConfig>
-                    <Dir>out</Dir>
-                    <Bits>1</Bits>
-                    <Attribute>unknown</Attribute>
-                    <CType>int</CType>
-                    <HasCtrl>0</HasCtrl>
-                </RtlPorts>
-                <RtlPorts>
-                    <name>s_axi_control_RREADY</name>
-                    <Object>control</Object>
-                    <Type>scalar</Type>
-                    <Scope/>
-                    <IOProtocol>s_axi</IOProtocol>
-                    <IOConfig>register, both mode</IOConfig>
-                    <Dir>in</Dir>
-                    <Bits>1</Bits>
-                    <Attribute>unknown</Attribute>
-                    <CType>int</CType>
-                    <HasCtrl>0</HasCtrl>
-                </RtlPorts>
-                <RtlPorts>
-                    <name>s_axi_control_RDATA</name>
-                    <Object>control</Object>
-                    <Type>scalar</Type>
-                    <Scope/>
-                    <IOProtocol>s_axi</IOProtocol>
-                    <IOConfig>register, both mode</IOConfig>
-                    <Dir>out</Dir>
-                    <Bits>32</Bits>
-                    <Attribute>unknown</Attribute>
-                    <CType>int</CType>
-                    <HasCtrl>0</HasCtrl>
-                </RtlPorts>
-                <RtlPorts>
-                    <name>s_axi_control_RRESP</name>
-                    <Object>control</Object>
-                    <Type>scalar</Type>
-                    <Scope/>
-                    <IOProtocol>s_axi</IOProtocol>
-                    <IOConfig>register, both mode</IOConfig>
-                    <Dir>out</Dir>
-                    <Bits>2</Bits>
-                    <Attribute>unknown</Attribute>
-                    <CType>int</CType>
-                    <HasCtrl>0</HasCtrl>
-                </RtlPorts>
-                <RtlPorts>
-                    <name>s_axi_control_BVALID</name>
-                    <Object>control</Object>
-                    <Type>scalar</Type>
-                    <Scope/>
-                    <IOProtocol>s_axi</IOProtocol>
-                    <IOConfig>register, both mode</IOConfig>
-                    <Dir>out</Dir>
-                    <Bits>1</Bits>
-                    <Attribute>unknown</Attribute>
-                    <CType>int</CType>
-                    <HasCtrl>0</HasCtrl>
-                </RtlPorts>
-                <RtlPorts>
-                    <name>s_axi_control_BREADY</name>
-                    <Object>control</Object>
-                    <Type>scalar</Type>
-                    <Scope/>
-                    <IOProtocol>s_axi</IOProtocol>
-                    <IOConfig>register, both mode</IOConfig>
-                    <Dir>in</Dir>
-                    <Bits>1</Bits>
-                    <Attribute>unknown</Attribute>
-                    <CType>int</CType>
-                    <HasCtrl>0</HasCtrl>
-                </RtlPorts>
-                <RtlPorts>
-                    <name>s_axi_control_BRESP</name>
-                    <Object>control</Object>
-                    <Type>scalar</Type>
-                    <Scope/>
-                    <IOProtocol>s_axi</IOProtocol>
-                    <IOConfig>register, both mode</IOConfig>
-                    <Dir>out</Dir>
-                    <Bits>2</Bits>
-                    <Attribute>unknown</Attribute>
-                    <CType>int</CType>
-                    <HasCtrl>0</HasCtrl>
-                </RtlPorts>
                 <RtlPorts>
                     <name>ap_clk</name>
                     <Object>Invert_Color</Object>
@@ -934,16 +506,11 @@
                 <hwRef type="interface" interface="out_data" name="" usage="data" direction="out"/>
             </hwRefs>
         </Arg>
-        <Arg ArgName="a" index="2" direction="in" srcType="int" srcSize="32">
-            <hwRefs>
-                <hwRef type="register" interface="s_axi_control" name="a" usage="data" direction="in"/>
-            </hwRefs>
-        </Arg>
     </Args>
     <Interfaces>
         <Interface InterfaceName="ap_clk" type="clock" busTypeName="clock" mode="slave">
             <busParams>
-                <busParam busParamName="ASSOCIATED_BUSIF">s_axi_control:in_data:out_data</busParam>
+                <busParam busParamName="ASSOCIATED_BUSIF">in_data:out_data</busParam>
                 <busParam busParamName="ASSOCIATED_RESET">ap_rst_n</busParam>
             </busParams>
             <portMaps>
@@ -992,46 +559,9 @@
                 <constraint constraint_type="pragma interface" mode="axis" register_option="0" register_mode="both" argName="out_data"/>
             </constraints>
         </Interface>
-        <Interface InterfaceName="s_axi_control" type="axi4lite" busTypeName="aximm" mode="slave" dataWidth="32" addrWidth="5" portPrefix="s_axi_control_" paramPrefix="C_S_AXI_CONTROL_">
-            <ports>
-                <port>s_axi_control_ARADDR</port>
-                <port>s_axi_control_ARREADY</port>
-                <port>s_axi_control_ARVALID</port>
-                <port>s_axi_control_AWADDR</port>
-                <port>s_axi_control_AWREADY</port>
-                <port>s_axi_control_AWVALID</port>
-                <port>s_axi_control_BREADY</port>
-                <port>s_axi_control_BRESP</port>
-                <port>s_axi_control_BVALID</port>
-                <port>s_axi_control_RDATA</port>
-                <port>s_axi_control_RREADY</port>
-                <port>s_axi_control_RRESP</port>
-                <port>s_axi_control_RVALID</port>
-                <port>s_axi_control_WDATA</port>
-                <port>s_axi_control_WREADY</port>
-                <port>s_axi_control_WSTRB</port>
-                <port>s_axi_control_WVALID</port>
-            </ports>
-            <registers>
-                <register offset="0x10" name="a" access="W" resetValue="0x0" description="Data signal of a" range="32">
-                    <fields>
-                        <field offset="0" width="32" name="a" access="W" resetValue="0" description="Bit 31 to 0 of a"/>
-                    </fields>
-                </register>
-            </registers>
-            <constraints>
-                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="1" offset="16" argName="a"/>
-            </constraints>
-        </Interface>
     </Interfaces>
     <ReportHWInterface>
         <section name="HW Interfaces" level="0">
-            <item name="S_AXILITE">
-                <table>
-                    <keys size="5">Interface, Data Width, Address Width, Offset, Register</keys>
-                    <column name="s_axi_control">32, 5, 16, 1</column>
-                </table>
-            </item>
             <item name="AXIS">
                 <table>
                     <keys size="9">Interface, Register Mode, TDATA, TKEEP, TLAST, TREADY, TSTRB, TUSER, TVALID</keys>
@@ -1056,21 +586,26 @@
                     <keys size="3">Argument, Direction, Datatype</keys>
                     <column name="in_data">in, stream&lt;hls::axis&lt;ap_uint&lt;24&gt; 1 0 0&gt; 0&gt;&amp;</column>
                     <column name="out_data">out, stream&lt;hls::axis&lt;ap_uint&lt;24&gt; 1 0 0&gt; 0&gt;&amp;</column>
-                    <column name="a">in, int</column>
                 </table>
             </item>
             <item name="SW-to-HW Mapping">
                 <table isCollapsed="1">
-                    <keys size="4">Argument, HW Name, HW Type, HW Info</keys>
-                    <column name="in_data">in_data, interface, </column>
-                    <column name="out_data">out_data, interface, </column>
-                    <column name="a">s_axi_control a, register, offset=0x10 range=32</column>
+                    <keys size="3">Argument, HW Name, HW Type</keys>
+                    <column name="in_data">in_data, interface</column>
+                    <column name="out_data">out_data, interface</column>
                 </table>
             </item>
         </section>
     </ReportSWInterface>
     <ReportBurst>
-        <section name="M_AXI Burst Information" level="0"/>
+        <section name="M_AXI Burst Information" level="0">
+            <item name="Burst Missed">
+                <table>
+                    <keys size="4">Variable, Problem, Resolution, Location</keys>
+                    <column name="">Cannot analyze the loop bounds of 'VITIS_LOOP_13_1', 214-252, Invert_Color/invert.cpp:13:19</column>
+                </table>
+            </item>
+        </section>
     </ReportBurst>
 </profile>
 

@@ -59,9 +59,6 @@ using namespace sc_dt;
 #define WRAPC_STREAM_EGRESS_STATUS_out_data_V_user_V "../tv/stream_size/stream_egress_status_out_data_V_user_V.dat"
 #define WRAPC_STREAM_SIZE_OUT_out_data_V_last_V "../tv/stream_size/stream_size_out_out_data_V_last_V.dat"
 #define WRAPC_STREAM_EGRESS_STATUS_out_data_V_last_V "../tv/stream_size/stream_egress_status_out_data_V_last_V.dat"
-// wrapc file define:
-#define AUTOTB_TVIN_a "../tv/cdatafile/c.Invert_Color.autotvin_a.dat"
-#define AUTOTB_TVOUT_a "../tv/cdatafile/c.Invert_Color.autotvout_a.dat"
 
 #define INTER_TCL "../tv/cdatafile/ref.tcl"
 
@@ -77,8 +74,6 @@ using namespace sc_dt;
 #define AUTOTB_TVOUT_PC_out_data_V_strb_V "../tv/rtldatafile/rtl.Invert_Color.autotvout_out_data_V_strb_V.dat"
 #define AUTOTB_TVOUT_PC_out_data_V_user_V "../tv/rtldatafile/rtl.Invert_Color.autotvout_out_data_V_user_V.dat"
 #define AUTOTB_TVOUT_PC_out_data_V_last_V "../tv/rtldatafile/rtl.Invert_Color.autotvout_out_data_V_last_V.dat"
-// tvout file define:
-#define AUTOTB_TVOUT_PC_a "../tv/rtldatafile/rtl.Invert_Color.autotvout_a.dat"
 
 class INTER_TCL_FILE {
   public:
@@ -94,7 +89,6 @@ INTER_TCL_FILE(const char* name) {
   out_data_V_strb_V_depth = 0;
   out_data_V_user_V_depth = 0;
   out_data_V_last_V_depth = 0;
-  a_depth = 0;
   trans_num =0;
 }
 ~INTER_TCL_FILE() {
@@ -122,7 +116,6 @@ string get_depth_list () {
   total_list << "{out_data_V_strb_V " << out_data_V_strb_V_depth << "}\n";
   total_list << "{out_data_V_user_V " << out_data_V_user_V_depth << "}\n";
   total_list << "{out_data_V_last_V " << out_data_V_last_V_depth << "}\n";
-  total_list << "{a " << a_depth << "}\n";
   return total_list.str();
 }
 void set_num (int num , int* class_num) {
@@ -142,7 +135,6 @@ void set_string(std::string list, std::string* class_list) {
     int out_data_V_strb_V_depth;
     int out_data_V_user_V_depth;
     int out_data_V_last_V_depth;
-    int a_depth;
     int trans_num;
   private:
     ofstream mFile;
@@ -185,9 +177,9 @@ static void RTLOutputCheckAndReplacement(std::string &AESL_token, std::string Po
   }
 }
 struct __cosim_sC__ { char data[12]; };
-extern "C" void Invert_Color_hw_stub_wrapper(volatile void *, volatile void *, int);
+extern "C" void Invert_Color_hw_stub_wrapper(volatile void *, volatile void *);
 
-extern "C" void apatb_Invert_Color_hw(volatile void * __xlx_apatb_param_in_data, volatile void * __xlx_apatb_param_out_data, int __xlx_apatb_param_a) {
+extern "C" void apatb_Invert_Color_hw(volatile void * __xlx_apatb_param_in_data, volatile void * __xlx_apatb_param_out_data) {
   refine_signal_handler();
   fstream wrapc_switch_file_token;
   wrapc_switch_file_token.open(".hls_cosim_wrapc_switch.log");
@@ -517,9 +509,6 @@ aesl_fh.touch(WRAPC_STREAM_SIZE_OUT_out_data_V_user_V);
 aesl_fh.touch(WRAPC_STREAM_EGRESS_STATUS_out_data_V_user_V);
 aesl_fh.touch(WRAPC_STREAM_SIZE_OUT_out_data_V_last_V);
 aesl_fh.touch(WRAPC_STREAM_EGRESS_STATUS_out_data_V_last_V);
-//a
-aesl_fh.touch(AUTOTB_TVIN_a);
-aesl_fh.touch(AUTOTB_TVOUT_a);
 CodeState = DUMP_INPUTS;
 std::vector<__cosim_sC__> __xlx_apatb_param_in_data_stream_buf;
 {
@@ -531,22 +520,8 @@ std::vector<__cosim_sC__> __xlx_apatb_param_in_data_stream_buf;
 long __xlx_apatb_param_in_data_stream_buf_size = ((hls::stream<__cosim_sC__>*)__xlx_apatb_param_in_data)->size();
 std::vector<__cosim_sC__> __xlx_apatb_param_out_data_stream_buf;
 long __xlx_apatb_param_out_data_stream_buf_size = ((hls::stream<__cosim_sC__>*)__xlx_apatb_param_out_data)->size();
-// print a Transactions
-{
-  sprintf(__xlx_sprintf_buffer.data(), "[[transaction]] %d\n", AESL_transaction);
-  aesl_fh.write(AUTOTB_TVIN_a, __xlx_sprintf_buffer.data());
-  {
-    sc_bv<32> __xlx_tmp_lv = *((int*)&__xlx_apatb_param_a);
-
-    sprintf(__xlx_sprintf_buffer.data(), "%s\n", __xlx_tmp_lv.to_string(SC_HEX).c_str());
-    aesl_fh.write(AUTOTB_TVIN_a, __xlx_sprintf_buffer.data()); 
-  }
-  tcl_file.set_num(1, &tcl_file.a_depth);
-  sprintf(__xlx_sprintf_buffer.data(), "[[/transaction]] \n");
-  aesl_fh.write(AUTOTB_TVIN_a, __xlx_sprintf_buffer.data());
-}
 CodeState = CALL_C_DUT;
-Invert_Color_hw_stub_wrapper(__xlx_apatb_param_in_data, __xlx_apatb_param_out_data, __xlx_apatb_param_a);
+Invert_Color_hw_stub_wrapper(__xlx_apatb_param_in_data, __xlx_apatb_param_out_data);
 CodeState = DUMP_OUTPUTS;
 long __xlx_apatb_param_in_data_stream_buf_final_size = __xlx_apatb_param_in_data_stream_buf_size - ((hls::stream<__cosim_sC__>*)__xlx_apatb_param_in_data)->size();
 

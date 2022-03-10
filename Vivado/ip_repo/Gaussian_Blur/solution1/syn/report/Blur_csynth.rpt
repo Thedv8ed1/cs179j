@@ -1,0 +1,176 @@
+
+
+================================================================
+== Vitis HLS Report for 'Blur'
+================================================================
+* Date:           Wed Feb 23 10:46:28 2022
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
+* Project:        Gaussian_Blur
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.268 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+----------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+    |   min   |   max   |    min   |    max   | min | max |   Type   |
+    +---------+---------+----------+----------+-----+-----+----------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|  dataflow|
+    +---------+---------+----------+----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        +------------------------+---------------------+---------+---------+-----------+-----------+-----+---------+---------+
+        |                        |                     |  Latency (cycles) |   Latency (absolute)  |    Interval   | Pipeline|
+        |        Instance        |        Module       |   min   |   max   |    min    |    max    | min |   max   |   Type  |
+        +------------------------+---------------------+---------+---------+-----------+-----------+-----+---------+---------+
+        |Loop_VConvH_proc_U0     |Loop_VConvH_proc     |        ?|        ?|          ?|          ?|    ?|        ?|     none|
+        |Loop_HConvH_proc8_U0    |Loop_HConvH_proc8    |        7|  2070624|  70.000 ns|  20.706 ms|    7|  2070624|     none|
+        |Loop_Border_proc_U0     |Loop_Border_proc     |        ?|        ?|          ?|          ?|    ?|        ?|     none|
+        |Block_split549_proc_U0  |Block_split549_proc  |        1|        1|  10.000 ns|  10.000 ns|    1|        1|     none|
+        |Blur_entry9_U0          |Blur_entry9          |        0|        0|       0 ns|       0 ns|    0|        0|     none|
+        +------------------------+---------------------+---------+---------+-----------+-----------+-----+---------+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|      2|    -|
+|FIFO             |        -|    -|     990|    680|    -|
+|Instance         |       45|   66|    7645|   9763|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|      -|    -|
+|Register         |        -|    -|       -|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |       45|   66|    8635|  10445|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |       16|   30|       8|     19|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +------------------------+---------------------+---------+----+------+------+-----+
+    |        Instance        |        Module       | BRAM_18K| DSP|  FF  |  LUT | URAM|
+    +------------------------+---------------------+---------+----+------+------+-----+
+    |Block_split549_proc_U0  |Block_split549_proc  |        0|   0|    36|   102|    0|
+    |Blur_entry9_U0          |Blur_entry9          |        0|   0|     3|    56|    0|
+    |Loop_Border_proc_U0     |Loop_Border_proc     |        3|   0|   996|  1050|    0|
+    |Loop_HConvH_proc8_U0    |Loop_HConvH_proc8    |        0|  33|  3282|  4119|    0|
+    |Loop_VConvH_proc_U0     |Loop_VConvH_proc     |       42|  33|  3222|  4268|    0|
+    |control_s_axi_U         |control_s_axi        |        0|   0|   106|   168|    0|
+    +------------------------+---------------------+---------+----+------+------+-----+
+    |Total                   |                     |       45|  66|  7645|  9763|    0|
+    +------------------------+---------------------+---------+----+------+------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    +-----------------------+---------+----+----+-----+------+-----+---------+
+    |          Name         | BRAM_18K| FF | LUT| URAM| Depth| Bits| Size:D*B|
+    +-----------------------+---------+----+----+-----+------+-----+---------+
+    |h_c567_U               |        0|  99|   0|    -|     3|   32|       96|
+    |h_c569_U               |        0|  99|   0|    -|     2|   32|       64|
+    |h_c_U                  |        0|  99|   0|    -|     2|   32|       64|
+    |hconv_U                |        0|  99|   0|    -|     2|   24|       48|
+    |vconv_U                |        0|  99|   0|    -|     2|   24|       48|
+    |vconv_xlim_loc_c570_U  |        0|  99|   0|    -|     2|   32|       64|
+    |vconv_xlim_loc_c_U     |        0|  99|   0|    -|     2|   32|       64|
+    |w_c566_U               |        0|  99|   0|    -|     2|   32|       64|
+    |w_c568_U               |        0|  99|   0|    -|     3|   32|       96|
+    |w_c_U                  |        0|  99|   0|    -|     2|   32|       64|
+    +-----------------------+---------+----+----+-----+------+-----+---------+
+    |Total                  |        0| 990|   0|    0|    22|  304|      672|
+    +-----------------------+---------+----+----+-----+------+-----+---------+
+
+    * Expression: 
+    +-----------------------------+----------+----+---+----+------------+------------+
+    |        Variable Name        | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------------+----------+----+---+----+------------+------------+
+    |Blur_entry9_U0_start_full_n  |       and|   0|  0|   2|           1|           1|
+    +-----------------------------+----------+----+---+----+------------+------------+
+    |Total                        |          |   0|  0|   2|           1|           1|
+    +-----------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+--------------+-------------------+--------------+
+|       RTL Ports       | Dir | Bits|   Protocol   |   Source Object   |    C Type    |
++-----------------------+-----+-----+--------------+-------------------+--------------+
+|s_axi_control_AWVALID  |   in|    1|         s_axi|            control|        scalar|
+|s_axi_control_AWREADY  |  out|    1|         s_axi|            control|        scalar|
+|s_axi_control_AWADDR   |   in|    5|         s_axi|            control|        scalar|
+|s_axi_control_WVALID   |   in|    1|         s_axi|            control|        scalar|
+|s_axi_control_WREADY   |  out|    1|         s_axi|            control|        scalar|
+|s_axi_control_WDATA    |   in|   32|         s_axi|            control|        scalar|
+|s_axi_control_WSTRB    |   in|    4|         s_axi|            control|        scalar|
+|s_axi_control_ARVALID  |   in|    1|         s_axi|            control|        scalar|
+|s_axi_control_ARREADY  |  out|    1|         s_axi|            control|        scalar|
+|s_axi_control_ARADDR   |   in|    5|         s_axi|            control|        scalar|
+|s_axi_control_RVALID   |  out|    1|         s_axi|            control|        scalar|
+|s_axi_control_RREADY   |   in|    1|         s_axi|            control|        scalar|
+|s_axi_control_RDATA    |  out|   32|         s_axi|            control|        scalar|
+|s_axi_control_RRESP    |  out|    2|         s_axi|            control|        scalar|
+|s_axi_control_BVALID   |  out|    1|         s_axi|            control|        scalar|
+|s_axi_control_BREADY   |   in|    1|         s_axi|            control|        scalar|
+|s_axi_control_BRESP    |  out|    2|         s_axi|            control|        scalar|
+|ap_clk                 |   in|    1|  ap_ctrl_none|               Blur|  return value|
+|ap_rst_n               |   in|    1|  ap_ctrl_none|               Blur|  return value|
+|in_data_TDATA          |   in|   24|          axis|   in_data_V_data_V|       pointer|
+|in_data_TKEEP          |   in|    3|          axis|   in_data_V_keep_V|       pointer|
+|in_data_TSTRB          |   in|    3|          axis|   in_data_V_strb_V|       pointer|
+|in_data_TUSER          |   in|    1|          axis|   in_data_V_user_V|       pointer|
+|in_data_TLAST          |   in|    1|          axis|   in_data_V_last_V|       pointer|
+|in_data_TID            |   in|    1|          axis|     in_data_V_id_V|       pointer|
+|in_data_TDEST          |   in|    1|          axis|   in_data_V_dest_V|       pointer|
+|in_data_TVALID         |   in|    1|          axis|   in_data_V_dest_V|       pointer|
+|in_data_TREADY         |  out|    1|          axis|   in_data_V_dest_V|       pointer|
+|out_data_TDATA         |  out|   24|          axis|  out_data_V_data_V|       pointer|
+|out_data_TKEEP         |  out|    3|          axis|  out_data_V_keep_V|       pointer|
+|out_data_TSTRB         |  out|    3|          axis|  out_data_V_strb_V|       pointer|
+|out_data_TUSER         |  out|    1|          axis|  out_data_V_user_V|       pointer|
+|out_data_TLAST         |  out|    1|          axis|  out_data_V_last_V|       pointer|
+|out_data_TID           |  out|    1|          axis|    out_data_V_id_V|       pointer|
+|out_data_TDEST         |  out|    1|          axis|  out_data_V_dest_V|       pointer|
+|out_data_TVALID        |  out|    1|          axis|  out_data_V_dest_V|       pointer|
+|out_data_TREADY        |   in|    1|          axis|  out_data_V_dest_V|       pointer|
++-----------------------+-----+-----+--------------+-------------------+--------------+
+

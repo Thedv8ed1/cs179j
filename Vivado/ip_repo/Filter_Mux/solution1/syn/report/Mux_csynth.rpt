@@ -1,0 +1,141 @@
+
+
+================================================================
+== Vitis HLS Report for 'Mux'
+================================================================
+* Date:           Wed Feb 23 09:05:41 2022
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
+* Project:        Filter_Mux
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  2.302 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        1|        1|  10.000 ns|  10.000 ns|    2|    2|     none|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       -|      -|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        0|    -|      68|    104|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|     42|    -|
+|Register         |        -|    -|      34|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|     102|    146|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +-----------------+---------------+---------+----+----+-----+-----+
+    |     Instance    |     Module    | BRAM_18K| DSP| FF | LUT | URAM|
+    +-----------------+---------------+---------+----+----+-----+-----+
+    |control_s_axi_U  |control_s_axi  |        0|   0|  68|  104|    0|
+    +-----------------+---------------+---------+----+----+-----+-----+
+    |Total            |               |        0|   0|  68|  104|    0|
+    +-----------------+---------------+---------+----+----+-----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    +-----------+----+-----------+-----+-----------+
+    |    Name   | LUT| Input Size| Bits| Total Bits|
+    +-----------+----+-----------+-----+-----------+
+    |ap_NS_fsm  |  14|          3|    1|          3|
+    |gray       |  14|          3|    1|          3|
+    |invert     |  14|          3|    1|          3|
+    +-----------+----+-----------+-----+-----------+
+    |Total      |  42|          9|    3|          9|
+    +-----------+----+-----------+-----+-----------+
+
+    * Register: 
+    +---------------------------+----+----+-----+-----------+
+    |            Name           | FF | LUT| Bits| Const Bits|
+    +---------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                  |   2|   0|    2|          0|
+    |filter_setting_0_data_reg  |  32|   0|   32|          0|
+    |filter_setting_0_vld_reg   |   0|   0|    1|          1|
+    +---------------------------+----+----+-----+-----------+
+    |Total                      |  34|   0|   35|          1|
+    +---------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+--------------+--------------+--------------+
+|       RTL Ports       | Dir | Bits|   Protocol   | Source Object|    C Type    |
++-----------------------+-----+-----+--------------+--------------+--------------+
+|s_axi_control_AWVALID  |   in|    1|         s_axi|       control|        scalar|
+|s_axi_control_AWREADY  |  out|    1|         s_axi|       control|        scalar|
+|s_axi_control_AWADDR   |   in|    5|         s_axi|       control|        scalar|
+|s_axi_control_WVALID   |   in|    1|         s_axi|       control|        scalar|
+|s_axi_control_WREADY   |  out|    1|         s_axi|       control|        scalar|
+|s_axi_control_WDATA    |   in|   32|         s_axi|       control|        scalar|
+|s_axi_control_WSTRB    |   in|    4|         s_axi|       control|        scalar|
+|s_axi_control_ARVALID  |   in|    1|         s_axi|       control|        scalar|
+|s_axi_control_ARREADY  |  out|    1|         s_axi|       control|        scalar|
+|s_axi_control_ARADDR   |   in|    5|         s_axi|       control|        scalar|
+|s_axi_control_RVALID   |  out|    1|         s_axi|       control|        scalar|
+|s_axi_control_RREADY   |   in|    1|         s_axi|       control|        scalar|
+|s_axi_control_RDATA    |  out|   32|         s_axi|       control|        scalar|
+|s_axi_control_RRESP    |  out|    2|         s_axi|       control|        scalar|
+|s_axi_control_BVALID   |  out|    1|         s_axi|       control|        scalar|
+|s_axi_control_BREADY   |   in|    1|         s_axi|       control|        scalar|
+|s_axi_control_BRESP    |  out|    2|         s_axi|       control|        scalar|
+|ap_clk                 |   in|    1|  ap_ctrl_none|           Mux|  return value|
+|ap_rst_n               |   in|    1|  ap_ctrl_none|           Mux|  return value|
+|gray                   |  out|    1|       ap_none|          gray|       pointer|
+|invert                 |  out|    1|       ap_none|        invert|       pointer|
++-----------------------+-----+-----+--------------+--------------+--------------+
+

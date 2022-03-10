@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"RGB2GRAY": {
+			"proto_instances": {
+			}
+		}
+	}
+}

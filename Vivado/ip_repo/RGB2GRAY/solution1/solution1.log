@@ -1,0 +1,500 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.053 seconds; current allocated memory: 171.934 MB.
+INFO: [HLS 200-10] Analyzing design file 'RGB2GRAY/RGB2GRAY.cpp' ... 
+ERROR: [HLS 214-124] use of undeclared identifier 'in_data': C:\PYNQ\PYNQ-master\PYNQ-master\boards\ip\RGB2GRAY\RGB2GRAY.cpp:8
+ERROR: [HLS 214-124] use of undeclared identifier 'out_data': C:\PYNQ\PYNQ-master\PYNQ-master\boards\ip\RGB2GRAY\RGB2GRAY.cpp:9
+ERROR: [HLS 214-124] use of undeclared identifier 'in_data': C:\PYNQ\PYNQ-master\PYNQ-master\boards\ip\RGB2GRAY\RGB2GRAY.cpp:14
+ERROR: [HLS 214-124] use of undeclared identifier 'out_data': C:\PYNQ\PYNQ-master\PYNQ-master\boards\ip\RGB2GRAY\RGB2GRAY.cpp:18
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 2.712 seconds; current allocated memory: 173.236 MB.
+INFO: [HLS 200-112] Total CPU user time: 2 seconds. Total CPU system time: 1 seconds. Total elapsed time: 4.72 seconds; peak allocated memory: 172.899 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.052 seconds; current allocated memory: 171.966 MB.
+INFO: [HLS 200-10] Analyzing design file 'RGB2GRAY/RGB2GRAY.cpp' ... 
+ERROR: [HLS 207-3552] too many template arguments for class template 'ap_uint': RGB2GRAY/RGB2GRAY.cpp:6:70
+INFO: [HLS 207-4515] template is declared here: C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int.h:202:8
+ERROR: [HLS 207-3552] too many template arguments for class template 'ap_uint': RGB2GRAY/RGB2GRAY.cpp:6:110
+INFO: [HLS 207-4515] template is declared here: C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int.h:202:8
+WARNING: [HLS 207-5519] invalid variable expr : RGB2GRAY/RGB2GRAY.cpp:8:33
+WARNING: [HLS 207-5519] invalid variable expr : RGB2GRAY/RGB2GRAY.cpp:9:33
+ERROR: [HLS 207-3796] unknown type name 'pixel': RGB2GRAY/RGB2GRAY.cpp:12:1
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 3.222 seconds; current allocated memory: 173.272 MB.
+INFO: [HLS 200-112] Total CPU user time: 2 seconds. Total CPU system time: 1 seconds. Total elapsed time: 5.08 seconds; peak allocated memory: 172.950 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.065 seconds; current allocated memory: 171.972 MB.
+INFO: [HLS 200-10] Analyzing design file 'RGB2GRAY/RGB2GRAY.cpp' ... 
+ERROR: [HLS 207-3552] too many template arguments for class template 'ap_uint': RGB2GRAY/RGB2GRAY.cpp:12:1
+INFO: [HLS 207-4515] template is declared here: C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int.h:202:8
+ERROR: [HLS 207-3729] no viable conversion from 'ap_uint<8>' to 'const hls::stream<hls::axis<ap_uint<8>, 1, 1, 1>, 0>::__STREAM_T__' (aka 'const axis<ap_uint<8>, 1UL, 1UL, 1UL>'): RGB2GRAY/RGB2GRAY.cpp:18:17
+INFO: [HLS 207-4373] candidate constructor (the implicit move constructor) not viable: no known conversion from 'ap_uint<8>' to 'hls::axis<ap_uint<8>, 1, 1, 1> &&' for 1st argument: C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:109:70
+INFO: [HLS 207-4373] candidate constructor (the implicit copy constructor) not viable: no known conversion from 'ap_uint<8>' to 'const hls::axis<ap_uint<8>, 1, 1, 1> &' for 1st argument: C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:109:70
+INFO: [HLS 207-4367] candidate function: C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:534:41
+INFO: [HLS 207-4409] passing argument to parameter 'din' here: C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:301:34
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 3.147 seconds; current allocated memory: 173.291 MB.
+INFO: [HLS 200-112] Total CPU user time: 2 seconds. Total CPU system time: 1 seconds. Total elapsed time: 4.893 seconds; peak allocated memory: 172.970 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.053 seconds; current allocated memory: 171.973 MB.
+INFO: [HLS 200-10] Analyzing design file 'RGB2GRAY/RGB2GRAY.cpp' ... 
+ERROR: [HLS 207-3729] no viable conversion from 'ap_uint<8>' to 'const hls::stream<hls::axis<ap_uint<8>, 1, 1, 1>, 0>::__STREAM_T__' (aka 'const axis<ap_uint<8>, 1UL, 1UL, 1UL>'): RGB2GRAY/RGB2GRAY.cpp:18:17
+INFO: [HLS 207-4373] candidate constructor (the implicit move constructor) not viable: no known conversion from 'ap_uint<8>' to 'hls::axis<ap_uint<8>, 1, 1, 1> &&' for 1st argument: C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:109:70
+INFO: [HLS 207-4373] candidate constructor (the implicit copy constructor) not viable: no known conversion from 'ap_uint<8>' to 'const hls::axis<ap_uint<8>, 1, 1, 1> &' for 1st argument: C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:109:70
+INFO: [HLS 207-4367] candidate function: C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:534:41
+INFO: [HLS 207-4409] passing argument to parameter 'din' here: C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:301:34
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 3.103 seconds; current allocated memory: 173.274 MB.
+INFO: [HLS 200-112] Total CPU user time: 2 seconds. Total CPU system time: 1 seconds. Total elapsed time: 4.92 seconds; peak allocated memory: 172.952 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.054 seconds; current allocated memory: 171.976 MB.
+INFO: [HLS 200-10] Analyzing design file 'RGB2GRAY/RGB2GRAY.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 3.097 seconds; current allocated memory: 173.317 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>::read()' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:293:50)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>::read()' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:296:25)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>::read()' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:295:67)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>::read()' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:295:36)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>::read()' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:294:39)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>::read()' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:294:23)
+INFO: [HLS 214-131] Inlining function 'ap_uint<24>::ap_uint<24, false>(ap_int_base<24, false> const&)' into 'ap_int_base<24, false>::RType<24, false>::arg1 operator>><24, false>(ap_int_base<24, false> const&, int)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1497:650)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::operator unsigned long long() const' into 'double operator*<24, false>(ap_int_base<24, false> const&, double)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1423:408)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>::ap_int_base<24, false>(ap_int_base<24, false> const&)' into 'ap_int_base<24, false>::RType<32, true>::logic operator&<24, false, 32, true>(ap_int_base<24, false> const&, ap_int_base<32, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1348:341)
+INFO: [HLS 214-131] Inlining function 'ap_int<32>::ap_int<32, true>(ap_int_base<32, true> const&)' into 'ap_int_base<24, false>::RType<32, true>::logic operator&<24, false, 32, true>(ap_int_base<24, false> const&, ap_int_base<32, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1348:555)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>::ap_int_base(int)' into 'ap_int_base<24, false>::RType<($_0)32, true>::logic operator&<24, false>(ap_int_base<24, false> const&, int)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1461:3098)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::RType<32, true>::logic operator&<24, false, 32, true>(ap_int_base<24, false> const&, ap_int_base<32, true> const&)' into 'ap_int_base<24, false>::RType<($_0)32, true>::logic operator&<24, false>(ap_int_base<24, false> const&, int)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1461:3096)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>::operator long long() const' into 'double operator*<32, true>(ap_int_base<32, true> const&, double)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1423:408)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<65, true>::ap_int_base<12, true>(ap_int_base<12, true> const&)' into 'ap_int_base<12, true>::RType<64, true>::minus operator-<12, true, 64, true>(ap_int_base<12, true> const&, ap_int_base<64, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1347:341)
+INFO: [HLS 214-131] Inlining function 'ap_int<65>::ap_int<65, true>(ap_int_base<65, true> const&)' into 'ap_int_base<12, true>::RType<64, true>::minus operator-<12, true, 64, true>(ap_int_base<12, true> const&, ap_int_base<64, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1347:555)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<65, true>::ap_int_base<64, true>(ap_int_base<64, true> const&)' into 'ap_int_base<12, true>::RType<64, true>::minus operator-<12, true, 64, true>(ap_int_base<12, true> const&, ap_int_base<64, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1347:430)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<64, true>::ap_int_base(long)' into 'ap_int_base<12, true>::RType<($_0)64, true>::minus operator-<12, true>(ap_int_base<12, true> const&, long)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1463:1548)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<12, true>::RType<64, true>::minus operator-<12, true, 64, true>(ap_int_base<12, true> const&, ap_int_base<64, true> const&)' into 'ap_int_base<12, true>::RType<($_0)64, true>::minus operator-<12, true>(ap_int_base<12, true> const&, long)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1463:1546)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<9, true>::ap_int_base<1, false>(ap_int_base<1, false> const&)' into 'ap_int_base<1, false>::RType<8, false>::minus operator-<1, false, 8, false>(ap_int_base<1, false> const&, ap_int_base<8, false> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1347:341)
+INFO: [HLS 214-131] Inlining function 'ap_int<9>::ap_int<9, true>(ap_int_base<9, true> const&)' into 'ap_int_base<1, false>::RType<8, false>::minus operator-<1, false, 8, false>(ap_int_base<1, false> const&, ap_int_base<8, false> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1347:555)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<9, true>::ap_int_base<8, false>(ap_int_base<8, false> const&)' into 'ap_int_base<1, false>::RType<8, false>::minus operator-<1, false, 8, false>(ap_int_base<1, false> const&, ap_int_base<8, false> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1347:430)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<1, false>::ap_int_base(int)' into 'ap_int_base<8, false>::operator-() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:746:12)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<1, false>::RType<8, false>::minus operator-<1, false, 8, false>(ap_int_base<1, false> const&, ap_int_base<8, false> const&)' into 'ap_int_base<8, false>::operator-() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:746:37)
+INFO: [HLS 214-131] Inlining function 'doubleToRawBits(double)' into 'ap_int_base<8, false>::ap_int_base(double)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:307:13)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, false>& ap_int_base<8, false>::operator=<9, true>(ap_int_base<9, true> const&)' into 'ap_int_base<8, false>::ap_int_base(double)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:345:23)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, false>::operator-() const' into 'ap_int_base<8, false>::ap_int_base(double)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:345:25)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<12, true>& ap_int_base<12, true>::operator=<65, true>(ap_int_base<65, true> const&)' into 'ap_int_base<8, false>::ap_int_base(double)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:312:9)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<12, true>::RType<($_0)64, true>::minus operator-<12, true>(ap_int_base<12, true> const&, long)' into 'ap_int_base<8, false>::ap_int_base(double)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:312:15)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<12, true>::ap_int_base(int)' into 'ap_int_base<8, false>::ap_int_base(double)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:310:37)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, false>::ap_int_base(double)' into 'ap_uint<8>::ap_uint(double)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int.h:308:25)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_uint<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:304:51)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_uint<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:307:26)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_uint<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:306:68)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_uint<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:306:37)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_uint<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:305:40)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_uint<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:305:24)
+INFO: [HLS 214-131] Inlining function 'ap_uint<1>::ap_uint(int)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:12:28)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_uint<8>, 1ul, 1ul, 1ul> const&)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:18:11)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<1, false>::operator!() const' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:13:24)
+INFO: [HLS 214-131] Inlining function 'double operator*<32, true>(ap_int_base<32, true> const&, double)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:17:19)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::RType<($_0)32, true>::logic operator&<24, false>(ap_int_base<24, false> const&, int)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:17:13)
+INFO: [HLS 214-131] Inlining function 'double operator*<32, true>(ap_int_base<32, true> const&, double)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:16:26)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::RType<($_0)32, true>::logic operator&<24, false>(ap_int_base<24, false> const&, int)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:16:20)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::RType<24, false>::arg1 operator>><24, false>(ap_int_base<24, false> const&, int)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:16:16)
+INFO: [HLS 214-131] Inlining function 'double operator*<24, false>(ap_int_base<24, false> const&, double)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:15:26)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::RType<24, false>::arg1 operator>><24, false>(ap_int_base<24, false> const&, int)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:15:21)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>::read()' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:14:12)
+INFO: [HLS 214-178] Inlining function 'ap_uint<8>::ap_uint(double)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:6:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 3.478 seconds; current allocated memory: 174.909 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.042 seconds; current allocated memory: 174.910 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.093 seconds; current allocated memory: 183.277 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.145 seconds; current allocated memory: 194.937 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' in function 'RGB2GRAY' automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (RGB2GRAY/RGB2GRAY.cpp:13:18) in function 'RGB2GRAY'... converting 8 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.234 seconds; current allocated memory: 228.139 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.153 seconds; current allocated memory: 226.151 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'RGB2GRAY' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'RGB2GRAY' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 32, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.187 seconds; current allocated memory: 226.564 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.232 seconds; current allocated memory: 227.016 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'RGB2GRAY' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/in_data_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/in_data_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/in_data_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/in_data_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/in_data_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/in_data_V_id_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/in_data_V_dest_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/out_data_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/out_data_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/out_data_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/out_data_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/out_data_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/out_data_V_id_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/out_data_V_dest_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'RGB2GRAY' to 'ap_ctrl_none'.
+INFO: [RTGEN 206-100] Generating core module 'dadd_64ns_64ns_64_7_full_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dmul_64ns_64ns_64_7_max_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sitodp_64ns_64_6_no_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'uitodp_32ns_64_6_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'RGB2GRAY'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.326 seconds; current allocated memory: 228.224 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 1.964 seconds; current allocated memory: 236.797 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for RGB2GRAY.
+INFO: [VLOG 209-307] Generating Verilog RTL for RGB2GRAY.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 137.04 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 10.142 seconds; current allocated memory: 236.913 MB.
+INFO: [HLS 200-112] Total CPU user time: 5 seconds. Total CPU system time: 1 seconds. Total elapsed time: 11.86 seconds; peak allocated memory: 236.797 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: export_design -rtl verilog -format ip_catalog 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+INFO: [HLS 200-802] Generated output file RGB2GRAY/solution1/impl/export.zip
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 17.768 seconds; current allocated memory: 180.294 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog 
+INFO: [HLS 200-1510] Running: set_directive_top -name RGB2GRAY RGB2GRAY 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.055 seconds; current allocated memory: 172.030 MB.
+INFO: [HLS 200-10] Analyzing design file 'RGB2GRAY/RGB2GRAY.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 4.698 seconds; current allocated memory: 173.353 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>::read()' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:293:50)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>::read()' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:296:25)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>::read()' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:295:67)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>::read()' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:295:36)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>::read()' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:294:39)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>::read()' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:294:23)
+INFO: [HLS 214-131] Inlining function 'ap_uint<24>::ap_uint<24, false>(ap_int_base<24, false> const&)' into 'ap_int_base<24, false>::RType<24, false>::arg1 operator>><24, false>(ap_int_base<24, false> const&, int)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1497:650)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::operator unsigned long long() const' into 'double operator*<24, false>(ap_int_base<24, false> const&, double)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1423:408)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>::ap_int_base<24, false>(ap_int_base<24, false> const&)' into 'ap_int_base<24, false>::RType<32, true>::logic operator&<24, false, 32, true>(ap_int_base<24, false> const&, ap_int_base<32, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1348:341)
+INFO: [HLS 214-131] Inlining function 'ap_int<32>::ap_int<32, true>(ap_int_base<32, true> const&)' into 'ap_int_base<24, false>::RType<32, true>::logic operator&<24, false, 32, true>(ap_int_base<24, false> const&, ap_int_base<32, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1348:555)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>::ap_int_base(int)' into 'ap_int_base<24, false>::RType<($_0)32, true>::logic operator&<24, false>(ap_int_base<24, false> const&, int)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1461:3098)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::RType<32, true>::logic operator&<24, false, 32, true>(ap_int_base<24, false> const&, ap_int_base<32, true> const&)' into 'ap_int_base<24, false>::RType<($_0)32, true>::logic operator&<24, false>(ap_int_base<24, false> const&, int)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1461:3096)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>::operator long long() const' into 'double operator*<32, true>(ap_int_base<32, true> const&, double)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1423:408)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<65, true>::ap_int_base<12, true>(ap_int_base<12, true> const&)' into 'ap_int_base<12, true>::RType<64, true>::minus operator-<12, true, 64, true>(ap_int_base<12, true> const&, ap_int_base<64, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1347:341)
+INFO: [HLS 214-131] Inlining function 'ap_int<65>::ap_int<65, true>(ap_int_base<65, true> const&)' into 'ap_int_base<12, true>::RType<64, true>::minus operator-<12, true, 64, true>(ap_int_base<12, true> const&, ap_int_base<64, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1347:555)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<65, true>::ap_int_base<64, true>(ap_int_base<64, true> const&)' into 'ap_int_base<12, true>::RType<64, true>::minus operator-<12, true, 64, true>(ap_int_base<12, true> const&, ap_int_base<64, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1347:430)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<64, true>::ap_int_base(long)' into 'ap_int_base<12, true>::RType<($_0)64, true>::minus operator-<12, true>(ap_int_base<12, true> const&, long)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1463:1548)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<12, true>::RType<64, true>::minus operator-<12, true, 64, true>(ap_int_base<12, true> const&, ap_int_base<64, true> const&)' into 'ap_int_base<12, true>::RType<($_0)64, true>::minus operator-<12, true>(ap_int_base<12, true> const&, long)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1463:1546)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<9, true>::ap_int_base<1, false>(ap_int_base<1, false> const&)' into 'ap_int_base<1, false>::RType<8, false>::minus operator-<1, false, 8, false>(ap_int_base<1, false> const&, ap_int_base<8, false> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1347:341)
+INFO: [HLS 214-131] Inlining function 'ap_int<9>::ap_int<9, true>(ap_int_base<9, true> const&)' into 'ap_int_base<1, false>::RType<8, false>::minus operator-<1, false, 8, false>(ap_int_base<1, false> const&, ap_int_base<8, false> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1347:555)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<9, true>::ap_int_base<8, false>(ap_int_base<8, false> const&)' into 'ap_int_base<1, false>::RType<8, false>::minus operator-<1, false, 8, false>(ap_int_base<1, false> const&, ap_int_base<8, false> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1347:430)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<1, false>::ap_int_base(int)' into 'ap_int_base<8, false>::operator-() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:746:12)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<1, false>::RType<8, false>::minus operator-<1, false, 8, false>(ap_int_base<1, false> const&, ap_int_base<8, false> const&)' into 'ap_int_base<8, false>::operator-() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:746:37)
+INFO: [HLS 214-131] Inlining function 'doubleToRawBits(double)' into 'ap_int_base<8, false>::ap_int_base(double)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:307:13)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, false>& ap_int_base<8, false>::operator=<9, true>(ap_int_base<9, true> const&)' into 'ap_int_base<8, false>::ap_int_base(double)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:345:23)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, false>::operator-() const' into 'ap_int_base<8, false>::ap_int_base(double)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:345:25)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<12, true>& ap_int_base<12, true>::operator=<65, true>(ap_int_base<65, true> const&)' into 'ap_int_base<8, false>::ap_int_base(double)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:312:9)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<12, true>::RType<($_0)64, true>::minus operator-<12, true>(ap_int_base<12, true> const&, long)' into 'ap_int_base<8, false>::ap_int_base(double)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:312:15)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<12, true>::ap_int_base(int)' into 'ap_int_base<8, false>::ap_int_base(double)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:310:37)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, false>::ap_int_base(double)' into 'ap_uint<8>::ap_uint(double)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int.h:308:25)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_uint<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:304:51)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_uint<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:307:26)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_uint<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:306:68)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_uint<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:306:37)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_uint<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:305:40)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_uint<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:305:24)
+INFO: [HLS 214-131] Inlining function 'ap_uint<1>::ap_uint(int)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:12:28)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_uint<8>, 1ul, 1ul, 1ul> const&)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:21:11)
+INFO: [HLS 214-131] Inlining function 'ap_uint<1>::ap_uint<3>(ap_uint<3> const&)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:20:12)
+INFO: [HLS 214-131] Inlining function 'ap_uint<1>::ap_uint<3>(ap_uint<3> const&)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:19:12)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<1, false>::operator!() const' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:13:24)
+INFO: [HLS 214-131] Inlining function 'double operator*<32, true>(ap_int_base<32, true> const&, double)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:17:19)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::RType<($_0)32, true>::logic operator&<24, false>(ap_int_base<24, false> const&, int)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:17:13)
+INFO: [HLS 214-131] Inlining function 'double operator*<32, true>(ap_int_base<32, true> const&, double)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:16:26)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::RType<($_0)32, true>::logic operator&<24, false>(ap_int_base<24, false> const&, int)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:16:20)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::RType<24, false>::arg1 operator>><24, false>(ap_int_base<24, false> const&, int)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:16:16)
+INFO: [HLS 214-131] Inlining function 'double operator*<24, false>(ap_int_base<24, false> const&, double)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:15:26)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::RType<24, false>::arg1 operator>><24, false>(ap_int_base<24, false> const&, int)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:15:21)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>::read()' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:14:12)
+INFO: [HLS 214-178] Inlining function 'ap_uint<8>::ap_uint(double)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:6:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 4.767 seconds; current allocated memory: 175.121 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.046 seconds; current allocated memory: 175.122 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.105 seconds; current allocated memory: 183.513 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.152 seconds; current allocated memory: 195.186 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' in function 'RGB2GRAY' automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (RGB2GRAY/RGB2GRAY.cpp:13:18) in function 'RGB2GRAY'... converting 8 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.249 seconds; current allocated memory: 228.404 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.166 seconds; current allocated memory: 226.407 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'RGB2GRAY' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'RGB2GRAY' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 32, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.185 seconds; current allocated memory: 226.813 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.222 seconds; current allocated memory: 227.245 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'RGB2GRAY' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/in_data_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/in_data_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/in_data_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/in_data_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/in_data_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/in_data_V_id_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/in_data_V_dest_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/out_data_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/out_data_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/out_data_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/out_data_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/out_data_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/out_data_V_id_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/out_data_V_dest_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'RGB2GRAY' to 'ap_ctrl_none'.
+INFO: [RTGEN 206-100] Generating core module 'dadd_64ns_64ns_64_7_full_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dmul_64ns_64ns_64_7_max_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sitodp_64ns_64_6_no_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'uitodp_32ns_64_6_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'RGB2GRAY'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.357 seconds; current allocated memory: 228.587 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 2.325 seconds; current allocated memory: 237.218 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for RGB2GRAY.
+INFO: [VLOG 209-307] Generating Verilog RTL for RGB2GRAY.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 137.04 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 4 seconds. CPU system time: 0 seconds. Elapsed time: 13.454 seconds; current allocated memory: 237.336 MB.
+INFO: [HLS 200-112] Total CPU user time: 6 seconds. Total CPU system time: 1 seconds. Total elapsed time: 15.514 seconds; peak allocated memory: 237.218 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog 
+INFO: [HLS 200-1510] Running: set_directive_top -name RGB2GRAY RGB2GRAY 
+INFO: [HLS 200-1510] Running: export_design -rtl verilog -format ip_catalog 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+INFO: [HLS 200-802] Generated output file RGB2GRAY/solution1/impl/export.zip
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 21.285 seconds; current allocated memory: 180.516 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog 
+INFO: [HLS 200-1510] Running: set_directive_top -name RGB2GRAY RGB2GRAY 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 172.030 MB.
+INFO: [HLS 200-10] Analyzing design file 'RGB2GRAY/RGB2GRAY.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 3.807 seconds; current allocated memory: 173.353 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>::read()' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:293:50)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>::read()' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:296:25)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>::read()' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:295:67)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>::read()' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:295:36)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>::read()' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:294:39)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>::read()' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:294:23)
+INFO: [HLS 214-131] Inlining function 'ap_uint<24>::ap_uint<24, false>(ap_int_base<24, false> const&)' into 'ap_int_base<24, false>::RType<24, false>::arg1 operator>><24, false>(ap_int_base<24, false> const&, int)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1497:650)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::operator unsigned long long() const' into 'double operator*<24, false>(ap_int_base<24, false> const&, double)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1423:408)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>::ap_int_base<24, false>(ap_int_base<24, false> const&)' into 'ap_int_base<24, false>::RType<32, true>::logic operator&<24, false, 32, true>(ap_int_base<24, false> const&, ap_int_base<32, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1348:341)
+INFO: [HLS 214-131] Inlining function 'ap_int<32>::ap_int<32, true>(ap_int_base<32, true> const&)' into 'ap_int_base<24, false>::RType<32, true>::logic operator&<24, false, 32, true>(ap_int_base<24, false> const&, ap_int_base<32, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1348:555)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>::ap_int_base(int)' into 'ap_int_base<24, false>::RType<($_0)32, true>::logic operator&<24, false>(ap_int_base<24, false> const&, int)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1461:3098)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::RType<32, true>::logic operator&<24, false, 32, true>(ap_int_base<24, false> const&, ap_int_base<32, true> const&)' into 'ap_int_base<24, false>::RType<($_0)32, true>::logic operator&<24, false>(ap_int_base<24, false> const&, int)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1461:3096)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>::operator long long() const' into 'double operator*<32, true>(ap_int_base<32, true> const&, double)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1423:408)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<65, true>::ap_int_base<12, true>(ap_int_base<12, true> const&)' into 'ap_int_base<12, true>::RType<64, true>::minus operator-<12, true, 64, true>(ap_int_base<12, true> const&, ap_int_base<64, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1347:341)
+INFO: [HLS 214-131] Inlining function 'ap_int<65>::ap_int<65, true>(ap_int_base<65, true> const&)' into 'ap_int_base<12, true>::RType<64, true>::minus operator-<12, true, 64, true>(ap_int_base<12, true> const&, ap_int_base<64, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1347:555)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<65, true>::ap_int_base<64, true>(ap_int_base<64, true> const&)' into 'ap_int_base<12, true>::RType<64, true>::minus operator-<12, true, 64, true>(ap_int_base<12, true> const&, ap_int_base<64, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1347:430)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<64, true>::ap_int_base(long)' into 'ap_int_base<12, true>::RType<($_0)64, true>::minus operator-<12, true>(ap_int_base<12, true> const&, long)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1463:1548)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<12, true>::RType<64, true>::minus operator-<12, true, 64, true>(ap_int_base<12, true> const&, ap_int_base<64, true> const&)' into 'ap_int_base<12, true>::RType<($_0)64, true>::minus operator-<12, true>(ap_int_base<12, true> const&, long)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1463:1546)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<9, true>::ap_int_base<1, false>(ap_int_base<1, false> const&)' into 'ap_int_base<1, false>::RType<8, false>::minus operator-<1, false, 8, false>(ap_int_base<1, false> const&, ap_int_base<8, false> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1347:341)
+INFO: [HLS 214-131] Inlining function 'ap_int<9>::ap_int<9, true>(ap_int_base<9, true> const&)' into 'ap_int_base<1, false>::RType<8, false>::minus operator-<1, false, 8, false>(ap_int_base<1, false> const&, ap_int_base<8, false> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1347:555)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<9, true>::ap_int_base<8, false>(ap_int_base<8, false> const&)' into 'ap_int_base<1, false>::RType<8, false>::minus operator-<1, false, 8, false>(ap_int_base<1, false> const&, ap_int_base<8, false> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1347:430)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<1, false>::ap_int_base(int)' into 'ap_int_base<8, false>::operator-() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:746:12)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<1, false>::RType<8, false>::minus operator-<1, false, 8, false>(ap_int_base<1, false> const&, ap_int_base<8, false> const&)' into 'ap_int_base<8, false>::operator-() const' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:746:37)
+INFO: [HLS 214-131] Inlining function 'doubleToRawBits(double)' into 'ap_int_base<8, false>::ap_int_base(double)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:307:13)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, false>& ap_int_base<8, false>::operator=<9, true>(ap_int_base<9, true> const&)' into 'ap_int_base<8, false>::ap_int_base(double)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:345:23)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, false>::operator-() const' into 'ap_int_base<8, false>::ap_int_base(double)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:345:25)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<12, true>& ap_int_base<12, true>::operator=<65, true>(ap_int_base<65, true> const&)' into 'ap_int_base<8, false>::ap_int_base(double)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:312:9)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<12, true>::RType<($_0)64, true>::minus operator-<12, true>(ap_int_base<12, true> const&, long)' into 'ap_int_base<8, false>::ap_int_base(double)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:312:15)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<12, true>::ap_int_base(int)' into 'ap_int_base<8, false>::ap_int_base(double)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:310:37)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<8, false>::ap_int_base(double)' into 'ap_uint<8>::ap_uint(double)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int.h:308:25)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_uint<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:304:51)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_uint<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:307:26)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_uint<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:306:68)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>::get_user_ptr()' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_uint<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:306:37)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>::get_dest_ptr()' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_uint<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:305:40)
+INFO: [HLS 214-131] Inlining function 'hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>::get_id_ptr()' into 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_uint<8>, 1ul, 1ul, 1ul> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_axi_sdata.h:305:24)
+INFO: [HLS 214-131] Inlining function 'ap_uint<1>::ap_uint(int)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:12:28)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>::write(hls::axis<ap_uint<8>, 1ul, 1ul, 1ul> const&)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:21:11)
+INFO: [HLS 214-131] Inlining function 'ap_uint<1>::ap_uint<3>(ap_uint<3> const&)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:20:12)
+INFO: [HLS 214-131] Inlining function 'ap_uint<1>::ap_uint<3>(ap_uint<3> const&)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:19:12)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<1, false>::operator!() const' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:13:24)
+INFO: [HLS 214-131] Inlining function 'double operator*<32, true>(ap_int_base<32, true> const&, double)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:17:19)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::RType<($_0)32, true>::logic operator&<24, false>(ap_int_base<24, false> const&, int)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:17:13)
+INFO: [HLS 214-131] Inlining function 'double operator*<32, true>(ap_int_base<32, true> const&, double)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:16:26)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::RType<($_0)32, true>::logic operator&<24, false>(ap_int_base<24, false> const&, int)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:16:20)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::RType<24, false>::arg1 operator>><24, false>(ap_int_base<24, false> const&, int)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:16:16)
+INFO: [HLS 214-131] Inlining function 'double operator*<24, false>(ap_int_base<24, false> const&, double)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:15:26)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<24, false>::RType<24, false>::arg1 operator>><24, false>(ap_int_base<24, false> const&, int)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:15:21)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>::read()' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:14:12)
+INFO: [HLS 214-178] Inlining function 'ap_uint<8>::ap_uint(double)' into 'RGB2GRAY(hls::stream<hls::axis<ap_uint<24>, 1ul, 1ul, 1ul>, 0>&, hls::stream<hls::axis<ap_uint<8>, 1ul, 1ul, 1ul>, 0>&)' (RGB2GRAY/RGB2GRAY.cpp:6:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 4.613 seconds; current allocated memory: 175.121 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.048 seconds; current allocated memory: 175.122 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.139 seconds; current allocated memory: 183.513 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.152 seconds; current allocated memory: 195.186 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_13_1' in function 'RGB2GRAY' automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (RGB2GRAY/RGB2GRAY.cpp:13:18) in function 'RGB2GRAY'... converting 8 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.247 seconds; current allocated memory: 228.404 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.15 seconds; current allocated memory: 226.407 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'RGB2GRAY' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'RGB2GRAY' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_13_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 32, loop 'VITIS_LOOP_13_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.18 seconds; current allocated memory: 226.813 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.237 seconds; current allocated memory: 227.245 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'RGB2GRAY' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/in_data_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/in_data_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/in_data_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/in_data_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/in_data_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/in_data_V_id_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/in_data_V_dest_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/out_data_V_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/out_data_V_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/out_data_V_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/out_data_V_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/out_data_V_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/out_data_V_id_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'RGB2GRAY/out_data_V_dest_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'RGB2GRAY' to 'ap_ctrl_none'.
+INFO: [RTGEN 206-100] Generating core module 'dadd_64ns_64ns_64_7_full_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dmul_64ns_64ns_64_7_max_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sitodp_64ns_64_6_no_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'uitodp_32ns_64_6_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'RGB2GRAY'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.341 seconds; current allocated memory: 228.587 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 2.344 seconds; current allocated memory: 237.223 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for RGB2GRAY.
+INFO: [VLOG 209-307] Generating Verilog RTL for RGB2GRAY.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 137.04 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 4 seconds. CPU system time: 0 seconds. Elapsed time: 12.436 seconds; current allocated memory: 237.340 MB.
+INFO: [HLS 200-112] Total CPU user time: 6 seconds. Total CPU system time: 1 seconds. Total elapsed time: 15.008 seconds; peak allocated memory: 237.223 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog 
+INFO: [HLS 200-1510] Running: set_directive_top -name RGB2GRAY RGB2GRAY 
+INFO: [HLS 200-1510] Running: export_design -rtl verilog -format ip_catalog 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+INFO: [HLS 200-802] Generated output file RGB2GRAY/solution1/impl/export.zip
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 18.412 seconds; current allocated memory: 180.515 MB.

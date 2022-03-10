@@ -1,0 +1,46 @@
+#-----------------------------------------------------------
+# xsim v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sat Feb 19 12:21:50 2022
+# Process ID: 8328
+# Current directory: C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog
+# Command line: xsim.exe -mode tcl -source {xsim.dir/Blur/xsim_script.tcl}
+# Log file: C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/xsim.log
+# Journal file: C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog\xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/Blur/xsim_script.tcl
+# xsim {Blur} -autoloadwcfg -tclbatch {Blur.tcl}
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+source Blur.tcl
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [0.00%] @ "125000"
+// RTL Simulation : 0 / 1 [0.47%] @ "100000145000"
+// RTL Simulation : 0 / 1 [0.93%] @ "200000155000"
+// RTL Simulation : 0 / 1 [1.40%] @ "300000165000"
+// RTL Simulation : 0 / 1 [1.86%] @ "400000175000"
+// RTL Simulation : 0 / 1 [2.33%] @ "500000185000"
+// RTL Simulation : 0 / 1 [2.79%] @ "600000195000"
+// RTL Simulation : 0 / 1 [3.26%] @ "700000205000"
+// RTL Simulation : 0 / 1 [3.73%] @ "800000215000"
+// RTL Simulation : 0 / 1 [4.19%] @ "900000225000"
+// RTL Simulation : 0 / 1 [4.66%] @ "1000000235000"
+// RTL Simulation : 0 / 1 [5.12%] @ "1100000245000"
+// RTL Simulation : 0 / 1 [5.59%] @ "1200000255000"
+// RTL Simulation : 0 / 1 [6.05%] @ "1300000265000"
+// RTL Simulation : 0 / 1 [6.52%] @ "1400000275000"
+// RTL Simulation : 0 / 1 [6.98%] @ "1500000285000"
+Command failed: Simulator command interrupted.
+
+Simulation engine not responding
+The simulator has terminated in an unexpected manner.  Please review the simulation log (xsim.log) for details.
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:14:33 . Memory (MB): peak = 916.500 ; gain = 0.000
+## quit
+INFO: [Common 17-206] Exiting xsim at Sat Feb 19 12:36:23 2022...

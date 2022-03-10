@@ -1,0 +1,207 @@
+
+
+================================================================
+== Vitis HLS Report for 'Loop_VConvH_proc'
+================================================================
+* Date:           Fri Feb 25 17:19:01 2022
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
+* Project:        Sobel
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.268 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|     none|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                 |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |    Loop Name    |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VConvH_VConvW  |        ?|        ?|         2|          1|          1|     ?|       yes|
+        +-----------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 6
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 4 5 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 6 5 
+5 --> 4 
+6 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 7.26>
+ST_1 : Operation 7 [1/1] (3.63ns)   --->   "%h_read = read i32 @_ssdm_op_Read.ap_fifo.i32P0A, i32 %h" [Sobel/Sobel.cpp:57]   --->   Operation 7 'read' 'h_read' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_1 : Operation 8 [1/1] (3.63ns)   --->   "%vconv_xlim_loc_read = read i32 @_ssdm_op_Read.ap_fifo.i32P0A, i32 %vconv_xlim_loc"   --->   Operation 8 'read' 'vconv_xlim_loc_read' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 9 [1/1] (3.63ns)   --->   "%write_ln57 = write void @_ssdm_op_Write.ap_fifo.i32P0A, i32 %h_out, i32 %h_read" [Sobel/Sobel.cpp:57]   --->   Operation 9 'write' 'write_ln57' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 10 [1/1] (3.63ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_fifo.i32P0A, i32 %vconv_xlim_loc_out, i32 %vconv_xlim_loc_read"   --->   Operation 10 'write' 'write_ln0' <Predicate = true> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+
+State 2 <SV = 1> <Delay = 6.91>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%cast = zext i32 %h_read" [Sobel/Sobel.cpp:57]   --->   Operation 11 'zext' 'cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%cast1 = zext i32 %vconv_xlim_loc_read"   --->   Operation 12 'zext' 'cast1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 13 [2/2] (6.91ns)   --->   "%bound = mul i64 %cast, i64 %cast1" [Sobel/Sobel.cpp:57]   --->   Operation 13 'mul' 'bound' <Predicate = true> <Delay = 6.91> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 1> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 3 <SV = 2> <Delay = 6.91>
+ST_3 : Operation 14 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %hconv, void @empty_9, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2"   --->   Operation 14 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 15 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %vconv, void @empty_9, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2"   --->   Operation 15 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 16 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %vconv_xlim_loc, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 16 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 17 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %h, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 17 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 18 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %h_out, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 18 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 19 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %vconv_xlim_loc_out, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 19 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 20 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %vconv, void @empty_9, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2"   --->   Operation 20 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 21 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %hconv, void @empty_9, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2"   --->   Operation 21 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 22 [1/2] (6.91ns)   --->   "%bound = mul i64 %cast, i64 %cast1" [Sobel/Sobel.cpp:57]   --->   Operation 22 'mul' 'bound' <Predicate = true> <Delay = 6.91> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 1> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 23 [1/1] (1.58ns)   --->   "%br_ln0 = br void"   --->   Operation 23 'br' 'br_ln0' <Predicate = true> <Delay = 1.58>
+
+State 4 <SV = 3> <Delay = 6.42>
+ST_4 : Operation 24 [1/1] (0.00ns)   --->   "%indvar_flatten = phi i64 0, void %entry, i64 %add_ln57, void %._crit_edge5.i.i" [Sobel/Sobel.cpp:57]   --->   Operation 24 'phi' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 25 [1/1] (0.00ns)   --->   "%col = phi i11 0, void %entry, i11 %select_ln57_2, void %._crit_edge5.i.i" [Sobel/Sobel.cpp:57]   --->   Operation 25 'phi' 'col' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 26 [1/1] (0.00ns)   --->   "%row = phi i32 0, void %entry, i32 %add_ln58, void %._crit_edge5.i.i" [Sobel/Sobel.cpp:58]   --->   Operation 26 'phi' 'row' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 27 [1/1] (3.52ns)   --->   "%add_ln57 = add i64 %indvar_flatten, i64 1" [Sobel/Sobel.cpp:57]   --->   Operation 27 'add' 'add_ln57' <Predicate = true> <Delay = 3.52> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 28 [1/1] (2.77ns)   --->   "%icmp_ln57 = icmp_eq  i64 %indvar_flatten, i64 %bound" [Sobel/Sobel.cpp:57]   --->   Operation 28 'icmp' 'icmp_ln57' <Predicate = true> <Delay = 2.77> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.77> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 29 [1/1] (0.00ns)   --->   "%br_ln57 = br i1 %icmp_ln57, void %._crit_edge227.loopexit.i.i, void %.exit" [Sobel/Sobel.cpp:57]   --->   Operation 29 'br' 'br_ln57' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 30 [1/1] (2.47ns)   --->   "%icmp_ln58 = icmp_eq  i32 %row, i32 %vconv_xlim_loc_read" [Sobel/Sobel.cpp:58]   --->   Operation 30 'icmp' 'icmp_ln58' <Predicate = (!icmp_ln57)> <Delay = 2.47> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.77> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 31 [1/1] (0.69ns)   --->   "%select_ln57 = select i1 %icmp_ln58, i32 0, i32 %row" [Sobel/Sobel.cpp:57]   --->   Operation 31 'select' 'select_ln57' <Predicate = (!icmp_ln57)> <Delay = 0.69> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 32 [1/1] (1.63ns)   --->   "%add_ln57_1 = add i11 %col, i11 1" [Sobel/Sobel.cpp:57]   --->   Operation 32 'add' 'add_ln57_1' <Predicate = (!icmp_ln57)> <Delay = 1.63> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 33 [1/1] (0.00ns)   --->   "%tmp = partselect i10 @_ssdm_op_PartSelect.i10.i11.i32.i32, i11 %add_ln57_1, i32 1, i32 10" [Sobel/Sobel.cpp:57]   --->   Operation 33 'partselect' 'tmp' <Predicate = (!icmp_ln57)> <Delay = 0.00>
+ST_4 : Operation 34 [1/1] (1.77ns)   --->   "%icmp = icmp_ne  i10 %tmp, i10 0" [Sobel/Sobel.cpp:57]   --->   Operation 34 'icmp' 'icmp' <Predicate = (!icmp_ln57)> <Delay = 1.77> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.77> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 35 [1/1] (0.00ns)   --->   "%tmp_1 = partselect i10 @_ssdm_op_PartSelect.i10.i11.i32.i32, i11 %col, i32 1, i32 10" [Sobel/Sobel.cpp:57]   --->   Operation 35 'partselect' 'tmp_1' <Predicate = (!icmp_ln57)> <Delay = 0.00>
+ST_4 : Operation 36 [1/1] (1.77ns)   --->   "%icmp18 = icmp_ne  i10 %tmp_1, i10 0" [Sobel/Sobel.cpp:57]   --->   Operation 36 'icmp' 'icmp18' <Predicate = (!icmp_ln57)> <Delay = 1.77> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.77> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 37 [1/1] (0.99ns)   --->   "%select_ln57_1 = select i1 %icmp_ln58, i1 %icmp, i1 %icmp18" [Sobel/Sobel.cpp:57]   --->   Operation 37 'select' 'select_ln57_1' <Predicate = (!icmp_ln57)> <Delay = 0.99> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 38 [1/1] (0.69ns)   --->   "%select_ln57_2 = select i1 %icmp_ln58, i11 %add_ln57_1, i11 %col" [Sobel/Sobel.cpp:57]   --->   Operation 38 'select' 'select_ln57_2' <Predicate = (!icmp_ln57)> <Delay = 0.69> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 39 [1/1] (0.00ns)   --->   "%zext_ln58 = zext i32 %select_ln57" [Sobel/Sobel.cpp:58]   --->   Operation 39 'zext' 'zext_ln58' <Predicate = (!icmp_ln57)> <Delay = 0.00>
+ST_4 : Operation 40 [1/1] (0.00ns)   --->   "%linebuf_V_1_addr = getelementptr i8 %linebuf_V_1, i64 0, i64 %zext_ln58" [Sobel/Sobel.cpp:64]   --->   Operation 40 'getelementptr' 'linebuf_V_1_addr' <Predicate = (!icmp_ln57)> <Delay = 0.00>
+ST_4 : Operation 41 [2/2] (3.25ns)   --->   "%linebuf_V_1_load = load i11 %linebuf_V_1_addr" [Sobel/Sobel.cpp:64]   --->   Operation 41 'load' 'linebuf_V_1_load' <Predicate = (!icmp_ln57)> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_4 : Operation 42 [1/1] (0.00ns)   --->   "%br_ln69 = br i1 %select_ln57_1, void %._crit_edge5.i.i, void" [Sobel/Sobel.cpp:69]   --->   Operation 42 'br' 'br_ln69' <Predicate = (!icmp_ln57)> <Delay = 0.00>
+ST_4 : Operation 43 [1/1] (2.55ns)   --->   "%add_ln58 = add i32 %select_ln57, i32 1" [Sobel/Sobel.cpp:58]   --->   Operation 43 'add' 'add_ln58' <Predicate = (!icmp_ln57)> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 44 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 44 'br' 'br_ln0' <Predicate = (!icmp_ln57)> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 7.26>
+ST_5 : Operation 45 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @VConvH_VConvW_str"   --->   Operation 45 'specloopname' 'specloopname_ln0' <Predicate = (!icmp_ln57)> <Delay = 0.00>
+ST_5 : Operation 46 [1/1] (0.00ns)   --->   "%specpipeline_ln58 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_2" [Sobel/Sobel.cpp:58]   --->   Operation 46 'specpipeline' 'specpipeline_ln58' <Predicate = (!icmp_ln57)> <Delay = 0.00>
+ST_5 : Operation 47 [1/1] (0.00ns)   --->   "%specloopname_ln58 = specloopname void @_ssdm_op_SpecLoopName, void @empty_0" [Sobel/Sobel.cpp:58]   --->   Operation 47 'specloopname' 'specloopname_ln58' <Predicate = (!icmp_ln57)> <Delay = 0.00>
+ST_5 : Operation 48 [1/1] (3.63ns)   --->   "%tmp_3 = read i8 @_ssdm_op_Read.ap_fifo.volatile.i8P0A, i8 %hconv" [C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:145]   --->   Operation 48 'read' 'tmp_3' <Predicate = (!icmp_ln57)> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_5 : Operation 49 [1/1] (0.00ns)   --->   "%linebuf_V_0_addr = getelementptr i8 %linebuf_V_0, i64 0, i64 %zext_ln58" [Sobel/Sobel.cpp:64]   --->   Operation 49 'getelementptr' 'linebuf_V_0_addr' <Predicate = (!icmp_ln57)> <Delay = 0.00>
+ST_5 : Operation 50 [1/2] (3.25ns)   --->   "%linebuf_V_1_load = load i11 %linebuf_V_1_addr" [Sobel/Sobel.cpp:64]   --->   Operation 50 'load' 'linebuf_V_1_load' <Predicate = (!icmp_ln57)> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_5 : Operation 51 [1/1] (3.25ns)   --->   "%store_ln67 = store i8 %linebuf_V_1_load, i11 %linebuf_V_0_addr" [Sobel/Sobel.cpp:67]   --->   Operation 51 'store' 'store_ln67' <Predicate = (!icmp_ln57)> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_5 : Operation 52 [1/1] (3.25ns)   --->   "%store_ln67 = store i8 %tmp_3, i11 %linebuf_V_1_addr" [Sobel/Sobel.cpp:67]   --->   Operation 52 'store' 'store_ln67' <Predicate = (!icmp_ln57)> <Delay = 3.25> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1920> <RAM>
+ST_5 : Operation 53 [1/1] (3.63ns)   --->   "%write_ln174 = write void @_ssdm_op_Write.ap_fifo.volatile.i8P0A, i8 %vconv, i8 %tmp_3" [C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174]   --->   Operation 53 'write' 'write_ln174' <Predicate = (select_ln57_1)> <Delay = 3.63> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_5 : Operation 54 [1/1] (0.00ns)   --->   "%br_ln71 = br void %._crit_edge5.i.i" [Sobel/Sobel.cpp:71]   --->   Operation 54 'br' 'br_ln71' <Predicate = (select_ln57_1)> <Delay = 0.00>
+
+State 6 <SV = 4> <Delay = 0.00>
+ST_6 : Operation 55 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 55 'ret' 'ret_ln0' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 7.27ns
+The critical path consists of the following:
+	fifo read on port 'h' (Sobel/Sobel.cpp:57) [14]  (3.63 ns)
+	fifo write on port 'h_out' (Sobel/Sobel.cpp:57) [17]  (3.63 ns)
+
+ <State 2>: 6.91ns
+The critical path consists of the following:
+	'mul' operation ('bound', Sobel/Sobel.cpp:57) [24]  (6.91 ns)
+
+ <State 3>: 6.91ns
+The critical path consists of the following:
+	'mul' operation ('bound', Sobel/Sobel.cpp:57) [24]  (6.91 ns)
+
+ <State 4>: 6.42ns
+The critical path consists of the following:
+	'phi' operation ('row', Sobel/Sobel.cpp:58) with incoming values : ('add_ln58', Sobel/Sobel.cpp:58) [29]  (0 ns)
+	'icmp' operation ('icmp_ln58', Sobel/Sobel.cpp:58) [35]  (2.47 ns)
+	'select' operation ('select_ln57', Sobel/Sobel.cpp:57) [36]  (0.698 ns)
+	'getelementptr' operation ('linebuf_V_1_addr', Sobel/Sobel.cpp:64) [49]  (0 ns)
+	'load' operation ('linebuf_V_1_load', Sobel/Sobel.cpp:64) on array 'linebuf_V_1' [50]  (3.25 ns)
+
+ <State 5>: 7.27ns
+The critical path consists of the following:
+	fifo read on port 'hconv' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:145) [47]  (3.63 ns)
+	fifo write on port 'vconv' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174) [55]  (3.63 ns)
+
+ <State 6>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

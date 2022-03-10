@@ -1,6 +1,7 @@
 {"sourceFile": [{
       "name": "",
-      "directive": [{
+      "directive": [
+        {
           "functionName": "Invert_Color",
           "label": "",
           "functionLabel": "",
@@ -11,5 +12,18 @@
                 "value": "Invert_Color"
               }]
           }
-        }]
+        },
+        {
+          "functionName": "Invert_Color",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "Invert_Color"
+              }]
+          }
+        }
+      ]
     }]}

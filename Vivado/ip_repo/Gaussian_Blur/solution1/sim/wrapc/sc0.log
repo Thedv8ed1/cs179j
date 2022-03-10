@@ -1,0 +1,7 @@
+   Build using "C:/Xilinx/Vitis_HLS/2020.2/tps/win64/msys64/mingw64/bin/g++"
+   Compiling blur.cpp_pre.cpp.tb.cpp
+   Compiling apatb_Blur.cpp
+   Compiling test_bench.cpp_pre.cpp.tb.cpp
+   Compiling apatb_Blur_util.cpp
+   Compiling apatb_Blur_ir.ll
+   Generating cosim.tv.exe

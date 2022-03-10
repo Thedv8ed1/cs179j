@@ -1,0 +1,137 @@
+
+C:\PYNQ\PYNQ-master\PYNQ-master\boards\ip\Gaussian_Blur\solution1\sim\verilog>set PATH= 
+
+C:\PYNQ\PYNQ-master\PYNQ-master\boards\ip\Gaussian_Blur\solution1\sim\verilog>call C:/Xilinx/Vivado/2020.2/bin/xelab xil_defaultlib.apatb_Blur_top glbl -prj Blur.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm  -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib "ieee_proposed=./ieee_proposed" -s Blur  
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe xil_defaultlib.apatb_Blur_top glbl -prj Blur.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s Blur 
+Multi-threading is on. Using 14 slave threads.
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/AESL_axi_slave_control.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_slave_control
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/AESL_axi_s_in_data.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_s_in_data
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/AESL_axi_s_out_data.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_axi_s_out_data
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/AESL_fifo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module fifo
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/Blur.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_Blur_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/Blur.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Blur
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/Blur_borderbuf.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Blur_borderbuf_ram
+INFO: [VRFC 10-311] analyzing module Blur_borderbuf
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/Blur_control_s_axi.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Blur_control_s_axi
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/Blur_fifo_w32_d2_S.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Blur_fifo_w32_d2_S_shiftReg
+INFO: [VRFC 10-311] analyzing module Blur_fifo_w32_d2_S
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/Blur_linebuf_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Blur_linebuf_0_ram
+INFO: [VRFC 10-311] analyzing module Blur_linebuf_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/Blur_mul_32ns_32ns_44_2_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Blur_mul_32ns_32ns_44_2_1_Multiplier_0
+INFO: [VRFC 10-311] analyzing module Blur_mul_32ns_32ns_44_2_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/Blur_regslice_both.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Blur_regslice_both
+INFO: [VRFC 10-311] analyzing module Blur_regslice_both_w1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/csv_file_dump.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/dataflow_monitor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dataflow_monitor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/df_fifo_interface.sv" into library xil_defaultlib
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'df_fifo_intf' [C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/df_fifo_interface.sv:4]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/df_fifo_monitor.sv" into library xil_defaultlib
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'df_fifo_intf' [C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/df_fifo_interface.sv:4]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/df_process_interface.sv" into library xil_defaultlib
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'df_process_intf' [C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/df_process_interface.sv:4]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/df_process_monitor.sv" into library xil_defaultlib
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'df_process_intf' [C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/df_process_interface.sv:4]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/dump_file_agent.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/nodf_module_interface.sv" into library xil_defaultlib
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'nodf_module_intf' [C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/nodf_module_interface.sv:4]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/nodf_module_monitor.sv" into library xil_defaultlib
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'nodf_module_intf' [C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/nodf_module_interface.sv:4]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/sample_agent.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/sample_manager.sv" into library xil_defaultlib
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_dataflow_monitor_sv
+Compiling module xil_defaultlib.Blur_linebuf_0_ram
+Compiling module xil_defaultlib.Blur_linebuf_0(DataWidth=32,Addr...
+Compiling module xil_defaultlib.Blur_control_s_axi
+Compiling module xil_defaultlib.Blur_borderbuf_ram
+Compiling module xil_defaultlib.Blur_borderbuf(DataWidth=24,Addr...
+Compiling module xil_defaultlib.Blur_mul_32ns_32ns_44_2_1_Multip...
+Compiling module xil_defaultlib.Blur_mul_32ns_32ns_44_2_1(ID=1,N...
+Compiling module xil_defaultlib.Blur_fifo_w32_d2_S_shiftReg
+Compiling module xil_defaultlib.Blur_fifo_w32_d2_S
+Compiling module xil_defaultlib.Blur_regslice_both(DataWidth=24)
+Compiling module xil_defaultlib.Blur_regslice_both(DataWidth=3)
+Compiling module xil_defaultlib.Blur_regslice_both(DataWidth=1)
+Compiling module xil_defaultlib.Blur
+Compiling module xil_defaultlib.fifo(DEPTH=1310720,WIDTH=24)
+Compiling module xil_defaultlib.fifo(DEPTH=1310720,WIDTH=3)
+Compiling module xil_defaultlib.fifo(DEPTH=1310720,WIDTH=1)
+Compiling module xil_defaultlib.AESL_axi_s_in_data
+Compiling module xil_defaultlib.AESL_axi_s_out_data
+Compiling module xil_defaultlib.AESL_axi_slave_control
+Compiling module xil_defaultlib.nodf_module_intf
+Compiling module xil_defaultlib.dataflow_monitor_1
+Compiling module xil_defaultlib.apatb_Blur_top
+Compiling module work.glbl
+Built simulation snapshot Blur
+
+****** Webtalk v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gaussian_Blur/solution1/sim/verilog/xsim.dir/Blur/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Sat Feb 19 12:21:49 2022...
+
+****** xsim v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/Blur/xsim_script.tcl
+# xsim {Blur} -autoloadwcfg -tclbatch {Blur.tcl}
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+source Blur.tcl
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [0.00%] @ "125000"
+// RTL Simulation : 0 / 1 [0.47%] @ "100000145000"
+// RTL Simulation : 0 / 1 [0.93%] @ "200000155000"
+// RTL Simulation : 0 / 1 [1.40%] @ "300000165000"
+// RTL Simulation : 0 / 1 [1.86%] @ "400000175000"
+// RTL Simulation : 0 / 1 [2.33%] @ "500000185000"
+// RTL Simulation : 0 / 1 [2.79%] @ "600000195000"
+// RTL Simulation : 0 / 1 [3.26%] @ "700000205000"
+// RTL Simulation : 0 / 1 [3.73%] @ "800000215000"
+// RTL Simulation : 0 / 1 [4.19%] @ "900000225000"
+// RTL Simulation : 0 / 1 [4.66%] @ "1000000235000"
+// RTL Simulation : 0 / 1 [5.12%] @ "1100000245000"
+// RTL Simulation : 0 / 1 [5.59%] @ "1200000255000"
+// RTL Simulation : 0 / 1 [6.05%] @ "1300000265000"
+// RTL Simulation : 0 / 1 [6.52%] @ "1400000275000"
+// RTL Simulation : 0 / 1 [6.98%] @ "1500000285000"
+Command failed: Simulator command interrupted.
+
+Simulation engine not responding
+The simulator has terminated in an unexpected manner.  Please review the simulation log (xsim.log) for details.
+run: Time (s): cpu = 00:00:00 ; elapsed = 00:14:33 . Memory (MB): peak = 916.500 ; gain = 0.000
+## quit
+INFO: [Common 17-206] Exiting xsim at Sat Feb 19 12:36:23 2022...

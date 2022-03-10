@@ -1,0 +1,4 @@
+Running: xsim.dir/Blur/xsimk.exe -simmode gui -wdb Blur.wdb -simrunnum 0 -socket 53893
+Design successfully loaded
+Design Loading Memory Usage: 26868 KB (Peak: 26868 KB)
+Design Loading CPU Usage: 30 ms

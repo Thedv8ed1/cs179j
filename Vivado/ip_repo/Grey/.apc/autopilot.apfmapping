@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="grey.cpp" path="C:\PYNQ\PYNQ-master\PYNQ-master\boards\ip\Grey\grey.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="grey_tb.cpp" path="C:\PYNQ\PYNQ-master\PYNQ-master\boards\ip\Grey\grey_tb.cpp"/>
+    <originFiles name="grey.cpp" path="C:\PYNQ\PYNQ-master\PYNQ-master\boards\ip\Grey\grey.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

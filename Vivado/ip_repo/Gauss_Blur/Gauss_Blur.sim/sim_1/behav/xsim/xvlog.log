@@ -1,0 +1,12 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gauss_Blur/Gauss_Blur.gen/sources_1/ip/outputBuffer/sim/outputBuffer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module outputBuffer
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gauss_Blur/Gauss_Blur.srcs/sources_1/new/conv.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module conv
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gauss_Blur/Gauss_Blur.srcs/sources_1/new/imageController.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module imageControl
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gauss_Blur/Gauss_Blur.srcs/sources_1/new/imageProcessTop.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ImageProcessTop
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gauss_Blur/Gauss_Blur.srcs/sources_1/new/lineBuffer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lineBuffer
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gauss_Blur/Gauss_Blur.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb

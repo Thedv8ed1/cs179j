@@ -1,0 +1,11 @@
+0.7
+2020.2
+Nov 18 2020
+09:47:47
+C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gauss_Blur/Gauss_Blur.gen/sources_1/ip/outputBuffer/sim/outputBuffer.v,1644877333,verilog,,C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gauss_Blur/Gauss_Blur.srcs/sources_1/new/conv.v,,outputBuffer,,,,,,,,
+C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gauss_Blur/Gauss_Blur.sim/sim_1/behav/xsim/glbl.v,1605673889,verilog,,,,glbl,,,,,,,,
+C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gauss_Blur/Gauss_Blur.srcs/sim_1/new/tb.v,1644852374,verilog,,,,tb,,,,,,,,
+C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gauss_Blur/Gauss_Blur.srcs/sources_1/new/conv.v,1644874714,verilog,,C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gauss_Blur/Gauss_Blur.srcs/sources_1/new/imageController.v,,conv,,,,,,,,
+C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gauss_Blur/Gauss_Blur.srcs/sources_1/new/imageController.v,1644796087,verilog,,C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gauss_Blur/Gauss_Blur.srcs/sources_1/new/imageProcessTop.v,,imageControl,,,,,,,,
+C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gauss_Blur/Gauss_Blur.srcs/sources_1/new/imageProcessTop.v,1644802399,verilog,,C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gauss_Blur/Gauss_Blur.srcs/sources_1/new/lineBuffer.v,,ImageProcessTop,,,,,,,,
+C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gauss_Blur/Gauss_Blur.srcs/sources_1/new/lineBuffer.v,1644796148,verilog,,C:/PYNQ/PYNQ-master/PYNQ-master/boards/ip/Gauss_Blur/Gauss_Blur.srcs/sim_1/new/tb.v,,lineBuffer,,,,,,,,
