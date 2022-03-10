@@ -100,8 +100,8 @@ class PROGRAM:
         return self.base.switches[0].read()
 
     def applyFPS(self, fps:int):
-        self.in_frame = cv2.rectangle(self.in_frame, (0,0), (110, 30), (0,0,0), -1)
-        self.in_frame = cv2.putText(self.in_frame, F"{fps:.2f} FPS", (10,20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)
+        self.in_frame = cv2.rectangle(self.in_frame, (0,0), (220, 60), (0,0,0), -1)
+        self.in_frame = cv2.putText(self.in_frame, F"{fps:.2f} FPS", (20,40), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 1)
 
     # MARK: - Photo filters for HDMI input
 
@@ -155,9 +155,7 @@ class PROGRAM:
         
         # None
         else:
-            pass
-
-        
+            pass        
 
     # Hardware RGB2GRAY
     # converts to 8 bit grayscale and puts result in buffer
@@ -193,7 +191,7 @@ class PROGRAM:
       #  while self.gray2rgb_vdma.register_map.S2MM_VDMASR.Halted!=1: # wait for vdma to finish
             #pass
     # full conversion from rgb->8bit gray->24bit gray
-    def Gray_Scale_HW():
+    def Gray_Scale_HW(self):
         self.RGB2GRAY()
         self.GRAY2RGB()
 
@@ -205,11 +203,13 @@ class PROGRAM:
 
         # SW
         if (grayscale.value == 1):
-            pass # FIXME
+            buffer=np.ndarray(shape=(self.hdmi_in.mode.height, self.hdmi_in.mode.width), dtype=np.uint8)        
+            cv2.cvtColor(self.in_frame, cv2.COLOR_BGR2GRAY, dst=buffer)            
+            cv2.cvtColor(buffer, cv2.COLOR_GRAY2BGR,dst=self.in_frame)
 
         # HW
         elif (grayscale.value == 2):
-            pass #FIXME
+            self.Gray_Scale_HW()
 
         # None
         else:
